@@ -37,7 +37,20 @@ export default async function BlogPostPage({
           <span>{post.excerpt}</span>
         </header>
         <div className={styles.articleCover}>
-          <img src={post.cover} alt="" />
+          <img
+            className={styles.articleCoverGlow}
+            src={post.cover}
+            alt=""
+            loading="eager"
+            decoding="async"
+          />
+          <img
+            className={styles.articleCoverImage}
+            src={post.cover}
+            alt=""
+            loading="eager"
+            decoding="async"
+          />
         </div>
         <div className={styles.articleBody}>
           {post.body.map((paragraph) => (
@@ -46,7 +59,7 @@ export default async function BlogPostPage({
         </div>
         <div className={styles.gallery}>
           {post.gallery.map((image) => (
-            <img key={image} src={image} alt="" />
+            <img key={image} src={image} alt="" loading="lazy" decoding="async" />
           ))}
         </div>
       </article>

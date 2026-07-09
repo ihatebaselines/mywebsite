@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+import PremiumEffects from "@/components/PremiumEffects";
+import SmoothScroll from "@/components/SmoothScroll";
+import "lenis/dist/lenis.css";
+import "react-loading-skeleton/dist/skeleton.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,7 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <SmoothScroll />
+        <PremiumEffects />
+        {children}
+      </body>
     </html>
   );
 }

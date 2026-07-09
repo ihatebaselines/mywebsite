@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "rise-final",
+    "title": "RISE Final Round",
+    "date": "2026-06-06",
+    "tag": "Competition",
+    "summary": "Second place at the RISE Final Round after a stronger final with harder AI tasks.",
+    "image": "/images/riselogo.png",
+    "gallery": ["/images/roaifinalround.png"],
+    "relatedHref": "/blog/rise",
+    "body": [
+      "RISE was one of the competition results that gave me a lot of confidence. The final round was harder than the qualifier and forced me to stay calm while solving AI-style tasks under pressure.",
+      "This work entry is here because I want the Work section to track outcomes and the process behind them, not only the final placement."
+    ]
+  },
+  {
+    "slug": "roai-selection",
+    "title": "ROAI Selection Camp Qualifier",
+    "date": "2026-05-18",
+    "tag": "AI Competition",
+    "summary": "A high-pressure qualifier round that pushed my practical ML and contest strategy.",
+    "image": "/images/portfolio-duck.png",
+    "gallery": ["/images/selectielot.png"],
+    "relatedHref": "/blog/roaiselection",
+    "body": [
+      "The ROAI Selection Camp Qualifier was useful because it exposed weaknesses in how I manage experiments and time. It was not only about knowing ML, but also about choosing the right experiment quickly.",
+      "I keep this in Work because it shaped how I think about AI competitions: practical decisions matter as much as the model itself."
+    ]
+  },
+  {
+    "slug": "skillab",
+    "title": "Skillab Innovation Challenge",
+    "date": "2026-05-02",
+    "tag": "Hackathon",
+    "summary": "First place with a project around skills, labour-market analytics, and AI-assisted insight.",
+    "image": "/images/skillab-logo-img.jpg",
+    "gallery": ["/images/angelu.png"],
+    "relatedHref": "/blog/skillab",
+    "repoUrl": "https://github.com/rusu28/Skillab-Radar-V1.2",
+    "body": [
+      "Skillab was the hackathon connected to Cluj IT Cluster where my team built Skillab Radar, a project around skills, labour-market analytics, and AI-assisted insight.",
+      "The challenge was more product-oriented than most contests I join. We had to connect AI, data, and a useful idea in a way that made sense outside a pure coding contest.",
+      "The repo is linked here because this is one of the projects where the implementation matters as much as the presentation."
+    ]
+  },
+  {
+    "slug": "nitronlp",
+    "title": "NitroNLP Hackathon",
+    "date": "2026-04-25",
+    "tag": "NLP",
+    "summary": "Third place with PretrainedLanguageModel in a fast NLP hackathon on Nitro-AI Judge.",
+    "image": "/images/pretrainedlm.png",
+    "gallery": ["/images/pretrainedlm.png"],
+    "relatedHref": "/blog/nitronlp",
+    "body": [
+      "NitroNLP was a fast team-based NLP competition. It rewarded quick iteration, practical evaluation, and communication inside the team.",
+      "This belongs in Work because it was a concrete applied NLP build under contest constraints."
+    ]
+  },
+  {
+    "slug": "ccc",
+    "title": "CCC School & Data/AI",
+    "date": "2026-03-21",
+    "tag": "Programming",
+    "summary": "Placed 4th in School and 12th in Data/AI, mixing algorithmic speed with data thinking.",
+    "image": "/images/ccc.png",
+    "gallery": ["/images/ccc2.png"],
+    "relatedHref": "/blog/ccc",
+    "body": [
+      "CCC mixed level-based programming with data and AI thinking. I liked it because the structure rewarded persistence: each improvement unlocked more of the task.",
+      "It is a good example of the kind of work I enjoy most: problem solving that sits somewhere between algorithms, data, and practical implementation."
+    ]
+  }
+]

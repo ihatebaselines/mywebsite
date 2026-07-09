@@ -180,6 +180,8 @@ export default function DraggableDucks() {
             alt=""
             draggable={false}
             className={styles.draggableDuckImage}
+            loading="lazy"
+            decoding="async"
           />
         </button>
       ))}

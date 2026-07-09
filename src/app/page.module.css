@@ -1,7 +1,32 @@
 .page {
   min-height: 100vh;
   color: #ffffff;
-  background: #000000;
+  background: #050505;
+}
+
+.page::before {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  z-index: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(ellipse at 80% 20%, rgb(47 125 255 / 12%) 0%, transparent 40%),
+    radial-gradient(circle at 20% 80%, rgb(18 50 150 / 8%) 0%, transparent 45%);
+  filter: blur(60px);
+  animation: paintDrift 24s ease-in-out infinite alternate;
+}
+
+.page::after {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  z-index: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at 50% 50%, rgb(60 140 255 / 10%) 0%, transparent 35%);
+  filter: blur(80px);
+  animation: paintDrift 18s ease-in-out infinite alternate-reverse;
 }
 
 .nav {
@@ -82,6 +107,30 @@
   text-align: center;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 90px 7vw 56px;
+  z-index: 1;
+  pointer-events: none;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 24px;
+  background:
+    linear-gradient(90deg, rgb(47 125 255 / 10%), transparent 28%, rgb(255 255 255 / 4%)),
+    radial-gradient(circle at 18% 22%, rgb(47 125 255 / 20%), transparent 22rem);
+  mask-image: linear-gradient(to bottom, #000000, transparent 86%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 100%, rgb(47 125 255 / 15%), transparent 60%);
+  filter: blur(40px);
+}
+
 .heroCopy {
   position: relative;
   z-index: 5;
@@ -111,6 +160,11 @@
   line-height: 0.92;
   text-transform: lowercase;
   text-wrap: balance;
+  letter-spacing: 0;
+  animation: heroReveal 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  text-shadow:
+    0 1px 0 rgb(255 255 255 / 22%),
+    0 28px 90px rgb(47 125 255 / 22%);
 }
 
 .heroCopy > p:not(.kicker) {
@@ -212,14 +266,22 @@
 }
 
 .aboutMe {
+  position: relative;
   max-width: 620px;
-  border: 2px solid #ffffff;
-  border-radius: 8px;
-  padding: 18px 20px;
-  background: rgb(16 16 16 / 92%);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  padding: 30px;
+  background: radial-gradient(circle at center, rgb(16 16 16 / 80%) 0%, transparent 80%);
   text-align: left;
-  box-shadow: 7px 7px 0 #2f7dff;
+  backdrop-filter: blur(14px);
+  transition: transform 300ms ease, border-radius 800ms ease;
 }
+
+.aboutMe:hover {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  transform: translateY(-3px) scale(1.02);
+}
+
+
 
 .aboutMe span {
   display: block;
@@ -282,6 +344,150 @@
   background: #000000;
 }
 
+.horizontalShowcase {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 24%, rgb(47 125 255 / 18%), transparent 28rem),
+    #000000;
+}
+
+.horizontalIntro {
+  position: absolute;
+  z-index: 2;
+  top: 76px;
+  left: clamp(20px, 8vw, 120px);
+  max-width: 780px;
+}
+
+.horizontalIntro p {
+  color: #2f7dff;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.horizontalIntro h2 {
+  margin-top: 8px;
+  font-family: var(--font-title);
+  font-size: clamp(42px, 7vw, 94px);
+  font-weight: 900;
+  line-height: 0.92;
+}
+
+.horizontalTrack {
+  display: flex;
+  align-items: end;
+  gap: 22px;
+  width: max-content;
+  min-height: 100vh;
+  padding: 260px 8vw 80px;
+  will-change: transform;
+}
+
+.horizontalCard {
+  position: relative;
+  display: grid;
+  grid-template-rows: 320px auto;
+  gap: 18px;
+  width: min(72vw, 520px);
+  min-height: 520px;
+  overflow: hidden;
+  isolation: isolate;
+  contain: layout paint;
+  padding: 16px;
+  border-radius: 30px;
+  background: transparent;
+  transition: transform 300ms ease, opacity 300ms ease, filter 300ms ease;
+}
+
+/* Scroll active state */
+.horizontalCardActive {
+  /* This ensures the class is exported to JS styles object */
+}
+.horizontalTrack:not(:hover):has(.horizontalCardActive) .horizontalCard {
+  opacity: 0.2;
+  filter: grayscale(100%);
+  transform: none;
+}
+
+.horizontalTrack:not(:hover) .horizontalCardActive {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Mouse hover overrides scroll state */
+.horizontalTrack:hover .horizontalCard {
+  opacity: 0.2;
+  filter: grayscale(100%);
+  transform: none;
+}
+
+.horizontalTrack .horizontalCard:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: translateY(-8px) scale(1.02);
+}
+
+.horizontalCard > span {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  z-index: 2;
+  color: rgb(255 255 255 / 18%);
+  font-family: var(--font-title);
+  font-size: 72px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.horizontalImage {
+  position: relative;
+  border-radius: 20px;
+  background: radial-gradient(circle at center, rgb(47 125 255 / 20%), transparent 70%);
+}
+
+.horizontalImage::before,
+.workImage::before,
+.postImage::before,
+.articleCover::before,
+.gallery::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  border-top: 1px solid rgb(255 255 255 / 56%);
+  border-bottom: 1px solid rgb(47 125 255 / 48%);
+  transform: scaleX(var(--line-scale, 0));
+  transform-origin: left center;
+}
+
+.horizontalImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 16px;
+}
+
+.horizontalCard p {
+  color: #2f7dff;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.horizontalCard h3 {
+  max-width: 440px;
+  margin-top: 6px;
+  font-family: var(--font-title);
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 900;
+  line-height: 0.95;
+}
+
 .sectionHeader {
   max-width: 1100px;
   margin: 0 auto 32px;
@@ -331,18 +537,45 @@
 
 .projectCard,
 .postCard {
+  position: relative;
   min-height: 240px;
-  border: 2px solid #ffffff;
-  border-radius: 8px;
+  overflow: hidden;
+  isolation: isolate;
+  contain: layout paint;
   padding: 20px;
-  background: #101010;
+  border-radius: 20px;
+  background: transparent;
+  transition: transform 300ms ease;
 }
+
+
+
+.projectCard:hover,
+.postCard:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+
 
 .projectCard {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 28px;
+}
+
+.projectCard:nth-child(1) {
+  grid-column: span 2;
+  min-height: 320px;
+  background: transparent;
+}
+
+.projectCard:nth-child(4n + 2) {
+  background: transparent;
+}
+
+.projectCard:nth-child(4n + 3) {
+  background: transparent;
 }
 
 .projectTopline {
@@ -410,17 +643,275 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.workGrid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.workGridItem {
+  grid-column: span 2;
+}
+
+.workGridItem:nth-child(1),
+.workGridItem:nth-child(6n + 1) {
+  grid-column: span 3;
+}
+
+.workGridItem:nth-child(4n + 2) {
+  grid-column: span 3;
+}
+
+.workGridItem:nth-child(5n + 3) {
+  grid-column: span 2;
+}
+
+.workCard {
+  position: relative;
+  display: grid;
+  grid-template-rows: 190px 1fr;
+  gap: 16px;
+  min-height: 390px;
+  overflow: hidden;
+  isolation: isolate;
+  contain: layout paint;
+  padding: 16px;
+  border-radius: 20px;
+  background: transparent;
+  transition: transform 300ms ease;
+}
+
+.workGridItem:nth-child(1) .workCard,
+.workGridItem:nth-child(6n + 1) .workCard {
+  grid-template-rows: 260px 1fr;
+  min-height: 480px;
+}
+
+.workGridItem:nth-child(4n + 2) .workCard {
+  grid-template-rows: 230px 1fr;
+}
+
+.workGridItem:nth-child(3n) .workCard {
+  background: transparent;
+}
+
+.workCard:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+
+
+.workImage {
+  position: relative;
+  border-radius: 20px;
+  background: radial-gradient(circle at center, rgb(47 125 255 / 20%), transparent 70%);
+}
+
+.workImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
+  transform: scale(1.01);
+  transition: transform 320ms ease, filter 320ms ease;
+}
+
+.workCard:hover .workImage img {
+  filter: saturate(1.12) contrast(1.04);
+  transform:
+    translate(
+      calc((var(--mxn, 50) - 50) * 0.06px),
+      calc((var(--myn, 50) - 50) * 0.06px)
+    )
+    scale(1.08);
+}
+
+.workText {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.workText p {
+  color: #2f7dff;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.workText h3 {
+  font-family: var(--font-title);
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.workText span {
+  color: rgb(255 255 255 / 78%);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.embedPreview {
+  height: 210px;
+  overflow: hidden;
+  border: 2px solid rgb(255 255 255 / 60%);
+  border-radius: 8px;
+  background: #050505;
+}
+
+.embedPreview iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.repoPreview {
+  display: grid;
+  gap: 4px;
+  border-radius: 20px;
+  padding: 14px;
+  background: transparent;
+}
+
+.repoPreview p,
+.repoPreview span {
+  color: rgb(255 255 255 / 62%);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.repoPreview strong {
+  color: #ffffff;
+  font-family: var(--font-title);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.workArticleEmbed {
+  height: min(70vh, 680px);
+  min-height: 420px;
+  max-width: 1100px;
+  margin: 34px 0;
+  overflow: hidden;
+  border-radius: 20px;
+  background: transparent;
+}
+
+.workArticleEmbed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.repoArticleCard {
+  display: grid;
+  gap: 8px;
+  max-width: 760px;
+  margin: 32px 0;
+  border-radius: 30px;
+  padding: 22px;
+  background: radial-gradient(circle at center, rgb(47 125 255 / 20%), transparent 70%);
+  transition: transform 300ms ease;
+}
+
+.repoArticleCard:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.repoArticleCard span {
+  color: #2f7dff;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.repoArticleCard strong {
+  font-family: var(--font-title);
+  font-size: clamp(26px, 4vw, 46px);
+  line-height: 1;
+}
+
+.repoArticleCard p {
+  color: rgb(255 255 255 / 75%);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.workSkeleton {
+  min-height: 390px;
+  border-radius: 20px;
+  padding: 16px;
+  background: transparent;
+}
+
+.workSkeleton span,
+.workSkeleton strong,
+.workSkeleton p {
+  display: block;
+  overflow: hidden;
+  border-radius: 6px;
+  background:
+    linear-gradient(
+      90deg,
+      #191919 0%,
+      #303030 38%,
+      #191919 78%
+    );
+  background-size: 220% 100%;
+  animation: skeletonSweep 1.15s linear infinite;
+}
+
+.workSkeleton span {
+  height: 190px;
+  margin-bottom: 18px;
+}
+
+.workSkeleton strong {
+  width: 76%;
+  height: 34px;
+  margin-bottom: 14px;
+}
+
+.workSkeleton p {
+  height: 16px;
+  margin-top: 10px;
+}
+
+.workSkeleton p:last-child {
+  width: 62%;
+}
+
 .postCard {
   display: grid;
   grid-template-columns: 170px 1fr;
   gap: 18px;
   min-height: 190px;
-  transition: border-color 180ms ease, transform 180ms ease;
 }
 
-.postCard:hover {
-  border-color: #2f7dff;
-  transform: translateY(-4px);
+.postCard:nth-child(1) {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(260px, 0.78fr) 1fr;
+  min-height: 320px;
+}
+
+.postCard:nth-child(1) .postImage {
+  min-height: 280px;
+}
+
+.postCard:nth-child(3n) {
+  grid-template-columns: 1fr;
+}
+
+.postCard:nth-child(3n) .postImage {
+  aspect-ratio: 16 / 9;
+}
+
+.postCard:nth-child(4n) {
+  background: transparent;
 }
 
 .postCard p {
@@ -430,14 +921,15 @@
 }
 
 .postImage {
+  position: relative;
   min-height: 146px;
   overflow: hidden;
-  border-radius: 6px;
-  background: #2f7dff;
+  border-radius: 20px;
+  background: radial-gradient(circle at center, rgb(47 125 255 / 20%), transparent 70%);
 }
 
 .postImage img,
-.articleCover img,
+.articleCoverImage,
 .gallery img {
   width: 100%;
   height: 100%;
@@ -450,9 +942,8 @@
   min-height: 150px;
   margin: 18px auto 0;
   overflow: hidden;
-  border: 2px solid rgb(255 255 255 / 35%);
-  border-radius: 8px;
-  background: #080808;
+  border-radius: 20px;
+  background: transparent;
 }
 
 .tailCards {
@@ -470,18 +961,17 @@
   align-items: center;
   gap: 14px;
   min-height: 118px;
-  border: 2px solid rgb(255 255 255 / 50%);
-  border-radius: 8px;
+  border-radius: 20px;
   padding: 12px;
-  background: #101010;
+  background: transparent;
 }
 
 .tailCard img {
   width: 100%;
   height: 86px;
   object-fit: contain;
-  border-radius: 6px;
-  background: #2f7dff;
+  border-radius: 12px;
+  background: radial-gradient(circle at center, rgb(47 125 255 / 20%), transparent 70%);
 }
 
 .tailCard span {
@@ -584,12 +1074,37 @@
 }
 
 .articleCover {
+  position: relative;
+  display: grid;
+  place-items: center;
   height: min(60vw, 620px);
   min-height: 320px;
   border: 2px solid #ffffff;
   border-radius: 8px;
-  background: #2f7dff;
+  background:
+    radial-gradient(circle at 20% 18%, rgb(47 125 255 / 44%), transparent 34%),
+    radial-gradient(circle at 86% 78%, rgb(255 255 255 / 14%), transparent 28%),
+    #080808;
   overflow: hidden;
+}
+
+.articleCoverGlow {
+  position: absolute;
+  inset: -28px;
+  width: calc(100% + 56px);
+  height: calc(100% + 56px);
+  object-fit: cover;
+  opacity: 0.28;
+  filter: blur(24px) saturate(1.25);
+  transform: scale(1.05);
+}
+
+.articleCoverImage {
+  position: relative;
+  z-index: 1;
+  max-width: 86%;
+  max-height: 88%;
+  border-radius: 4px;
 }
 
 .articleBody {
@@ -620,6 +1135,47 @@
   }
 }
 
+@keyframes skeletonSweep {
+  from {
+    background-position: 120% 0;
+  }
+  to {
+    background-position: -120% 0;
+  }
+}
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.985);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes cardScan {
+  0%,
+  64% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes starDrift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-42px, 28px, 0);
+  }
+}
+
 @media (max-width: 860px) {
   .nav {
     padding: 0 14px;
@@ -639,13 +1195,47 @@
 
   .projectGrid,
   .postGrid,
-  .gallery {
+  .gallery,
+  .workGrid {
     grid-template-columns: 1fr;
+  }
+
+  .workGridItem,
+  .workGridItem:nth-child(1),
+  .workGridItem:nth-child(6n + 1),
+  .workGridItem:nth-child(4n + 2),
+  .workGridItem:nth-child(5n + 3),
+  .projectCard:nth-child(1),
+  .postCard:nth-child(1) {
+    grid-column: auto;
   }
 
   .sectionHeaderRow {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .horizontalShowcase {
+    min-height: auto;
+    padding: 58px 16px;
+  }
+
+  .horizontalIntro {
+    position: static;
+    margin-bottom: 24px;
+  }
+
+  .horizontalTrack {
+    display: grid;
+    width: auto;
+    min-height: auto;
+    padding: 0;
+  }
+
+  .horizontalCard {
+    width: 100%;
+    min-height: 420px;
+    grid-template-rows: 230px auto;
   }
 
   .postCard {

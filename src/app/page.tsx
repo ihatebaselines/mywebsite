@@ -1,10 +1,14 @@
 import Link from "next/link";
 import DraggableDucks from "@/components/DraggableDucks";
+import HorizontalShowcase from "@/components/HorizontalShowcase";
+import RecentWork from "@/components/RecentWork";
 import { getSortedPosts } from "@/content/posts";
+import { getSortedWork } from "@/content/work";
 import styles from "./page.module.css";
 
 export default function Home() {
   const sortedPosts = getSortedPosts();
+  const recentWork = getSortedWork().slice(0, 6);
   const recentPosts = sortedPosts.slice(0, 4);
   const previewPosts = sortedPosts.slice(0, 6);
   const teaserPosts = sortedPosts.slice(6, 8);
@@ -17,6 +21,7 @@ export default function Home() {
           ihateb
         </Link>
         <div className={styles.navLinks}>
+          <a href="#last-work">Work</a>
           <a href="#portfolio">Portfolio</a>
           <a href="#blog">Blog</a>
           <a href="mailto:rusvlad1010@icloud.com">Contact</a>
@@ -27,7 +32,7 @@ export default function Home() {
         <DraggableDucks />
         <div className={styles.heroCopy}>
           <p className={styles.kicker}>you can drag the cats :))))</p>
-          <h1>
+          <h1 data-hero-title>
             welcome
             <span className={styles.sadWrap}>
               {" "}
@@ -35,6 +40,8 @@ export default function Home() {
                 className={styles.sadFace}
                 src="/images/sad.webp"
                 alt="sad face"
+                loading="eager"
+                decoding="async"
               />
             </span>
           </h1>
@@ -65,24 +72,41 @@ export default function Home() {
           <div className={styles.aboutMe}>
             <span>About me</span>
             <p>
-  Student based in Cluj-Napoca, studying at Colegiul Național &quot;Emil
-  Racoviță&quot;. I&apos;m interested in AI, competitive programming, mathematics,
-  research, and building projects that mix technical depth with real-world use.
-  I&apos;ve been involved in competitions, hackathons, and AI-related projects,
-  many of which are documented on my LinkedIn and throughout this website.
-</p>
+              Student based in Cluj-Napoca, studying at Colegiul National
+              &quot;Emil Racovita&quot;.Lowkey I am interested in AI, competitive
+              programming, mathematics, research, and individual projects:)
+            </p>
           </div>
         </div>
       </section>
 
+      <HorizontalShowcase items={recentWork} />
+
+      <section id="last-work" className={styles.band}>
+        <div className={styles.sectionHeaderRow} data-reveal>
+          <div className={styles.sectionHeader}>
+            <p>Last work</p>
+            <h2 data-split-heading>
+              some things
+            </h2>
+          </div>
+          <Link className={styles.projectButton} href="/work">
+            See all work
+          </Link>
+        </div>
+        <RecentWork items={recentWork} />
+      </section>
+
       <section id="portfolio" className={styles.band}>
-        <div className={styles.sectionHeader}>
-          <p>MOREEE</p>
-          <h2>Recent things I have done</h2>
+        <div className={styles.sectionHeader} data-reveal>
+          <p>Highlights</p>
+          <h2 data-split-heading>
+            recent competitions / hackathons
+          </h2>
         </div>
         <div className={styles.projectGrid}>
           {recentPosts.map((post, index) => (
-            <article className={styles.projectCard} key={post.slug}>
+            <article className={styles.projectCard} data-card key={post.slug}>
               <div>
                 <div className={styles.projectTopline}>
                   <span className={styles.projectNumber}>
@@ -104,10 +128,12 @@ export default function Home() {
       </section>
 
       <section id="blog" className={styles.band}>
-        <div className={styles.sectionHeaderRow}>
+        <div className={styles.sectionHeaderRow} data-reveal>
           <div className={styles.sectionHeader}>
             <p>Blog</p>
-            <h2>Posts, photos and updates from my work.</h2>
+            <h2 data-split-heading>
+              basically just random blogs I guess
+            </h2>
           </div>
           <Link className={styles.projectButton} href="/blog">
             Search all
@@ -117,11 +143,17 @@ export default function Home() {
           {previewPosts.map((post, index) => (
             <Link
               className={styles.postCard}
+              data-card
               href={`/blog/${post.slug}`}
               key={`${post.slug}-${post.date}-${index}`}
             >
-              <div className={styles.postImage}>
-                <img src={post.cover} alt="" />
+              <div className={styles.postImage} data-clip-reveal data-cinematic>
+                <img
+                  src={post.cover}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div>
                 <p>
@@ -141,7 +173,7 @@ export default function Home() {
                   className={styles.tailCard}
                   key={`${post.slug}-${post.date}-tail-${index}`}
                 >
-                  <img src={post.cover} alt="" />
+                  <img src={post.cover} alt="" loading="lazy" decoding="async" />
                   <span>{post.title}</span>
                 </div>
               ))}
