@@ -13,7 +13,7 @@ export default function GlowCard({
   className?: string;
   as?: "div" | "article" | "a";
 } & React.HTMLAttributes<HTMLElement>) {
-  const cardRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<any>(null);
   const [pointer, setPointer] = useState({ x: 50, y: 50 });
   const [hovering, setHovering] = useState(false);
 
@@ -28,7 +28,7 @@ export default function GlowCard({
 
   return (
     <Tag
-      ref={cardRef as React.Ref<HTMLDivElement>}
+      ref={cardRef}
       className={`${styles.glowCard} ${className}`}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setHovering(true)}
