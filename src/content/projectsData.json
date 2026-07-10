@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "socrate-main-model",
+    "title": "Socrate (Main Model)",
+    "description": "The core machine learning model and inference code for the Socrate architecture. Built for high performance and scalability.",
+    "tags": ["Machine Learning", "Python", "AI"],
+    "image": "/images/socrate-logo.png",
+    "repoUrl": "https://github.com/ihatebaselines/socrate/tree/main/main_model",
+    "date": "2026-07-10",
+    "featured": true
+  },
+  {
+    "slug": "skillab-radar",
+    "title": "Skillab Radar",
+    "description": "Labour-market analytics platform powered by AI-assisted insights. Built for the Skillab Innovation Challenge where it won 1st place and a €1000 prize.",
+    "tags": ["AI", "Analytics", "NLP", "Python"],
+    "image": "/images/skillab-logo-img.jpg",
+    "repoUrl": "https://github.com/rusu28/Skillab-Radar-V1.2",
+    "date": "2026-05-02",
+    "featured": true
+  }
+]

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import DraggableDucks from "@/components/DraggableDucks";
 import HorizontalShowcase from "@/components/HorizontalShowcase";
+import Navbar from "@/components/Navbar";
 import RecentWork from "@/components/RecentWork";
 import { getSortedPosts } from "@/content/posts";
 import { getSortedWork } from "@/content/work";
@@ -16,17 +17,7 @@ export default function Home() {
 
   return (
     <main className={styles.page}>
-      <nav className={styles.nav} aria-label="Main navigation">
-        <Link className={styles.mark} href="/">
-          ihateb
-        </Link>
-        <div className={styles.navLinks}>
-          <a href="#last-work">Work</a>
-          <a href="#portfolio">Portfolio</a>
-          <a href="#blog">Blog</a>
-          <a href="mailto:rusvlad1010@icloud.com">Contact</a>
-        </div>
-      </nav>
+      <Navbar />
 
       <section className={styles.hero}>
         <DraggableDucks />
@@ -80,7 +71,7 @@ export default function Home() {
         </div>
       </section>
 
-      <HorizontalShowcase items={recentWork} />
+
 
       <section id="last-work" className={styles.band}>
         <div className={styles.sectionHeaderRow} data-reveal>

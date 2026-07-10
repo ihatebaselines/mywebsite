@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Navbar from "@/components/Navbar";
 import RecentWork from "@/components/RecentWork";
 import { getSortedWork } from "@/content/work";
 import styles from "@/app/page.module.css";
@@ -8,14 +8,7 @@ export default function WorkPage() {
 
   return (
     <main className={styles.page}>
-      <nav className={styles.nav} aria-label="Main navigation">
-        <Link className={styles.mark} href="/">
-          ihateb
-        </Link>
-        <Link className={styles.backLink} href="/#last-work">
-          Back
-        </Link>
-      </nav>
+      <Navbar backHref="/#last-work" backLabel="Back" />
 
       <section className={styles.blogIndex}>
         <div className={styles.sectionHeader}>

@@ -172,6 +172,72 @@ export default function PremiumEffects() {
       }
     });
 
+    // ═══════════════════════════════════════════════════════
+    // HERO 3D PLUNGE TRANSITION
+    // ═══════════════════════════════════════════════════════
+    const heroSection = document.querySelector("section[class*='hero']");
+    const heroCopy = document.querySelector("div[class*='heroCopy']");
+    const duckButtons = document.querySelectorAll("button[class*='draggableDuck']");
+    const bentoGridSection = document.querySelector("#last-work");
+
+    if (heroSection && heroCopy && bentoGridSection) {
+      const bentoCards = bentoGridSection.querySelectorAll("[data-card]");
+      
+      const plungeTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: heroSection,
+          start: "top top",
+          end: "+=140%", 
+          pin: true,
+          pinSpacing: false, // Allows Bento Grid to scroll up underneath/over
+          scrub: 1.5, // Smooth scrubbing
+        }
+      });
+
+      // 1. Massive zoom-in and fade out of the text
+      plungeTl.to(heroCopy, {
+        scale: 12,
+        opacity: 0,
+        filter: "blur(20px)",
+        ease: "power2.in",
+        duration: 1
+      }, 0);
+
+      // 2. Ducks fly away
+      duckButtons.forEach((duck, i) => {
+        const xMove = i % 2 === 0 ? -250 : 250;
+        const yMove = i < 2 ? -250 : 250;
+        
+        plungeTl.to(duck, {
+          x: xMove,
+          y: yMove,
+          scale: 4,
+          opacity: 0,
+          rotate: xMove / 2,
+          ease: "power2.in",
+          duration: 1
+        }, 0);
+      });
+
+      // 3. Assemble Bento Grid from depth
+      if (bentoCards.length) {
+        plungeTl.fromTo(bentoCards, {
+          scale: 0.65,
+          opacity: 0,
+          y: 100,
+          rotateX: 10
+        }, {
+          scale: 1,
+          opacity: 1,
+          y: 0,
+          rotateX: 0,
+          stagger: 0.08,
+          ease: "power3.out",
+          duration: 0.8
+        }, 0.3); // Starts slightly after the zoom begins
+      }
+    }
+
     const onPointerMove = (event: PointerEvent) => {
       document.documentElement.style.setProperty("--cursor-x", `${event.clientX}px`);
       document.documentElement.style.setProperty("--cursor-y", `${event.clientY}px`);

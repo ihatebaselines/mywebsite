@@ -1,8 +1,19 @@
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  --background: #050508;
+  --foreground: #f0f0f5;
+  --accent: #2f7dff;
+  --accent-soft: rgb(47 125 255 / 12%);
+  --surface: rgb(255 255 255 / 4%);
+  --surface-hover: rgb(255 255 255 / 8%);
+  --border: rgb(255 255 255 / 8%);
+  --border-hover: rgb(255 255 255 / 16%);
+  --glow: rgb(47 125 255 / 30%);
   --font-body: Manrope, Arial, Helvetica, sans-serif;
   --font-title: "Noto Sans", Manrope, Arial, Helvetica, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
 }
 
 @font-face {
@@ -57,16 +68,16 @@ body {
   left: var(--cursor-x, 50vw);
   top: var(--cursor-y, 50vh);
   z-index: 4;
-  width: 360px;
-  height: 360px;
+  width: 420px;
+  height: 420px;
   pointer-events: none;
   border-radius: 50%;
   background:
-    radial-gradient(circle, rgb(47 125 255 / 16%), transparent 62%),
-    radial-gradient(circle, rgb(255 255 255 / 8%), transparent 36%);
+    radial-gradient(circle, rgb(47 125 255 / 14%), transparent 58%),
+    radial-gradient(circle, rgb(255 255 255 / 6%), transparent 32%);
   mix-blend-mode: screen;
   transform: translate(-50%, -50%);
-  transition: left 120ms ease-out, top 120ms ease-out;
+  transition: left 100ms ease-out, top 100ms ease-out;
 }
 
 @media (max-width: 760px) {
@@ -82,6 +93,19 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Noise texture overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
 }
 
 * {
@@ -103,13 +127,16 @@ img {
 }
 
 body::-webkit-scrollbar {
-  width: 7px;
-  background: #ffffff;
+  width: 6px;
+  background: #0a0a0f;
 }
 
 body::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: #2f7dff;
+  background: var(--accent);
 }
 
-
+::selection {
+  background: rgb(47 125 255 / 30%);
+  color: #ffffff;
+}

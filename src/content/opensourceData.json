@@ -1,0 +1,11 @@
+[
+  {
+    "slug": "socratex-library",
+    "name": "SocrateX",
+    "description": "Open-source library component of the Socrate project, providing advanced tools and utilities for seamless integration.",
+    "repoUrl": "https://github.com/ihatebaselines/socrate/tree/main/library/SocrateX",
+    "language": "Python",
+    "topics": ["library", "machine-learning", "open-source", "python"],
+    "image": "/images/socrate-logo.png"
+  }
+]

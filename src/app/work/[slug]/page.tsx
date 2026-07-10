@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 import { getWork, workItems } from "@/content/work";
 import styles from "@/app/page.module.css";
 
@@ -21,14 +22,7 @@ export default async function WorkDetailPage({
 
   return (
     <main className={styles.page}>
-      <nav className={styles.nav} aria-label="Main navigation">
-        <Link className={styles.mark} href="/">
-          ihateb
-        </Link>
-        <Link className={styles.backLink} href="/work">
-          Back
-        </Link>
-      </nav>
+      <Navbar backHref="/work" backLabel="Back" />
 
       <article className={styles.article}>
         <header className={styles.articleHeader}>
