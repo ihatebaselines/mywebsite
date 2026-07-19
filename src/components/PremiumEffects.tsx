@@ -1,11 +1,14 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
 export default function PremiumEffects() {
+  const pathname = usePathname();
+
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return;
@@ -249,7 +252,7 @@ export default function PremiumEffects() {
       split?.revert();
       headingSplits.forEach((item) => item.revert());
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }
