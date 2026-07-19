@@ -182,12 +182,12 @@ export default function PremiumEffects() {
 
     if (heroSection && heroCopy && bentoGridSection) {
       const bentoCards = bentoGridSection.querySelectorAll("[data-card]");
-      
+
       const plungeTl = gsap.timeline({
         scrollTrigger: {
           trigger: heroSection,
           start: "top top",
-          end: "+=140%", 
+          end: "+=140%",
           pin: true,
           pinSpacing: false, // Allows Bento Grid to scroll up underneath/over
           scrub: 1.5, // Smooth scrubbing
@@ -207,7 +207,7 @@ export default function PremiumEffects() {
       duckButtons.forEach((duck, i) => {
         const xMove = i % 2 === 0 ? -250 : 250;
         const yMove = i < 2 ? -250 : 250;
-        
+
         plungeTl.to(duck, {
           x: xMove,
           y: yMove,
@@ -238,12 +238,6 @@ export default function PremiumEffects() {
       }
     }
 
-    const onPointerMove = (event: PointerEvent) => {
-      document.documentElement.style.setProperty("--cursor-x", `${event.clientX}px`);
-      document.documentElement.style.setProperty("--cursor-y", `${event.clientY}px`);
-    };
-
-    window.addEventListener("pointermove", onPointerMove);
 
     const rafId = requestAnimationFrame(() => {
       ScrollTrigger.refresh();
@@ -251,12 +245,10 @@ export default function PremiumEffects() {
 
     return () => {
       cancelAnimationFrame(rafId);
-      window.removeEventListener("pointermove", onPointerMove);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       split?.revert();
       headingSplits.forEach((item) => item.revert());
     };
   }, []);
 
-  return <div className="premium-cursor-glow" aria-hidden="true" />;
 }

@@ -1,5 +1,30 @@
 [
   {
+    "slug": "ceoai-volunteer",
+    "title": "My Volunteer Experience at CEOAI",
+    "date": "2026-07-19",
+    "category": "Portfolio, Volunteer",
+    "excerpt": "A quick overview of my fun and memorable five days volunteer experience at the CEOAI competition in Cluj-Napoca.",
+    "shortStory": "Volunteering at CEOAI was an incredibly wonderful experience. Although the days were long and demanding,staying on our feet from morning until late evening,working alongside a fantastic, youthful committee and my schoolmates made it totally worth it. From managing delegations to reporting technical glitches and celebrating at the final gala, every single day brought something completely different and deeply memorable.",
+    "cover": "/images/placeholder.png",
+    "gallery": [
+      "/images/placeholder.png"
+    ],
+    "body": [
+      "My volunteer experience at CEOAI was absolutely wonderful. The committee was incredibly friendly and easygoing, especially since they were young, which made it super easy to get along and have fun. Jokes aside, there were also some really tough days. We were on our feet from morning until late evening, but luckily, I had some of my classmates and school friends there with me. The best part was that every single day brought a completely different vibe and memorable events.",
+      "Day 1",
+      "The first day passed in a flash because the delegations were already arriving. I had the pleasure of coordinating the delegation from Moldova. Afterward, I headed to the practice round held at CREIC, where I helped coordinate alongside a good friend. The news crews even showed up in the halls while we were busy reporting platform issues to the team.",
+      "Day 2",
+      "I couldn't make it to the opening ceremony in the morning, but I joined the practice round shortly after. I mostly hung out with a classmate until the committee came over and gave us the hilarious task of turning a QWERTY keyboard into an AZERTY one :))))). Later, we went to the BMW office where they held a workshop, and that was pretty much it before dinner.",
+      "Day 3",
+      "Competition day! Initially, we hung out with the delegations in front of CREIC. We guided them upstairs before the contest started and made sure all their computers were turned on and ready to go. Afterward, a few colleagues and I stayed in a separate room where we played cards :)). We also acted as impromptu baristas, making coffee for anyone who needed it since we had an espresso machine right there. Sadly, I had to leave for about three hours in the middle of the competition, but I returned later with some friends to give the delegations a tour of Cluj, wrapping up the day with dinner.",
+      "Day 4",
+      "The second day of the competition was tough, and we stayed there the entire day. There were a lot of technical issues right at the start; I ran back and forth with another volunteer to centralize all the problems for the committee. In between, we played some cards, distributed food, made sure everything was running smoothly, and did some short shifts supervising the contest rooms. Afterward, we went to play board games with the delegations and volunteers (while another group went to the Cluj Botanical Garden), which was super interesting and fun.",
+      "Day 5",
+      "We took an amazing trip to the Turda Salt Mine (Salina Turda), where we explored and rode the boats on the underground lake with most of the delegations, volunteers, and the committee. Afterward, we had lunch at a really cool restaurant. Then came the awards ceremony, where every medal-winning student was recognized. We, the volunteers, also got to go up on stage for some photos! The CEO of BMW was there too. Finally, we had the closing gala, where we partied and had a blast with all the delegations until late at night."
+    ]
+  },
+  {
     "slug": "rise",
     "title": "Second Place at RISE Final Round :)",
     "date": "2026-06-06",
@@ -7,7 +32,9 @@
     "excerpt": "Second place at the RISE Final Round",
     "shortStory": "I placed 2nd at the RISE Final Round, an international-style AI competition hosted on Nitro-AI Judge, where I competed as vladandrei.",
     "cover": "/images/riselogo.png",
-    "gallery": ["/images/roaifinalround.png"],
+    "gallery": [
+      "/images/roaifinalround.png"
+    ],
     "body": [
       "RISE was one of my strongest competition results so far. After the online qualifier stage, the final round brought together some of the best competitors in a much more intense format, with harder tasks and a lot more pressure.",
       "The final was hosted on Nitro-AI Judge, where I competed using the username vladandrei. The contest followed an AI olympiad-style format, focused on practical problem solving, machine learning intuition, and the ability to build reliable solutions under strict time constraints.",
@@ -23,7 +50,9 @@
     "excerpt": "19th place at the ROAI National Stage",
     "shortStory": "I placed 19th at the ROAI National Stage, one of the main stages of Romania's AI olympiad selection.",
     "cover": "/images/portfolio-duck.png",
-    "gallery": ["/images/nationalaroai.png"],
+    "gallery": [
+      "/images/nationalaroai.png"
+    ],
     "body": [
       "ROAI was one of the most important AI competitions I participated in. The National Stage was a serious step up from normal practice rounds, because it gathered qualified students and tested both theoretical understanding and practical AI skills.",
       "I placed 19th in the national phase. For me, this was an important benchmark because it showed where I stood among other students interested in machine learning, data science, algorithms, and AI olympiad-style tasks.",
@@ -39,7 +68,9 @@
     "excerpt": "I volunteered and proposed a Reinforcement Learning problem named Funtime Beach, inspired by Gymnasium's Blackjack environment.",
     "shortStory": "I designed Funtime Beach, a model-based Reinforcement Learning problem inspired by the Blackjack environment from Gymnasium.",
     "cover": "/images/portfolio-duck.png",
-    "gallery": ["/images/prelotproblemamea.png"],
+    "gallery": [
+      "/images/prelotproblemamea.png"
+    ],
     "body": [
       "For ROAI Prelot, I had the chance to contribute from a different perspective: not only as someone who solves problems, but also as a volunteer and problem setter. This helped me understand how much work goes into creating a good contest task.",
       "My proposed problem was called Funtime Beach. It was a Reinforcement Learning task inspired by Gymnasium's Blackjack environment, but reinterpreted in a more original and playful setting. The goal was to keep the decision-making feeling of Blackjack while turning it into a model-based RL problem.",
@@ -55,7 +86,9 @@
     "excerpt": "33rd place at the ROAI Selection Camp Qualifier",
     "shortStory": "I placed 33rd at the ROAI Selection Camp Qualifier, the round used to select students for the ROAI camp.",
     "cover": "/images/portfolio-duck.png",
-    "gallery": ["/images/selectielot.png"],
+    "gallery": [
+      "/images/selectielot.png"
+    ],
     "body": [
       "The ROAI Selection Camp Qualifier was one of the most competitive AI rounds I participated in. It was connected to the selection process for the ROAI camp, so the level was naturally high and the pressure was much stronger than in a regular contest.",
       "I finished in 33rd place. While I would have liked to place higher, this round was still very valuable because it showed me what high-level AI competition tasks look like and what I need to improve for the future.",
@@ -71,7 +104,9 @@
     "excerpt": "First place at the Skillab Innovation Challenge",
     "shortStory": "My team won 1st place at the Skillab Innovation Challenge and received a 1000 euro prize.",
     "cover": "/images/skillab-logo-img.jpg",
-    "gallery": ["/images/angelu.png"],
+    "gallery": [
+      "/images/angelu.png"
+    ],
     "body": [
       "Skillab Innovation Challenge was a different kind of competition for me because it combined technology, research, teamwork, and product thinking. Instead of only solving a predefined programming task, we had to think about a real-world problem and build a strong idea around it.",
       "The challenge was connected to skills, jobs, labour market analytics, and the way AI can help understand the gap between what people know and what companies need. This made the event feel very practical, because the topic was not just technical, but also connected to education and the future of work.",
@@ -87,7 +122,9 @@
     "excerpt": "3rd place at Nitro NLP Hackathon 5th Edition",
     "shortStory": "My team PretrainedLanguageModel placed 3rd at the Nitro NLP Hackathon 5th Edition.",
     "cover": "/images/portfolio-duck.png",
-    "gallery": ["/images/pretrainedlm.png"],
+    "gallery": [
+      "/images/pretrainedlm.png"
+    ],
     "body": [
       "NitroNLP Hackathon was one of the most fun AI competitions I joined because it focused on Natural Language Processing, a field that combines machine learning, language, data, and experimentation.",
       "I participated with my team, PretrainedLanguageModel, and we competed on Nitro-AI Judge. My username on the platform was vladandrei. The hackathon format made everything more intense because we had to move fast, test ideas, and improve our solution under time pressure.",
@@ -103,7 +140,9 @@
     "excerpt": "European Statistics Competition, the official Statistics Olympiad of Romania",
     "shortStory": "My team society placed 164th in the European Statistics Competition.",
     "cover": "/images/esc.png",
-    "gallery": ["/images/escplace.png"],
+    "gallery": [
+      "/images/escplace.png"
+    ],
     "body": [
       "The European Statistics Competition was a different experience from my usual AI and programming contests. It focused more on statistics, data interpretation, official data sources, and explaining conclusions clearly.",
       "I participated with my team, society, and we placed 164th. Even though this was not a top placement, the competition was valuable because it helped me practice a different kind of thinking: less about code, more about understanding data and communicating insights.",
@@ -119,7 +158,9 @@
     "excerpt": "Place School: 4th, Place Data/AI: 12th",
     "shortStory": "I competed in CCC using the username vladddddddd and placed 4th in School and 12th in Data/AI.",
     "cover": "/images/ccc.png",
-    "gallery": ["/images/ccc2.png"],
+    "gallery": [
+      "/images/ccc2.png"
+    ],
     "body": [
       "Cloudflight Coding Contest was a very interesting competition because it mixed fast problem solving with a level-based format. Instead of solving completely separate tasks, the contest challenged participants to progress through increasingly difficult levels.",
       "I competed using the username vladddddddd. I placed 4th in the School category and 12th in the Data/AI category, which made this one of my strongest multi-category competition results.",
