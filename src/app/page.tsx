@@ -22,7 +22,7 @@ export default function Home() {
       <section className={styles.hero}>
         <DraggableDucks />
         <div className={styles.heroCopy}>
-          <p className={styles.kicker}>you can drag the cats :))))</p>
+          <p className={styles.kicker}>you can drag the pingus :))))</p>
           <h1 data-hero-title>
             welcome
             <span className={styles.sadWrap}>
@@ -70,8 +70,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-
 
       <section id="last-work" className={styles.band}>
         <div className={styles.sectionHeaderRow} data-reveal>

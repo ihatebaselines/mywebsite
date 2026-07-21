@@ -16,13 +16,116 @@ export default function PremiumEffects() {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    if (window.matchMedia("(max-width: 760px)").matches) {
-      return;
+    const isMobile = window.matchMedia("(max-width: 760px)").matches;
+    const title = document.querySelector("[data-hero-title]");
+    const headingSplits: SplitType[] = [];
+
+    // ═══════════════════════════════════════════════════════
+    // MOBILE ANIMATIONS — lighter, no pinning
+    // ═══════════════════════════════════════════════════════
+    if (isMobile) {
+      // Hero title: word-by-word slide up (smoother than chars on mobile)
+      const split = title ? new SplitType(title as HTMLElement, { types: "words" }) : null;
+
+      if (split?.words?.length) {
+        gsap.fromTo(
+          split.words,
+          { yPercent: 80, opacity: 0, filter: "blur(6px)" },
+          {
+            yPercent: 0,
+            opacity: 1,
+            filter: "blur(0px)",
+            duration: 0.7,
+            ease: "power3.out",
+            stagger: 0.07,
+            delay: 0.08,
+          },
+        );
+      }
+
+      // Section headings — word reveal on scroll
+      gsap.utils.toArray<HTMLElement>("[data-split-heading]").forEach((heading) => {
+        const headingSplit = new SplitType(heading, { types: "words" });
+        headingSplits.push(headingSplit);
+        if (!headingSplit.words?.length) return;
+
+        gsap.fromTo(
+          headingSplit.words,
+          { yPercent: 90, opacity: 0, filter: "blur(5px)" },
+          {
+            yPercent: 0,
+            opacity: 1,
+            filter: "blur(0px)",
+            duration: 0.6,
+            ease: "power3.out",
+            stagger: 0.055,
+            scrollTrigger: {
+              trigger: heading,
+              start: "top 88%",
+              toggleActions: "play none none reverse",
+            },
+          },
+        );
+      });
+
+      // data-reveal — fade + slide up
+      gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((item) => {
+        gsap.fromTo(
+          item,
+          { y: 28, opacity: 0, filter: "blur(4px)" },
+          {
+            y: 0,
+            opacity: 1,
+            filter: "blur(0px)",
+            duration: 0.6,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: item,
+              start: "top 88%",
+              toggleActions: "play none none reverse",
+            },
+          },
+        );
+      });
+
+      // data-card — scale + fade pop-in
+      gsap.utils.toArray<HTMLElement>("[data-card]").forEach((card, index) => {
+        gsap.fromTo(
+          card,
+          { y: 32, opacity: 0, scale: 0.96 },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.5,
+            delay: (index % 4) * 0.04,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 92%",
+              toggleActions: "play none none reverse",
+            },
+          },
+        );
+      });
+
+      const rafId = requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
+      });
+
+      return () => {
+        cancelAnimationFrame(rafId);
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        split?.revert();
+        headingSplits.forEach((item) => item.revert());
+      };
     }
 
-    const title = document.querySelector("[data-hero-title]");
+    // ═══════════════════════════════════════════════════════
+    // DESKTOP FULL ANIMATIONS (unchanged)
+    // ═══════════════════════════════════════════════════════
+
     const split = title ? new SplitType(title as HTMLElement, { types: "chars" }) : null;
-    const headingSplits: SplitType[] = [];
 
     if (split?.chars?.length) {
       gsap.fromTo(
@@ -176,7 +279,7 @@ export default function PremiumEffects() {
     });
 
     // ═══════════════════════════════════════════════════════
-    // HERO 3D PLUNGE TRANSITION
+    // HERO 3D PLUNGE TRANSITION (desktop only)
     // ═══════════════════════════════════════════════════════
     const heroSection = document.querySelector("section[class*='hero']");
     const heroCopy = document.querySelector("div[class*='heroCopy']");
@@ -192,12 +295,11 @@ export default function PremiumEffects() {
           start: "top top",
           end: "+=140%",
           pin: true,
-          pinSpacing: false, // Allows Bento Grid to scroll up underneath/over
-          scrub: 1.5, // Smooth scrubbing
+          pinSpacing: false,
+          scrub: 1.5,
         }
       });
 
-      // 1. Massive zoom-in and fade out of the text
       plungeTl.to(heroCopy, {
         scale: 12,
         opacity: 0,
@@ -206,7 +308,6 @@ export default function PremiumEffects() {
         duration: 1
       }, 0);
 
-      // 2. Ducks fly away
       duckButtons.forEach((duck, i) => {
         const xMove = i % 2 === 0 ? -250 : 250;
         const yMove = i < 2 ? -250 : 250;
@@ -222,7 +323,6 @@ export default function PremiumEffects() {
         }, 0);
       });
 
-      // 3. Assemble Bento Grid from depth
       if (bentoCards.length) {
         plungeTl.fromTo(bentoCards, {
           scale: 0.65,
@@ -237,10 +337,9 @@ export default function PremiumEffects() {
           stagger: 0.08,
           ease: "power3.out",
           duration: 0.8
-        }, 0.3); // Starts slightly after the zoom begins
+        }, 0.3);
       }
     }
-
 
     const rafId = requestAnimationFrame(() => {
       ScrollTrigger.refresh();

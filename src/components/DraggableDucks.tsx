@@ -9,6 +9,7 @@ type Cat = {
   y: number;
   size: number;
   rotate: number;
+  img: string;
 };
 
 type DragState = {
@@ -19,10 +20,10 @@ type DragState = {
 };
 
 const initialCats: Cat[] = [
-  { id: 1, x: 68, y: 52, size: 210, rotate: -7 },
-  { id: 2, x: 9, y: 58, size: 140, rotate: 12 },
-  { id: 3, x: 76, y: 14, size: 120, rotate: 9 },
-  { id: 4, x: 19, y: 20, size: 105, rotate: -14 },
+  { id: 1, x: 65, y: 48, size: 220, rotate: -5, img: "/images/pingu-standing.png" },
+  { id: 2, x: 7,  y: 55, size: 155, rotate: 10, img: "/images/pingu-waving.png" },
+  { id: 3, x: 74, y: 10, size: 140, rotate: 8,  img: "/images/pingu-chair.png" },
+  { id: 4, x: 16, y: 16, size: 125, rotate: -12, img: "/images/pingu-trumpet.png" },
 ];
 
 export default function DraggableDucks() {
@@ -153,7 +154,7 @@ export default function DraggableDucks() {
   }, []);
 
   return (
-    <div ref={stageRef} className={styles.duckStage} aria-label="Draggable cats">
+    <div ref={stageRef} className={styles.duckStage} aria-label="Draggable Pingus">
       {cats.map((cat) => (
         <button
           type="button"
@@ -167,7 +168,7 @@ export default function DraggableDucks() {
           }}
           data-cat-button
           className={styles.draggableDuck}
-          aria-label="Drag cat"
+          aria-label="Drag Pingu"
           style={{
             left: `${cat.x}%`,
             top: `${cat.y}%`,
@@ -176,7 +177,7 @@ export default function DraggableDucks() {
           }}
         >
           <img
-            src="/images/portfolio-cat.png"
+            src={cat.img}
             alt=""
             draggable={false}
             className={styles.draggableDuckImage}
