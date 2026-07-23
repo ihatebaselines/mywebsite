@@ -277,7 +277,6 @@ export default function PremiumEffects() {
         });
       }
     });
-
     // ═══════════════════════════════════════════════════════
     // HERO 3D PLUNGE TRANSITION (desktop only)
     // ═══════════════════════════════════════════════════════
@@ -302,10 +301,16 @@ export default function PremiumEffects() {
 
       plungeTl.to(heroCopy, {
         scale: 12,
-        opacity: 0,
         filter: "blur(20px)",
         ease: "power2.in",
         duration: 1
+      }, 0);
+
+      // Fade out much faster so it doesn't overlap the transparent section scrolling up
+      plungeTl.to(heroCopy, {
+        opacity: 0,
+        ease: "power2.out",
+        duration: 0.35
       }, 0);
 
       duckButtons.forEach((duck, i) => {
@@ -316,10 +321,15 @@ export default function PremiumEffects() {
           x: xMove,
           y: yMove,
           scale: 4,
-          opacity: 0,
           rotate: xMove / 2,
           ease: "power2.in",
           duration: 1
+        }, 0);
+        
+        plungeTl.to(duck, {
+          opacity: 0,
+          ease: "power2.out",
+          duration: 0.35
         }, 0);
       });
 
@@ -340,7 +350,6 @@ export default function PremiumEffects() {
         }, 0.3);
       }
     }
-
     const rafId = requestAnimationFrame(() => {
       ScrollTrigger.refresh();
     });
