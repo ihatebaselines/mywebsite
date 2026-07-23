@@ -1,6 +1,7 @@
 import Link from "next/link";
 import DraggableDucks from "@/components/DraggableDucks";
 import HorizontalShowcase from "@/components/HorizontalShowcase";
+import LeaderboardRank from "@/components/LeaderboardRank";
 import Navbar from "@/components/Navbar";
 import RecentWork from "@/components/RecentWork";
 import { getSortedPosts } from "@/content/posts";
@@ -68,6 +69,8 @@ export default function Home() {
               programming, mathematics, research, and individual projects:)
             </p>
           </div>
+          
+          <LeaderboardRank />
         </div>
       </section>
 
