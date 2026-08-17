@@ -10,10 +10,13 @@ async function fetchRank() {
     // The points are typically in a <dd> tag with text-2xl or sm:text-3xl
     const pointsMatch = html.match(/class="text-2xl[^>]*>([\d.,]+)<\/dd>/) || html.match(/([\d.,]+)\s*<\/span>\s*<span[^>]*>pct\./i);
     const levelMatch = html.match(/Nivel(?:<!-- -->\s*){0,2}(\d+)/i) || html.match(/Level\s+(\d+)/i);
+    const rankMatch = html.match(/#<!-- -->(\d+)/) || html.match(/locul\s+(\d+)/i) || html.match(/clasament.*?(\d+)/i);
+    
     if (pointsMatch) {
       return {
         points: pointsMatch[1],
-        rank: levelMatch ? `Lvl ${levelMatch[1]}` : "Active",
+        level: levelMatch ? levelMatch[1] : "Active",
+        rank: rankMatch ? rankMatch[1] : "Active",
       };
     }
   } catch (e) {
