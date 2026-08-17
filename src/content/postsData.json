@@ -1,5 +1,30 @@
 [
   {
+    "slug": "untold-volunteer",
+    "title": "My Volunteer Experience at UNTOLD",
+    "date": "2026-08-16",
+    "category": "Portfolio, Volunteer",
+    "excerpt": "A quick overview of my wonderful one-week volunteer experience at UNTOLD festival in Cluj-Napoca.",
+    "shortStory": "Volunteering at UNTOLD Emergency was a wonderful 7-day experience. From getting our red shirts on Monday to partying at Martin Garrix on Sunday, here is a day-by-day diary of what it was like.",
+    "cover": "/images/untold-logo.jpg",
+    "gallery": [
+      "/images/untold-1.jpg",
+      "/images/untold-2.jpg",
+      "/images/untold-3.jpg",
+      "/images/untold-logo.jpg"
+    ],
+    "body": [
+      "Volunteering at UNTOLD was a wonderful one-week experience, not gonna lie. It was a mix of hard work, backstage access, and of course, amazing music with friends.",
+      "Day 1 (Monday): We kicked things off with our official training in the evening. This is when the vibe really started to build up. We received our iconic red volunteer t-shirts and got to meet the rest of the crew.",
+      "Day 2 (Tuesday): A slower day. We mostly handled paperwork, signed our contracts, and hung around the volunteer camp. We also took a walk through the festival grounds before the madness started. Honestly, it was kind of boring, ngl.",
+      "Day 3 (Wednesday): Things started getting real! The staff called us to the Cluj Arena where we stayed for about 4-5 hours setting things up. It was a very hot day, but we were just chilling, drinking sodas, and having a blast :)))) It felt more like a hangout than actual work.",
+      "Day 4 (Thursday): The festival officially started! I didn't have much to do in the morning, which gave me the perfect opportunity to just enjoy the artists and hang out with my friends later in the day. We did a lot that day and it was awesome. I could tell you about the crowds, but honestly, this is my experience as an emergency volunteer, and to just tell the same story as regular participants wouldn't be nice :))",
+      "Day 5 (Friday): I spent the first part of the day at the volunteer camp, and then a friend and I got the chance to visit the backstage area! After finishing my shift and checking out, I stayed for the festival. I managed to see Swae Lee and Zara Larsson live, which was incredibly fun and definitely a highlight of the week.",
+      "Day 6 (Saturday): The morning shift was a bit boring again, but it was actually a blessing in disguise because it meant I had the entire rest of the day free. The lineup wasn't my absolute favorite that night, but staying for the awards ceremony after volunteering was a really nice touch.",
+      "Day 7 (Sunday): The final day of UNTOLD, and easily the one with the most insane lineup! We were given the whole day off and we absolutely made the most of it. We saw Martin Garrix, Steve Aoki, and all the big names playing the main stage. Just look up the artists online, the energy was unreal :) After the festival ended, I literally had zero energy left for two whole days, but it was so cool :)))"
+    ]
+  },
+  {
     "slug": "ceoai-volunteer",
     "title": "My Volunteer Experience at CEOAI",
     "date": "2026-07-19",
