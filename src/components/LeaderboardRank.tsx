@@ -2,21 +2,22 @@ import React from "react";
 
 async function fetchRank() {
   try {
-    const res = await fetch("https://platform.olimpiada-ai.ro/ro/leaderboard", {
+    const res = await fetch("https://platform.olimpiada-ai.ro/ro/profile/ihatebaselines", {
       next: { revalidate: 3600 },
     });
     if (!res.ok) return null;
     const html = await res.text();
-    // Example format in JSON-LD: "name":"ihatebaselines","url":"...","description":"Rank #5 with 7767.35 points"
-    const match = html.match(/"name":"ihatebaselines".*?"description":"Rank #(\d+)\s+with\s+([\d.]+)\s+points"/);
-    if (match) {
+    // The points are typically in a <dd> tag with text-2xl or sm:text-3xl
+    const pointsMatch = html.match(/class="text-2xl[^>]*>([\d.,]+)<\/dd>/) || html.match(/([\d.,]+)\s*<\/span>\s*<span[^>]*>pct\./i);
+    const levelMatch = html.match(/Nivel(?:<!-- -->\s*){0,2}(\d+)/i) || html.match(/Level\s+(\d+)/i);
+    if (pointsMatch) {
       return {
-        rank: match[1],
-        points: match[2],
+        points: pointsMatch[1],
+        rank: levelMatch ? `Lvl ${levelMatch[1]}` : "Active",
       };
     }
   } catch (e) {
-    console.error("Failed to fetch MLCompete rank:", e);
+    console.error("Failed to fetch MLCompete profile:", e);
   }
   return null;
 }
