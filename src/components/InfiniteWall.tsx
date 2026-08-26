@@ -19,6 +19,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { WallStroke, WallNote, WallStamp } from "@/lib/supabase";
+import initialWallData from "@/content/wallState.json";
 import styles from "@/app/page.module.css";
 
 // Extended Drawing Palette (Catppuccin + Vibrant Spectrum + Monochrome)
@@ -86,10 +87,10 @@ export default function InfiniteWall() {
   const [brushSize, setBrushSize] = useState<number>(4);
   const [selectedStamp, setSelectedStamp] = useState<string>(AVAILABLE_STAMPS[0].src);
 
-  // Wall Content Data
-  const [strokes, setStrokes] = useState<WallStroke[]>([]);
-  const [notes, setNotes] = useState<WallNote[]>([]);
-  const [stamps, setStamps] = useState<WallStamp[]>([]);
+  // Wall Content Data (initialized from permanent wallState and merged with local visitor items)
+  const [strokes, setStrokes] = useState<WallStroke[]>((initialWallData.strokes as WallStroke[]) || []);
+  const [notes, setNotes] = useState<WallNote[]>((initialWallData.notes as WallNote[]) || []);
+  const [stamps, setStamps] = useState<WallStamp[]>((initialWallData.stamps as WallStamp[]) || []);
   const [currentStroke, setCurrentStroke] = useState<{ x: number; y: number }[] | null>(null);
 
   // Sync & Auto-Save State
@@ -111,7 +112,7 @@ export default function InfiniteWall() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Load Background preference from localStorage if available
+  // Load background and saved items from localStorage on mount
   useEffect(() => {
     try {
       const savedBg = localStorage.getItem("ihateb_wall_bg");
@@ -121,6 +122,67 @@ export default function InfiniteWall() {
           setSelectedColor("#11111b");
         } else {
           setSelectedColor("#89b4fa");
+        }
+      }
+
+      const localStrokes = localStorage.getItem("ihateb_wall_strokes");
+      if (localStrokes) {
+        const parsed = JSON.parse(localStrokes) as WallStroke[];
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setStrokes((prev) => {
+            const map = new Map(prev.map((s) => [s.id, s]));
+            parsed.forEach((s) => map.set(s.id, s));
+            return Array.from(map.values());
+          });
+        }
+      }
+
+      const localNotes = localStorage.getItem("ihateb_wall_notes");
+      if (localNotes) {
+        const parsed = JSON.parse(localNotes) as WallNote[];
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setNotes((prev) => {
+            const map = new Map(prev.map((n) => [n.id, n]));
+            parsed.forEach((n) => map.set(n.id, n));
+            return Array.from(map.values());
+          });
+        }
+      }
+
+      const localStamps = localStorage.getItem("ihateb_wall_stamps");
+      if (localStamps) {
+        const parsed = JSON.parse(localStamps) as WallStamp[];
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setStamps((prev) => {
+            const map = new Map(prev.map((st) => [st.id, st]));
+            parsed.forEach((st) => map.set(st.id, st));
+            return Array.from(map.values());
+          });
+        }
+      }
+    } catch (_) {}
+  }, []);
+
+  const persistLocal = useCallback((type: "stroke" | "note" | "stamp" | "like", data: any) => {
+    try {
+      if (type === "stroke") {
+        const existing = JSON.parse(localStorage.getItem("ihateb_wall_strokes") || "[]");
+        existing.push(data);
+        localStorage.setItem("ihateb_wall_strokes", JSON.stringify(existing.slice(-300)));
+      } else if (type === "note") {
+        const existing = JSON.parse(localStorage.getItem("ihateb_wall_notes") || "[]");
+        existing.push(data);
+        localStorage.setItem("ihateb_wall_notes", JSON.stringify(existing));
+      } else if (type === "stamp") {
+        const existing = JSON.parse(localStorage.getItem("ihateb_wall_stamps") || "[]");
+        existing.push(data);
+        localStorage.setItem("ihateb_wall_stamps", JSON.stringify(existing));
+      } else if (type === "like") {
+        const existing = (JSON.parse(localStorage.getItem("ihateb_wall_notes") || "[]") as WallNote[]) || [];
+        const note = existing.find((n) => n.id === data.id);
+        if (note) {
+          note.likes = (note.likes || 0) + 1;
+          localStorage.setItem("ihateb_wall_notes", JSON.stringify(existing));
         }
       }
     } catch (_) {}
@@ -137,68 +199,6 @@ export default function InfiniteWall() {
       setSelectedColor("#89b4fa");
     }
   };
-
-  // Continuous Live Sync Fetch Function
-  const fetchWallData = useCallback(async () => {
-    try {
-      setIsSyncing(true);
-      const res = await fetch("/api/wall");
-      if (res.ok) {
-        const data = await res.json();
-        if (data.strokes) {
-          setStrokes((prev) => {
-            const existingMap = new Map(prev.map((s) => [s.id, s]));
-            let changed = false;
-            for (const s of data.strokes) {
-              if (!existingMap.has(s.id)) {
-                existingMap.set(s.id, s);
-                changed = true;
-              }
-            }
-            return changed ? Array.from(existingMap.values()) : prev;
-          });
-        }
-        if (data.notes) {
-          setNotes((prev) => {
-            const existingMap = new Map(prev.map((n) => [n.id, n]));
-            let changed = false;
-            for (const n of data.notes) {
-              const current = existingMap.get(n.id);
-              if (!current || current.likes !== n.likes) {
-                existingMap.set(n.id, n);
-                changed = true;
-              }
-            }
-            return changed ? Array.from(existingMap.values()) : prev;
-          });
-        }
-        if (data.stamps) {
-          setStamps((prev) => {
-            const existingMap = new Map(prev.map((st) => [st.id, st]));
-            let changed = false;
-            for (const st of data.stamps) {
-              if (!existingMap.has(st.id)) {
-                existingMap.set(st.id, st);
-                changed = true;
-              }
-            }
-            return changed ? Array.from(existingMap.values()) : prev;
-          });
-        }
-      }
-    } catch (err) {
-      console.warn("Live sync polling error:", err);
-    } finally {
-      setIsSyncing(false);
-    }
-  }, []);
-
-  // Set up 2.5s continuous live sync interval
-  useEffect(() => {
-    fetchWallData();
-    const interval = setInterval(fetchWallData, 2500);
-    return () => clearInterval(interval);
-  }, [fetchWallData]);
 
   // Convert Screen (clientX, clientY) to Infinite World (worldX, worldY)
   const screenToWorld = useCallback(
@@ -330,12 +330,7 @@ export default function InfiniteWall() {
       setStamps((prev) => [...prev, newStamp]);
 
       // Auto-save instantly
-      fetch("/api/wall", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "stamp", data: newStamp }),
-      }).catch(console.warn);
-
+      persistLocal("stamp", newStamp);
       showAutoSaveNotice();
     } else if (tool === "note") {
       setNotePlacementCoords(worldCoord);
@@ -378,12 +373,7 @@ export default function InfiniteWall() {
       setCurrentStroke(null);
 
       // Auto-save stroke instantly
-      fetch("/api/wall", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "stroke", data: newStroke }),
-      }).catch(console.warn);
-
+      persistLocal("stroke", newStroke);
       showAutoSaveNotice();
     } else {
       setCurrentStroke(null);
@@ -428,15 +418,7 @@ export default function InfiniteWall() {
     setIsSubmittingNote(false);
     showAutoSaveNotice();
 
-    try {
-      await fetch("/api/wall", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "note", data: newNote }),
-      });
-    } catch (err) {
-      console.warn("Failed to persist note:", err);
-    }
+    persistLocal("note", newNote);
   };
 
   // Like a note
@@ -444,14 +426,7 @@ export default function InfiniteWall() {
     setNotes((prev) =>
       prev.map((note) => (note.id === id ? { ...note, likes: (note.likes || 0) + 1 } : note))
     );
-
-    try {
-      await fetch("/api/wall", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "like_note", data: { id } }),
-      });
-    } catch (_) {}
+    persistLocal("like", { id });
   };
 
   // Export Canvas snapshot as PNG
