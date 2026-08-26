@@ -1,0 +1,113 @@
+[
+  {
+    "version": "v2.4",
+    "date": "2026-08-26",
+    "title": "Algorithms to Neurons & TheWall Whiteboard",
+    "tag": "Competition & Features",
+    "tagType": "feature",
+    "summary": "1st place in the From Algorithms to Neurons AI competition, new 3D photo carousel wheel, Facebook collage, permanent TheWall live whiteboard with continuous auto-save, and Command Palette.",
+    "changes": [
+      "Added complete 'From Algorithms to Neurons' 1st place AI Competition post and 24h Hackathon breakdown.",
+      "Integrated 13 high-res event photos with Facebook-style mosaic collage and 3D coverflow carousel wheel.",
+      "Launched TheWall (/wall): permanent live multi-user whiteboard with continuous auto-save, drawing color wheel, and custom board themes.",
+      "Added Spotlight Command Palette (Ctrl + K) for rapid site-wide search and quick developer actions.",
+      "Optimized full-screen render passes for buttery smooth 60-120 FPS scrolling."
+    ]
+  },
+  {
+    "version": "v2.3",
+    "date": "2026-08-16",
+    "title": "UNTOLD Emergency Volunteer Experience",
+    "tag": "Experience",
+    "tagType": "milestone",
+    "summary": "One-week day-by-day diary of volunteering with UNTOLD Emergency in Cluj-Napoca.",
+    "changes": [
+      "Published 7-day diary covering volunteer training, venue setups at Cluj Arena, and backstage tours.",
+      "Added photo gallery with live artist stages (Martin Garrix, Steve Aoki, Zara Larsson, Swae Lee)."
+    ]
+  },
+  {
+    "version": "v2.2",
+    "date": "2026-07-19",
+    "title": "CEOAI 2026 Delegation Coordination",
+    "tag": "Experience",
+    "tagType": "milestone",
+    "summary": "Five days volunteering and coordinating delegations at the Central European Olympiad in AI.",
+    "changes": [
+      "Published CEOAI volunteer log from CREIC venue and BMW workshops.",
+      "Added event photos and delegation gala highlights from Salina Turda."
+    ]
+  },
+  {
+    "version": "v2.1",
+    "date": "2026-06-06",
+    "title": "RISE AI Final Round — 2nd Place",
+    "tag": "Competition",
+    "tagType": "competition",
+    "summary": "2nd place podium finish in the international-style RISE AI competition on Nitro-AI Judge.",
+    "changes": [
+      "Published RISE contest review focusing on ML problem solving under time constraints.",
+      "Added Nitro-AI judge scoreboard and architecture summary in the Work portfolio."
+    ]
+  },
+  {
+    "version": "v2.0",
+    "date": "2026-05-18",
+    "title": "ROAI Prelot Problem Setter & Selection Camp",
+    "tag": "Olympiad & Design",
+    "tagType": "competition",
+    "summary": "Designed 'Funtime Beach' model-based RL problem for ROAI Prelot and competed in the Selection Camp Qualifier.",
+    "changes": [
+      "Authored original Gymnasium Blackjack-inspired Reinforcement Learning task 'Funtime Beach'.",
+      "Published Selection Camp Qualifier post and strategy review."
+    ]
+  },
+  {
+    "version": "v1.9",
+    "date": "2026-05-02",
+    "title": "Skillab Innovation Challenge — 1st Place (€1000)",
+    "tag": "Hackathon",
+    "tagType": "competition",
+    "summary": "Won 1st place with team at the Skillab Innovation Challenge with Skillab Radar.",
+    "changes": [
+      "Built Skillab Radar: AI labor market analytics platform for Cluj IT Cluster.",
+      "Linked open-source project repository with €1000 prize award."
+    ]
+  },
+  {
+    "version": "v1.8",
+    "date": "2026-04-25",
+    "title": "NitroNLP Hackathon & ROAI Nationals",
+    "tag": "AI Competition",
+    "tagType": "competition",
+    "summary": "3rd place at NitroNLP Hackathon (5th Edition) and Top 19 at the ROAI National Stage.",
+    "changes": [
+      "Competed as PretrainedLanguageModel in fast NLP challenge on Nitro-AI.",
+      "Placed 19th in the National AI Olympiad selection phase."
+    ]
+  },
+  {
+    "version": "v1.5",
+    "date": "2026-03-21",
+    "title": "European Statistics Competition (ESC)",
+    "tag": "Competition",
+    "tagType": "competition",
+    "summary": "Participated in ESC with team society exploring national statistical datasets and analysis.",
+    "changes": [
+      "Explored evidence-based reasoning, official statistics interpretation, and data presentation."
+    ]
+  },
+  {
+    "version": "v1.0",
+    "date": "Friday, July 10, 2026 at 4:49:07 PM",
+    "title": "Official Website Launch 🚀",
+    "tag": "Launch",
+    "tagType": "system",
+    "summary": "Official genesis release of ihatebaselines portfolio on Friday, July 10, 2026 at 4:49:07 PM with Catppuccin Mocha aesthetic, smooth physics, interactive pingus, blog, and creative experiments.",
+    "changes": [
+      "Official genesis release of ihatebaselines portfolio on Friday, July 10, 2026 at 4:49:07 PM.",
+      "Initial launch of ihatebaselines portfolio with custom Catppuccin dark aesthetics.",
+      "Added interactive draggable pingus and horizontal project showcases."
+    ]
+  }
+]

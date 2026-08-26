@@ -1,0 +1,141 @@
+[
+  {
+    "id": "algorithms-to-neurons-ai",
+    "title": "1st Place — AI Competition",
+    "event": "From Algorithms to Neurons",
+    "category": "AI Competition",
+    "date": "2026-08",
+    "place": "1st Place",
+    "tier": "gold",
+    "badge": "🥇 1st Place",
+    "score": "~260 / 300 pts",
+    "division": "Group A (Grades 7–10)",
+    "description": "5-day AI event in Constanța organized by IEEE Romania Section & Informatică pentru Viitor. Focused on Signal Analysis, audio preprocessing, and competitive AI problem solving.",
+    "links": [
+      { "label": "Blog Post", "url": "/blog/from-algorithms-to-neurons" },
+      { "label": "Group A Problems", "url": "https://platform.olimpiada-ai.ro/ro/competitions/29" },
+      { "label": "Event Site", "url": "https://www.algorithms-to-neurons.com/" }
+    ],
+    "tags": ["Signal Analysis", "Audio ML", "AI Competition", "IEEE"]
+  },
+  {
+    "id": "skillab-innovation",
+    "title": "1st Place (€1000 Prize)",
+    "event": "Skillab Innovation Challenge",
+    "category": "Hackathon & Innovation",
+    "date": "2026-05",
+    "place": "1st Place",
+    "tier": "gold",
+    "badge": "🥇 1st Place (€1000)",
+    "score": "1st Place Winner",
+    "division": "Open / Team",
+    "description": "Built Skillab Radar, an AI-powered labour market intelligence and skills analytics platform for Cluj IT Cluster, winning 1st place and €1000 prize.",
+    "links": [
+      { "label": "Blog Post", "url": "/blog/skillab" },
+      { "label": "GitHub Repo", "url": "https://github.com/rusu28/Skillab-Radar-V1.2" }
+    ],
+    "tags": ["AI Innovation", "Product Design", "Labour Analytics", "Cluj IT"]
+  },
+  {
+    "id": "rise-final-round",
+    "title": "2nd Place — Final Round",
+    "event": "RISE AI Competition",
+    "category": "AI Olympiad",
+    "date": "2026-06",
+    "place": "2nd Place",
+    "tier": "silver",
+    "badge": "🥈 2nd Place",
+    "score": "2nd Place Finalist",
+    "division": "Individual (vladandrei)",
+    "description": "International-style competitive machine learning contest on Nitro-AI Judge. High-pressure AI olympiad tasks testing model intuition, feature engineering, and robust pipelines.",
+    "links": [
+      { "label": "Blog Post", "url": "/blog/rise" }
+    ],
+    "tags": ["Nitro-AI", "Olympiad ML", "Competitive AI"]
+  },
+  {
+    "id": "nitronlp-hackathon",
+    "title": "3rd Place — NitroNLP Hackathon",
+    "event": "NitroNLP 5th Edition",
+    "category": "NLP Hackathon",
+    "date": "2026-04",
+    "place": "3rd Place",
+    "tier": "bronze",
+    "badge": "🥉 3rd Place",
+    "score": "3rd Place Podium",
+    "division": "Team PretrainedLanguageModel",
+    "description": "Fast-paced NLP competition on Nitro-AI Judge focused on language models, fine-tuning, embeddings, and text processing under strict time constraints.",
+    "links": [
+      { "label": "Blog Post", "url": "/blog/nitronlp" }
+    ],
+    "tags": ["NLP", "Transformers", "Nitro-AI", "Team Contest"]
+  },
+  {
+    "id": "roai-national-stage",
+    "title": "19th Place — National Stage",
+    "event": "ROAI National Stage",
+    "category": "National Olympiad",
+    "date": "2026-04",
+    "place": "Top 19 Nationally",
+    "tier": "special",
+    "badge": "🎯 19th Place",
+    "score": "Top 19 Romania",
+    "division": "National AI Olympiad",
+    "description": "Official Romanian National Artificial Intelligence Olympiad phase testing deep theoretical and applied machine learning and algorithmic problem solving.",
+    "links": [
+      { "label": "Blog Post", "url": "/blog/roainationala" }
+    ],
+    "tags": ["ROAI", "National Olympiad", "AI Theory", "Romania"]
+  },
+  {
+    "id": "ccc-cloudflight",
+    "title": "4th School & 12th Data/AI",
+    "event": "Cloudflight Coding Contest (CCC)",
+    "category": "Algorithms & Data/AI",
+    "date": "2025-10",
+    "place": "4th & 12th",
+    "tier": "special",
+    "badge": "⚡ 4th School / 12th AI",
+    "score": "Level-based multi-category",
+    "division": "Individual (vladddddddd)",
+    "description": "Progressive level-based algorithmic problem solving and data analysis challenge with live automated judge grading.",
+    "links": [
+      { "label": "Blog Post", "url": "/blog/ccc" }
+    ],
+    "tags": ["Cloudflight", "Algorithms", "Data/AI", "Competitive Coding"]
+  },
+  {
+    "id": "algorithms-to-neurons-hackathon",
+    "title": "9th Place — 24h Hackathon",
+    "event": "From Algorithms to Neurons",
+    "category": "24h Hackathon",
+    "date": "2026-08",
+    "place": "9th Place",
+    "tier": "special",
+    "badge": "🌊 9th Place Hackathon",
+    "score": "24h Build",
+    "division": "Team Camera 505",
+    "description": "24-hour intense hackathon on 'Signals That Can Change Our World' at Constanța Maritime University building real-world signal systems.",
+    "links": [
+      { "label": "Blog Post", "url": "/blog/from-algorithms-to-neurons" }
+    ],
+    "tags": ["24h Hackathon", "Signal Systems", "Constanța", "Teamwork"]
+  },
+  {
+    "id": "roai-prelot-problem-setter",
+    "title": "Volunteer & Problem Setter",
+    "event": "ROAI Prelot",
+    "category": "Problem Setter",
+    "date": "2026-05",
+    "place": "Problem Author",
+    "tier": "special",
+    "badge": "🎲 Problem Setter",
+    "score": "Task: Funtime Beach",
+    "division": "Reinforcement Learning Task",
+    "description": "Authored and designed 'Funtime Beach', an original model-based Reinforcement Learning contest task inspired by Gymnasium's Blackjack environment.",
+    "links": [
+      { "label": "Blog Post", "url": "/blog/roaiprelot" }
+    ],
+    "tags": ["Reinforcement Learning", "Gymnasium", "Contest Design", "ROAI"]
+  }
+]

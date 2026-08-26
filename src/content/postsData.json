@@ -1,5 +1,57 @@
 [
   {
+    "slug": "from-algorithms-to-neurons",
+    "title": "1st Place at From Algorithms to Neurons — AI Competition & Hackathon",
+    "date": "2026-08-26",
+    "category": "Portfolio, AI Competition",
+    "excerpt": "1st place in the AI Competition (Group A, Grades 7–10) and 9th place in the 24h Hackathon at Constanța Maritime University.",
+    "shortStory": "I finished From Algorithms to Neurons with 1st place in the AI Competition, Group A (Grades 7–10) with ~260/300 points in Signal Analysis, and 9th place in the 24-hour hackathon with team Camera 505.",
+    "cover": "/images/algorithms-to-neurons-logo.png",
+    "gallery": [
+      "/images/algorithms-to-neurons/event-photo-01.jpg",
+      "/images/algorithms-to-neurons/event-photo-02.jpg",
+      "/images/algorithms-to-neurons/event-photo-03.jpg",
+      "/images/algorithms-to-neurons/event-photo-04.jpg",
+      "/images/algorithms-to-neurons/event-photo-05.jpg",
+      "/images/algorithms-to-neurons/event-photo-06.jpg",
+      "/images/algorithms-to-neurons/event-photo-07.jpg",
+      "/images/algorithms-to-neurons/event-photo-08.jpg",
+      "/images/algorithms-to-neurons/event-photo-09.jpg",
+      "/images/algorithms-to-neurons/event-photo-10.jpg",
+      "/images/algorithms-to-neurons/event-photo-11.jpg",
+      "/images/algorithms-to-neurons/event-photo-12.jpg",
+      "/images/algorithms-to-neurons/event-photo-13.jpg"
+    ],
+    "links": [
+      {
+        "title": "From Algorithms to Neurons — Official Site",
+        "url": "https://www.algorithms-to-neurons.com/",
+        "description": "Official event website with schedule, speakers, IEEE backing, and scientific showcase."
+      },
+      {
+        "title": "AI Competition Tasks — Group A (Grades 7–10)",
+        "url": "https://platform.olimpiada-ai.ro/ro/competitions/29",
+        "description": "Signal Analysis and audio processing challenges on platform.olimpiada-ai.ro (1st place, ~260/300 pts)."
+      },
+      {
+        "title": "AI Competition Tasks — Group B (Grades 11–12)",
+        "url": "https://platform.olimpiada-ai.ro/ro/competitions/30",
+        "description": "Signal processing tasks and problem sets for senior division competitors."
+      }
+    ],
+    "body": [
+      "I’m happy to share that From Algorithms to Neurons, a five-day event bringing together young people from across Romania around AI, STEM, signal processing and technology, has come to an end, and I’m even happier to say that I finished it with 1st place in the AI Competition, Group A (Grades 7–10)! 🥇",
+      "The AI competition was one of the first challenges of the event, but that definitely didn’t make it easy. The main theme was Signal Analysis, with many of the problems focusing on signals and audio. Although I hadn’t worked extensively with audio preprocessing before, I was able to learn from the available documentation, experiment with different approaches, and ultimately score approximately 260/300 points.",
+      "The event also included a 24-hour hackathon built around the theme “Signals That Can Change Our World.” I decided to take on a fairly ambitious project, and unfortunately, due to several technical issues, I wasn’t able to fix everything and get the entire system working within the deadline.",
+      "Still, together with my team Camera 505, we managed to achieve 9th place in the hackathon. It was an incredibly valuable experience and showed me how different building a complete system under time pressure can be from solving an individual competition problem.",
+      "But in the end, competitions are not only about rankings. They are also about the people you meet, the experiences you share, and the things you learn along the way. I met many people I already knew from national Olympiads, but I also met many new students who genuinely impressed me with their scientific projects, research ideas and posters presented during the Scientific Showcase. Seeing so many young people working on serious scientific and technological projects was one of my favorite parts of the entire event.",
+      "And, of course, there was the location. 🌊 The event took place at the Constanța Maritime University, so naturally, going to the seaside was part of the experience too. 😄",
+      "I’m especially grateful to have been part of an event organized with the support of IEEE Romania Section, together with the “Informatică pentru Viitor” Association, and hosted academically by the Constanța Maritime University. The event was also selected as part of the IEEE Region 8 Acceleration Program 2026, which made the whole experience even more meaningful.",
+      "With this, I can probably say that I’ve wrapped up my competitions from 10th grade, and with August almost over, it feels like the perfect way to close this chapter. Thank you to everyone who organized the event, to the participants I had the chance to meet, and to everyone who made these five days such a great experience. I’m already looking forward to the next competitions and challenges in 11th grade. 🔥🐧",
+      "[#ArtificialIntelligence](https://www.linkedin.com/search/results/all/?keywords=%23artificialintelligence&origin=HASH_TAG_FROM_FEED) [#AI](https://www.linkedin.com/search/results/all/?keywords=%23ai&origin=HASH_TAG_FROM_FEED) [#STEM](https://www.linkedin.com/search/results/all/?keywords=%23stem&origin=HASH_TAG_FROM_FEED) [#MachineLearning](https://www.linkedin.com/search/results/all/?keywords=%23machinelearning&origin=HASH_TAG_FROM_FEED) [#SignalProcessing](https://www.linkedin.com/search/results/all/?keywords=%23signalprocessing&origin=HASH_TAG_FROM_FEED) [#Hackathon](https://www.linkedin.com/search/results/all/?keywords=%23hackathon&origin=HASH_TAG_FROM_FEED) [#IEEE](https://www.linkedin.com/search/results/all/?keywords=%23ieee&origin=HASH_TAG_FROM_FEED) [#Science](https://www.linkedin.com/search/results/all/?keywords=%23science&origin=HASH_TAG_FROM_FEED) [#Research](https://www.linkedin.com/search/results/all/?keywords=%23research&origin=HASH_TAG_FROM_FEED) [#Students](https://www.linkedin.com/search/results/all/?keywords=%23students&origin=HASH_TAG_FROM_FEED) [#Romania](https://www.linkedin.com/search/results/all/?keywords=%23romania&origin=HASH_TAG_FROM_FEED)"
+    ]
+  },
+  {
     "slug": "untold-volunteer",
     "title": "My Volunteer Experience at UNTOLD",
     "date": "2026-08-16",

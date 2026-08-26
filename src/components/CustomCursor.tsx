@@ -61,26 +61,26 @@ export default function CustomCursor() {
     }
 
     function tick() {
-      // Snap dot to cursor instantly
-      dot!.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+      // Snap dot to cursor instantly with hardware acceleration
+      dot!.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
 
-      // Ring lerps behind
-      ringX += (mouseX - ringX) * 0.12;
-      ringY += (mouseY - ringY) * 0.12;
-      ring!.style.transform = `translate(${ringX}px, ${ringY}px)`;
+      // Ring lerps behind smoothly
+      ringX += (mouseX - ringX) * 0.15;
+      ringY += (mouseY - ringY) * 0.15;
+      ring!.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
 
       raf = requestAnimationFrame(tick);
     }
 
-    document.addEventListener("pointermove", onMove);
-    document.addEventListener("mouseover", onOver);
+    window.addEventListener("pointermove", onMove, { passive: true });
+    document.addEventListener("mouseover", onOver, { passive: true });
     raf = requestAnimationFrame(tick);
 
     // Hide native cursor on body
     document.body.classList.add(styles.hideCursor);
 
     return () => {
-      document.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointermove", onMove);
       document.removeEventListener("mouseover", onOver);
       cancelAnimationFrame(raf);
       document.body.classList.remove(styles.hideCursor);

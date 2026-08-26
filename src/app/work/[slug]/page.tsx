@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import PhotoGallery from "@/components/PhotoGallery";
 import { getWork, workItems } from "@/content/work";
 import styles from "@/app/page.module.css";
 
@@ -84,11 +85,7 @@ export default async function WorkDetailPage({
         ) : null}
 
         {item.gallery?.length ? (
-          <div className={styles.gallery}>
-            {item.gallery.map((image) => (
-              <img key={image} src={image} alt="" loading="lazy" decoding="async" />
-            ))}
-          </div>
+          <PhotoGallery images={item.gallery} title={`${item.title} Showcase`} />
         ) : null}
       </article>
     </main>

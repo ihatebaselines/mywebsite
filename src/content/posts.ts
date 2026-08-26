@@ -1,3 +1,10 @@
+export type BlogPostLink = {
+  title: string;
+  url: string;
+  description?: string;
+  badge?: string;
+};
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -8,6 +15,7 @@ export type BlogPost = {
   cover: string;
   gallery: string[];
   body: string[];
+  links?: BlogPostLink[];
 };
 
 import postsData from "./postsData.json";

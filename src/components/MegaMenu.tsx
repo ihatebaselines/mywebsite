@@ -87,25 +87,25 @@ export default function MegaMenu({
 
         {/* Column 3: Content */}
         <div className={styles.megaMenuColumn}>
-          <span className={styles.megaMenuHeader}>CONTENT</span>
+          <span className={styles.megaMenuHeader}>EXPLORE</span>
           <div className={styles.megaMenuList}>
-            <Link href="/#portfolio" className={styles.megaMenuLink}>
-              <div className={styles.megaMenuIconWrap} style={{ color: "#f59e0b" }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            <Link href="/wall" className={styles.megaMenuLink}>
+              <div className={styles.megaMenuIconWrap} style={{ color: "#89b4fa" }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
               </div>
-              Highlights
+              TheWall
             </Link>
             <Link href="/blog" className={styles.megaMenuLink}>
               <div className={styles.megaMenuIconWrap} style={{ color: "#ec4899" }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
               </div>
-              Blog
+              Blog & Stories
             </Link>
-            <Link href="/#last-work" className={styles.megaMenuLink}>
-              <div className={styles.megaMenuIconWrap} style={{ color: "#8b5cf6" }}>
+            <Link href="/changelog" className={styles.megaMenuLink}>
+              <div className={styles.megaMenuIconWrap} style={{ color: "#a6e3a1" }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               </div>
-              Last Work
+              Changelog
             </Link>
           </div>
         </div>

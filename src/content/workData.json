@@ -1,5 +1,33 @@
 [
   {
+    "slug": "algorithms-to-neurons",
+    "title": "From Algorithms to Neurons",
+    "date": "2026-08-26",
+    "tag": "AI Competition & Hackathon",
+    "summary": "1st place in the AI Competition (Group A) and 9th place in the 24h Hackathon at Constanța Maritime University.",
+    "image": "/images/algorithms-to-neurons-logo.png",
+    "gallery": [
+      "/images/algorithms-to-neurons/event-photo-01.jpg",
+      "/images/algorithms-to-neurons/event-photo-02.jpg",
+      "/images/algorithms-to-neurons/event-photo-03.jpg",
+      "/images/algorithms-to-neurons/event-photo-04.jpg",
+      "/images/algorithms-to-neurons/event-photo-05.jpg",
+      "/images/algorithms-to-neurons/event-photo-06.jpg",
+      "/images/algorithms-to-neurons/event-photo-07.jpg",
+      "/images/algorithms-to-neurons/event-photo-08.jpg",
+      "/images/algorithms-to-neurons/event-photo-09.jpg",
+      "/images/algorithms-to-neurons/event-photo-10.jpg",
+      "/images/algorithms-to-neurons/event-photo-11.jpg",
+      "/images/algorithms-to-neurons/event-photo-12.jpg",
+      "/images/algorithms-to-neurons/event-photo-13.jpg"
+    ],
+    "relatedHref": "/blog/from-algorithms-to-neurons",
+    "body": [
+      "From Algorithms to Neurons was a five-day AI, STEM, signal processing and technology event in Constanța, organized with IEEE Romania Section and Informatică pentru Viitor.",
+      "I placed 1st in the AI Competition (Group A, Grades 7–10) with ~260/300 points focusing on Signal Analysis and audio processing, and achieved 9th place in the 24-hour hackathon with team Camera 505."
+    ]
+  },
+  {
     "slug": "rise-final",
     "title": "RISE Final Round",
     "date": "2026-06-06",

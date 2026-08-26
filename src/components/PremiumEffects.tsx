@@ -21,24 +21,23 @@ export default function PremiumEffects() {
     const headingSplits: SplitType[] = [];
 
     // ═══════════════════════════════════════════════════════
-    // MOBILE ANIMATIONS — lighter, no pinning
+    // MOBILE ANIMATIONS — lightweight GPU-accelerated
     // ═══════════════════════════════════════════════════════
     if (isMobile) {
-      // Hero title: word-by-word slide up (smoother than chars on mobile)
+      // Hero title: word-by-word slide up
       const split = title ? new SplitType(title as HTMLElement, { types: "words" }) : null;
 
       if (split?.words?.length) {
         gsap.fromTo(
           split.words,
-          { yPercent: 80, opacity: 0, filter: "blur(6px)" },
+          { yPercent: 60, opacity: 0 },
           {
             yPercent: 0,
             opacity: 1,
-            filter: "blur(0px)",
-            duration: 0.7,
+            duration: 0.6,
             ease: "power3.out",
-            stagger: 0.07,
-            delay: 0.08,
+            stagger: 0.05,
+            delay: 0.05,
           },
         );
       }
@@ -51,17 +50,16 @@ export default function PremiumEffects() {
 
         gsap.fromTo(
           headingSplit.words,
-          { yPercent: 90, opacity: 0, filter: "blur(5px)" },
+          { yPercent: 60, opacity: 0 },
           {
             yPercent: 0,
             opacity: 1,
-            filter: "blur(0px)",
-            duration: 0.6,
+            duration: 0.5,
             ease: "power3.out",
-            stagger: 0.055,
+            stagger: 0.04,
             scrollTrigger: {
               trigger: heading,
-              start: "top 88%",
+              start: "top 90%",
               toggleActions: "play none none reverse",
             },
           },
@@ -72,16 +70,15 @@ export default function PremiumEffects() {
       gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((item) => {
         gsap.fromTo(
           item,
-          { y: 28, opacity: 0, filter: "blur(4px)" },
+          { y: 24, opacity: 0 },
           {
             y: 0,
             opacity: 1,
-            filter: "blur(0px)",
-            duration: 0.6,
+            duration: 0.5,
             ease: "power3.out",
             scrollTrigger: {
               trigger: item,
-              start: "top 88%",
+              start: "top 90%",
               toggleActions: "play none none reverse",
             },
           },
@@ -92,13 +89,13 @@ export default function PremiumEffects() {
       gsap.utils.toArray<HTMLElement>("[data-card]").forEach((card, index) => {
         gsap.fromTo(
           card,
-          { y: 32, opacity: 0, scale: 0.96 },
+          { y: 24, opacity: 0, scale: 0.97 },
           {
             y: 0,
             opacity: 1,
             scale: 1,
-            duration: 0.5,
-            delay: (index % 4) * 0.04,
+            duration: 0.45,
+            delay: (index % 4) * 0.03,
             ease: "power3.out",
             scrollTrigger: {
               trigger: card,
@@ -122,7 +119,7 @@ export default function PremiumEffects() {
     }
 
     // ═══════════════════════════════════════════════════════
-    // DESKTOP FULL ANIMATIONS (unchanged)
+    // DESKTOP FULL ANIMATIONS (smooth GPU accelerated)
     // ═══════════════════════════════════════════════════════
 
     const split = title ? new SplitType(title as HTMLElement, { types: "chars" }) : null;
@@ -130,16 +127,15 @@ export default function PremiumEffects() {
     if (split?.chars?.length) {
       gsap.fromTo(
         split.chars,
-        { yPercent: 115, opacity: 0, rotateX: -70, filter: "blur(10px)" },
+        { yPercent: 90, opacity: 0, rotateX: -45 },
         {
           yPercent: 0,
           opacity: 1,
           rotateX: 0,
-          filter: "blur(0px)",
-          duration: 0.9,
+          duration: 0.75,
           ease: "power4.out",
-          stagger: 0.025,
-          delay: 0.1,
+          stagger: 0.02,
+          delay: 0.08,
         },
       );
     }
@@ -152,18 +148,17 @@ export default function PremiumEffects() {
 
       gsap.fromTo(
         headingSplit.words,
-        { yPercent: 105, opacity: 0, filter: "blur(8px)" },
+        { yPercent: 75, opacity: 0 },
         {
           yPercent: 0,
           opacity: 1,
-          filter: "blur(0px)",
-          duration: 0.72,
+          duration: 0.6,
           ease: "power4.out",
-          stagger: 0.045,
+          stagger: 0.035,
           scrollTrigger: {
             trigger: heading,
-            start: "top 82%",
-            end: "bottom 18%",
+            start: "top 86%",
+            end: "bottom 14%",
             toggleActions: "play none none reverse",
           },
         },
@@ -174,17 +169,16 @@ export default function PremiumEffects() {
     revealItems.forEach((item) => {
       gsap.fromTo(
         item,
-        { y: 42, opacity: 0, filter: "blur(8px)" },
+        { y: 32, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          filter: "blur(0px)",
-          duration: 0.8,
+          duration: 0.65,
           ease: "power3.out",
           scrollTrigger: {
             trigger: item,
-            start: "top 84%",
-            end: "bottom 16%",
+            start: "top 86%",
+            end: "bottom 14%",
             toggleActions: "play none none reverse",
           },
         },
@@ -197,19 +191,19 @@ export default function PremiumEffects() {
         item,
         {
           clipPath: "inset(0% 100% 0% 0% round 8px)",
-          filter: "blur(8px)",
-          scale: 1.04,
+          scale: 1.02,
+          opacity: 0.4,
         },
         {
           clipPath: "inset(0% 0% 0% 0% round 8px)",
-          filter: "blur(0px)",
           scale: 1,
-          duration: 0.95,
+          opacity: 1,
+          duration: 0.75,
           ease: "expo.out",
           scrollTrigger: {
             trigger: item,
-            start: "top 86%",
-            end: "bottom 12%",
+            start: "top 88%",
+            end: "bottom 10%",
             toggleActions: "play none none reverse",
           },
         },
@@ -221,23 +215,21 @@ export default function PremiumEffects() {
       gsap.fromTo(
         card,
         {
-          y: 54,
+          y: 36,
           opacity: 0,
-          scale: 0.97,
-          clipPath: "inset(18% 0% 18% 0% round 8px)",
+          scale: 0.98,
         },
         {
           y: 0,
           opacity: 1,
           scale: 1,
-          clipPath: "inset(0% 0% 0% 0% round 8px)",
-          duration: 0.65,
-          delay: (index % 6) * 0.035,
+          duration: 0.55,
+          delay: (index % 6) * 0.025,
           ease: "power3.out",
           scrollTrigger: {
             trigger: card,
-            start: "top 90%",
-            end: "bottom 8%",
+            start: "top 92%",
+            end: "bottom 6%",
             toggleActions: "play none none reverse",
           },
         },
@@ -253,12 +245,12 @@ export default function PremiumEffects() {
         { "--line-scale": 0 },
         {
           "--line-scale": 1,
-          duration: 0.9,
+          duration: 0.75,
           ease: "power3.out",
           scrollTrigger: {
             trigger: block,
-            start: "top 82%",
-            end: "bottom 16%",
+            start: "top 86%",
+            end: "bottom 14%",
             toggleActions: "play none none reverse",
           },
         },
@@ -266,17 +258,18 @@ export default function PremiumEffects() {
 
       if (media) {
         gsap.to(media, {
-          yPercent: -6,
+          yPercent: -4,
           ease: "none",
           scrollTrigger: {
             trigger: block,
             start: "top bottom",
             end: "bottom top",
-            scrub: 0.8,
+            scrub: 0.5,
           },
         });
       }
     });
+
     // ═══════════════════════════════════════════════════════
     // HERO 3D PLUNGE TRANSITION (desktop only)
     // ═══════════════════════════════════════════════════════
@@ -292,62 +285,48 @@ export default function PremiumEffects() {
         scrollTrigger: {
           trigger: heroSection,
           start: "top top",
-          end: "+=140%",
+          end: "+=120%",
           pin: true,
           pinSpacing: false,
-          scrub: 1.5,
+          scrub: 0.8,
         }
       });
 
       plungeTl.to(heroCopy, {
-        scale: 12,
-        filter: "blur(20px)",
-        ease: "power2.in",
-        duration: 1
-      }, 0);
-
-      // Fade out much faster so it doesn't overlap the transparent section scrolling up
-      plungeTl.to(heroCopy, {
+        scale: 4,
         opacity: 0,
-        ease: "power2.out",
-        duration: 0.35
+        ease: "power2.inOut",
+        duration: 0.8
       }, 0);
 
       duckButtons.forEach((duck, i) => {
-        const xMove = i % 2 === 0 ? -250 : 250;
-        const yMove = i < 2 ? -250 : 250;
+        const xMove = i % 2 === 0 ? -180 : 180;
+        const yMove = i < 2 ? -180 : 180;
 
         plungeTl.to(duck, {
           x: xMove,
           y: yMove,
-          scale: 4,
-          rotate: xMove / 2,
-          ease: "power2.in",
-          duration: 1
-        }, 0);
-        
-        plungeTl.to(duck, {
+          scale: 2.5,
           opacity: 0,
-          ease: "power2.out",
-          duration: 0.35
+          rotate: xMove / 3,
+          ease: "power2.inOut",
+          duration: 0.8
         }, 0);
       });
 
       if (bentoCards.length) {
         plungeTl.fromTo(bentoCards, {
-          scale: 0.65,
+          scale: 0.85,
           opacity: 0,
-          y: 100,
-          rotateX: 10
+          y: 60,
         }, {
           scale: 1,
           opacity: 1,
           y: 0,
-          rotateX: 0,
-          stagger: 0.08,
+          stagger: 0.05,
           ease: "power3.out",
-          duration: 0.8
-        }, 0.3);
+          duration: 0.6
+        }, 0.25);
       }
     }
     const rafId = requestAnimationFrame(() => {
