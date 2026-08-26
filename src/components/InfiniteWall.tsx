@@ -305,7 +305,7 @@ export default function InfiniteWall() {
 
   // Pointer / Mouse Handlers
   const handlePointerDown = (e: React.PointerEvent) => {
-    if (tool === "pan" || e.button === 1 || e.spaceKey) {
+    if (tool === "pan" || e.button === 1) {
       setIsPanning(true);
       panStartRef.current = { x: e.clientX - pan.x, y: e.clientY - pan.y };
       return;
