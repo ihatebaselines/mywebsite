@@ -1,0 +1,657 @@
+/* ═══════════════════════════════════════════════════════
+   ERROR 404 NOT FOUND — 5 REAL NATIVE VARIANTS
+   ═══════════════════════════════════════════════════════ */
+
+.container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  background-color: #0c0b0b;
+  color: #f5f0eb;
+  font-family: var(--font-mono, monospace);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Background ambient grain and subtle vignette */
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 60%);
+  z-index: 1;
+}
+
+/* Variant Switcher Pills at Top */
+.variantSwitcher {
+  position: fixed;
+  top: 72px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: rgba(22, 20, 20, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+  z-index: 100;
+  font-size: 11px;
+}
+
+.variantLabel {
+  color: #666;
+  padding: 0 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 10px;
+}
+
+.variantBtn {
+  background: transparent;
+  border: none;
+  color: #888;
+  font-family: inherit;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.variantBtn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.variantBtnActive {
+  color: #0c0b0b;
+  background: #fff;
+  font-weight: 700;
+}
+
+/* Common Footer Bar */
+.footerBar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 48px 32px;
+  font-size: 12px;
+  color: #555;
+  letter-spacing: 0.03em;
+}
+
+.footerLeft {
+  color: #777;
+  font-style: italic;
+}
+
+.footerRight {
+  font-weight: 700;
+  color: #666;
+}
+
+/* Reusable Buttons */
+.whiteBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: #f5f0eb;
+  color: #0d0c0c;
+  font-weight: 600;
+  font-size: 13px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.whiteBtn:hover {
+  transform: translateY(-1px);
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.15);
+}
+
+.ghostLinkBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: #888;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: color 0.15s ease;
+}
+
+.ghostLinkBtn:hover {
+  color: #fff;
+}
+
+.darkOutlineBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #ddd;
+  font-weight: 500;
+  font-size: 13px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  text-decoration: none;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.darkOutlineBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+/* ═══════════════════════════════════════════════════════
+   VARIANT 01: MINIMAL / FOCUSED
+   ═══════════════════════════════════════════════════════ */
+.v1Stage {
+  position: relative;
+  z-index: 5;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px 40px;
+  text-align: center;
+}
+
+.v1BgNumber {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(12rem, 26vw, 24rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.06);
+  user-select: none;
+  pointer-events: none;
+  line-height: 1;
+  z-index: 1;
+}
+
+.v1CenterHero {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.v1PinguFaceWrap {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 24px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background: #0d0c0c;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.v1PinguFaceWrap:hover {
+  transform: scale(1.06);
+}
+
+.v1PinguFaceImg {
+  width: 140%;
+  height: 140%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.v1Title {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 12px 0;
+}
+
+.v1Subtitle {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.6;
+  max-width: 420px;
+  margin: 0 0 28px 0;
+}
+
+.v1Actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ═══════════════════════════════════════════════════════
+   VARIANT 02: PLAYFUL / INTERACTIVE (FLASHLIGHT)
+   ═══════════════════════════════════════════════════════ */
+.v2Stage {
+  position: relative;
+  z-index: 5;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 48px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.v2Grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 64px;
+  width: 100%;
+}
+
+.v2Left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.v2Title {
+  font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: #fff;
+  margin: 0 0 28px 0;
+}
+
+.pipe {
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 300;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.v2List {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #777;
+  font-size: 15px;
+  margin-bottom: 36px;
+}
+
+.v2List p {
+  margin: 0;
+}
+
+.v2Right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+}
+
+.v2Annotation {
+  position: absolute;
+  top: 15px;
+  right: 60px;
+  font-size: 13px;
+  color: #888;
+  font-family: var(--font-mono);
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.v2PinguWrap {
+  position: relative;
+  z-index: 3;
+  width: 180px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.v2PinguImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.8));
+}
+
+/* Flashlight Beam using CSS polygon & linear-gradient */
+.v2FlashlightBeam {
+  position: absolute;
+  top: 95px;
+  left: 20px;
+  width: 260px;
+  height: 220px;
+  background: linear-gradient(
+    140deg,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.01) 85%,
+    transparent 100%
+  );
+  clip-path: polygon(75% 15%, 100% 18%, 25% 100%, 0% 85%);
+  pointer-events: none;
+  z-index: 2;
+  filter: blur(1px);
+}
+
+/* Projected illuminated pool on the floor */
+.v2FloorSpotlight {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 220px;
+  height: 70px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.2) 45%,
+    transparent 75%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.25);
+  transform: perspective(300px) rotateX(45deg);
+  z-index: 1;
+}
+
+.v2SpotlightText {
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  color: #111;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+  user-select: none;
+}
+
+/* ═══════════════════════════════════════════════════════
+   VARIANT 03: TYPOGRAPHIC / PHILOSOPHICAL
+   ═══════════════════════════════════════════════════════ */
+.v3Stage {
+  position: relative;
+  z-index: 5;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 48px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.v3Grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+}
+
+.v3TypoCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.v3BigText {
+  font-size: clamp(3.4rem, 6.5vw, 6rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.v3Italic {
+  font-style: italic;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #fff;
+  letter-spacing: 0.02em;
+}
+
+.v3RightCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+}
+
+.v3RightSub {
+  font-size: 15px;
+  color: #888;
+  margin: 0 0 16px 0;
+}
+
+.v3RightText {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #aaa;
+  margin: 0 0 32px 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   VARIANT 04: TERMINAL / DEVELOPER
+   ═══════════════════════════════════════════════════════ */
+.v4Stage {
+  position: relative;
+  z-index: 5;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px 40px;
+}
+
+.v4Container {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+}
+
+.v4TerminalBox {
+  background: rgba(16, 14, 14, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 32px 36px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 2;
+}
+
+.v4Line {
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0;
+  color: #ddd;
+}
+
+.v4Prompt {
+  color: #555;
+  margin-right: 8px;
+}
+
+.v4Output {
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0 0 8px 0;
+  color: #777;
+}
+
+.v4Cursor {
+  color: #fff;
+  animation: blink 1s infinite;
+}
+
+.v4PeekingPingu {
+  position: absolute;
+  top: -45px;
+  right: -35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+
+.v4PinguNote {
+  font-size: 12px;
+  color: #888;
+  font-style: italic;
+  margin-bottom: 4px;
+}
+
+.v4PeekingImg {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.v4Actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   VARIANT 05: CREATIVE / ABSTRACT (VORTEX OF 404)
+   ═══════════════════════════════════════════════════════ */
+.v5Stage {
+  position: relative;
+  z-index: 5;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px 40px;
+  overflow: hidden;
+}
+
+.v5VortexWrap {
+  position: relative;
+  width: 540px;
+  height: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.v5VortexSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: vortexSpin 90s linear infinite;
+  pointer-events: none;
+  user-select: none;
+}
+
+@keyframes vortexSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.v5CenterVoid {
+  position: relative;
+  z-index: 3;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: #0c0b0b;
+  box-shadow: 0 0 60px 30px #0c0b0b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+}
+
+.v5Title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 6px 0;
+  line-height: 1.2;
+}
+
+.v5Subtitle {
+  font-size: 12px;
+  color: #777;
+  margin: 0 0 16px 0;
+  line-height: 1.4;
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE ADJUSTMENTS
+   ═══════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .v2Grid,
+  .v3Grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .v2Left,
+  .v3RightCol {
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .footerBar {
+    padding: 20px 24px;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

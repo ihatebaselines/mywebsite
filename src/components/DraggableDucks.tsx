@@ -32,6 +32,8 @@ export default function DraggableDucks() {
   const catsRef = useRef(initialCats);
   const catElementsRef = useRef(new Map<number, HTMLButtonElement>());
   const [cats, setCats] = useState(initialCats);
+  const clickCountRef = useRef(0);
+  const [speech, setSpeech] = useState<{ text: string; catId: number } | null>(null);
 
   useEffect(() => {
     catsRef.current = cats;
@@ -97,6 +99,42 @@ export default function DraggableDucks() {
   }
 
   useEffect(() => {
+    let animFrameId: number | null = null;
+    let pendingPoint: { clientX: number; clientY: number } | null = null;
+
+    function processDrag() {
+      if (pendingPoint && dragRef.current) {
+        moveCat(pendingPoint.clientX, pendingPoint.clientY);
+      }
+      animFrameId = null;
+    }
+
+    function onPointerMove(event: PointerEvent) {
+      const drag = dragRef.current;
+      if (!drag || drag.pointerId !== event.pointerId) return;
+
+      pendingPoint = { clientX: event.clientX, clientY: event.clientY };
+      if (!animFrameId) {
+        animFrameId = requestAnimationFrame(processDrag);
+      }
+    }
+
+    function onPointerEnd(event: PointerEvent) {
+      const drag = dragRef.current;
+      if (!drag || drag.pointerId !== event.pointerId) return;
+
+      if (animFrameId) {
+        cancelAnimationFrame(animFrameId);
+        animFrameId = null;
+      }
+      dragRef.current = null;
+      pendingPoint = null;
+
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerup", onPointerEnd);
+      window.removeEventListener("pointercancel", onPointerEnd);
+    }
+
     function onPointerDown(event: PointerEvent) {
       if (event.button !== 0) return;
 
@@ -118,38 +156,40 @@ export default function DraggableDucks() {
 
       event.preventDefault();
       event.stopPropagation();
+
+      // Easter egg: track penguin clicks
+      clickCountRef.current++;
+      const count = clickCountRef.current;
+      if (count === 5) {
+        setSpeech({ text: "stop clicking me.", catId: cat.id });
+        setTimeout(() => setSpeech(null), 2500);
+      } else if (count === 6) {
+        setSpeech({ text: "seriously.", catId: cat.id });
+        setTimeout(() => setSpeech(null), 2500);
+      } else if (count >= 10) {
+        setSpeech({ text: `click_count = ${count}\nproductivity = 0`, catId: cat.id });
+        setTimeout(() => setSpeech(null), 3000);
+      }
+
       startDrag(cat, event.pointerId, event.clientX, event.clientY);
+
+      // Only attach move/up listeners during an active drag!
+      window.addEventListener("pointermove", onPointerMove, { passive: true });
+      window.addEventListener("pointerup", onPointerEnd, { passive: true });
+      window.addEventListener("pointercancel", onPointerEnd, { passive: true });
     }
 
-    function onPointerMove(event: PointerEvent) {
-      const drag = dragRef.current;
-      if (!drag || drag.pointerId !== event.pointerId) return;
-
-      event.preventDefault();
-      moveCat(event.clientX, event.clientY);
+    const stageEl = stageRef.current;
+    if (stageEl) {
+      stageEl.addEventListener("pointerdown", onPointerDown, { passive: false });
     }
-
-    function onPointerEnd(event: PointerEvent) {
-      const drag = dragRef.current;
-      if (!drag || drag.pointerId !== event.pointerId) return;
-
-      event.preventDefault();
-      dragRef.current = null;
-    }
-
-    document.addEventListener("pointerdown", onPointerDown, {
-      capture: true,
-      passive: false,
-    });
-    document.addEventListener("pointermove", onPointerMove, { passive: false });
-    document.addEventListener("pointerup", onPointerEnd, { passive: false });
-    document.addEventListener("pointercancel", onPointerEnd, { passive: false });
 
     return () => {
-      document.removeEventListener("pointerdown", onPointerDown, { capture: true });
-      document.removeEventListener("pointermove", onPointerMove);
-      document.removeEventListener("pointerup", onPointerEnd);
-      document.removeEventListener("pointercancel", onPointerEnd);
+      if (animFrameId) cancelAnimationFrame(animFrameId);
+      if (stageEl) stageEl.removeEventListener("pointerdown", onPointerDown);
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerup", onPointerEnd);
+      window.removeEventListener("pointercancel", onPointerEnd);
     };
   }, []);
 
@@ -184,6 +224,31 @@ export default function DraggableDucks() {
             loading="lazy"
             decoding="async"
           />
+          {speech && speech.catId === cat.id && (
+            <div
+              style={{
+                position: "absolute",
+                top: "-40px",
+                left: "50%",
+                transform: "translateX(-50%)",
+                background: "#1e1b1b",
+                border: "1px solid var(--border)",
+                color: "var(--foreground)",
+                fontFamily: "var(--font-jetbrains-mono, monospace)",
+                fontSize: "11px",
+                padding: "4px 8px",
+                borderRadius: "4px",
+                whiteSpace: "pre-line",
+                pointerEvents: "none",
+                zIndex: 100,
+                boxShadow: "0 4px 12px rgba(0,0,0,0.5)",
+                lineHeight: 1.3,
+                textAlign: "center",
+              }}
+            >
+              {speech.text}
+            </div>
+          )}
         </button>
       ))}
     </div>

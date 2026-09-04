@@ -76,7 +76,7 @@ export default function AwardsShowcase() {
         </div>
 
         <div className={styles.awardsStatCard}>
-          <div className={styles.awardsStatIcon} style={{ color: "#89b4fa" }}>
+          <div className={styles.awardsStatIcon} style={{ color: "#f5f0eb" }}>
             <Clock size={22} />
           </div>
           <div className={styles.awardsStatMeta}>

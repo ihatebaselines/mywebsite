@@ -42,23 +42,9 @@
     ]
   },
   {
-    "slug": "roai-selection",
-    "title": "ROAI Selection Camp Qualifier",
-    "date": "2026-05-18",
-    "tag": "AI Competition",
-    "summary": "A high-pressure qualifier round that pushed my practical ML and contest strategy.",
-    "image": "/images/portfolio-duck.png",
-    "gallery": ["/images/selectielot.png"],
-    "relatedHref": "/blog/roaiselection",
-    "body": [
-      "The ROAI Selection Camp Qualifier was useful because it exposed weaknesses in how I manage experiments and time. It was not only about knowing ML, but also about choosing the right experiment quickly.",
-      "I keep this in Work because it shaped how I think about AI competitions: practical decisions matter as much as the model itself."
-    ]
-  },
-  {
     "slug": "skillab",
     "title": "Skillab Innovation Challenge",
-    "date": "2026-05-02",
+    "date": "2026-05-27",
     "tag": "Hackathon",
     "summary": "First place with a project around skills, labour-market analytics, and AI-assisted insight.",
     "image": "/images/skillab-logo-img.jpg",
@@ -74,7 +60,7 @@
   {
     "slug": "nitronlp",
     "title": "NitroNLP Hackathon",
-    "date": "2026-04-25",
+    "date": "2026-05-10",
     "tag": "NLP",
     "summary": "Third place with PretrainedLanguageModel in a fast NLP hackathon on Nitro-AI Judge.",
     "image": "/images/pretrainedlm.png",
@@ -83,6 +69,20 @@
     "body": [
       "NitroNLP was a fast team-based NLP competition. It rewarded quick iteration, practical evaluation, and communication inside the team.",
       "This belongs in Work because it was a concrete applied NLP build under contest constraints."
+    ]
+  },
+  {
+    "slug": "roai-selection",
+    "title": "ROAI Selection Camp Qualifier",
+    "date": "2026-04-16",
+    "tag": "AI Competition",
+    "summary": "A high-pressure qualifier round that pushed my practical ML and contest strategy.",
+    "image": "/images/portfolio-duck.png",
+    "gallery": ["/images/selectielot.png"],
+    "relatedHref": "/blog/roaiselection",
+    "body": [
+      "The ROAI Selection Camp Qualifier was useful because it exposed weaknesses in how I manage experiments and time. It was not only about knowing ML, but also about choosing the right experiment quickly.",
+      "I keep this in Work because it shaped how I think about AI competitions: practical decisions matter as much as the model itself."
     ]
   },
   {

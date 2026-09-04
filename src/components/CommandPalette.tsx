@@ -24,6 +24,8 @@ import awardsData from "@/content/awardsData.json";
 import projectsData from "@/content/projectsData.json";
 import opensourceData from "@/content/opensourceData.json";
 import changelogData from "@/content/changelogData.json";
+import { setSiteTheme } from "@/lib/theme";
+import { unlockAchievement } from "@/lib/progression";
 import styles from "@/app/page.module.css";
 
 interface PaletteItem {
@@ -114,6 +116,15 @@ export default function CommandPalette() {
         url: "/opensource",
         badge: "GitHub",
       },
+      {
+        id: "nav-licenses",
+        title: "Licenses & Attributions",
+        subtitle: "All open source packages, libraries, frameworks & typefaces",
+        category: "Navigation",
+        icon: <FileCode size={16} />,
+        url: "/licenses",
+        badge: "Licenses",
+      },
 
       // Actions
       {
@@ -169,7 +180,7 @@ export default function CommandPalette() {
         title: post.title,
         subtitle: `${post.category} • ${post.excerpt}`,
         category: "Blog" as const,
-        icon: <BookOpen size={16} color="#89b4fa" />,
+        icon: <BookOpen size={16} color="#f5f0eb" />,
         url: `/blog/${post.slug}`,
         badge: post.date,
       })),
@@ -204,6 +215,73 @@ export default function CommandPalette() {
     if (!q) {
       // Default top suggestions
       return allItems.slice(0, 12);
+    }
+
+    // Easter egg queries
+    if (q === "0") {
+      return [
+        {
+          id: "easter-egg-0",
+          title: "0 results. perfect.",
+          subtitle: "The origin remains unaltered. Click to set Zero Mode.",
+          category: "Actions" as const,
+          icon: <Sparkles size={16} color="#10b981" />,
+          action: () => {
+            setSiteTheme("zero", true);
+            unlockAchievement(0);
+          },
+          badge: "0 Mode",
+        },
+      ];
+    }
+
+    if (q === "1") {
+      return [
+        {
+          id: "easter-egg-1",
+          title: "one result: a new beginning.",
+          subtitle: "Click or press Enter to activate One Mode (White Theme).",
+          category: "Actions" as const,
+          icon: <Sparkles size={16} color="#f59e0b" />,
+          action: () => {
+            setSiteTheme("one", true);
+            unlockAchievement(1);
+          },
+          badge: "One Mode",
+        },
+      ];
+    }
+
+    if (q === "baseline") {
+      return [
+        {
+          id: "easter-egg-baseline",
+          title: "did you mean: break it?",
+          subtitle: "Never accept the default. Break the baseline.",
+          category: "Actions" as const,
+          icon: <Sparkles size={16} color="#ef4444" />,
+          action: () => {
+            unlockAchievement(2);
+          },
+          badge: "Protocol",
+        },
+      ];
+    }
+
+    if (q === "nothing") {
+      return [
+        {
+          id: "easter-egg-nothing",
+          title: "you found it.",
+          subtitle: "technically, room for everything.",
+          category: "Actions" as const,
+          icon: <Sparkles size={16} color="#a855f7" />,
+          action: () => {
+            unlockAchievement(0);
+          },
+          badge: "Origin",
+        },
+      ];
     }
 
     return allItems
@@ -315,7 +393,7 @@ export default function CommandPalette() {
             ref={inputRef}
             type="text"
             className={styles.cmdInput}
-            placeholder="Search competitions, posts, awards, actions... (or Esc)"
+            placeholder="Search for something. Or nothing..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleInputKeyDown}
@@ -337,7 +415,12 @@ export default function CommandPalette() {
           {filteredItems.length === 0 ? (
             <div className={styles.cmdEmpty}>
               <Sparkles size={20} className={styles.cmdEmptyIcon} />
-              <p>No results found for &ldquo;{query}&rdquo;</p>
+              <p style={{ fontWeight: 700, margin: "0 0 4px", color: "var(--foreground)" }}>
+                0 results. perfect.
+              </p>
+              <p style={{ opacity: 0.5, fontSize: "12px", margin: 0 }}>
+                No match for &ldquo;{query}&rdquo;
+              </p>
               <span>Try searching for &quot;1st Place&quot;, &quot;Neurons&quot;, &quot;Wall&quot; or &quot;Discord&quot;</span>
             </div>
           ) : (

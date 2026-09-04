@@ -1,48 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+/* ─── MONOCHROME TERMINAL DESIGN SYSTEM (from purcar.me) ─── */
 :root {
-  --background: #1e1e2e;
-  --foreground: #cdd6f4;
-  --accent: #89b4fa;
-  --accent-soft: rgb(137 180 250 / 12%);
-  --surface: rgb(205 214 244 / 4%);
-  --surface-hover: rgb(205 214 244 / 8%);
-  --border: rgb(205 214 244 / 8%);
-  --border-hover: rgb(205 214 244 / 16%);
-  --glow: rgb(137 180 250 / 30%);
-  --font-body: Manrope, Arial, Helvetica, sans-serif;
-  --font-title: "Noto Sans", Manrope, Arial, Helvetica, sans-serif;
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 32px;
-}
+  /* Purcar.me Core Tokens */
+  --bg: #201d1d;
+  --bg-secondary: #1a1717;
+  --bg-hover: #2a2626;
+  --bg-active: #302c2c;
+  --border: rgba(245, 240, 235, 0.10);
+  --border-strong: rgba(245, 240, 235, 0.20);
+  --text: #f5f0eb;
+  --text-muted: rgba(245, 240, 235, 0.45);
+  --text-dim: rgba(245, 240, 235, 0.25);
+  --accent: #f5f0eb;
+  --accent-thinking: #a0e4a0;
+  --font: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
-@font-face {
-  font-family: Manrope;
-  src: url("/fonts/manrope-regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Manrope;
-  src: url("/fonts/manrope-700.woff2") format("woff2");
-  font-weight: 700 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Noto Sans";
-  src: url("/fonts/noto-sans-900.woff2") format("woff2");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
+  /* Compatibility bindings for ihateb components */
+  --background: #201d1d;
+  --foreground: #f5f0eb;
+  --accent-soft: rgba(245, 240, 235, 0.10);
+  --surface: rgba(245, 240, 235, 0.035);
+  --surface-hover: rgba(245, 240, 235, 0.07);
+  --border-hover: rgba(245, 240, 235, 0.20);
+  --glow: rgba(245, 240, 235, 0.15);
+  --font-body: var(--font);
+  --font-title: var(--font);
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
 }
 
 html {
   min-height: 100%;
   scroll-behavior: smooth;
+  font-size: 13.5px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html,
@@ -51,35 +46,113 @@ body {
   overflow-x: hidden;
 }
 
-.char {
-  display: inline-block;
-  transform-origin: 50% 85%;
-  will-change: transform, opacity, filter;
-}
-
-.word {
-  display: inline-block;
-  overflow: hidden;
-  will-change: transform, opacity, filter;
-}
-
 body {
   min-height: 100%;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  font-family: var(--font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Noise texture overlay */
+/* Exact purcar.me typography rule */
+h1, h2, h3, h4, h5, h6, p, span, label, button, input, textarea, select, a, li {
+  font-family: var(--font) !important;
+  letter-spacing: -0.01em;
+}
+
+/* Purcar.me custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 240, 235, 0.35);
+}
+
+body::-webkit-scrollbar {
+  width: 4px;
+  background: var(--bg);
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background: var(--border-strong);
+}
+
+/* Purcar.me text selection */
+::selection {
+  background: rgba(245, 240, 235, 0.15);
+  color: var(--text);
+}
+
+/* Purcar.me terminal animations and utilities */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.caret {
+  animation: blink 1.2s step-end infinite;
+}
+
+@keyframes thinkPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.think-pulse {
+  animation: thinkPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes dotBounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.3; }
+  40%           { transform: translateY(-4px); opacity: 1; }
+}
+
+.dot-bounce {
+  display: inline-block;
+  animation: dotBounce 1.2s ease-in-out infinite;
+  color: #a0e4a0;
+  font-size: 16px;
+  line-height: 1;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.border-mono {
+  border: 1px solid var(--border);
+}
+
+.border-mono-strong {
+  border: 1px solid var(--border-strong);
+}
+
+/* Noise texture overlay with warm charcoal blend */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.025;
+  opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 200px 200px;
@@ -103,17 +176,47 @@ img {
   max-width: 100%;
 }
 
-body::-webkit-scrollbar {
-  width: 6px;
-  background: #0a0a0f;
+.char {
+  display: inline-block;
+  transform-origin: 50% 85%;
+  will-change: transform, opacity, filter;
 }
 
-body::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background: var(--accent);
+.word {
+  display: inline-block;
+  overflow: hidden;
+  will-change: transform, opacity, filter;
 }
 
-::selection {
-  background: rgb(137 180 250 / 30%);
-  color: #ffffff;
+/* ─── ONE MODE (WHITE THEME / A NEW BEGINNING) ─── */
+[data-theme="one"],
+[data-theme="one"] :root {
+  --bg: #f8f7f5;
+  --bg-secondary: #f1efe9;
+  --bg-hover: #ebe8e1;
+  --bg-active: #e4e0d7;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.16);
+  --text: #111111;
+  --text-muted: #666666;
+  --text-dim: #999999;
+  --accent: #111111;
+  --background: #f8f7f5;
+  --foreground: #111111;
+  --accent-soft: rgba(0, 0, 0, 0.06);
+  --surface: #ffffff;
+  --surface-hover: #f9f8f6;
+  --border-hover: rgba(0, 0, 0, 0.18);
+  --glow: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="one"] body {
+  background: #f8f7f5 !important;
+  color: #111111 !important;
+}
+
+[data-theme="one"] .page,
+[data-theme="one"] main {
+  background: #f8f7f5 !important;
+  color: #111111 !important;
 }

@@ -108,6 +108,38 @@ export default function RecentWork({
           </motion.div>
         );
       })}
+
+      <div
+        style={{
+          gridColumn: "1 / -1",
+          textAlign: "right",
+          marginTop: "0.75rem",
+          paddingRight: "0.5rem",
+        }}
+      >
+        <BaselineTag />
+      </div>
     </motion.div>
+  );
+}
+
+function BaselineTag() {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <span
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        fontFamily: "var(--font-jetbrains-mono, monospace)",
+        fontSize: "11px",
+        color: hovered ? "#10b981" : "var(--muted)",
+        opacity: hovered ? 0.8 : 0.4,
+        cursor: "default",
+        letterSpacing: "0.05em",
+        transition: "all 0.2s ease",
+      }}
+    >
+      {hovered ? "~~baseline detected~~ baseline removed." : "baseline detected."}
+    </span>
   );
 }

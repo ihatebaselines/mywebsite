@@ -1,0 +1,330 @@
+.licensesPage {
+  min-height: 100vh;
+  background-color: #111111;
+  color: #ebe8e3;
+  padding-top: 72px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.heroSection {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 24px 40px;
+}
+
+.sectionLabel {
+  display: inline-block;
+  font-family: var(--font-jetbrains-mono, monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8a8885;
+  margin-bottom: 20px;
+}
+
+.hugeTitle {
+  font-family: var(--font-jetbrains-mono, var(--font-title), monospace);
+  font-size: clamp(3.2rem, 6.5vw, 5.8rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: #ebe8e3;
+  margin: 0 0 24px 0;
+}
+
+.heroSubtitle {
+  font-family: var(--font-jetbrains-mono, var(--font), monospace);
+  font-size: 15px;
+  line-height: 1.6;
+  color: #8a8885;
+  max-width: 720px;
+  margin: 0 0 32px 0;
+}
+
+.statsBar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 16px 20px;
+  background: #141212;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  font-family: var(--font-jetbrains-mono, monospace);
+  font-size: 12px;
+  color: #8a8885;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statNum {
+  color: #ebe8e3;
+  font-weight: 700;
+}
+
+.statDot {
+  color: #333130;
+}
+
+/* Controls: Search & Categories */
+.controlsSection {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.searchBarWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555351;
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  background: #141212;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 6px;
+  color: #ebe8e3;
+  font-family: var(--font-jetbrains-mono, monospace);
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.searchInput:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: #171515;
+}
+
+.searchInput::placeholder {
+  color: #555351;
+}
+
+.clearSearchBtn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #8a8885;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 11px;
+}
+
+.clearSearchBtn:hover {
+  color: #ebe8e3;
+}
+
+.categoryPills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.categoryPill {
+  font-family: var(--font-jetbrains-mono, monospace);
+  font-size: 11px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #141212;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #8a8885;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.categoryPill:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #ebe8e3;
+}
+
+.categoryPillActive {
+  background: #ebe8e3;
+  color: #111111;
+  border-color: #ebe8e3;
+  font-weight: 700;
+}
+
+.categoryPillActive:hover {
+  background: #ffffff;
+  color: #111111;
+}
+
+/* Grid of Cards */
+.gridSection {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+.licensesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 1100px) {
+  .licensesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .licensesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.licenseCard {
+  background: #141212;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.25s ease,
+              background-color 0.25s ease;
+}
+
+.licenseCard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.22);
+  background: #171515;
+}
+
+.cardTop {
+  margin-bottom: 20px;
+}
+
+.cardHeaderRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.cardTitleWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  font-family: var(--font-jetbrains-mono, monospace);
+  font-size: 17px;
+  font-weight: 700;
+  color: #ebe8e3;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+}
+
+.cardVersion {
+  font-family: var(--font-jetbrains-mono, monospace);
+  font-size: 11px;
+  color: #555351;
+}
+
+.licenseBadge {
+  font-family: var(--font-jetbrains-mono, monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #8a8885;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.licenseBadge:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ebe8e3;
+}
+
+.cardAuthor {
+  font-family: var(--font-jetbrains-mono, monospace);
+  font-size: 11px;
+  color: #8a8885;
+  margin-bottom: 12px;
+}
+
+.cardDescription {
+  font-family: var(--font-jetbrains-mono, var(--font), monospace);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #8a8885;
+  margin: 0;
+}
+
+.cardCategoryTag {
+  display: inline-block;
+  font-family: var(--font-jetbrains-mono, monospace);
+  font-size: 9.5px;
+  color: #555351;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 12px;
+}
+
+.cardBottomLinks {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cardActionLink {
+  font-family: var(--font-jetbrains-mono, monospace);
+  font-size: 11px;
+  color: #8a8885;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.cardActionLink:hover {
+  color: #ebe8e3;
+  transform: translateX(2px);
+}
+
+.noResults {
+  grid-column: 1 / -1;
+  padding: 60px 20px;
+  text-align: center;
+  background: #141212;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  font-family: var(--font-jetbrains-mono, monospace);
+  color: #8a8885;
+}

@@ -6,6 +6,7 @@ export type ChangelogEntry = {
   tagType: "competition" | "feature" | "milestone" | "system";
   summary: string;
   changes: string[];
+  quote?: string;
 };
 
 import changelogData from "./changelogData.json";

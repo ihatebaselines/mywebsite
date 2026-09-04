@@ -1,42 +1,39 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import styles from "@/app/page.module.css";
-
-const NOOT_MESSAGES = [
-  "hi bro",
-  "lowk loading the website",
-  "kinda lit innit",
-  "just sayin",
-  "its finna be lit",
-  "dw",
-  "aint bad innit",
-  "noot noot",
-  "whatever",
-
-];
+import styles from "./LoadingScreen.module.css";
 
 export default function LoadingScreen() {
   const [visible, setVisible] = useState(true);
   const [hiding, setHiding] = useState(false);
-  const [msgIndex, setMsgIndex] = useState(0);
+  const [showZero, setShowZero] = useState(false);
 
   useEffect(() => {
-    // Cycle through noot messages
-    const msgInterval = setInterval(() => {
-      setMsgIndex((i) => (i + 1) % NOOT_MESSAGES.length);
-    }, 400);
+    try {
+      const alreadyLoaded = sessionStorage.getItem("ihateb_opened");
+      if (alreadyLoaded) {
+        setVisible(false);
+        return;
+      }
+      sessionStorage.setItem("ihateb_opened", "true");
+    } catch {
+      // ignore storage restrictions
+    }
 
-    // Start hiding after 1.8s
+    // Phase 1 (0ms - 550ms): "ihatebaselines"
+    // Phase 2 (550ms): "0" appears underneath (where "...yet." was)
+    const zeroTimer = setTimeout(() => {
+      setShowZero(true);
+    }, 550);
+
+    // Fade out at 1400ms
     const hideTimer = setTimeout(() => {
-      clearInterval(msgInterval);
       setHiding(true);
-      // Fully remove after fade animation
-      setTimeout(() => setVisible(false), 200);
-    }, 200);
+      setTimeout(() => setVisible(false), 450);
+    }, 1400);
 
     return () => {
-      clearInterval(msgInterval);
+      clearTimeout(zeroTimer);
       clearTimeout(hideTimer);
     };
   }, []);
@@ -48,18 +45,9 @@ export default function LoadingScreen() {
       className={`${styles.loadingScreen} ${hiding ? styles.loadingScreenHide : ""}`}
       aria-hidden="true"
     >
-      <div className={styles.loadingContent}>
-        <div className={styles.loadingRow}>
-          <img
-            src="/images/pingu-waving.png"
-            alt="Pingu"
-            className={`${styles.loadingPingu} ${hiding ? styles.loadingPinguOut : ""}`}
-          />
-          <div className={styles.loadingTextCol}>
-            <span className={styles.loadingBrand}>ihatebaselines</span>
-            <p className={styles.loadingNoot}>{NOOT_MESSAGES[msgIndex]}</p>
-          </div>
-        </div>
+      <div className={styles.loadingCenter}>
+        <div className={styles.loadingTextMain}>ihatebaselines</div>
+        {showZero && <div className={styles.loadingTextSub}>0</div>}
       </div>
     </div>
   );

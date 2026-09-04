@@ -190,20 +190,20 @@ export default function PremiumEffects() {
       gsap.fromTo(
         item,
         {
-          clipPath: "inset(0% 100% 0% 0% round 8px)",
-          scale: 1.02,
-          opacity: 0.4,
+          clipPath: "inset(0% 45% 0% 45% round 6px)",
+          scale: 1.05,
+          opacity: 0.5,
         },
         {
-          clipPath: "inset(0% 0% 0% 0% round 8px)",
+          clipPath: "inset(0% 0% 0% 0% round 6px)",
           scale: 1,
           opacity: 1,
-          duration: 0.75,
+          duration: 0.85,
           ease: "expo.out",
           scrollTrigger: {
             trigger: item,
-            start: "top 88%",
-            end: "bottom 10%",
+            start: "top 90%",
+            end: "bottom 12%",
             toggleActions: "play none none reverse",
           },
         },
@@ -235,6 +235,106 @@ export default function PremiumEffects() {
         },
       );
     });
+
+    // ═══════════════════════════════════════════════════════
+    // SCROLL WORD REVEAL (for About Me / Editorial bios)
+    // ═══════════════════════════════════════════════════════
+    const wordRevealElements = gsap.utils.toArray<HTMLElement>("[data-word-reveal]");
+    const wordSplits: SplitType[] = [];
+
+    wordRevealElements.forEach((el) => {
+      const splitInstance = new SplitType(el, { types: "words" });
+      wordSplits.push(splitInstance);
+
+      if (splitInstance.words?.length) {
+        gsap.fromTo(
+          splitInstance.words,
+          { opacity: 0.18 },
+          {
+            opacity: 1,
+            stagger: 0.025,
+            ease: "none",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              end: "bottom 50%",
+              scrub: 0.5,
+            },
+          },
+        );
+      }
+    });
+
+    // ═══════════════════════════════════════════════════════
+    // HERO SCROLL ZOOM, FADE & INDEPENDENT PARALLAX (Tympanus/Motion)
+    // ═══════════════════════════════════════════════════════
+    const heroSection = document.querySelector("section[class*='hero']");
+    const heroTitle = document.querySelector("[data-hero-title]");
+    const heroSubtitle = document.querySelector("[data-hero-subtitle]");
+    const heroActions = document.querySelector("[data-hero-actions]");
+    const duckButtons = document.querySelectorAll("button[class*='draggableDuck']");
+
+    if (heroSection) {
+      // 1. Subtitle & action buttons: fade out early before next section arrives
+      const fadeItems = [heroSubtitle, heroActions].filter(Boolean) as HTMLElement[];
+      if (fadeItems.length) {
+        gsap.to(fadeItems, {
+          opacity: 0,
+          y: -28,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: heroSection,
+            start: "top top",
+            end: "45% top",
+            scrub: 0.5,
+          },
+        });
+      }
+
+      // 2. Hero Title: subtle zoom (1 to 1.15) & graceful fade down to 0.05
+      if (heroTitle) {
+        gsap.to(heroTitle, {
+          scale: 1.15,
+          opacity: 0.05,
+          y: -45,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: heroSection,
+            start: "top top",
+            end: "bottom top",
+            scrub: 0.6,
+          },
+        });
+      }
+
+      // 3. Pingus: independent parallax drift on scroll
+      const parallaxRates = [
+        { y: -130, r: -5 },
+        { y: -75, r: 4 },
+        { y: -210, r: 8 },
+        { y: -105, r: -6 },
+      ];
+
+      duckButtons.forEach((duck, i) => {
+        const rate = parallaxRates[i % parallaxRates.length];
+        gsap.to(duck, {
+          y: rate.y,
+          rotate: rate.r,
+          opacity: 0.35,
+          ease: "none",
+          scrollTrigger: {
+            trigger: heroSection,
+            start: "top top",
+            end: "bottom top",
+            scrub: 0.5,
+          },
+        });
+      });
+    }
+
+    // GSAP ScrollTrigger performance tuning
+    ScrollTrigger.config({ limitCallbacks: true });
+    gsap.ticker.lagSmoothing(500, 33);
 
     const cinematicBlocks = gsap.utils.toArray<HTMLElement>("[data-cinematic]");
     cinematicBlocks.forEach((block) => {
@@ -270,65 +370,6 @@ export default function PremiumEffects() {
       }
     });
 
-    // ═══════════════════════════════════════════════════════
-    // HERO 3D PLUNGE TRANSITION (desktop only)
-    // ═══════════════════════════════════════════════════════
-    const heroSection = document.querySelector("section[class*='hero']");
-    const heroCopy = document.querySelector("div[class*='heroCopy']");
-    const duckButtons = document.querySelectorAll("button[class*='draggableDuck']");
-    const bentoGridSection = document.querySelector("#last-work");
-
-    if (heroSection && heroCopy && bentoGridSection) {
-      const bentoCards = bentoGridSection.querySelectorAll("[data-card]");
-
-      const plungeTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: heroSection,
-          start: "top top",
-          end: "+=120%",
-          pin: true,
-          pinSpacing: false,
-          scrub: 0.8,
-        }
-      });
-
-      plungeTl.to(heroCopy, {
-        scale: 4,
-        opacity: 0,
-        ease: "power2.inOut",
-        duration: 0.8
-      }, 0);
-
-      duckButtons.forEach((duck, i) => {
-        const xMove = i % 2 === 0 ? -180 : 180;
-        const yMove = i < 2 ? -180 : 180;
-
-        plungeTl.to(duck, {
-          x: xMove,
-          y: yMove,
-          scale: 2.5,
-          opacity: 0,
-          rotate: xMove / 3,
-          ease: "power2.inOut",
-          duration: 0.8
-        }, 0);
-      });
-
-      if (bentoCards.length) {
-        plungeTl.fromTo(bentoCards, {
-          scale: 0.85,
-          opacity: 0,
-          y: 60,
-        }, {
-          scale: 1,
-          opacity: 1,
-          y: 0,
-          stagger: 0.05,
-          ease: "power3.out",
-          duration: 0.6
-        }, 0.25);
-      }
-    }
     const rafId = requestAnimationFrame(() => {
       ScrollTrigger.refresh();
     });
@@ -338,6 +379,7 @@ export default function PremiumEffects() {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       split?.revert();
       headingSplits.forEach((item) => item.revert());
+      wordSplits.forEach((item) => item.revert());
     };
   }, [pathname]);
 

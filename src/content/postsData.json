@@ -122,21 +122,21 @@
     ]
   },
   {
-    "slug": "roainationala",
-    "title": "ROAI National Stage",
-    "date": "2026-04-07",
+    "slug": "skillab",
+    "title": "Skillab — Innovation Challenge",
+    "date": "2026-05-27",
     "category": "Portofolio",
-    "excerpt": "19th place at the ROAI National Stage",
-    "shortStory": "I placed 19th at the ROAI National Stage, one of the main stages of Romania's AI olympiad selection.",
-    "cover": "/images/portfolio-duck.png",
+    "excerpt": "First place at the Skillab Innovation Challenge",
+    "shortStory": "My team won 1st place at the Skillab Innovation Challenge and received a 1000 euro prize.",
+    "cover": "/images/skillab-logo-img.jpg",
     "gallery": [
-      "/images/nationalaroai.png"
+      "/images/angelu.png"
     ],
     "body": [
-      "ROAI was one of the most important AI competitions I participated in. The National Stage was a serious step up from normal practice rounds, because it gathered qualified students and tested both theoretical understanding and practical AI skills.",
-      "I placed 19th in the national phase. For me, this was an important benchmark because it showed where I stood among other students interested in machine learning, data science, algorithms, and AI olympiad-style tasks.",
-      "The round required more than just writing code quickly. I had to understand the task, choose the right approach, test ideas carefully, and avoid wasting time on methods that were unlikely to improve the score.",
-      "Even though I still saw many things I could improve, this result gave me a lot of motivation. ROAI helped me understand that competitive AI is not only about knowing libraries, but also about strategy, experimentation, clean thinking, and staying calm during difficult tasks."
+      "Skillab Innovation Challenge was a different kind of competition for me because it combined technology, research, teamwork, and product thinking. Instead of only solving a predefined programming task, we had to think about a real-world problem and build a strong idea around it.",
+      "The challenge was connected to skills, jobs, labour market analytics, and the way AI can help understand the gap between what people know and what companies need. This made the event feel very practical, because the topic was not just technical, but also connected to education and the future of work.",
+      "Together with my team, I won 1st place and received a 1000 euro prize. The result was really exciting because it showed that our idea was not only technically interesting, but also convincing from an innovation and impact perspective.",
+      "This competition helped me improve how I present ideas, how I work in a team, and how I connect AI with real problems. It also gave me more confidence in hackathons and innovation challenges where communication and creativity matter just as much as coding."
     ]
   },
   {
@@ -158,9 +158,27 @@
     ]
   },
   {
+    "slug": "nitronlp",
+    "title": "NitroNLP Hackathon",
+    "date": "2026-05-10",
+    "category": "Portofolio",
+    "excerpt": "3rd place at Nitro NLP Hackathon 5th Edition",
+    "shortStory": "My team PretrainedLanguageModel placed 3rd at the Nitro NLP Hackathon 5th Edition.",
+    "cover": "/images/portfolio-duck.png",
+    "gallery": [
+      "/images/pretrainedlm.png"
+    ],
+    "body": [
+      "NitroNLP Hackathon was one of the most fun AI competitions I joined because it focused on Natural Language Processing, a field that combines machine learning, language, data, and experimentation.",
+      "I participated with my team, PretrainedLanguageModel, and we competed on Nitro-AI Judge. My username on the platform was vladandrei. The hackathon format made everything more intense because we had to move fast, test ideas, and improve our solution under time pressure.",
+      "We placed 3rd, which was a great result for the team. During the competition, teamwork mattered a lot: we had to split responsibilities, compare approaches, and decide quickly which experiments were worth keeping.",
+      "This hackathon helped me understand NLP better in a practical way. It was not only about knowing models or libraries, but about building a full solution, evaluating it, improving it, and communicating efficiently with the team."
+    ]
+  },
+  {
     "slug": "roaiselection",
     "title": "ROAI Selection Camp Qualifier",
-    "date": "2026-05-18",
+    "date": "2026-04-16",
     "category": "Portofolio",
     "excerpt": "33rd place at the ROAI Selection Camp Qualifier",
     "shortStory": "I placed 33rd at the ROAI Selection Camp Qualifier, the round used to select students for the ROAI camp.",
@@ -176,39 +194,21 @@
     ]
   },
   {
-    "slug": "skillab",
-    "title": "Skillab — Innovation Challenge",
-    "date": "2026-05-02",
+    "slug": "roainationala",
+    "title": "ROAI National Stage",
+    "date": "2026-04-07",
     "category": "Portofolio",
-    "excerpt": "First place at the Skillab Innovation Challenge",
-    "shortStory": "My team won 1st place at the Skillab Innovation Challenge and received a 1000 euro prize.",
-    "cover": "/images/skillab-logo-img.jpg",
-    "gallery": [
-      "/images/angelu.png"
-    ],
-    "body": [
-      "Skillab Innovation Challenge was a different kind of competition for me because it combined technology, research, teamwork, and product thinking. Instead of only solving a predefined programming task, we had to think about a real-world problem and build a strong idea around it.",
-      "The challenge was connected to skills, jobs, labour market analytics, and the way AI can help understand the gap between what people know and what companies need. This made the event feel very practical, because the topic was not just technical, but also connected to education and the future of work.",
-      "Together with my team, I won 1st place and received a 1000 euro prize. The result was really exciting because it showed that our idea was not only technically interesting, but also convincing from an innovation and impact perspective.",
-      "This competition helped me improve how I present ideas, how I work in a team, and how I connect AI with real problems. It also gave me more confidence in hackathons and innovation challenges where communication and creativity matter just as much as coding."
-    ]
-  },
-  {
-    "slug": "nitronlp",
-    "title": "NitroNLP Hackathon",
-    "date": "2026-04-25",
-    "category": "Portofolio",
-    "excerpt": "3rd place at Nitro NLP Hackathon 5th Edition",
-    "shortStory": "My team PretrainedLanguageModel placed 3rd at the Nitro NLP Hackathon 5th Edition.",
+    "excerpt": "19th place at the ROAI National Stage",
+    "shortStory": "I placed 19th at the ROAI National Stage, one of the main stages of Romania's AI olympiad selection.",
     "cover": "/images/portfolio-duck.png",
     "gallery": [
-      "/images/pretrainedlm.png"
+      "/images/nationalaroai.png"
     ],
     "body": [
-      "NitroNLP Hackathon was one of the most fun AI competitions I joined because it focused on Natural Language Processing, a field that combines machine learning, language, data, and experimentation.",
-      "I participated with my team, PretrainedLanguageModel, and we competed on Nitro-AI Judge. My username on the platform was vladandrei. The hackathon format made everything more intense because we had to move fast, test ideas, and improve our solution under time pressure.",
-      "We placed 3rd, which was a great result for the team. During the competition, teamwork mattered a lot: we had to split responsibilities, compare approaches, and decide quickly which experiments were worth keeping.",
-      "This hackathon helped me understand NLP better in a practical way. It was not only about knowing models or libraries, but about building a full solution, evaluating it, improving it, and communicating efficiently with the team."
+      "ROAI was one of the most important AI competitions I participated in. The National Stage was a serious step up from normal practice rounds, because it gathered qualified students and tested both theoretical understanding and practical AI skills.",
+      "I placed 19th in the national phase. For me, this was an important benchmark because it showed where I stood among other students interested in machine learning, data science, algorithms, and AI olympiad-style tasks.",
+      "The round required more than just writing code quickly. I had to understand the task, choose the right approach, test ideas carefully, and avoid wasting time on methods that were unlikely to improve the score.",
+      "Even though I still saw many things I could improve, this result gave me a lot of motivation. ROAI helped me understand that competitive AI is not only about knowing libraries, but also about strategy, experimentation, clean thinking, and staying calm during difficult tasks."
     ]
   },
   {

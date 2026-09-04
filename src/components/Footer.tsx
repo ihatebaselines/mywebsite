@@ -1,13 +1,18 @@
 "use client";
 
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+import { setSiteTheme, getInitialTheme, type SiteMode } from "@/lib/theme";
+import { unlockAchievement } from "@/lib/progression";
 import styles from "@/app/page.module.css";
 
 const LINKS = [
-  { label: "Work", href: "/#last-work" },
-  { label: "Projects", href: "/projects" },
-  { label: "Open Source", href: "/opensource" },
-  { label: "Blog", href: "/blog" },
+  { label: "WORK", href: "/#projects" },
+  { label: "THEWALL", href: "/wall" },
+  { label: "PROJECTS", href: "/projects" },
+  { label: "OPEN SOURCE", href: "/opensource" },
+  { label: "LICENSES", href: "/licenses" },
+  { label: "BLOG", href: "/blog" },
 ];
 
 const SOCIALS = [
@@ -28,7 +33,7 @@ const SOCIALS = [
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
         <rect width="4" height="12" x="2" y="9" />
-        <circle cx="4" cy="4" r="2" />
+        <circle cx="4" r="2" cy="4" />
       </svg>
     ),
   },
@@ -55,9 +60,81 @@ const SOCIALS = [
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const [theme, setTheme] = useState<SiteMode>("zero");
+  const [rightsHover, setRightsHover] = useState(false);
+  const [bottomSeconds, setBottomSeconds] = useState(0);
+  const footerRef = useRef<HTMLElement>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Sync theme
+  useEffect(() => {
+    setTheme(getInitialTheme());
+    const handleThemeChange = (e: Event) => {
+      const detail = (e as CustomEvent).detail;
+      if (detail?.mode) setTheme(detail.mode);
+    };
+    window.addEventListener("theme-change", handleThemeChange);
+    return () => window.removeEventListener("theme-change", handleThemeChange);
+  }, []);
+
+  // Bottom of page timer tracker (3s, 6s, 9s)
+  useEffect(() => {
+    function handleScroll() {
+      const scrollHeight = document.documentElement.scrollHeight;
+      const clientHeight = window.innerHeight;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+      const isAtBottom = scrollTop + clientHeight >= scrollHeight - 60;
+
+      if (isAtBottom) {
+        if (!timerRef.current) {
+          timerRef.current = setInterval(() => {
+            setBottomSeconds((prev) => {
+              const next = prev + 1;
+              if (next >= 9) {
+                unlockAchievement(5);
+              }
+              return next;
+            });
+          }, 1000);
+        }
+      } else {
+        if (timerRef.current) {
+          clearInterval(timerRef.current);
+          timerRef.current = null;
+        }
+        setBottomSeconds(0);
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, []);
+
+  // Compute center message based on idle bottom seconds
+  const getCenterMessage = () => {
+    if (bottomSeconds >= 9) return "fine. +1 curiosity.";
+    if (bottomSeconds >= 6) return "seriously?";
+    if (bottomSeconds >= 3) return "...still here?";
+    return theme === "one"
+      ? "you made it to the bottom. there is something here."
+      : "you made it to the bottom. there is nothing here.";
+  };
+
+  const handleZeroClick = () => {
+    setSiteTheme("zero", true);
+  };
+
+  const handleOneClick = () => {
+    setSiteTheme("one", true);
+    unlockAchievement(1);
+  };
 
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} ref={footerRef}>
       <div className={styles.footerInner}>
         {/* Top row */}
         <div className={styles.footerTop}>
@@ -74,7 +151,7 @@ export default function Footer() {
         <div className={styles.footerMid}>
           <nav className={styles.footerNav} aria-label="Footer navigation">
             {LINKS.map((link) => (
-              <Link key={link.href} className={styles.footerNavLink} href={link.href}>
+              <Link key={link.label} className={styles.footerNavLink} href={link.href}>
                 {link.label}
               </Link>
             ))}
@@ -98,7 +175,67 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className={styles.footerBottom}>
-          <span>© {year} Vlad Andrei/IHB · made with ☕ in Cluj-Napoca</span>
+          <div className={styles.footerCopyWrap}>
+            <span
+              onMouseEnter={() => setRightsHover(true)}
+              onMouseLeave={() => setRightsHover(false)}
+              style={{ cursor: "default" }}
+            >
+              © {year} • {rightsHover ? "1 chance reserved." : theme === "one" ? "1 chance reserved." : "0 rights reserved."}{" "}
+              {theme === "one"
+                ? "built from zero, still beginning..."
+                : "built from nothing, still unfinished..."}
+            </span>
+
+            {/* [0] and [1] Mode Toggles */}
+            <div style={{ display: "inline-flex", gap: "4px", marginLeft: "6px" }}>
+              <button
+                type="button"
+                onClick={handleZeroClick}
+                className={styles.footerZeroBtn}
+                title="[0] Zero Mode (Dark Void)"
+                style={{
+                  opacity: theme === "zero" ? 1 : 0.5,
+                  fontWeight: theme === "zero" ? 700 : 400,
+                }}
+              >
+                [0]
+              </button>
+
+              <button
+                type="button"
+                onClick={handleOneClick}
+                className={styles.footerZeroBtn}
+                title="[1] One Mode (A New Beginning)"
+                style={{
+                  opacity: theme === "one" ? 1 : 0.45,
+                  fontWeight: theme === "one" ? 700 : 400,
+                }}
+              >
+                [1]
+              </button>
+            </div>
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "6px" }}>
+            <div className={styles.footerCenterPill}>
+              {getCenterMessage()}
+            </div>
+            {theme === "one" && (
+              <div
+                style={{
+                  fontFamily: "var(--font)",
+                  fontSize: "11px",
+                  color: "var(--text-dim)",
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                }}
+              >
+                1 &gt; waiting
+              </div>
+            )}
+          </div>
+
           <span className={styles.footerAccent}>ihatebaselines.com</span>
         </div>
       </div>

@@ -1,113 +1,198 @@
 [
   {
-    "version": "v2.4",
-    "date": "2026-08-26",
-    "title": "Algorithms to Neurons & TheWall Whiteboard",
-    "tag": "Competition & Features",
+    "version": "v2.6.7",
+    "date": "2026-09-04",
+    "title": "Two Modes, One Site",
+    "tag": "Major Release",
     "tagType": "feature",
-    "summary": "1st place in the From Algorithms to Neurons AI competition, new 3D photo carousel wheel, Facebook collage, permanent TheWall live whiteboard with continuous auto-save, and Command Palette.",
+    "summary": "Introduced a complete dual-mode architecture built around the idea of 0 → 1.\n\n0 is the origin: dark, empty, baseline.\n1 is the first departure from it: light, movement, a new beginning.\n\nAlongside the redesign came a persistent progression system, hidden interactions, console commands, and a site-wide collection of easter eggs.",
+    "quote": "Zero is where you are.\nOne is proof you moved.",
     "changes": [
-      "Added complete 'From Algorithms to Neurons' 1st place AI Competition post and 24h Hackathon breakdown.",
-      "Integrated 13 high-res event photos with Facebook-style mosaic collage and 3D coverflow carousel wheel.",
-      "Launched TheWall (/wall): permanent live multi-user whiteboard with continuous auto-save, drawing color wheel, and custom board themes.",
-      "Added Spotlight Command Palette (Ctrl + K) for rapid site-wide search and quick developer actions.",
-      "Optimized full-screen render passes for buttery smooth 60-120 FPS scrolling."
-    ]
-  },
-  {
-    "version": "v2.3",
-    "date": "2026-08-16",
-    "title": "UNTOLD Emergency Volunteer Experience",
-    "tag": "Experience",
-    "tagType": "milestone",
-    "summary": "One-week day-by-day diary of volunteering with UNTOLD Emergency in Cluj-Napoca.",
-    "changes": [
-      "Published 7-day diary covering volunteer training, venue setups at Cluj Arena, and backstage tours.",
-      "Added photo gallery with live artist stages (Martin Garrix, Steve Aoki, Zara Larsson, Swae Lee)."
-    ]
-  },
-  {
-    "version": "v2.2",
-    "date": "2026-07-19",
-    "title": "CEOAI 2026 Delegation Coordination",
-    "tag": "Experience",
-    "tagType": "milestone",
-    "summary": "Five days volunteering and coordinating delegations at the Central European Olympiad in AI.",
-    "changes": [
-      "Published CEOAI volunteer log from CREIC venue and BMW workshops.",
-      "Added event photos and delegation gala highlights from Salina Turda."
-    ]
-  },
-  {
-    "version": "v2.1",
-    "date": "2026-06-06",
-    "title": "RISE AI Final Round — 2nd Place",
-    "tag": "Competition",
-    "tagType": "competition",
-    "summary": "2nd place podium finish in the international-style RISE AI competition on Nitro-AI Judge.",
-    "changes": [
-      "Published RISE contest review focusing on ML problem solving under time constraints.",
-      "Added Nitro-AI judge scoreboard and architecture summary in the Work portfolio."
+      "Added Zero Mode — the original dark / void-inspired theme.",
+      "Added One Mode — a full white theme built around “1 means begin again.”",
+      "Added cinematic 0 → 1 and 1 → 0 transitions across the entire site.",
+      "Added persistent mode state through localStorage.",
+      "Added large environmental typography including ONE, BEGIN, START FROM ZERO, and other hidden references.",
+      "Added an invisible six-step progression system: [0] found nothing, [1] found something, [2] broke a baseline, [3] annoyed a pingu, [4] read the source, [5] reached the end.",
+      "Added a hidden 6/6 completion moment for anyone curious enough to find everything.",
+      "Expanded the Command Palette with secret queries: 0 → 0 results. perfect., 1 → one result: a new beginning., baseline → did you mean: break it?, nothing → you found it.",
+      "Added keyboard interactions: 0 → giant zero overlay + Zero Mode, 1 → white flash + One Mode, F → forking reality... permission denied.",
+      "Made the logo unnecessarily interactive: 2s hover → yes. still., 7 clicks → ego: NaN, 10 clicks → click_count = 10 / productivity = 0, double click → ilovebaselines → no.",
+      "Added project-page whispers including: some survived., things I broke first., baseline detected., baseline broken.",
+      "Added draggable-pingu project reviews: code review initiated. 🐧",
+      "Added Open Source / Licenses easter eggs: closed source detected: 0, good., fork me. I dare you., as it should be., beautiful., lawyers were here.",
+      "Added a five-click MIT license interaction because apparently that was necessary.",
+      "Added hidden Blog search responses and fake results for: nothing, 1, penguin.",
+      "Added a slow-scroll hidden post: you weren't supposed to find this.",
+      "Added an interactive version-history descent back to: v0.0 initial commit. added nothing. broke nothing. started anyway.",
+      "Added the permanent end-of-timeline release: v∞ still unfinished.",
+      "Exposed a tiny DevTools API: window.ihatebaselines.zero(), window.ihatebaselines.one(), window.ihatebaselines.pingu().",
+      "Added footer idle messages: 3s → ...still here?, 6s → seriously?, 9s → fine. +1 curiosity.",
+      "Added 0 rights reserved. → 1 chance reserved. hover interaction.",
+      "Added a minimalist loading screen built around the site name and a fading 0.",
+      "Removed all explicit scroll down labels and arrows."
     ]
   },
   {
     "version": "v2.0",
-    "date": "2026-05-18",
-    "title": "ROAI Prelot Problem Setter & Selection Camp",
-    "tag": "Olympiad & Design",
+    "date": "2026-08-26",
+    "title": "Algorithms to Neurons & TheWall",
+    "tag": "Competition & Features",
     "tagType": "competition",
-    "summary": "Designed 'Funtime Beach' model-based RL problem for ROAI Prelot and competed in the Selection Camp Qualifier.",
+    "summary": "A competition win, a permanent collaborative canvas, and a much better way to move around the site.",
+    "quote": "build things.\nleave traces.",
     "changes": [
-      "Authored original Gymnasium Blackjack-inspired Reinforcement Learning task 'Funtime Beach'.",
-      "Published Selection Camp Qualifier post and strategy review."
+      "Published the complete From Algorithms to Neurons competition write-up.",
+      "Finished 1st place in the AI Competition, Group A.",
+      "Finished 9th place in the accompanying 24-hour hackathon with team Camera 505.",
+      "Added a 13-photo event gallery.",
+      "Added a Facebook-style mosaic layout for event photography.",
+      "Added a 3D coverflow carousel for browsing competition photos.",
+      "Launched TheWall — a permanent live multi-user whiteboard.",
+      "Added continuous board auto-save.",
+      "Added custom drawing colors and board themes.",
+      "Added the global Command Palette (Ctrl / Cmd + K) for search and quick actions.",
+      "Reworked full-screen rendering and scroll behavior for smoother interactions."
+    ]
+  },
+  {
+    "version": "v1.9.5",
+    "date": "2026-08-16",
+    "title": "UNTOLD Emergency",
+    "tag": "Experience",
+    "tagType": "milestone",
+    "summary": "One week behind the scenes at UNTOLD, documented day by day.",
+    "quote": "turns out infrastructure is also a kind of engineering.",
+    "changes": [
+      "Published a seven-day volunteer diary from UNTOLD Emergency in Cluj-Napoca.",
+      "Documented volunteer training and venue preparation around Cluj Arena.",
+      "Added backstage and production-area photography.",
+      "Included moments from live sets and festival operations featuring artists such as Martin Garrix, Steve Aoki, Zara Larsson, and Swae Lee."
+    ]
+  },
+  {
+    "version": "v1.9.3",
+    "date": "2026-07-19",
+    "title": "CEOAI 2026",
+    "tag": "Experience",
+    "tagType": "milestone",
+    "summary": "Five days helping coordinate people, schedules, venues, and everything in between.",
+    "quote": "AI competition, human logistics.",
+    "changes": [
+      "Published my volunteer experience from the Central European Olympiad in Artificial Intelligence.",
+      "Helped coordinate delegations throughout the event.",
+      "Documented activities at the CREIC venue.",
+      "Added highlights from the BMW workshops.",
+      "Added event photography from the delegation gala at Salina Turda."
+    ]
+  },
+  {
+    "version": "v1.9.2",
+    "date": "2026-06-06",
+    "title": "RISE AI Final Round — 2nd Place",
+    "tag": "Competition",
+    "tagType": "competition",
+    "summary": "A stronger final, harder tasks, and a second-place finish.",
+    "quote": "second place.\nstill above the baseline.",
+    "changes": [
+      "Finished 2nd place at the RISE AI Final Round.",
+      "Competed in an international-style AI contest hosted on Nitro-AI Judge.",
+      "Published a breakdown focused on solving ML problems under strict time constraints.",
+      "Added the Nitro-AI scoreboard and competition material to the Work archive."
+    ]
+  },
+  {
+    "version": "v1.9.1",
+    "date": "2026-05-27",
+    "title": "Skillab Innovation Challenge — 1st Place",
+    "tag": "Hackathon",
+    "tagType": "competition",
+    "summary": "Built something useful, shipped it under pressure, and somehow won.",
+    "quote": "idea → prototype → first place.",
+    "changes": [
+      "Won 1st place at the Skillab Innovation Challenge.",
+      "Built Skillab Radar, an AI-assisted labor-market analytics platform.",
+      "Worked around skills data, job-market signals, and regional workforce insights.",
+      "Built the project for the Cluj IT Cluster challenge.",
+      "Published the project repository as open source.",
+      "Took home the €1000 first-place prize."
     ]
   },
   {
     "version": "v1.9",
-    "date": "2026-05-02",
-    "title": "Skillab Innovation Challenge — 1st Place (€1000)",
-    "tag": "Hackathon",
-    "tagType": "competition",
-    "summary": "Won 1st place with team at the Skillab Innovation Challenge with Skillab Radar.",
+    "date": "2026-05-18",
+    "title": "ROAI Prelot — Problem Setter",
+    "tag": "Olympiad & Design",
+    "tagType": "feature",
+    "summary": "For once, I wasn't solving the problem. I was writing it.",
+    "quote": "creating the problem is a different kind of solving.",
     "changes": [
-      "Built Skillab Radar: AI labor market analytics platform for Cluj IT Cluster.",
-      "Linked open-source project repository with €1000 prize award."
+      "Designed Funtime Beach, an original model-based Reinforcement Learning task.",
+      "Built the problem around ideas inspired by Gymnasium's Blackjack environment.",
+      "Contributed the task to Romanian AI Olympiad preparation material.",
+      "Worked on contest environments and evaluation setup."
+    ]
+  },
+  {
+    "version": "v1.8.5",
+    "date": "2026-05-10",
+    "title": "NitroNLP Hackathon — 3rd Place",
+    "tag": "NLP",
+    "tagType": "competition",
+    "summary": "Transformers, time pressure, and one more podium.",
+    "quote": "language models, limited time, unlimited overthinking.",
+    "changes": [
+      "Finished 3rd place at the fifth edition of the NitroNLP Hackathon.",
+      "Competed under the username PretrainedLanguageModel.",
+      "Fine-tuned transformer-based models under contest constraints.",
+      "Evaluated and iterated on submissions through Nitro-AI Judge."
     ]
   },
   {
     "version": "v1.8",
-    "date": "2026-04-25",
-    "title": "NitroNLP Hackathon & ROAI Nationals",
+    "date": "2026-04-16",
+    "title": "ROAI Selection Camp & Nationals",
     "tag": "AI Competition",
     "tagType": "competition",
-    "summary": "3rd place at NitroNLP Hackathon (5th Edition) and Top 19 at the ROAI National Stage.",
+    "summary": "A difficult stretch of competitions and one of the better reality checks.",
+    "quote": "ranking is temporary.\nskill compounds.",
     "changes": [
-      "Competed as PretrainedLanguageModel in fast NLP challenge on Nitro-AI.",
-      "Placed 19th in the National AI Olympiad selection phase."
+      "Finished 33rd in the ROAI Selection Camp Qualifier.",
+      "Reached Top 19 in the national selection stage.",
+      "Competed across machine learning, algorithms, and AI-focused problems.",
+      "Left with a much clearer idea of how much there still is to learn."
     ]
   },
   {
     "version": "v1.5",
     "date": "2026-03-21",
-    "title": "European Statistics Competition (ESC)",
+    "title": "European Statistics Competition",
     "tag": "Competition",
     "tagType": "competition",
-    "summary": "Participated in ESC with team society exploring national statistical datasets and analysis.",
+    "summary": "A detour from models into data, evidence, and interpretation.",
+    "quote": "numbers don't speak for themselves.",
     "changes": [
-      "Explored evidence-based reasoning, official statistics interpretation, and data presentation."
+      "Participated in the European Statistics Competition with team Society.",
+      "Worked with national statistical datasets.",
+      "Explored data interpretation, evidence-based reasoning, and visual presentation.",
+      "Learned that the hardest part of data is often explaining what it actually means."
     ]
   },
   {
     "version": "v1.0",
-    "date": "Friday, July 10, 2026 at 4:49:07 PM",
-    "title": "Official Website Launch 🚀",
+    "date": "2026-07-10 · 16:49:07",
+    "title": "ihatebaselines.com",
     "tag": "Launch",
-    "tagType": "system",
-    "summary": "Official genesis release of ihatebaselines portfolio on Friday, July 10, 2026 at 4:49:07 PM with Catppuccin Mocha aesthetic, smooth physics, interactive pingus, blog, and creative experiments.",
+    "tagType": "milestone",
+    "summary": "The first public version.\n\nNot finished.\nNot particularly sensible.\nBut online.",
+    "quote": "version one is just a baseline.",
     "changes": [
-      "Official genesis release of ihatebaselines portfolio on Friday, July 10, 2026 at 4:49:07 PM.",
-      "Initial launch of ihatebaselines portfolio with custom Catppuccin dark aesthetics.",
-      "Added interactive draggable pingus and horizontal project showcases."
+      "Launched ihatebaselines.com.",
+      "Started with a custom Catppuccin Mocha-inspired dark theme.",
+      "Added draggable pingus.",
+      "Added the first Work and Blog sections.",
+      "Added smooth physics and small interactive experiments.",
+      "Shipped the first public version of what would eventually become this site."
     ]
   }
 ]

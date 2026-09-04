@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import styles from "@/app/page.module.css";
 import ContactModal from "@/components/ContactModal";
@@ -16,8 +16,12 @@ export default function Navbar({
 }) {
   const [contactOpen, setContactOpen] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
-
   const [menuOpen, setMenuOpen] = useState(false);
+  const [brandText, setBrandText] = useState("ihatebaselines");
+
+  const logoHoverTimer = useRef<NodeJS.Timeout | null>(null);
+  const clickCountRef = useRef(0);
+  const clickResetTimer = useRef<NodeJS.Timeout | null>(null);
 
   let megaMenuTimeout: NodeJS.Timeout;
 
@@ -32,15 +36,71 @@ export default function Navbar({
     }, 150);
   };
 
+  const handleLogoMouseEnter = () => {
+    logoHoverTimer.current = setTimeout(() => {
+      setBrandText("yes. still.");
+    }, 2000);
+  };
+
+  const handleLogoMouseLeave = () => {
+    if (logoHoverTimer.current) clearTimeout(logoHoverTimer.current);
+    if (brandText === "yes. still.") {
+      setBrandText("ihatebaselines");
+    }
+  };
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    clickCountRef.current += 1;
+    const count = clickCountRef.current;
+
+    if (clickResetTimer.current) clearTimeout(clickResetTimer.current);
+    clickResetTimer.current = setTimeout(() => {
+      clickCountRef.current = 0;
+      setBrandText("ihatebaselines");
+    }, 3000);
+
+    if (count === 7) {
+      setBrandText("ego: NaN");
+    } else if (count >= 10) {
+      setBrandText("click_count = 10 / productivity = 0");
+    }
+  };
+
+  const handleLogoDoubleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setBrandText("ilovebaselines");
+    setTimeout(() => {
+      setBrandText("no.");
+      setTimeout(() => {
+        setBrandText("ihatebaselines");
+      }, 1200);
+    }, 1000);
+  };
+
   return (
     <>
       <nav className={styles.navBar} aria-label="Main navigation">
         <div className={styles.navLeft}>
-          <Link className={styles.navBrand} href="/">
-            <div className={styles.navLogoContainer}>
+          <Link
+            href="/"
+            className={styles.navBrand}
+            onMouseEnter={handleLogoMouseEnter}
+            onMouseLeave={handleLogoMouseLeave}
+            onClick={handleLogoClick}
+            onDoubleClick={handleLogoDoubleClick}
+          >
+            <div
+              className={styles.navLogoContainer}
+              title="0 is still a number."
+            >
               <img src="/images/pingu.png" alt="Pingu logo" className={styles.navLogo} />
             </div>
-            <span className={styles.navBrandText}>ihatebaselines</span>
+            <span
+              className={styles.navBrandText}
+              title="yes. I really do."
+            >
+              {brandText}
+            </span>
           </Link>
         </div>
 
@@ -62,6 +122,7 @@ export default function Navbar({
           <Link href="/wall" className={styles.navLinkText}>TheWall</Link>
           <Link href="/projects" className={styles.navLinkText}>Projects</Link>
           <Link href="/opensource" className={styles.navLinkText}>Open Source</Link>
+          <Link href="/licenses" className={styles.navLinkText}>Licenses</Link>
           <Link href="/blog" className={styles.navLinkText}>Blog</Link>
           <Link href="/changelog" className={styles.navLinkText}>Updates</Link>
         </div>
@@ -98,6 +159,7 @@ export default function Navbar({
           <Link href="/wall" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>🎨 TheWall</Link>
           <Link href="/projects" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>Projects</Link>
           <Link href="/opensource" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>Open Source</Link>
+          <Link href="/licenses" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>⚖️ Licenses</Link>
           <Link href="/blog" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>Blog</Link>
           <Link href="/changelog" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>📜 Changelog</Link>
           <button className={`${styles.mobileNavLink} ${styles.mobileNavContactBtn}`} onClick={() => { setMenuOpen(false); setContactOpen(true); }}>Contact</button>
