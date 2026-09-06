@@ -558,6 +558,18 @@
   gap: 12px;
 }
 
+.mobileMenuLabel {
+  color: var(--text-muted);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+}
+
+.mobileMenuWork {
+  display: contents;
+}
+
 .mobileNavLink {
   display: block;
   padding: 12px 0;
@@ -659,7 +671,7 @@
 .hero h1 {
   max-width: 1120px;
   font-family: var(--font-title);
-  font-size: clamp(64px, 13vw, 184px);
+  font-size: clamp(64px, 7.2vw, 128px);
   font-weight: 900;
   line-height: 0.92;
   text-transform: lowercase;
@@ -679,7 +691,7 @@
 
 .heroCopy > p:not(.kicker) {
   max-width: 680px;
-  font-size: clamp(16px, 1.8vw, 22px);
+  font-size: clamp(16px, 1.15vw, 18px);
   font-weight: 500;
   line-height: 1.4;
   color: var(--text-muted);
@@ -5668,7 +5680,7 @@
   flex-direction: column;
   align-items: center;
   font-family: var(--font-jetbrains-mono, var(--font-title), monospace);
-  font-size: clamp(4.5rem, 11vw, 9.5rem);
+  font-size: clamp(4.5rem, 7.2vw, 8rem);
   font-weight: 700;
   line-height: 0.92;
   letter-spacing: -0.04em;
@@ -5678,7 +5690,7 @@
 
 .heroSubtitleNew {
   font-family: var(--font-jetbrains-mono, var(--font), monospace);
-  font-size: clamp(15px, 1.6vw, 18px);
+  font-size: clamp(14px, 1.15vw, 17px);
   color: #888;
   line-height: 1.6;
   max-width: 640px;

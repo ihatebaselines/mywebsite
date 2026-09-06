@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar";
-import InfiniteWall from "@/components/InfiniteWall";
 import styles from "@/app/page.module.css";
 
 export const metadata = {
@@ -9,11 +8,19 @@ export const metadata = {
 
 export default function WallPage() {
   return (
-    <main className={styles.page} style={{ overflow: "hidden", height: "100vh" }}>
+    <main className={styles.page}>
       <Navbar backHref="/" backLabel="Back to Home" />
-
-      <div className={styles.wallPageContainer}>
-        <InfiniteWall />
+      <section className={styles.pageHero}>
+        <div className={styles.sectionHeader} data-reveal>
+          <p>TheWall</p>
+          <h1>temporarily offline.</h1>
+          <span className={styles.pageHeroSub}>
+            The wall is taking a little break. Come back later — the blank
+            space is intentional.
+          </span>
+        </div>
+      </section>
+      <div style={{ minHeight: "40vh" }}>
       </div>
     </main>
   );

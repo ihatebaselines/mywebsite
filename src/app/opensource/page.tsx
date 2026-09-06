@@ -50,7 +50,7 @@ export default function OpenSourcePage() {
           <h1 data-split-heading>code in the open</h1>
           <span className={styles.pageHeroSub}>
             Repos, tools, and experiments that are publicly available on
-            GitHub. Contributions welcome. Press [F] to fork reality.
+            GitHub. Contributions welcome.
           </span>
         </div>
       </section>

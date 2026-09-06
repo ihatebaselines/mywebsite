@@ -118,12 +118,10 @@ export default function Navbar({
               onMouseLeave={handleMouseLeave}
             />
           </div>
-          
-          <Link href="/wall" className={styles.navLinkText}>TheWall</Link>
+          <Link href="/blog" className={styles.navLinkText}>Blog</Link>
           <Link href="/projects" className={styles.navLinkText}>Projects</Link>
           <Link href="/opensource" className={styles.navLinkText}>Open Source</Link>
           <Link href="/licenses" className={styles.navLinkText}>Licenses</Link>
-          <Link href="/blog" className={styles.navLinkText}>Blog</Link>
           <Link href="/changelog" className={styles.navLinkText}>Updates</Link>
         </div>
 
@@ -156,12 +154,15 @@ export default function Navbar({
 
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ""}`}>
         <div className={styles.mobileMenuInner}>
-          <Link href="/wall" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>🎨 TheWall</Link>
+          <div className={styles.mobileMenuLabel}>MENU</div>
+          <div className={styles.mobileMenuWork}>
+            <Link href="/work" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>Work</Link>
+          </div>
+          <Link href="/blog" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>Blog</Link>
           <Link href="/projects" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>Projects</Link>
           <Link href="/opensource" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>Open Source</Link>
           <Link href="/licenses" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>⚖️ Licenses</Link>
-          <Link href="/blog" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>Blog</Link>
-          <Link href="/changelog" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>📜 Changelog</Link>
+          <Link href="/changelog" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>Updates</Link>
           <button className={`${styles.mobileNavLink} ${styles.mobileNavContactBtn}`} onClick={() => { setMenuOpen(false); setContactOpen(true); }}>Contact</button>
         </div>
       </div>

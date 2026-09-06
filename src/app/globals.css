@@ -3,8 +3,8 @@
 /* ─── MONOCHROME TERMINAL DESIGN SYSTEM (from purcar.me) ─── */
 :root {
   /* Purcar.me Core Tokens */
-  --bg: #201d1d;
-  --bg-secondary: #1a1717;
+  --bg: #121212;
+  --bg-secondary: #0f0f0f;
   --bg-hover: #2a2626;
   --bg-active: #302c2c;
   --border: rgba(245, 240, 235, 0.10);
@@ -17,7 +17,7 @@
   --font: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
   /* Compatibility bindings for ihateb components */
-  --background: #201d1d;
+  --background: #121212;
   --foreground: #f5f0eb;
   --accent-soft: rgba(245, 240, 235, 0.10);
   --surface: rgba(245, 240, 235, 0.035);
@@ -211,12 +211,12 @@ img {
 }
 
 [data-theme="one"] body {
-  background: #f8f7f5 !important;
+  background: #fbfaf8 !important;
   color: #111111 !important;
 }
 
 [data-theme="one"] .page,
 [data-theme="one"] main {
-  background: #f8f7f5 !important;
+  background: #fbfaf8 !important;
   color: #111111 !important;
 }
