@@ -96,18 +96,6 @@
     "description": "A growing collection of useful helpers, camera controls, shaders, and abstractions for React Three Fiber."
   },
   {
-    "name": "@supabase/supabase-js",
-    "version": "2.112.4",
-    "license": "MIT",
-    "licenseUrl": "https://github.com/supabase/supabase-js/blob/master/LICENSE",
-    "category": "Backend & Database",
-    "author": "Supabase, Inc.",
-    "website": "https://supabase.com",
-    "repository": "https://github.com/supabase/supabase-js",
-    "npm": "https://www.npmjs.com/package/@supabase/supabase-js",
-    "description": "Isomorphic JavaScript client for Supabase. Powers live real-time synchronization, persistence, and presence for TheWall whiteboard."
-  },
-  {
     "name": "Lucide React",
     "version": "1.23.0",
     "license": "ISC",

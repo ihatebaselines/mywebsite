@@ -4,6 +4,7 @@ export type ProjectItem = {
   description: string;
   tags: string[];
   image: string;
+  gallery?: string[];
   repoUrl?: string;
   liveUrl?: string;
   date: string;

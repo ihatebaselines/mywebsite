@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
 import LicensesClient, { LicenseItem } from "./LicensesClient";
+import { PageIntro } from "@/components/SiteCards";
 import rawLicensesData from "@/content/licensesData.json";
 
 export const metadata: Metadata = {
@@ -12,10 +12,5 @@ export const metadata: Metadata = {
 export default function LicensesPage() {
   const licensesData = rawLicensesData as LicenseItem[];
 
-  return (
-    <>
-      <Navbar backHref="/" backLabel="Home" />
-      <LicensesClient initialLicenses={licensesData} />
-    </>
-  );
+  return <main className="site-main"><PageIntro eyebrow="open source attributions · 05" title="open source licenses" description="The tools and libraries that power this site. Built by an amazing open-source community." aside="fewer barriers. more builders." /><LicensesClient initialLicenses={licensesData} /></main>;
 }

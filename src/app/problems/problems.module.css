@@ -1,0 +1,43 @@
+.main {
+  display: flex;
+  align-items: center;
+  min-height: min(790px, calc(100svh - 76px));
+  padding-top: 48px;
+  padding-bottom: 72px;
+}
+
+.hero {
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.02fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 76px);
+}
+
+.copy { max-width: 720px; }
+.eyebrow { display: flex; align-items: center; gap: 10px; margin: 0; color: var(--accent); font-size: .76rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+.eyebrow span { color: var(--quiet); }
+.copy h1 { margin: 22px 0 24px; font-size: clamp(3.4rem, 6vw, 7.4rem); font-weight: 800; letter-spacing: -.105em; line-height: .99; }
+.copy h1 span { color: var(--accent); }
+.lede { max-width: 630px; margin: 0; font-size: clamp(1.05rem, 1.55vw, 1.38rem); line-height: 1.65; }
+.description { max-width: 590px; margin: 22px 0 0; color: var(--muted); font-size: .9rem; line-height: 1.85; }
+.status { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; width: fit-content; margin-top: 30px; padding: 10px 13px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); color: var(--muted); font-size: .71rem; }
+.status strong { margin-left: 5px; color: var(--accent-dark); font-weight: 600; }
+.statusDot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.note { margin: 22px 0 0; color: var(--accent-dark); font-size: .77rem; }
+.visual { position: relative; width: 100%; min-height: 390px; aspect-ratio: 1.12; margin: 0; }
+.visual img { object-fit: contain; }
+
+@media (max-width: 760px) {
+  .main { min-height: 0; padding-top: 54px; padding-bottom: 56px; }
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .copy h1 { margin: 17px 0 18px; font-size: clamp(3.15rem, 13vw, 5.5rem); }
+  .description { margin-top: 16px; }
+  .status { margin-top: 23px; }
+  .visual { min-height: 0; aspect-ratio: 1.05; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .visual img { animation: settle-in 700ms cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes settle-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+}

@@ -2,6 +2,7 @@ export type WorkItem = {
   slug: string;
   title: string;
   date: string;
+  result?: string;
   tag: string;
   summary: string;
   image: string;

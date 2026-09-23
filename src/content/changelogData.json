@@ -1,45 +1,11 @@
 [
   {
-    "version": "v2.6.7",
-    "date": "2026-09-04",
-    "title": "Two Modes, One Site",
-    "tag": "Major Release",
-    "tagType": "feature",
-    "summary": "Introduced a complete dual-mode architecture built around the idea of 0 → 1.\n\n0 is the origin: dark, empty, baseline.\n1 is the first departure from it: light, movement, a new beginning.\n\nAlongside the redesign came a persistent progression system, hidden interactions, console commands, and a site-wide collection of easter eggs.",
-    "quote": "Zero is where you are.\nOne is proof you moved.",
-    "changes": [
-      "Added Zero Mode — the original dark / void-inspired theme.",
-      "Added One Mode — a full white theme built around “1 means begin again.”",
-      "Added cinematic 0 → 1 and 1 → 0 transitions across the entire site.",
-      "Added persistent mode state through localStorage.",
-      "Added large environmental typography including ONE, BEGIN, START FROM ZERO, and other hidden references.",
-      "Added an invisible six-step progression system: [0] found nothing, [1] found something, [2] broke a baseline, [3] annoyed a pingu, [4] read the source, [5] reached the end.",
-      "Added a hidden 6/6 completion moment for anyone curious enough to find everything.",
-      "Expanded the Command Palette with secret queries: 0 → 0 results. perfect., 1 → one result: a new beginning., baseline → did you mean: break it?, nothing → you found it.",
-      "Added keyboard interactions: 0 → giant zero overlay + Zero Mode, 1 → white flash + One Mode, F → forking reality... permission denied.",
-      "Made the logo unnecessarily interactive: 2s hover → yes. still., 7 clicks → ego: NaN, 10 clicks → click_count = 10 / productivity = 0, double click → ilovebaselines → no.",
-      "Added project-page whispers including: some survived., things I broke first., baseline detected., baseline broken.",
-      "Added draggable-pingu project reviews: code review initiated. 🐧",
-      "Added Open Source / Licenses easter eggs: closed source detected: 0, good., fork me. I dare you., as it should be., beautiful., lawyers were here.",
-      "Added a five-click MIT license interaction because apparently that was necessary.",
-      "Added hidden Blog search responses and fake results for: nothing, 1, penguin.",
-      "Added a slow-scroll hidden post: you weren't supposed to find this.",
-      "Added an interactive version-history descent back to: v0.0 initial commit. added nothing. broke nothing. started anyway.",
-      "Added the permanent end-of-timeline release: v∞ still unfinished.",
-      "Exposed a tiny DevTools API: window.ihatebaselines.zero(), window.ihatebaselines.one(), window.ihatebaselines.pingu().",
-      "Added footer idle messages: 3s → ...still here?, 6s → seriously?, 9s → fine. +1 curiosity.",
-      "Added 0 rights reserved. → 1 chance reserved. hover interaction.",
-      "Added a minimalist loading screen built around the site name and a fading 0.",
-      "Removed all explicit scroll down labels and arrows."
-    ]
-  },
-  {
     "version": "v2.0",
     "date": "2026-08-26",
-    "title": "Algorithms to Neurons & TheWall",
+    "title": "Algorithms to Neurons",
     "tag": "Competition & Features",
     "tagType": "competition",
-    "summary": "A competition win, a permanent collaborative canvas, and a much better way to move around the site.",
+    "summary": "A competition win, a detailed write-up, and a much better way to move around the site.",
     "quote": "build things.\nleave traces.",
     "changes": [
       "Published the complete From Algorithms to Neurons competition write-up.",
@@ -48,9 +14,6 @@
       "Added a 13-photo event gallery.",
       "Added a Facebook-style mosaic layout for event photography.",
       "Added a 3D coverflow carousel for browsing competition photos.",
-      "Launched TheWall — a permanent live multi-user whiteboard.",
-      "Added continuous board auto-save.",
-      "Added custom drawing colors and board themes.",
       "Added the global Command Palette (Ctrl / Cmd + K) for search and quick actions.",
       "Reworked full-screen rendering and scroll behavior for smoother interactions."
     ]

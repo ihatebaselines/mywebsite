@@ -4,12 +4,10 @@ import React, { useState, useEffect, useMemo, useCallback, useRef } from "react"
 import { useRouter } from "next/navigation";
 import {
   Search,
-  Command,
   Trophy,
   BookOpen,
   FolderGit2,
   FileCode,
-  PenTool,
   History,
   Copy,
   Check,
@@ -23,9 +21,6 @@ import postsData from "@/content/postsData.json";
 import awardsData from "@/content/awardsData.json";
 import projectsData from "@/content/projectsData.json";
 import opensourceData from "@/content/opensourceData.json";
-import changelogData from "@/content/changelogData.json";
-import { setSiteTheme } from "@/lib/theme";
-import { unlockAchievement } from "@/lib/progression";
 import styles from "@/app/page.module.css";
 
 interface PaletteItem {
@@ -56,20 +51,11 @@ export default function CommandPalette() {
       {
         id: "nav-home",
         title: "Home",
-        subtitle: "Back to main overview and interactive pingus",
+        subtitle: "Portfolio home and recent work",
         category: "Navigation",
         icon: <Compass size={16} />,
         url: "/",
         badge: "Page",
-      },
-      {
-        id: "nav-wall",
-        title: "TheWall",
-        subtitle: "Permanent live whiteboard, draw doodles & leave signed notes",
-        category: "Navigation",
-        icon: <PenTool size={16} />,
-        url: "/wall",
-        badge: "Interactive",
       },
       {
         id: "nav-changelog",
@@ -97,6 +83,15 @@ export default function CommandPalette() {
         icon: <FolderGit2 size={16} />,
         url: "/work",
         badge: "Work",
+      },
+      {
+        id: "nav-problems",
+        title: "Problems & Solutions",
+        subtitle: "Competition problems, writeups, and source code",
+        category: "Navigation",
+        icon: <FileCode size={16} />,
+        url: "/problems",
+        badge: "Soon",
       },
       {
         id: "nav-projects",
@@ -215,73 +210,6 @@ export default function CommandPalette() {
     if (!q) {
       // Default top suggestions
       return allItems.slice(0, 12);
-    }
-
-    // Easter egg queries
-    if (q === "0") {
-      return [
-        {
-          id: "easter-egg-0",
-          title: "0 results. perfect.",
-          subtitle: "The origin remains unaltered. Click to set Zero Mode.",
-          category: "Actions" as const,
-          icon: <Sparkles size={16} color="#10b981" />,
-          action: () => {
-            setSiteTheme("zero", true);
-            unlockAchievement(0);
-          },
-          badge: "0 Mode",
-        },
-      ];
-    }
-
-    if (q === "1") {
-      return [
-        {
-          id: "easter-egg-1",
-          title: "one result: a new beginning.",
-          subtitle: "Click or press Enter to activate One Mode (White Theme).",
-          category: "Actions" as const,
-          icon: <Sparkles size={16} color="#f59e0b" />,
-          action: () => {
-            setSiteTheme("one", true);
-            unlockAchievement(1);
-          },
-          badge: "One Mode",
-        },
-      ];
-    }
-
-    if (q === "baseline") {
-      return [
-        {
-          id: "easter-egg-baseline",
-          title: "did you mean: break it?",
-          subtitle: "Never accept the default. Break the baseline.",
-          category: "Actions" as const,
-          icon: <Sparkles size={16} color="#ef4444" />,
-          action: () => {
-            unlockAchievement(2);
-          },
-          badge: "Protocol",
-        },
-      ];
-    }
-
-    if (q === "nothing") {
-      return [
-        {
-          id: "easter-egg-nothing",
-          title: "you found it.",
-          subtitle: "technically, room for everything.",
-          category: "Actions" as const,
-          icon: <Sparkles size={16} color="#a855f7" />,
-          action: () => {
-            unlockAchievement(0);
-          },
-          badge: "Origin",
-        },
-      ];
     }
 
     return allItems
@@ -416,12 +344,12 @@ export default function CommandPalette() {
             <div className={styles.cmdEmpty}>
               <Sparkles size={20} className={styles.cmdEmptyIcon} />
               <p style={{ fontWeight: 700, margin: "0 0 4px", color: "var(--foreground)" }}>
-                0 results. perfect.
+                No results found.
               </p>
               <p style={{ opacity: 0.5, fontSize: "12px", margin: 0 }}>
                 No match for &ldquo;{query}&rdquo;
               </p>
-              <span>Try searching for &quot;1st Place&quot;, &quot;Neurons&quot;, &quot;Wall&quot; or &quot;Discord&quot;</span>
+              <span>Try searching projects, posts, competitions, or pages.</span>
             </div>
           ) : (
             filteredItems.map((item, index) => {
