@@ -25,7 +25,7 @@
 .status strong { margin-left: 5px; color: var(--accent-dark); font-weight: 600; }
 .statusDot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
 .note { margin: 22px 0 0; color: var(--accent-dark); font-size: .77rem; }
-.visual { position: relative; width: 100%; min-height: 390px; aspect-ratio: 1.12; margin: 0; }
+.visual { position: relative; width: 100%; min-height: 390px; aspect-ratio: 1.35; margin: 0; }
 .visual img { object-fit: contain; }
 
 @media (max-width: 760px) {
@@ -34,7 +34,7 @@
   .copy h1 { margin: 17px 0 18px; font-size: clamp(3.15rem, 13vw, 5.5rem); }
   .description { margin-top: 16px; }
   .status { margin-top: 23px; }
-  .visual { min-height: 0; aspect-ratio: 1.05; }
+  .visual { min-height: 0; aspect-ratio: 1.35; }
 }
 
 @media (prefers-reduced-motion: no-preference) {

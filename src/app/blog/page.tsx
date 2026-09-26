@@ -14,7 +14,7 @@ export default function BlogIndexPage() {
   const featured = posts[0];
   return (
     <main className="site-main">
-      <PageIntro eyebrow="notes from the process · 07" title="blog" description="Random thoughts, experiments, and things learned while building on the internet." aside="same curiosity. different day." />
+      <PageIntro eyebrow="notes from the process · 07" title="blog" description="Random thoughts, experiments, and things learned while building on the internet." illustration={{ src: "/images/tilcayo-trust-layout.png", alt: "Tilcayo cat sketching a webpage: trust the layout" }} />
       {featured ? <section className="section-block" aria-label="Featured post">
         <div className="section-head"><div><span className="section-kicker">featured note</span></div><Link className="text-link" href={`/blog/${featured.slug}`}>Read the post <span aria-hidden="true">→</span></Link></div>
         <article className="blog-featured">

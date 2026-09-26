@@ -41,7 +41,7 @@ export default function Home() {
           </div>
         </div>
         <figure className="hero-visual">
-          <Image src="/images/cat-ocean-hero.png" alt="A very relaxed Siamese cat floating on the ocean with a drink and a bottle" fill priority sizes="(max-width: 720px) 100vw, 55vw" />
+          <Image src="/images/tilcayo-home-hero.png" alt="A spotted tilcayo cat floating at sea, with notes about new layouts and good ideas" fill priority sizes="(max-width: 720px) 100vw, 55vw" />
         </figure>
       </section>
 

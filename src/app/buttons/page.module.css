@@ -11,6 +11,15 @@
   margin: 0 auto;
 }
 
+.intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 340px); align-items: center; gap: 24px; }
+.introArt { position: relative; width: 100%; aspect-ratio: 1.4; }
+.introArt img { object-fit: contain; }
+
+@media (max-width: 720px) {
+  .intro { grid-template-columns: minmax(0, 1fr); }
+  .introArt { max-width: 340px; }
+}
+
 .title {
   font-size: 3rem;
   font-weight: 900;

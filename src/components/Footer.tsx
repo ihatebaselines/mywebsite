@@ -17,7 +17,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="footer-topline">
         <Link className="wordmark" href="/">ihatebaselines<span>.</span></Link>
-        <p>curious people build a kinder internet.</p>
+        <p>tilcayo: a tiny wildcat from bolivia’s cloud forests.</p>
       </div>
       <div className="footer-middle">
         <nav aria-label="Footer navigation">

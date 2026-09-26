@@ -6,20 +6,22 @@ export function PageIntro({
   title,
   description,
   aside,
+  illustration,
 }: {
   eyebrow: string;
   title: string;
   description: string;
   aside?: string;
+  illustration?: { src: string; alt: string };
 }) {
   return (
-    <header className="page-intro">
+    <header className={`page-intro${illustration ? " page-intro-illustrated" : ""}`}>
       <div className="page-intro-main">
         <span className="eyebrow">{eyebrow}</span>
         <h1 className="page-title">{title}<span className="title-period">.</span></h1>
         <p className="page-description">{description}</p>
       </div>
-      {aside ? <p className="intro-aside">{aside}</p> : null}
+      {illustration ? <figure className="intro-illustration"><Image src={illustration.src} alt={illustration.alt} fill sizes="(max-width: 720px) 90vw, 35vw" /></figure> : aside ? <p className="intro-aside">{aside}</p> : null}
     </header>
   );
 }

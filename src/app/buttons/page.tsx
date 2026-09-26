@@ -1,14 +1,16 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./page.module.css";
 
 export default function ButtonsShowcase() {
   return (
     <main className={styles.page}>
       <div className={styles.container}>
-        <h1 className={styles.title}>Button Concepts</h1>
-        <p className={styles.subtitle}>
-          Here is a showcase of different button styles. Hover over them!
-        </p>
+        <div className={styles.intro}>
+          <div><h1 className={styles.title}>Button Concepts</h1>
+          <p className={styles.subtitle}>Here is a showcase of different button styles. Hover over them!</p></div>
+          <div className={styles.introArt}><Image src="/images/tilcayo-pixel-perfect.png" alt="Tilcayo cat refining an interface: pixel perfect, mostly" fill sizes="(max-width: 720px) 90vw, 30vw" /></div>
+        </div>
         
         <Link href="/" className={styles.backLink}>← Back to Home</Link>
 

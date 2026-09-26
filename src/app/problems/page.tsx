@@ -29,8 +29,8 @@ export default function ProblemsPage() {
         </div>
         <figure className={styles.visual}>
           <Image
-            src="/images/problems-cat.png"
-            alt="A Siamese cat wearing glasses and thinking over a laptop"
+            src="/images/problems-tilcayo-cat.png"
+            alt="A spotted tilcayo cat wearing glasses and thinking over a laptop"
             fill
             priority
             sizes="(max-width: 760px) 100vw, 55vw"

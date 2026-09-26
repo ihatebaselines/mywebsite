@@ -1,15 +1,17 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   useEffect(() => console.error(error), [error]);
   return (
-    <main className="site-main"><section className="page-intro error-page">
+    <main className="site-main"><section className="page-intro page-intro-illustrated error-page">
       <div><span className="eyebrow">something went wrong</span><h1 className="page-title">let’s try that again<span className="title-period">.</span></h1><p className="page-description">The page hit an unexpected error. Your place here is safe.</p>
         <div className="button-row"><button className="button button-primary" onClick={reset}>Try again →</button><Link className="button" href="/">Back home</Link></div>
       </div>
+      <figure className="intro-illustration"><Image src="/images/tilcayo-404-still-looking.png" alt="Tilcayo cat peeking over a 404 window: still looking" fill priority sizes="(max-width: 720px) 90vw, 35vw" /></figure>
     </section></main>
   );
 }

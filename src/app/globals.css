@@ -126,6 +126,16 @@ img { display: block; max-width: 100%; }
 .explore-card:hover .explore-arrow { transform: translate(2px,-2px); }
 
 .page-intro { display: grid; grid-template-columns: minmax(0,1fr) minmax(190px, 280px); align-items: end; gap: 30px; padding: clamp(70px, 11vw, 152px) 0 clamp(38px, 6vw, 78px); }
+.page-intro-illustrated { grid-template-columns: minmax(0,1fr) minmax(240px, 390px); align-items: center; }
+.intro-illustration { position: relative; width: 100%; aspect-ratio: 1.4; margin: 0; }
+.intro-illustration img { object-fit: contain; }
+.illustrated-end { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 340px); align-items: center; gap: 30px; }
+.illustrated-end .page-description { margin: 8px 0 20px; }
+.illustrated-end figure, .end-sticker { position: relative; width: 100%; aspect-ratio: 1.4; margin: 0; }
+.illustrated-end img, .end-sticker img { object-fit: contain; }
+.end-sticker { max-width: 290px; margin: 44px 0 0 auto; }
+.error-page { min-height: min(650px, calc(100svh - 180px)); }
+.error-page .button { margin-top: 24px; }
 .page-intro-main { max-width: 1080px; }
 .page-title { margin: 18px 0 16px; font-size: clamp(3rem, 8vw, 7.4rem); }
 .page-description { max-width: 860px; margin: 0; color: var(--muted); font-size: clamp(.98rem, 1.3vw, 1.18rem); line-height: 1.7; }
@@ -295,6 +305,10 @@ img { display: block; max-width: 100%; }
   .home-title { margin: 17px 0 15px; font-size: clamp(3.5rem, 15vw, 6rem); }
   .hero-description { margin: 18px 0 23px; font-size: 1rem; }
   .hero-visual { min-height: 0; aspect-ratio: 1.12; }
+  .page-intro-illustrated { grid-template-columns: minmax(0,1fr); }
+  .intro-illustration { justify-self: center; max-width: 390px; }
+  .illustrated-end { grid-template-columns: minmax(0, 1fr); }
+  .illustrated-end figure { max-width: 300px; justify-self: center; }
   .hero-stats { gap: 18px; margin-top: 25px; }
   .home-explore { padding-top: 28px; }
   .home-section { padding-top: 46px; }
