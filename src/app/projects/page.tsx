@@ -12,7 +12,7 @@ export default function ProjectsPage() {
   const featured = getFeaturedProjects();
   return (
     <main className="site-main">
-      <PageIntro eyebrow="things i’ve made · 03" title="things I built" description="A collection of projects, experiments, and small ideas built with curiosity." illustration={{ src: "/images/tilcayo-still-iterating.png", alt: "Tilcayo cat with a laptop and a pile of ideas: still iterating" }} />
+      <PageIntro eyebrow="things i’ve made · 03" title="things I built" description="A collection of projects, experiments, and small ideas built with curiosity." illustration={{ src: "/images/pixel-cat-sunglasses.jpg", alt: "Pixel art Siamese cat wearing red sunglasses" }} />
       {featured.length > 0 ? <section className="listing-grid" aria-label="Featured projects">
         {featured.slice(0, 2).map((project) => <EntryCard key={project.slug} href={`/projects/${project.slug}`} title={project.title} description={project.description} meta={`FEATURED · ${project.date}`} image={project.image} tags={project.tags} featured />)}
       </section> : null}

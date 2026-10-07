@@ -9,7 +9,7 @@ export default function ButtonsShowcase() {
         <div className={styles.intro}>
           <div><h1 className={styles.title}>Button Concepts</h1>
           <p className={styles.subtitle}>Here is a showcase of different button styles. Hover over them!</p></div>
-          <div className={styles.introArt}><Image src="/images/tilcayo-pixel-perfect.png" alt="Tilcayo cat refining an interface: pixel perfect, mostly" fill sizes="(max-width: 720px) 90vw, 30vw" /></div>
+          <div className={styles.introArt}><Image src="/images/pixel-cat-sunglasses.jpg" alt="Pixel art Siamese cat wearing red sunglasses" fill sizes="(max-width: 720px) 90vw, 30vw" /></div>
         </div>
         
         <Link href="/" className={styles.backLink}>← Back to Home</Link>

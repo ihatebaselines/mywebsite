@@ -29,7 +29,7 @@ export default function ProblemsPage() {
         </div>
         <figure className={styles.visual}>
           <Image
-            src="/images/problems-tilcayo-cat.png"
+            src="/images/pixel-cat-bucket.jpg"
             alt="A spotted tilcayo cat wearing glasses and thinking over a laptop"
             fill
             priority

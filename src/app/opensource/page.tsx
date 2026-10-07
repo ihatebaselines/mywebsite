@@ -12,7 +12,7 @@ export default function OpenSourcePage() {
   const featured = items[0];
   return (
     <main className="site-main">
-      <PageIntro eyebrow="code in the open · 04" title="code in the open" description="Tools, templates, and experiments for a more open internet. Small ideas, real code." illustration={{ src: "/images/tilcayo-good-ideas-float.png", alt: "Tilcayo cat floating in a pool ring: good ideas float" }} />
+      <PageIntro eyebrow="code in the open · 04" title="code in the open" description="Tools, templates, and experiments for a more open internet. Small ideas, real code." illustration={{ src: "/images/pixel-cat-icecream.jpg", alt: "Pixel art Siamese cat licking an orange ice cream" }} />
       <section className="section-block" aria-label="Featured repository">
         <div className="section-head"><div><span className="section-kicker">featured repository</span></div>{featured ? <a className="text-link" href="https://github.com/ihatebaselines" target="_blank" rel="noreferrer">View all on GitHub <span aria-hidden="true">→</span></a> : null}</div>
         {featured ? <a className="featured-repo" href={featured.repoUrl} target="_blank" rel="noreferrer">
@@ -26,7 +26,7 @@ export default function OpenSourcePage() {
         <div className="section-head"><div><span className="section-kicker">all repositories</span></div></div>
         <div className="listing-grid three-col">{items.slice(1).map((item) => <ExternalEntryCard key={item.slug} href={item.repoUrl} title={item.name} description={item.description} meta={item.language} tags={item.topics} />)}</div>
       </section> : null}
-      <section className="section-block"><hr className="section-divider" /><div className="illustrated-end"><div><h2>Want to build on it?</h2><p className="page-description">Everything listed here is public. Explore the repositories, open an issue, or fork something and make it your own.</p><a className="button button-primary" href="https://github.com/ihatebaselines" target="_blank" rel="noreferrer">View GitHub profile <span aria-hidden="true">↗</span></a></div><figure><Image src="/images/tilcayo-deployed-somehow.png" alt="Tilcayo cat with shipping boxes: deployed, somehow" fill sizes="(max-width: 720px) 90vw, 28vw" /></figure></div></section>
+      <section className="section-block"><hr className="section-divider" /><div className="illustrated-end"><div><h2>Want to build on it?</h2><p className="page-description">Everything listed here is public. Explore the repositories, open an issue, or fork something and make it your own.</p><a className="button button-primary" href="https://github.com/ihatebaselines" target="_blank" rel="noreferrer">View GitHub profile <span aria-hidden="true">↗</span></a></div><figure><Image src="/images/pixel-cat-tv.jpg" alt="Pixel art Siamese cat relaxing on a red sofa" fill sizes="(max-width: 720px) 90vw, 28vw" /></figure></div></section>
     </main>
   );
 }

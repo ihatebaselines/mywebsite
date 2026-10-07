@@ -12,5 +12,5 @@ export const metadata: Metadata = {
 export default function LicensesPage() {
   const licensesData = rawLicensesData as LicenseItem[];
 
-  return <main className="site-main"><PageIntro eyebrow="open source attributions · 05" title="open source licenses" description="The tools and libraries that power this site. Built by an amazing open-source community." illustration={{ src: "/images/tilcayo-move-it.png", alt: "Tilcayo cat moving a giant cursor: move it -2px" }} /><LicensesClient initialLicenses={licensesData} /></main>;
+  return <main className="site-main"><PageIntro eyebrow="open source attributions · 05" title="open source licenses" description="The tools and libraries that power this site. Built by an amazing open-source community." illustration={{ src: "/images/pixel-cat-rug.jpg", alt: "Pixel art Siamese cat on a patterned rug" }} /><LicensesClient initialLicenses={licensesData} /></main>;
 }

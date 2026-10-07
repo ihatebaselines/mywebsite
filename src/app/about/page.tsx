@@ -12,7 +12,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <main className="site-main">
-      <PageIntro eyebrow="a quick introduction · readme.md" title="readme" description="A student developer building AI, open source, and a better internet." illustration={{ src: "/images/tilcayo-one-last-tweak.png", alt: "Tilcayo cat at a laptop: one last tweak" }} />
+      <PageIntro eyebrow="a quick introduction · readme.md" title="readme" description="A student developer building AI, open source, and a better internet." illustration={{ src: "/images/pixel-cat-rug.jpg", alt: "Pixel art Siamese cat sprawled on a patterned rug" }} />
       <section className="readme-layout">
         <div className="readme-copy">
           <span className="section-kicker">hi, i’m vlad</span>

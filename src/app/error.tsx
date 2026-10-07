@@ -11,7 +11,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
       <div><span className="eyebrow">something went wrong</span><h1 className="page-title">let’s try that again<span className="title-period">.</span></h1><p className="page-description">The page hit an unexpected error. Your place here is safe.</p>
         <div className="button-row"><button className="button button-primary" onClick={reset}>Try again →</button><Link className="button" href="/">Back home</Link></div>
       </div>
-      <figure className="intro-illustration"><Image src="/images/tilcayo-404-still-looking.png" alt="Tilcayo cat peeking over a 404 window: still looking" fill priority sizes="(max-width: 720px) 90vw, 35vw" /></figure>
+      <figure className="intro-illustration"><Image src="/images/pixel-cat-bucket.jpg" alt="Pixel art Siamese cat in a blue food bucket" fill priority sizes="(max-width: 720px) 90vw, 35vw" /></figure>
     </section></main>
   );
 }
