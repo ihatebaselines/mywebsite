@@ -1,5 +1,48 @@
 [
   {
+    "slug": "ccc-2026",
+    "title": "CCC 2026 — School & Data/AI",
+    "date": "2026-10-24",
+    "result": "14th · School / 31st · Data/AI",
+    "tag": "AI Competition & Programming",
+    "summary": "Placed 14th in School and 31st in Data/AI with team PretrainedLanguageModel in an intense edition marked by matchmaking bottlenecks and AI subscription vibecoders.",
+    "image": "/images/ccc.png",
+    "gallery": [
+      "/images/ccc2.png"
+    ],
+    "relatedHref": "/blog/ccc-2026",
+    "body": [
+      "CCC 2026 was a very interesting experience, even though this year we didn't manage to achieve our best results — finishing 31st in Data/AI with team PretrainedLanguageModel and 14th in the School category.",
+      "In the Data/AI track, our progress was heavily impacted by what our team felt was a poorly designed matchmaking system. Because the queue rarely placed us into matches, we were unable to play nearly enough games with our AI — ending up with around 100 matches while other teams had 300–400 matches, and at times waiting 10 minutes without getting into a single match.",
+      "Combined with competitors using paid AI subscriptions ('vibecoders') to generate solutions faster without explicit prompting, we watched our ranking drop from 2nd down to 10th, 20th, and 31st toward the end as we sat out of matchmaking. A similar dynamic with paid AI subscriptions affected the School category as well, where we finished in 14th place."
+    ]
+  },
+  {
+    "slug": "rosdc-2026",
+    "title": "ROSDC 2026",
+    "date": "2026-10-17",
+    "result": "Operations · Condor",
+    "tag": "Space Design Competition",
+    "summary": "Worked on the Operations department in the Romanian Space Design Competition under fictional aerospace company Condor, collaborating with creative students on a complex aerospace engineering proposal.",
+    "image": "/images/rosdc-logo.png",
+    "gallery": [
+      "/images/rosdc-logo.png",
+      "/images/rosdc-condor.png"
+    ],
+    "links": [
+      {
+        "label": "Instagram (@ro.sdc)",
+        "url": "https://www.instagram.com/ro.sdc/",
+        "description": "Official Instagram page of the Romanian Space Design Competition (ROSDC)."
+      }
+    ],
+    "body": [
+      "ROSDC 2026 (Romanian Space Design Competition) was a wonderful experience! Held as an industry-style aerospace engineering and space settlement design simulation, the competition brings high school students together into fictional aerospace companies — such as Condor — to respond to a complex Request for Proposal (RFP) for future space habitats and orbital infrastructure.",
+      "I worked on the Operations side of the project, focusing on how the settlement and systems actually function, scale, and sustain daily life and logistics in space.",
+      "Beyond the engineering challenge itself, the best part of ROSDC 2026 was meeting so many creative people with truly awesome ideas and collaborating under pressure to turn ambitious concepts into a cohesive design pitch."
+    ]
+  },
+  {
     "slug": "algorithms-to-neurons",
     "title": "From Algorithms to Neurons",
     "date": "2026-08-26",

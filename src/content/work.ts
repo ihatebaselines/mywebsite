@@ -11,6 +11,7 @@ export type WorkItem = {
   relatedHref?: string;
   embedUrl?: string;
   repoUrl?: string;
+  links?: { label: string; url: string; description?: string }[];
 };
 
 import workData from "./workData.json";

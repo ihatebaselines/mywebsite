@@ -196,8 +196,8 @@ export default function CommandPalette() {
         subtitle: os.description,
         category: "Projects" as const,
         icon: <FileCode size={16} color="#cba6f7" />,
-        url: os.repoUrl,
-        badge: "Package",
+        url: os.repoUrl || "/opensource",
+        badge: os.repoUrl ? "Package" : "Coming Soon",
       })),
     ];
 

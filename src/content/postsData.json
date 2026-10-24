@@ -1,5 +1,24 @@
 [
   {
+    "slug": "ccc-2026",
+    "title": "CCC 2026 — Matchmaking Bottlenecks & The Era of Vibecoding",
+    "date": "2026-10-24",
+    "category": "Portfolio, AI Competition",
+    "excerpt": "Place School: 14th, Place Data/AI: 31st (with team PretrainedLanguageModel) — a very interesting experience held back by matchmaking issues and paid AI subscriptions.",
+    "shortStory": "CCC 2026 was a very interesting experience where we placed 31st in Data/AI with team PretrainedLanguageModel and 14th in School, heavily impacted by strange matchmaking queues and paid AI subscription vibecoders.",
+    "cover": "/images/ccc.png",
+    "gallery": [
+      "/images/ccc2.png"
+    ],
+    "body": [
+      "Cloudflight Coding Contest (CCC) 2026 was a very interesting experience overall, even though unfortunately this year we didn’t manage to achieve our best results — finishing in 31st place in the Data/AI category with team PretrainedLanguageModel, and 14th place in the School phase.",
+      "From our team's perspective, the biggest obstacle in the Data/AI competition was the matchmaking system, which felt quite poorly balanced. Because the matchmaking queue simply wouldn't put us into games consistently, we couldn't play nearly as many matches with our AI as we should have. By the end, we only had around 100 matches played while other teams had 300 to 400 matches — which was really strange. There were even stretches where we sat for 10 minutes straight without being placed into a single match, which was honestly pretty sad.",
+      "Because we weren't getting matched, our ranking kept sliding down toward the end: after being up in 2nd place, we dropped to 10th, then 20th, and finally 31st.",
+      "On top of the matchmaking issues, there were the paid AI subscriptions ): We found ourselves going up against people paying for premium AI subscriptions that generated everything faster and better without even needing explicit prompts ): That was pretty disheartening to watch.",
+      "In the School category, we also finished in 14th place — largely for the same reason, competing against vibecoders armed with paid AI subscriptions ): Still, despite the frustrations with the matchmaking queue and the current state of AI-assisted vibecoding, competing alongside PretrainedLanguageModel made it a memorable contest."
+    ]
+  },
+  {
     "slug": "from-algorithms-to-neurons",
     "title": "1st Place at From Algorithms to Neurons — AI Competition & Hackathon",
     "date": "2026-08-26",

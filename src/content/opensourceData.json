@@ -7,5 +7,14 @@
     "language": "Python",
     "topics": ["library", "machine-learning", "open-source", "python"],
     "image": "/images/socrate-logo.png"
+  },
+  {
+    "slug": "baddiesmash",
+    "name": "BaddieSmash ( Coming soon )",
+    "description": "Open-source multimodal language architecture (weights will not be released). Currently, BaddieSmash V0.1 is a clean, lightweight model that you can train on image + text datasets to respond with text. The architecture is easily adaptable to video and audio modalities — the BaddieSmash architecture release is coming soon, followed by BaddieSmashStar (currently in beta), the actual interactive agent you can talk to and have execute tasks for you (:",
+    "repoUrl": "",
+    "language": "Python · Multimodal AI",
+    "topics": ["multimodal", "vision-language", "architecture", "baddiesmashstar-agent", "beta", "coming-soon"],
+    "image": "/images/baddiesmash-logo.jpg"
   }
 ]

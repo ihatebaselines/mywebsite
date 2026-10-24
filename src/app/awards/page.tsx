@@ -7,6 +7,8 @@ export const metadata = {
 };
 
 const results: Record<string, string> = {
+  "ccc-2026": "14th + 31st",
+  "rosdc-2026": "Operations",
   "algorithms-to-neurons": "1st + 9th",
   "rise-final": "2nd",
   skillab: "1st",
@@ -16,7 +18,7 @@ const results: Record<string, string> = {
 };
 
 export default function AwardsPage() {
-  const entries = workItems.filter((item) => /competition|hackathon/i.test(item.tag));
+  const entries = workItems.filter((item) => /competition|hackathon|programming|nlp/i.test(item.tag));
   return (
     <main className="site-main">
       <PageIntro eyebrow="showing up and learning · 08" title="recent competitions / hackathons" description="Building in public, learning new things, and occasionally winning stuff." />

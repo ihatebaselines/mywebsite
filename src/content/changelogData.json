@@ -1,5 +1,20 @@
 [
   {
+    "version": "v2.1",
+    "date": "2026-10-24",
+    "title": "CCC 2026, ROSDC 2026 & BaddieSmash",
+    "tag": "Competitions & Open Source",
+    "tagType": "competition",
+    "summary": "Two October competitions — space settlement design at ROSDC and AI/algorithmic battles at CCC 2026 — plus announcing the BaddieSmash multimodal architecture.",
+    "quote": "matchmaking queues, space habitats, and multimodal models.",
+    "changes": [
+      "Added CCC 2026 write-up and results (14th in School, 31st in Data/AI with PretrainedLanguageModel).",
+      "Added ROSDC 2026 (Romanian Space Design Competition) entry where I worked in Operations under Condor.",
+      "Announced BaddieSmash (Coming soon) — an open-source multimodal language architecture (V0.1 image + text to text, adaptable to video/audio) and the upcoming BaddieSmashStar beta agent.",
+      "Updated Open Source and Projects showcases with SocrateX and BaddieSmash imagery."
+    ]
+  },
+  {
     "version": "v2.0",
     "date": "2026-08-26",
     "title": "Algorithms to Neurons",

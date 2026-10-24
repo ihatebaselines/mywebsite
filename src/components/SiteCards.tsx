@@ -64,22 +64,56 @@ export function ExternalEntryCard({
   title,
   description,
   meta,
+  image,
   tags = [],
 }: {
-  href: string;
+  href?: string;
   title: string;
   description: string;
   meta?: string;
+  image?: string;
   tags?: string[];
 }) {
-  return (
-    <a className="entry-card" href={href} target="_blank" rel="noreferrer">
+  const hasRepo = Boolean(href && href.trim().length > 0);
+  const content = (
+    <>
+      {image ? (
+        <div className="entry-image">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            sizes="(max-width: 720px) 90vw, (max-width: 1050px) 45vw, 35vw"
+          />
+        </div>
+      ) : null}
       <div className="repo-card">
-        <div className="repo-card-top"><span>{meta ?? "OPEN SOURCE"}</span><span aria-hidden="true">↗</span></div>
+        <div className="repo-card-top">
+          <span>{meta ?? "OPEN SOURCE"}</span>
+          <span aria-hidden="true">{hasRepo ? "↗" : "⏳"}</span>
+        </div>
         <h3>{title}</h3>
         <p>{description}</p>
-        {tags.length ? <div className="tag-list">{tags.slice(0, 4).map((tag) => <span className="tag" key={tag}>{tag}</span>)}</div> : null}
+        {tags.length ? (
+          <div className="tag-list">
+            {tags.slice(0, 5).map((tag) => (
+              <span className="tag" key={tag}>
+                {tag}
+              </span>
+            ))}
+          </div>
+        ) : null}
       </div>
+    </>
+  );
+
+  if (!hasRepo) {
+    return <article className="entry-card">{content}</article>;
+  }
+
+  return (
+    <a className="entry-card" href={href} target="_blank" rel="noreferrer">
+      {content}
     </a>
   );
 }

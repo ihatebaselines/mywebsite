@@ -1,5 +1,39 @@
 [
   {
+    "id": "ccc-2026",
+    "title": "14th School & 31st Data/AI",
+    "event": "Cloudflight Coding Contest (CCC) 2026",
+    "category": "Algorithms & Data/AI",
+    "date": "2026-10-24",
+    "place": "14th & 31st",
+    "tier": "special",
+    "badge": "⚡ 14th School / 31st AI",
+    "score": "100+ AI Matches",
+    "division": "Team PretrainedLanguageModel",
+    "description": "An intense edition of CCC where we placed 31st in Data/AI (with team PretrainedLanguageModel) and 14th in School, battling severe matchmaking bottlenecks (~100 matches vs. 300–400 for others, with 10-minute queue gaps) and paid-subscription AI vibecoders.",
+    "links": [
+      { "label": "Blog Post", "url": "/blog/ccc-2026" }
+    ],
+    "tags": ["Cloudflight", "Data/AI", "PretrainedLanguageModel", "Competitive Coding"]
+  },
+  {
+    "id": "rosdc-2026",
+    "title": "Operations Department — Condor",
+    "event": "ROSDC 2026 (Romanian Space Design Competition)",
+    "category": "Space Design Competition",
+    "date": "2026-10-17",
+    "place": "Operations",
+    "tier": "special",
+    "badge": "🚀 Operations · Condor",
+    "score": "Aerospace RFP Simulation",
+    "division": "Condor Company — Operations",
+    "description": "A wonderful experience working on the Operations side of an industry-style space settlement design competition, meeting lots of creative people with awesome ideas.",
+    "links": [
+      { "label": "Instagram", "url": "https://www.instagram.com/ro.sdc/" }
+    ],
+    "tags": ["ROSDC", "Space Design", "Operations", "Condor", "Aerospace"]
+  },
+  {
     "id": "algorithms-to-neurons-ai",
     "title": "1st Place — AI Competition",
     "event": "From Algorithms to Neurons",

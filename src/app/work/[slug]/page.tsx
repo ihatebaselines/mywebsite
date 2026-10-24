@@ -20,6 +20,13 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ slu
       <div className="article-body">{item.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
       {item.embedUrl ? <div className="work-embed"><iframe src={item.embedUrl} title={`${item.title} live embed`} loading="lazy" /></div> : null}
       {item.repoUrl ? <a className="entry-card resource-card" href={item.repoUrl} target="_blank" rel="noreferrer"><span className="entry-meta">GITHUB REPOSITORY</span><h2>{item.repoUrl.replace("https://github.com/", "")} ↗</h2><p>Open the implementation, project files, and latest code.</p></a> : null}
+      {item.links?.map((link) => (
+        <a key={link.url} className="entry-card resource-card" href={link.url} target="_blank" rel="noreferrer">
+          <span className="entry-meta">{link.label.toUpperCase()}</span>
+          <h2>{link.url.replace(/^https?:\/\//, "").replace(/\/$/, "")} ↗</h2>
+          {link.description ? <p>{link.description}</p> : null}
+        </a>
+      ))}
       {item.relatedHref ? <p><Link className="button" href={item.relatedHref}>Related post →</Link></p> : null}
       {item.gallery?.length ? <PhotoGallery images={item.gallery} title={`${item.title} Showcase`} /> : null}
     </article></main>
