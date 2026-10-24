@@ -234,7 +234,10 @@ img { display: block; max-width: 100%; }
 .license-card-top { display: flex; justify-content: space-between; gap: 10px; }
 .license-version { color: var(--quiet); font-size: .69rem; }
 .license-links { display: flex; gap: 12px; margin-top: 12px; color: var(--accent-dark); font-size: .69rem; }
-.update-quote { margin-top: 12px !important; color: var(--accent-dark) !important; font-style: italic; }
+.update-quote { margin: 12px 0 0; color: var(--accent-dark); font-style: italic; }
+.update-quote p { margin: 0; color: inherit; }
+.update-quote cite { display: block; margin-top: 5px; font-size: .68rem; font-style: normal; }
+.update-quote cite a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .visually-hidden { position: absolute; overflow: hidden; width: 1px; height: 1px; clip: rect(0,0,0,0); white-space: nowrap; clip-path: inset(50%); }
 
 .update-list { display: grid; gap: 12px; }

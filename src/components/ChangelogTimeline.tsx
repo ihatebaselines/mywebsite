@@ -35,7 +35,7 @@ export default function ChangelogTimeline() {
       {results.length ? <div className="update-list">
         {results.map((item) => <article className="update-card" key={item.version}>
           <div className="update-version"><strong>{item.version}</strong><span>{item.date}</span><span className="tag">{item.tag}</span></div>
-          <div className="update-copy"><h2>{item.title}</h2><p>{item.summary}</p>{item.quote ? <p className="update-quote">“{item.quote}”</p> : null}</div>
+          <div className="update-copy"><h2>{item.title}</h2><p>{item.summary}</p>{item.quote ? <blockquote className="update-quote"><p>“{item.quote}”</p>{item.quoteAuthor ? <cite>{item.quoteSource ? <a href={item.quoteSource} target="_blank" rel="noreferrer">— {item.quoteAuthor}<span aria-hidden="true"> ↗</span></a> : `— ${item.quoteAuthor}`}</cite> : null}</blockquote> : null}</div>
           <ul>{item.changes.map((change, index) => <li key={`${item.version}-${index}`}>{change}</li>)}</ul>
         </article>)}
       </div> : <p className="empty-state">No updates match that search.</p>}

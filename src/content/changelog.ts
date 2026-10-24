@@ -7,6 +7,8 @@ export type ChangelogEntry = {
   summary: string;
   changes: string[];
   quote?: string;
+  quoteAuthor?: string;
+  quoteSource?: string;
 };
 
 import changelogData from "./changelogData.json";
