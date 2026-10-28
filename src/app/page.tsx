@@ -34,7 +34,7 @@ export default function Home() {
             <Link className="button" href="/blog">Read the blog</Link>
             <Link className="button" href="/projects">See projects</Link>
           </div>
-          <p className="hero-note">same curiosity. different day.</p>
+          <p className="hero-note">same curiosity. different day. (unless x + 25·sin(0.05y + φ) kicks in)</p>
           <div className="hero-stats" aria-label="Portfolio at a glance">
             <div className="hero-stat"><strong>{workItems.length}</strong><span>work entries</span></div>
             <div className="hero-stat"><strong>{competitionCount}</strong><span>competitions</span></div>
