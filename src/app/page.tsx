@@ -4,6 +4,8 @@ import { EntryCard, PageIntro } from "@/components/SiteCards";
 import { getFeaturedProjects, projects } from "@/content/projects";
 import { getSortedPosts, posts } from "@/content/posts";
 import { getSortedWork, workItems } from "@/content/work";
+import DrunkTitle from "@/components/home/DrunkTitle";
+import RandomHeroVisual from "@/components/home/RandomHeroVisual";
 
 const destinations = [
   { number: "01", label: "Work", copy: "things i’ve built and shipped.", href: "/work" },
@@ -25,7 +27,7 @@ export default function Home() {
       <section className="home-hero" aria-labelledby="home-title">
         <div className="hero-copy">
           <p className="eyebrow">a student developer, still figuring it out</p>
-          <h1 className="home-title" id="home-title"><span>i hate</span><span>baselines<span className="title-period">.</span></span></h1>
+          <DrunkTitle />
           <p className="hero-description">student developer building AI, open source, and things that start at zero.</p>
           <div className="button-row">
             <Link className="button button-primary" href="/work">View my work <span aria-hidden="true">→</span></Link>
@@ -40,9 +42,7 @@ export default function Home() {
             <div className="hero-stat"><strong>{posts.length}</strong><span>notes & stories</span></div>
           </div>
         </div>
-        <figure className="hero-visual">
-          <Image src="/images/pixel-cat-hero.jpg" alt="A pixel art Siamese cat yelling against a warm orange background" fill priority sizes="(max-width: 720px) 100vw, 55vw" />
-        </figure>
+        <RandomHeroVisual />
       </section>
 
       <section className="home-section home-readme" aria-label="A little about me" data-reveal>
@@ -58,8 +58,31 @@ export default function Home() {
         </article>
       </section>
 
+      <section className="home-section" aria-labelledby="home-igblogs-title" data-reveal>
+        <div className="section-head">
+          <div>
+            <span className="section-kicker">02 / blogs?</span>
+            <h2 id="home-igblogs-title">recent notes & small blogs<span className="title-period">.</span></h2>
+            <p>quick updates, messy prototypes, and things written along the way.</p>
+          </div>
+          <Link className="text-link" href="/blog">View all blogs <span aria-hidden="true">→</span></Link>
+        </div>
+        <div className="listing-grid three-col home-blog-grid">
+          {sortedPosts.slice(0, 3).map((post) => (
+            <EntryCard
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              title={post.title}
+              description={post.excerpt}
+              meta={`${post.category} · ${post.date}`}
+              image={post.cover}
+            />
+          ))}
+        </div>
+      </section>
+
       <section className="home-section" aria-labelledby="home-projects-title" data-reveal>
-        <div className="section-head"><div><span className="section-kicker">02 / projects</span><h2 id="home-projects-title">some things<span className="title-period">.</span></h2><p>projects, experiments, and ideas that somehow worked.</p></div><Link className="text-link" href="/projects">See all projects <span aria-hidden="true">→</span></Link></div>
+        <div className="section-head"><div><span className="section-kicker">03 / projects</span><h2 id="home-projects-title">some things<span className="title-period">.</span></h2><p>projects, experiments, and ideas that somehow worked.</p></div><Link className="text-link" href="/projects">See all projects <span aria-hidden="true">→</span></Link></div>
         <div className="listing-grid home-project-grid">
           {featuredProjects.map((project) => <EntryCard key={project.slug} href={`/projects/${project.slug}`} title={project.title} description={project.description} meta={`PROJECT · ${project.date}`} image={project.image} tags={project.tags} />)}
         </div>

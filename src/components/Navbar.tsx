@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import CommandPalette from "@/components/CommandPalette";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
   { label: "Work", href: "/work" },
@@ -33,7 +34,11 @@ export default function Navbar() {
             return <Link key={link.href} href={link.href} aria-current={active ? "page" : undefined}>{link.label}</Link>;
           })}
         </nav>
-        <div className="header-actions"><CommandPalette /><Link className="header-cta" href="/contact">Let’s talk <span aria-hidden="true">→</span></Link></div>
+        <div className="header-actions">
+          <ThemeToggle />
+          <CommandPalette />
+          <Link className="header-cta" href="/contact">Let’s talk <span aria-hidden="true">→</span></Link>
+        </div>
         <details className="mobile-menu" ref={mobileMenu}>
           <summary className="menu-toggle" aria-label="Toggle navigation menu" aria-controls="mobile-navigation"><span /><span /></summary>
           <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation">

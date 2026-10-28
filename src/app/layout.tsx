@@ -6,11 +6,11 @@ import "lenis/dist/lenis.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ihatebaselines · vlad andrei",
+  title: "ihatebaselines.",
   description: "Portfolio, blog and projects by Vlad Andrei — AI, competitive programming, math.",
   metadataBase: new URL("https://ihatebaselines.com"),
   openGraph: {
-    title: "ihatebaselines · vlad andrei",
+    title: "ihatebaselines.",
     description: "Portfolio, blog and projects by Vlad Andrei — AI, competitive programming, math.",
     url: "https://ihatebaselines.com",
     siteName: "ihatebaselines",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ihatebaselines · vlad andrei",
+    title: "ihatebaselines.",
     description: "Portfolio, blog and projects by Vlad Andrei.",
     images: ["/og-image.png"],
   },
