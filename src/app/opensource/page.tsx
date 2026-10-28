@@ -16,7 +16,7 @@ export default function OpenSourcePage() {
       <section className="section-block" aria-label="Featured repository">
         <div className="section-head"><div><span className="section-kicker">featured repository</span></div>{featured ? <a className="text-link" href="https://github.com/ihatebaselines" target="_blank" rel="noreferrer">View all on GitHub <span aria-hidden="true">→</span></a> : null}</div>
         {featured ? <a className="featured-repo" href={featured.repoUrl || "#"} target={featured.repoUrl ? "_blank" : undefined} rel={featured.repoUrl ? "noreferrer" : undefined}>
-          {featured.image ? <span className="repo-mark" style={{ position: "relative", overflow: "hidden", padding: 0 }}><Image src={featured.image} alt={featured.name} fill sizes="58px" style={{ objectFit: "cover" }} /></span> : <span className="repo-mark" aria-hidden="true">⌘</span>}
+          {featured.image ? <span className="repo-mark" style={{ position: "relative", overflow: "hidden", padding: 0 }}><Image src={featured.image} alt={featured.name} fill sizes="58px" style={{ objectFit: "contain" }} /></span> : <span className="repo-mark" aria-hidden="true">⌘</span>}
           <span><h2>{featured.name}</h2><p>{featured.description}</p><span className="tag-list">{featured.topics.map((topic) => <span className="tag" key={topic}>{topic}</span>)}</span></span>
           <span className="repo-stats">{featured.language}<br />{featured.repoUrl ? "Browse the repository ↗" : "Repository coming soon ⏳"}</span>
         </a> : <p className="empty-state">No repositories are listed here yet.</p>}
