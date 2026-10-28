@@ -1,11 +1,11 @@
 [
   {
-    "slug": "baddiesmash",
-    "title": "Baddie's Mash (Coming soon)",
-    "description": "Open-source multimodal language architecture (weights will not be released). Currently, Baddie's Mash V0.1 is a simple, streamlined model trainable on image + text datasets to generate text responses, with an architecture easily adaptable to video and audio. Soon launching the Baddie's Mash architecture along with Baddie's Mash Star (currently in beta) — the actual interactive agent you can talk to and have complete tasks for you (:",
-    "tags": ["Multimodal AI", "Vision-Language", "Agent", "Beta", "Coming Soon"],
-    "image": "/images/baddiesmash-logo.jpg",
-    "date": "2026-10-24",
+    "slug": "swift-fox",
+    "title": "Swift...? Coming Soon",
+    "description": "\"Not smash, just swift.\" Laying down the genetic code for the upcoming SwiftFox series. As Alan Kay said: 'The best way to predict the future is to invent it.' Streamlined neural foundations, zero bloat, pure velocity. Keep your eyes on the fox.",
+    "tags": ["SwiftFox", "Next-Gen AI", "Neural DNA", "Coming Soon"],
+    "image": "/images/heiheihei.gif",
+    "date": "2026-10-28",
     "featured": true
   },
   {

@@ -9,12 +9,12 @@
     "image": "/images/socrate-logo.png"
   },
   {
-    "slug": "baddiesmash",
-    "name": "Baddie's Mash (Coming soon)",
-    "description": "Open-source multimodal language architecture (weights will not be released). Currently, Baddie's Mash V0.1 is a clean, lightweight model that you can train on image + text datasets to respond with text. The architecture is easily adaptable to video and audio modalities — the Baddie's Mash architecture release is coming soon, followed by Baddie's Mash Star (currently in beta), the actual interactive agent you can talk to and have execute tasks for you (:",
+    "slug": "swift-fox",
+    "name": "Swift...? Coming Soon",
+    "description": "\"Not smash, just swift.\" Something nimble is brewing under the SwiftFox umbrella — lightning-fast architectures and agents designed to outrun the baseline. As Antoine de Saint-Exupéry wrote: 'Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.' Stay swift.",
     "repoUrl": "",
-    "language": "Python · Multimodal AI",
-    "topics": ["multimodal", "vision-language", "architecture", "baddiesmashstar-agent", "beta", "coming-soon"],
-    "image": "/images/baddiesmash-logo.jpg"
+    "language": "Python · SwiftFox AI",
+    "topics": ["swiftfox", "swift", "coming-soon", "agent", "minimalist", "neural-dna"],
+    "image": "/images/heiheihei.gif"
   }
 ]
