@@ -9,12 +9,12 @@
     "image": "/images/socrate-logo.png"
   },
   {
-    "slug": "swift-fox",
-    "name": "Swift...? Coming Soon",
-    "description": "\"Not smash, just swift.\" Something nimble is brewing under the SwiftFox umbrella — lightning-fast architectures and agents designed to outrun the baseline. As Antoine de Saint-Exupéry wrote: 'Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.' Stay swift.",
+    "slug": "swift",
+    "name": "swift...",
+    "description": "\"Not smash, just swift.\" As Jonathan Swift noted: 'May you live all the days of your life.' A quiet prelude — swift, nimble, and always keeping one step ahead of the rest. Stay swift.",
     "repoUrl": "",
-    "language": "Python · SwiftFox AI",
-    "topics": ["swiftfox", "swift", "coming-soon", "agent", "minimalist", "neural-dna"],
+    "language": "Python",
+    "topics": ["swift", "coming-soon"],
     "image": "/images/heiheihei.gif"
   }
 ]

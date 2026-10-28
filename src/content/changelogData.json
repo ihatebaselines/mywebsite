@@ -2,18 +2,18 @@
   {
     "version": "v2.1",
     "date": "2026-10-28",
-    "title": "CCC 2026, ROSDC 2026 & SwiftFox Teaser",
+    "title": "CCC 2026, ROSDC 2026 & swift...",
     "tag": "Competitions & Open Source",
     "tagType": "competition",
-    "summary": "October competitions recap, Condor space settlement design, and an animated neural teaser for the upcoming SwiftFox lineup.",
-    "quote": "Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.",
-    "quoteAuthor": "Antoine de Saint-Exupéry",
-    "quoteSource": "https://en.wikiquote.org/wiki/Antoine_de_Saint-Exup%C3%A9ry",
+    "summary": "October competitions recap, Condor space settlement design, and an animated chromatic teaser.",
+    "quote": "Vision is the art of seeing what is invisible to others.",
+    "quoteAuthor": "Jonathan Swift",
+    "quoteSource": "https://en.wikiquote.org/wiki/Jonathan_Swift",
     "changes": [
       "Added CCC 2026 write-up and results (14th in School, 31st in Data/AI with PretrainedLanguageModel).",
       "Added ROSDC 2026 (Romanian Space Design Competition) entry where I worked in Operations under Condor.",
-      "Teased Swift...? Coming Soon with an animated chromatic DNA loop, hinting at the future SwiftFox models and agents.",
-      "Updated Open Source and Projects showcases with SocrateX and SwiftFox artwork."
+      "Added swift... teaser with an animated chromatic DNA loop.",
+      "Updated Open Source and Projects showcases with SocrateX and swift... artwork."
     ]
   },
   {
