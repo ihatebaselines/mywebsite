@@ -1,5 +1,8 @@
 export type ChangelogEntry = {
   version: string;
+  codename?: string;
+  image?: string;
+  imageGlitch?: string;
   date: string;
   title: string;
   tag: string;

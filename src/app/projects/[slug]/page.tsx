@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -6,6 +7,34 @@ import { getProject, projects } from "@/content/projects";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getProject(slug);
+  if (!project) return {};
+  const imageUrl = project.image ? (project.image.startsWith("http") ? project.image : `https://ihatebaselines.com${project.image}`) : "https://ihatebaselines.com/images/ihatebaselines.jpg";
+  return {
+    title: `${project.title} — ihatebaselines.`,
+    description: project.description || "Project by Vlad Andrei Rus on ihatebaselines.",
+    openGraph: {
+      title: `${project.title} — ihatebaselines.`,
+      description: project.description,
+      url: `https://ihatebaselines.com/projects/${slug}`,
+      images: [
+        {
+          url: imageUrl,
+          alt: project.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} — ihatebaselines.`,
+      description: project.description,
+      images: [imageUrl],
+    },
+  };
 }
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {

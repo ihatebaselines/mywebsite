@@ -5,14 +5,11 @@ import {
   ChevronLeft,
   ChevronRight,
   X,
-  Grid,
-  Layers,
   Maximize2,
   Minimize2,
   ZoomIn,
   ZoomOut,
   Sparkles,
-  LayoutGrid,
 } from "lucide-react";
 import styles from "@/app/page.module.css";
 
@@ -23,12 +20,9 @@ interface PhotoGalleryProps {
 
 export default function PhotoGallery({ images, title = "Event Gallery" }: PhotoGalleryProps) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const [viewMode, setViewMode] = useState<"collage" | "wheel" | "grid">("collage");
-  const [wheelIndex, setWheelIndex] = useState<number>(0);
   const [isZoomed, setIsZoomed] = useState<boolean>(false);
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
 
-  const wheelTrackRef = useRef<HTMLDivElement>(null);
   const lightboxRef = useRef<HTMLDivElement>(null);
   const thumbStripRef = useRef<HTMLDivElement>(null);
 
@@ -95,15 +89,6 @@ export default function PhotoGallery({ images, title = "Event Gallery" }: PhotoG
     [images.length]
   );
 
-  // Wheel view controls
-  const nextWheel = () => {
-    setWheelIndex((prev) => (prev + 1) % images.length);
-  };
-
-  const prevWheel = () => {
-    setWheelIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
-
   // Fullscreen toggler
   const toggleFullscreen = () => {
     if (!document.fullscreenElement) {
@@ -125,7 +110,7 @@ export default function PhotoGallery({ images, title = "Event Gallery" }: PhotoG
 
   return (
     <div className={styles.galleryWrapper}>
-      {/* Gallery Header with View Mode Switcher */}
+      {/* Gallery Header */}
       <div className={styles.galleryHeaderRow}>
         <div className={styles.sectionHeader} style={{ margin: 0 }}>
           <p>Event Gallery</p>
@@ -133,188 +118,28 @@ export default function PhotoGallery({ images, title = "Event Gallery" }: PhotoG
             {title} <span className={styles.galleryCountBadge}>({images.length} photos)</span>
           </h2>
         </div>
-
-        <div className={styles.galleryViewSwitcher}>
-          <button
-            type="button"
-            className={`${styles.viewSwitchBtn} ${viewMode === "collage" ? styles.viewSwitchBtnActive : ""}`}
-            onClick={() => setViewMode("collage")}
-            title="Facebook Collage View"
-          >
-            <LayoutGrid size={15} />
-            <span>Collage</span>
-          </button>
-          <button
-            type="button"
-            className={`${styles.viewSwitchBtn} ${viewMode === "wheel" ? styles.viewSwitchBtnActive : ""}`}
-            onClick={() => setViewMode("wheel")}
-            title="Carousel Wheel View"
-          >
-            <Layers size={15} />
-            <span>Wheel</span>
-          </button>
-          <button
-            type="button"
-            className={`${styles.viewSwitchBtn} ${viewMode === "grid" ? styles.viewSwitchBtnActive : ""}`}
-            onClick={() => setViewMode("grid")}
-            title="All Photos Grid View"
-          >
-            <Grid size={15} />
-            <span>All ({images.length})</span>
-          </button>
-        </div>
       </div>
 
-      {/* ─── 1. FACEBOOK COLLAGE / MOSAIC VIEW ─── */}
-      {viewMode === "collage" && (
-        <div
-          className={`${styles.fbCollageGrid} ${
-            images.length === 1
-              ? styles.fbCollage1
-              : images.length === 2
-              ? styles.fbCollage2
-              : images.length === 3
-              ? styles.fbCollage3
-              : images.length === 4
-              ? styles.fbCollage4
-              : styles.fbCollage5
-          }`}
-        >
-          {showCollage.map((imgSrc, idx) => {
-            const isLast = idx === previewLimit - 1 && remainingCount > 0;
-            return (
-              <div
-                key={idx}
-                className={`${styles.fbCollageItem} ${styles[`fbItem${idx}`] || ""}`}
-                onClick={() => openLightbox(idx)}
-              >
-                <img
-                  src={imgSrc}
-                  alt={`Photo ${idx + 1}`}
-                  loading="lazy"
-                  decoding="async"
-                  className={styles.fbCollageImg}
-                />
-                <div className={styles.fbCollageHoverOverlay}>
-                  <Maximize2 size={22} className={styles.fbHoverIcon} />
-                </div>
-
-                {isLast && (
-                  <div className={styles.fbMoreOverlay}>
-                    <div className={styles.fbMoreContent}>
-                      <span className={styles.fbMoreNumber}>+{remainingCount}</span>
-                      <span className={styles.fbMoreLabel}>view all photos</span>
-                    </div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      )}
-
-      {/* ─── 2. CAROUSEL WHEEL SLIDER VIEW ─── */}
-      {viewMode === "wheel" && (
-        <div className={styles.wheelContainer}>
-          <div className={styles.wheelControlsBar}>
-            <button
-              type="button"
-              className={styles.wheelArrowBtn}
-              onClick={prevWheel}
-              aria-label="Previous image"
-            >
-              <ChevronLeft size={20} />
-            </button>
-            <span className={styles.wheelCounter}>
-              {String(wheelIndex + 1).padStart(2, "0")} / {String(images.length).padStart(2, "0")}
-            </span>
-            <button
-              type="button"
-              className={styles.wheelArrowBtn}
-              onClick={nextWheel}
-              aria-label="Next image"
-            >
-              <ChevronRight size={20} />
-            </button>
-          </div>
-
-          <div className={styles.wheelTrack} ref={wheelTrackRef}>
-            {images.map((imgSrc, idx) => {
-              // Calculate offset relative to wheelIndex for 3D wheel effect
-              const offset = (idx - wheelIndex + images.length) % images.length;
-              const signedOffset = offset > images.length / 2 ? offset - images.length : offset;
-              const isCenter = signedOffset === 0;
-              const isVisible = Math.abs(signedOffset) <= 3;
-              if (!isVisible) return null;
-
-              return (
-                <div
-                  key={idx}
-                  className={`${styles.wheelCard} ${isCenter ? styles.wheelCardCenter : ""}`}
-                  style={{
-                    transform: `perspective(1000px) rotateY(${signedOffset * -14}deg) translateZ(${
-                      isCenter ? "60px" : `${-Math.abs(signedOffset) * 60}px`
-                    }) scale(${isCenter ? 1 : Math.max(0.75, 1 - Math.abs(signedOffset) * 0.12)})`,
-                    opacity: isCenter ? 1 : Math.max(0.35, 1 - Math.abs(signedOffset) * 0.28),
-                    zIndex: 20 - Math.abs(signedOffset),
-                  }}
-                  onClick={() => {
-                    if (isCenter) {
-                      openLightbox(idx);
-                    } else {
-                      setWheelIndex(idx);
-                    }
-                  }}
-                >
-                  <img
-                    src={imgSrc}
-                    alt={`Wheel slide ${idx + 1}`}
-                    loading="lazy"
-                    decoding="async"
-                    className={styles.wheelImg}
-                  />
-                  <div className={styles.wheelCardBadge}>
-                    <span>#{idx + 1}</span>
-                  </div>
-                  {isCenter && (
-                    <button
-                      type="button"
-                      className={styles.wheelClickZoomBtn}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        openLightbox(idx);
-                      }}
-                    >
-                      <Maximize2 size={16} />
-                      <span>Full View</span>
-                    </button>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
-          <div className={styles.wheelPaginationDots}>
-            {images.map((_, idx) => (
-              <button
-                key={idx}
-                type="button"
-                className={`${styles.wheelDot} ${idx === wheelIndex ? styles.wheelDotActive : ""}`}
-                onClick={() => setWheelIndex(idx)}
-                aria-label={`Go to slide ${idx + 1}`}
-              />
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* ─── 3. FULL ALL-PHOTOS GRID VIEW ─── */}
-      {viewMode === "grid" && (
-        <div className={styles.fullPhotoGrid}>
-          {images.map((imgSrc, idx) => (
+      {/* ─── FACEBOOK COLLAGE / MOSAIC VIEW ONLY ─── */}
+      <div
+        className={`${styles.fbCollageGrid} ${
+          images.length === 1
+            ? styles.fbCollage1
+            : images.length === 2
+            ? styles.fbCollage2
+            : images.length === 3
+            ? styles.fbCollage3
+            : images.length === 4
+            ? styles.fbCollage4
+            : styles.fbCollage5
+        }`}
+      >
+        {showCollage.map((imgSrc, idx) => {
+          const isLast = idx === previewLimit - 1 && remainingCount > 0;
+          return (
             <div
               key={idx}
-              className={styles.fullGridItem}
+              className={`${styles.fbCollageItem} ${styles[`fbItem${idx}`] || ""}`}
               onClick={() => openLightbox(idx)}
             >
               <img
@@ -322,18 +147,26 @@ export default function PhotoGallery({ images, title = "Event Gallery" }: PhotoG
                 alt={`Photo ${idx + 1}`}
                 loading="lazy"
                 decoding="async"
-                className={styles.fullGridImg}
+                className={styles.fbCollageImg}
               />
-              <div className={styles.fullGridOverlay}>
-                <span className={styles.fullGridNumber}>#{idx + 1}</span>
-                <Maximize2 size={18} />
+              <div className={styles.fbCollageHoverOverlay}>
+                <Maximize2 size={22} className={styles.fbHoverIcon} />
               </div>
-            </div>
-          ))}
-        </div>
-      )}
 
-      {/* ─── 4. FULLSCREEN INTERACTIVE LIGHTBOX MODAL ─── */}
+              {isLast && (
+                <div className={styles.fbMoreOverlay}>
+                  <div className={styles.fbMoreContent}>
+                    <span className={styles.fbMoreNumber}>+{remainingCount}</span>
+                    <span className={styles.fbMoreLabel}>view all photos</span>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* ─── FULLSCREEN INTERACTIVE LIGHTBOX MODAL ─── */}
       {lightboxIndex !== null && (
         <div
           className={styles.lightboxModal}

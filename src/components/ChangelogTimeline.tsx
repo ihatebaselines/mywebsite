@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import Image from "next/image";
+import { useEffect, useMemo, useState } from "react";
 import { changelog } from "@/content/changelog";
 
 const filters = [
@@ -14,11 +15,22 @@ const filters = [
 export default function ChangelogTimeline() {
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState("all");
+  // 40% chance of glitch images, 60% chance of normal green images on entry
+  const [isGlitch, setIsGlitch] = useState(false);
+
+  useEffect(() => {
+    setIsGlitch(Math.random() < 0.4);
+  }, []);
+
   const results = useMemo(() => {
     const term = query.trim().toLowerCase();
     return changelog.filter((item) => {
       const inCategory = selected === "all" || item.tagType === selected;
-      const inSearch = !term || `${item.title} ${item.summary} ${item.version} ${item.changes.join(" ")}`.toLowerCase().includes(term);
+      const inSearch =
+        !term ||
+        `${item.title} ${item.summary} ${item.version} ${item.codename || ""} ${item.changes.join(" ")}`
+          .toLowerCase()
+          .includes(term);
       return inCategory && inSearch;
     });
   }, [query, selected]);
@@ -26,19 +38,73 @@ export default function ChangelogTimeline() {
   return (
     <div>
       <div className="search-controls">
-        <label style={{ flex: 1 }}><span className="visually-hidden">Search updates</span><input className="search-field" type="search" placeholder="Search updates…" value={query} onChange={(event) => setQuery(event.target.value)} /></label>
-        <span className="search-count">{results.length} / {changelog.length}</span>
+        <label className="search-field-wrap" style={{ flex: 1 }}>
+          <span className="visually-hidden">Search updates</span>
+          <input
+            className="search-field"
+            type="search"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="Search updates by title, date, or topic…"
+          />
+        </label>
+        <span className="search-count">
+          {results.length} / {changelog.length} updates
+        </span>
       </div>
+
       <div className="filter-row" aria-label="Filter updates">
-        {filters.map((filter) => <button className="filter-button" type="button" key={filter.value} aria-pressed={selected === filter.value} onClick={() => setSelected(filter.value)}>{filter.label}</button>)}
+        {filters.map((filter) => (
+          <button
+            className="filter-button"
+            type="button"
+            key={filter.value}
+            aria-pressed={selected === filter.value}
+            onClick={() => setSelected(filter.value)}
+          >
+            {filter.label}
+          </button>
+        ))}
       </div>
-      {results.length ? <div className="update-list">
-        {results.map((item) => <article className="update-card" key={item.version}>
-          <div className="update-version"><strong>{item.version}</strong><span>{item.date}</span><span className="tag">{item.tag}</span></div>
-          <div className="update-copy"><h2>{item.title}</h2><p>{item.summary}</p>{item.quote ? <blockquote className="update-quote"><p>“{item.quote}”</p>{item.quoteAuthor ? <cite>{item.quoteSource ? <a href={item.quoteSource} target="_blank" rel="noreferrer">— {item.quoteAuthor}<span aria-hidden="true"> ↗</span></a> : `— ${item.quoteAuthor}`}</cite> : null}</blockquote> : null}</div>
-          <ul>{item.changes.map((change, index) => <li key={`${item.version}-${index}`}>{change}</li>)}</ul>
-        </article>)}
-      </div> : <p className="empty-state">No updates match that search.</p>}
+
+      {results.length ? (
+        <div className="listing-grid">
+          {results.map((item) => {
+            const currentImg =
+              isGlitch && item.imageGlitch
+                ? item.imageGlitch
+                : item.image || "/images/updates/normal/update_1_0.jpg";
+
+            return (
+              <article className="entry-card" key={item.version}>
+                <div className="entry-card-link">
+                  <div className="entry-image">
+                    <Image
+                      src={currentImg}
+                      alt=""
+                      fill
+                      sizes="(max-width: 720px) 90vw, 45vw"
+                    />
+                  </div>
+                  <div className="entry-copy">
+                    <p className="entry-meta">
+                      {item.tag ? `${item.tag.toUpperCase()} · ` : ""}
+                      {item.date}
+                    </p>
+                    <h2>{item.title}</h2>
+                    <p>{item.summary}</p>
+                    <span className="entry-arrow" aria-hidden="true">
+                      →
+                    </span>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      ) : (
+        <p className="empty-state">No updates match “{query}”. Try another search.</p>
+      )}
     </div>
   );
 }

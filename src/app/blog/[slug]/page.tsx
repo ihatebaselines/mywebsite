@@ -1,4 +1,5 @@
 import React from "react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -7,6 +8,35 @@ import { getPost, posts } from "@/content/posts";
 
 export function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPost(slug);
+  if (!post) return {};
+  const imageUrl = post.cover ? (post.cover.startsWith("http") ? post.cover : `https://ihatebaselines.com${post.cover}`) : "https://ihatebaselines.com/images/ihatebaselines.jpg";
+  const desc = post.excerpt || post.shortStory || "Blog post by Vlad Andrei Rus on ihatebaselines.";
+  return {
+    title: `${post.title} — ihatebaselines.`,
+    description: desc,
+    openGraph: {
+      title: `${post.title} — ihatebaselines.`,
+      description: desc,
+      url: `https://ihatebaselines.com/blog/${slug}`,
+      images: [
+        {
+          url: imageUrl,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} — ihatebaselines.`,
+      description: desc,
+      images: [imageUrl],
+    },
+  };
 }
 
 function renderFormattedParagraph(text: string) {

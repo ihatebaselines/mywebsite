@@ -1,19 +1,27 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useHeroGlitch } from "./heroState";
 
 export default function DrunkTitle() {
+  const isGlitch = useHeroGlitch();
+  const [mounted, setMounted] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isGlitch) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Grid sizes: low-res grid for pixelation
-    const W = 320;
-    const H = 160;
+    // Grid sizes: low-res grid for pixelation (single unified line)
+    const W = 360;
+    const H = 80;
 
     const offscreen = document.createElement("canvas");
     offscreen.width = W;
@@ -73,37 +81,33 @@ export default function DrunkTitle() {
     let prevPhase = -1;
 
     const render = () => {
-      // Lenis smooth scroll momentum interpolation
       currentScroll += (targetScroll - currentScroll) * 0.085;
-
-      // When static (no scroll), phase is fixed! When scrolling, it ripples!
-      const scrollPhase = (currentScroll * 0.012) % (Math.PI * 2);
+      const scrollPhase = (currentScroll * 0.015) % (Math.PI * 2);
 
       if (Math.abs(scrollPhase - prevPhase) > 0.0001) {
         prevPhase = scrollPhase;
 
-        // 1. Draw base text "i hate baselines." on white background
+        // 1. Draw unified base text "ihatebaselines." on white background
         offCtx.fillStyle = "#ffffff";
         offCtx.fillRect(0, 0, W, H);
 
-        offCtx.fillStyle = "#171b20"; // Dark site text color
-        offCtx.font = "800 36px 'JetBrains Mono', monospace";
+        offCtx.fillStyle = "#171b20";
+        offCtx.font = "800 32px 'JetBrains Mono', monospace";
         offCtx.textAlign = "left";
-        offCtx.textBaseline = "top";
+        offCtx.textBaseline = "middle";
 
-        offCtx.fillText("i hate", 10, 16);
-        offCtx.fillText("baselines.", 10, 68);
+        offCtx.fillText("ihatebaselines.", 10, H / 2);
 
         const baseImgData = offCtx.getImageData(0, 0, W, H);
         const basePixels = baseImgData.data;
 
-        // 2. Sinusoidal wave remap with BORDER_REFLECT
+        // 2. Sinusoidal wave remap
         const remappedR = new Uint8Array(W * H);
         const remappedG = new Uint8Array(W * H);
         const remappedB = new Uint8Array(W * H);
 
-        const amp = 8;
-        const freq = 0.07;
+        const amp = 6;
+        const freq = 0.08;
 
         for (let y = 0; y < H; y++) {
           const row = y * W;
@@ -121,25 +125,22 @@ export default function DrunkTitle() {
           }
         }
 
-        // 3. Exact NP.ROLL from the notebook scaled to 320x160
+        // 3. Channel rolls
         R = remappedR;
         G = remappedG;
         B = remappedB;
 
-        B = rollX(B, 18);
-        B = rollX(R, -18);
-        R = rollX(G, -18);
-        B = rollX(G, 18);
+        B = rollX(B, 15);
+        B = rollX(R, -15);
+        R = rollX(G, -15);
+        B = rollX(G, 15);
 
-        R = rollY(B, 7);
+        R = rollY(B, 5);
         G = rollY(G, 2);
+        R = rollY(R, -5);
+        G = rollY(R, 5);
 
-        R = rollY(R, -7);
-        G = rollY(R, 7);
-        G = rollY(R, -4);
-        R = rollY(R, 10);
-
-        // 4. Put into output ImageData with transparent background
+        // 4. Output composite
         const outImgData = offCtx.createImageData(W, H);
         const outPixels = outImgData.data;
 
@@ -153,7 +154,7 @@ export default function DrunkTitle() {
           outPixels[p + 1] = g_val;
           outPixels[p + 2] = b_val;
 
-          // Pure white background becomes transparent so it blends perfectly onto site theme
+          // Pure white background becomes transparent so it blends perfectly
           if (r_val > 245 && g_val > 245 && b_val > 245) {
             outPixels[p + 3] = 0;
           } else {
@@ -163,8 +164,8 @@ export default function DrunkTitle() {
         offCtx.putImageData(outImgData, 0, 0);
 
         // 5. Draw pixelated on main canvas
-        canvas.width = canvas.parentElement?.clientWidth || 550;
-        canvas.height = canvas.parentElement?.clientHeight || 240;
+        canvas.width = canvas.parentElement?.clientWidth || 580;
+        canvas.height = canvas.parentElement?.clientHeight || 95;
 
         ctx.imageSmoothingEnabled = false;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -180,10 +181,35 @@ export default function DrunkTitle() {
       window.removeEventListener("scroll", handleScroll);
       cancelAnimationFrame(animId);
     };
-  }, []);
+  }, [isGlitch]);
 
+  // If not glitch mode (or before mount), render clean text in site green rgb(63, 116, 115)
+  if (!mounted || !isGlitch) {
+    return (
+      <h1
+        className="home-title"
+        style={{
+          color: "rgb(63, 116, 115)",
+          whiteSpace: "nowrap",
+          letterSpacing: "-0.08em",
+        }}
+      >
+        ihatebaselines<span className="title-period">.</span>
+      </h1>
+    );
+  }
+
+  // Glitched mode: render unified animated glitch canvas
   return (
-    <div style={{ position: "relative", width: "100%", maxWidth: "580px", height: "180px", margin: "16px 0 20px" }}>
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        maxWidth: "600px",
+        height: "clamp(60px, 9vw, 95px)",
+        margin: "18px 0 16px",
+      }}
+    >
       <canvas
         ref={canvasRef}
         style={{
@@ -192,7 +218,7 @@ export default function DrunkTitle() {
           height: "100%",
           imageRendering: "pixelated",
         }}
-        aria-label="i hate baselines."
+        aria-label="ihatebaselines."
       />
     </div>
   );

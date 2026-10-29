@@ -14,28 +14,33 @@
       "Added ROSDC 2026 (Romanian Space Design Competition) entry where I worked in Operations under Condor.",
       "Added swift... teaser with an animated chromatic DNA loop.",
       "Updated Open Source and Projects showcases with SocrateX and swift... artwork."
-    ]
+    ],
+    "codename": "swift 1",
+    "image": "/images/updates/normal/update_2_1.jpg",
+    "imageGlitch": "/images/updates/glitch/update_2_1.jpg"
   },
   {
     "version": "v2.0",
     "date": "2026-08-26",
-    "title": "Algorithms to Neurons",
-    "tag": "Competition & Features",
+    "title": "Total Remake — From Algorithms to Neurons",
+    "tag": "Remake & Competition",
     "tagType": "competition",
-    "summary": "A competition win, a detailed write-up, and a much better way to move around the site.",
+    "summary": "A total remake of the entire site from scratch, plus adding a new competition I participated in: From Algorithms to Neurons.",
     "quote": "Talk is cheap. Show me the code.",
     "quoteAuthor": "Linus Torvalds",
     "quoteSource": "https://lkml.org/lkml/2000/8/25/132",
     "changes": [
-      "Published the complete From Algorithms to Neurons competition write-up.",
+      "A total ground-up remake of the website architecture, UI layout, and design system.",
+      "Added a new competition I participated in: From Algorithms to Neurons.",
       "Finished 1st place in the AI Competition, Group A.",
       "Finished 9th place in the accompanying 24-hour hackathon with team Camera 505.",
-      "Added a 13-photo event gallery.",
-      "Added a Facebook-style mosaic layout for event photography.",
-      "Added a 3D coverflow carousel for browsing competition photos.",
+      "Added a 13-photo event gallery with a Facebook-style mosaic collage layout.",
       "Added the global Command Palette (Ctrl / Cmd + K) for search and quick actions.",
-      "Reworked full-screen rendering and scroll behavior for smoother interactions."
-    ]
+      "Reworked rendering and smooth scroll behavior for cleaner interactions."
+    ],
+    "codename": "swift",
+    "image": "/images/updates/normal/update_2_0.jpg",
+    "imageGlitch": "/images/updates/glitch/update_2_0.jpg"
   },
   {
     "version": "v1.9.5",
@@ -52,7 +57,10 @@
       "Documented volunteer training and venue preparation around Cluj Arena.",
       "Added backstage and production-area photography.",
       "Included moments from live sets and festival operations featuring artists such as Martin Garrix, Steve Aoki, Zara Larsson, and Swae Lee."
-    ]
+    ],
+    "codename": "zero 9.5",
+    "image": "/images/updates/normal/update_1_9_5.jpg",
+    "imageGlitch": "/images/updates/glitch/update_1_9_5.jpg"
   },
   {
     "version": "v1.9.3",
@@ -70,7 +78,10 @@
       "Documented activities at the CREIC venue.",
       "Added highlights from the BMW workshops.",
       "Added event photography from the delegation gala at Salina Turda."
-    ]
+    ],
+    "codename": "zero 9.3",
+    "image": "/images/updates/normal/update_1_9_3.jpg",
+    "imageGlitch": "/images/updates/glitch/update_1_9_3.jpg"
   },
   {
     "version": "v1.9.2",
@@ -87,7 +98,10 @@
       "Competed in an international-style AI contest hosted on Nitro-AI Judge.",
       "Published a breakdown focused on solving ML problems under strict time constraints.",
       "Added the Nitro-AI scoreboard and competition material to the Work archive."
-    ]
+    ],
+    "codename": "zero 9.2",
+    "image": "/images/updates/normal/update_1_9_2.jpg",
+    "imageGlitch": "/images/updates/glitch/update_1_9_2.jpg"
   },
   {
     "version": "v1.9.1",
@@ -106,7 +120,10 @@
       "Built the project for the Cluj IT Cluster challenge.",
       "Published the project repository as open source.",
       "Took home the €1000 first-place prize."
-    ]
+    ],
+    "codename": "zero 9.1",
+    "image": "/images/updates/normal/update_1_9_1.jpg",
+    "imageGlitch": "/images/updates/glitch/update_1_9_1.jpg"
   },
   {
     "version": "v1.9",
@@ -123,7 +140,10 @@
       "Built the problem around ideas inspired by Gymnasium's Blackjack environment.",
       "Contributed the task to Romanian AI Olympiad preparation material.",
       "Worked on contest environments and evaluation setup."
-    ]
+    ],
+    "codename": "zero 9",
+    "image": "/images/updates/normal/update_1_9.jpg",
+    "imageGlitch": "/images/updates/glitch/update_1_9.jpg"
   },
   {
     "version": "v1.8.5",
@@ -140,7 +160,10 @@
       "Competed under the username PretrainedLanguageModel.",
       "Fine-tuned transformer-based models under contest constraints.",
       "Evaluated and iterated on submissions through Nitro-AI Judge."
-    ]
+    ],
+    "codename": "zero 8.5",
+    "image": "/images/updates/normal/update_1_8_5.jpg",
+    "imageGlitch": "/images/updates/glitch/update_1_8_5.jpg"
   },
   {
     "version": "v1.8",
@@ -157,7 +180,10 @@
       "Reached Top 19 in the national selection stage.",
       "Competed across machine learning, algorithms, and AI-focused problems.",
       "Left with a much clearer idea of how much there still is to learn."
-    ]
+    ],
+    "codename": "zero 8",
+    "image": "/images/updates/normal/update_1_8.jpg",
+    "imageGlitch": "/images/updates/glitch/update_1_8.jpg"
   },
   {
     "version": "v1.5",
@@ -174,7 +200,10 @@
       "Worked with national statistical datasets.",
       "Explored data interpretation, evidence-based reasoning, and visual presentation.",
       "Learned that the hardest part of data is often explaining what it actually means."
-    ]
+    ],
+    "codename": "zero 5",
+    "image": "/images/updates/normal/update_1_5.jpg",
+    "imageGlitch": "/images/updates/glitch/update_1_5.jpg"
   },
   {
     "version": "v1.0",
@@ -193,6 +222,45 @@
       "Added the first Work and Blog sections.",
       "Added smooth physics and small interactive experiments.",
       "Shipped the first public version of what would eventually become this site."
-    ]
+    ],
+    "codename": "zero",
+    "image": "/images/updates/normal/update_1_0.jpg",
+    "imageGlitch": "/images/updates/glitch/update_1_0.jpg"
+  },
+  {
+    "version": "v0.2",
+    "codename": "hi 2",
+    "date": "2026-06-20",
+    "title": "Interactive Canvas & Physics",
+    "tag": "Prototype",
+    "tagType": "feature",
+    "summary": "Early physics sandbox, draggable UI components, and initial interactive experiments.",
+    "quote": "Simplicity is prerequisite for reliability.",
+    "quoteAuthor": "Edsger W. Dijkstra",
+    "changes": [
+      "Built initial prototype canvas with interactive particle physics.",
+      "Experimented with spring mechanics and custom coordinate mapping.",
+      "Tested layout foundations for upcoming project releases."
+    ],
+    "image": "/images/updates/normal/update_0_2.jpg",
+    "imageGlitch": "/images/updates/glitch/update_0_2.jpg"
+  },
+  {
+    "version": "v0.1",
+    "codename": "hi 1",
+    "date": "2026-06-01",
+    "title": "Genesis",
+    "tag": "Genesis",
+    "tagType": "milestone",
+    "summary": "First commit. Blank screen, a simple 'hello world', and the start of ihatebaselines.",
+    "quote": "The journey of a thousand miles begins with a single step.",
+    "quoteAuthor": "Lao Tzu",
+    "changes": [
+      "Repository initialized at zero.",
+      "Basic Next.js scaffolding created.",
+      "First local test build succeeded."
+    ],
+    "image": "/images/updates/normal/update_0_1.jpg",
+    "imageGlitch": "/images/updates/glitch/update_0_1.jpg"
   }
 ]

@@ -1,16 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useHeroGlitch } from "./heroState";
 
 export default function RandomHeroVisual() {
-  // 50% chance for glitch cat vs 50% for normal pixel cat
-  const [isGlitch, setIsGlitch] = useState(false);
-
-  useEffect(() => {
-    // Determine 50/50 randomly on client mount / page join
-    setIsGlitch(Math.random() < 0.5);
-  }, []);
+  const isGlitch = useHeroGlitch();
 
   return (
     <figure className="hero-visual">

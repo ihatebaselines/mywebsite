@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -6,6 +7,34 @@ import { getWork, workItems } from "@/content/work";
 
 export function generateStaticParams() {
   return workItems.map((item) => ({ slug: item.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const item = getWork(slug);
+  if (!item) return {};
+  const imageUrl = item.image ? (item.image.startsWith("http") ? item.image : `https://ihatebaselines.com${item.image}`) : "https://ihatebaselines.com/images/ihatebaselines.jpg";
+  return {
+    title: `${item.title} — ihatebaselines.`,
+    description: item.summary || "Work entry by Vlad Andrei Rus on ihatebaselines.",
+    openGraph: {
+      title: `${item.title} — ihatebaselines.`,
+      description: item.summary,
+      url: `https://ihatebaselines.com/work/${slug}`,
+      images: [
+        {
+          url: imageUrl,
+          alt: item.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${item.title} — ihatebaselines.`,
+      description: item.summary,
+      images: [imageUrl],
+    },
+  };
 }
 
 export default async function WorkDetailPage({ params }: { params: Promise<{ slug: string }> }) {
