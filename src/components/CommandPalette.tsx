@@ -96,20 +96,11 @@ export default function CommandPalette() {
       {
         id: "nav-projects",
         title: "Projects",
-        subtitle: "Featured research, apps and AI builds",
+        subtitle: "Featured research, apps, AI builds & open source",
         category: "Navigation",
         icon: <FolderGit2 size={16} />,
         url: "/projects",
         badge: "Builds",
-      },
-      {
-        id: "nav-opensource",
-        title: "Open Source",
-        subtitle: "Libraries, SocrateX and GitHub repositories",
-        category: "Navigation",
-        icon: <FileCode size={16} />,
-        url: "/opensource",
-        badge: "GitHub",
       },
       {
         id: "nav-licenses",
@@ -196,7 +187,7 @@ export default function CommandPalette() {
         subtitle: os.description,
         category: "Projects" as const,
         icon: <FileCode size={16} color="#cba6f7" />,
-        url: os.repoUrl || "/opensource",
+        url: os.repoUrl || "/projects#opensource",
         badge: os.repoUrl ? "Package" : "Coming Soon",
       })),
     ];

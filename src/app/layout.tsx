@@ -228,7 +228,8 @@ const jsonLd = {
       },
       "sameAs": [
         "https://github.com/ihatebaselines",
-        "https://instagram.com/ihatebaselines"
+        "https://www.instagram.com/_rusuuu__",
+        "https://www.linkedin.com/in/vladandreirus"
       ]
     },
     {
@@ -347,9 +348,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="theme-color" content="#f7f5ef" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('ihb-theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`,
+          }}
+        />
+        <meta name="theme-color" content="#0b0d0e" />
         <link rel="image_src" href="https://ihatebaselines.com/images/ihatebaselines.jpg" />
         <meta name="author" content="Vlad Andrei Rus" />
         <link

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { changelog } from "@/content/changelog";
 
 const filters = [
@@ -15,12 +15,6 @@ const filters = [
 export default function ChangelogTimeline() {
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState("all");
-  // 40% chance of glitch images, 60% chance of normal green images on entry
-  const [isGlitch, setIsGlitch] = useState(false);
-
-  useEffect(() => {
-    setIsGlitch(Math.random() < 0.4);
-  }, []);
 
   const results = useMemo(() => {
     const term = query.trim().toLowerCase();
@@ -71,9 +65,7 @@ export default function ChangelogTimeline() {
         <div className="listing-grid">
           {results.map((item) => {
             const currentImg =
-              isGlitch && item.imageGlitch
-                ? item.imageGlitch
-                : item.image || "/images/updates/normal/update_1_0.jpg";
+              item.image || "/images/updates/normal/update_1_0.jpg";
 
             return (
               <article className="entry-card" key={item.version}>

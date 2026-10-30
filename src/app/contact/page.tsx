@@ -8,6 +8,7 @@ export const metadata = {
 const socials = [
   { name: "GitHub", detail: "code and open source", href: "https://github.com/ihatebaselines" },
   { name: "LinkedIn", detail: "professional stuff", href: "https://www.linkedin.com/in/vladandreirus" },
+  { name: "Instagram", detail: "@_rusuuu__", href: "https://www.instagram.com/_rusuuu__" },
   { name: "Discord", detail: "find me on Discord", href: "https://discordapp.com/users/934847546432581682" },
   { name: "Email", detail: "the direct route", href: "mailto:rusvlad1010@icloud.com" },
 ];
@@ -15,7 +16,11 @@ const socials = [
 export default function ContactPage() {
   return (
     <main className="site-main">
-      <PageIntro eyebrow="get in touch · 06" title="let’s talk" description="I’d love to hear from you — whether you have a question, an idea, a project, or just want to say hi. I’m always open to interesting conversations and collaborations." illustration={{ src: "/images/pixel-cat-bucket.jpg", alt: "Pixel art Siamese cat in a blue food bucket" }} />
+      <PageIntro
+        eyebrow="get in touch"
+        title="contact"
+        description="I’d love to hear from you — whether you have a question, an idea, a project, or just want to say hi."
+      />
       <section className="contact-panel">
         <div><small>email</small><h2>rusvlad1010@icloud.com</h2><p>Feel free to reach out anytime. I usually reply within a few days.</p></div>
         <a className="button button-primary" href="mailto:rusvlad1010@icloud.com">Send a message <span aria-hidden="true">→</span></a>

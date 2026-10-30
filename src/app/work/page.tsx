@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getSortedWork } from "@/content/work";
 import { EntryCard, PageIntro } from "@/components/SiteCards";
 
@@ -8,13 +9,31 @@ export const metadata = {
 
 export default function WorkPage() {
   const items = getSortedWork();
+
   return (
     <main className="site-main">
-      <PageIntro eyebrow="selected work · 01" title="some things" description="Projects, competitions, experiments, and ideas I’ve worked on. Small things, bigger possibilities." illustration={{ src: "/images/pixel-cat-tv.jpg", alt: "Pixel art Siamese cat lounging with a remote control" }} />
+      <PageIntro
+        eyebrow="selected work & competitions"
+        title="work"
+        description="Projects, competitions, experiments, and ideas I’ve worked on."
+      />
       <section className="listing-grid" aria-label="Work and competition entries">
-        {items.map((item, index) => <EntryCard key={item.slug} href={`/work/${item.slug}`} title={item.title} description={item.summary} meta={`${item.tag} · ${item.date}`} image={item.image} featured={index === 0} />)}
+        {items.map((item) => (
+          <EntryCard
+            key={item.slug}
+            href={`/work/${item.slug}`}
+            title={item.title}
+            description={item.summary}
+            meta={`${item.tag} · ${item.date}`}
+            image={item.image}
+          />
+        ))}
       </section>
-      <div className="section-block"><a className="text-link" href="/awards">A few competition details <span aria-hidden="true">→</span></a></div>
+      <div className="section-block">
+        <Link className="text-link" href="/awards">
+          A few competition details & awards <span aria-hidden="true">→</span>
+        </Link>
+      </div>
     </main>
   );
 }

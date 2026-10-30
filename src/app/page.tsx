@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { EntryCard, PageIntro } from "@/components/SiteCards";
+import { EntryCard } from "@/components/SiteCards";
 import { getFeaturedProjects, projects } from "@/content/projects";
 import { getSortedPosts, posts } from "@/content/posts";
 import { getSortedWork, workItems } from "@/content/work";
@@ -10,10 +10,9 @@ import RandomHeroVisual from "@/components/home/RandomHeroVisual";
 const destinations = [
   { number: "01", label: "Work", copy: "things i’ve built and shipped.", href: "/work" },
   { number: "02", label: "Blog", copy: "thoughts, notes, and experiments.", href: "/blog" },
-  { number: "03", label: "Projects", copy: "small ideas, bigger possibilities.", href: "/projects" },
-  { number: "04", label: "Open Source", copy: "code for a more open internet.", href: "/opensource" },
-  { number: "05", label: "Licenses", copy: "the tools behind this little corner.", href: "/licenses" },
-  { number: "06", label: "Updates", copy: "what changed, and what’s next.", href: "/changelog" },
+  { number: "03", label: "Projects", copy: "small ideas and code in the open.", href: "/projects" },
+  { number: "04", label: "Licenses", copy: "the tools behind this little corner.", href: "/licenses" },
+  { number: "05", label: "Updates", copy: "what changed, and what’s next.", href: "/changelog" },
 ];
 
 export default function Home() {
@@ -34,7 +33,7 @@ export default function Home() {
             <Link className="button" href="/blog">Read the blog</Link>
             <Link className="button" href="/projects">See projects</Link>
           </div>
-          <p className="hero-note">same curiosity. different day. (unless x + 25·sin(0.05y + φ) kicks in)</p>
+          <p className="hero-note">same curiosity. different day.</p>
           <div className="hero-stats" aria-label="Portfolio at a glance">
             <div className="hero-stat"><strong>{workItems.length}</strong><span>work entries</span></div>
             <div className="hero-stat"><strong>{competitionCount}</strong><span>competitions</span></div>
@@ -61,7 +60,7 @@ export default function Home() {
       <section className="home-section" aria-labelledby="home-igblogs-title" data-reveal>
         <div className="section-head">
           <div>
-            <span className="section-kicker">02 / blogs?</span>
+            <span className="section-kicker">02 / blogs</span>
             <h2 id="home-igblogs-title">recent notes & small blogs<span className="title-period">.</span></h2>
             <p>quick updates, messy prototypes, and things written along the way.</p>
           </div>
@@ -88,29 +87,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-section" aria-labelledby="home-highlights-title" data-reveal>
-        <div className="section-head"><div><span className="section-kicker">03 / highlights</span><h2 id="home-highlights-title">small wins. big motivation.</h2></div></div>
-        <div className="highlight-grid">
-          {competitions.slice(0, 4).map((item) => <Link className="highlight-card" href={`/work/${item.slug}`} key={item.slug}><span className="highlight-mark" aria-hidden="true">✳</span><span className="highlight-result">{item.result ?? "Featured"}</span><strong>{item.title}</strong><small>{item.tag} · {item.date}</small></Link>)}
-        </div>
-      </section>
-
       <section className="home-section" aria-labelledby="home-competitions-title" data-reveal>
         <div className="section-head"><div><span className="section-kicker">04 / competitions</span><h2 id="home-competitions-title">recent competitions / hackathons</h2><p>small steps, bigger things.</p></div><Link className="text-link" href="/awards">All results <span aria-hidden="true">→</span></Link></div>
-        <div className="listing-grid three-col">
-          {competitions.slice(0, 3).map((item) => <EntryCard key={item.slug} href={`/work/${item.slug}`} title={item.title} description={item.summary} meta={`${item.result ?? item.tag} · ${item.date}`} image={item.image} tags={[item.tag]} />)}
-        </div>
-      </section>
-
-      <section className="home-section" aria-labelledby="home-blog-title" data-reveal>
-        <div className="section-head"><div><span className="section-kicker">05 / lately</span><h2 id="home-blog-title">recently<span className="title-period">.</span></h2><p>latest notes, stories, and things worth keeping.</p></div><Link className="text-link" href="/blog">View all posts <span aria-hidden="true">→</span></Link></div>
-        <div className="listing-grid three-col home-blog-grid">
-          {sortedPosts.slice(0, 3).map((post) => <EntryCard key={post.slug} href={`/blog/${post.slug}`} title={post.title} description={post.excerpt} meta={`${post.category} · ${post.date}`} image={post.cover} />)}
+        <div className="listing-grid">
+          {competitions.slice(0, 4).map((item) => <EntryCard key={item.slug} href={`/work/${item.slug}`} title={item.title} description={item.summary} meta={`${item.result ?? item.tag} · ${item.date}`} image={item.image} tags={[item.tag]} />)}
         </div>
       </section>
 
       <section className="home-explore home-section" aria-labelledby="explore-heading" data-reveal>
-        <div className="section-head"><div><span className="section-kicker">06 / explore</span><h2 id="explore-heading">find your way around<span className="title-period">.</span></h2><p>everything else, all in one place.</p></div></div>
+        <div className="section-head"><div><span className="section-kicker">05 / explore</span><h2 id="explore-heading">find your way around<span className="title-period">.</span></h2><p>everything else, all in one place.</p></div></div>
         <div className="explore-grid">
           {destinations.map((item) => <Link className="explore-card" href={item.href} key={item.number}><span className="explore-number">{item.number}</span><span><h3>{item.label}</h3><p>{item.copy}</p></span><span className="explore-arrow" aria-hidden="true">↗</span></Link>)}
         </div>
@@ -118,12 +103,13 @@ export default function Home() {
 
       <section className="home-contact home-section" aria-labelledby="home-contact-title" data-reveal>
         <div className="contact-panel">
-          <div><small>07 / say hi</small><h2 id="home-contact-title">good things start with a hello<span className="title-period">.</span></h2><p>Have a project, question, or just want to talk? My inbox is open.</p></div>
+          <div><small className="section-kicker">06 / say hi</small><h2 id="home-contact-title">good things start with a hello<span className="title-period">.</span></h2><p>Have a project, question, or just want to talk? My inbox is open.</p></div>
           <div className="home-contact-links">
             <a className="button button-primary" href="mailto:rusvlad1010@icloud.com">Email me <span aria-hidden="true">→</span></a>
             <div className="home-contact-socials">
               <a href="https://github.com/ihatebaselines" target="_blank" rel="noreferrer">GitHub ↗</a>
               <a href="https://www.linkedin.com/in/vladandreirus" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+              <a href="https://www.instagram.com/_rusuuu__" target="_blank" rel="noreferrer">Instagram ↗</a>
               <a href="mailto:rusvlad1010@icloud.com">Email ↗</a>
             </div>
           </div>

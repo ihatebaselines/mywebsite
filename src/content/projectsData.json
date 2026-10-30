@@ -1,11 +1,12 @@
 [
   {
     "slug": "swift",
-    "title": "swift...",
-    "description": "\"Not smash, just swift.\" As Jonathan Swift wrote: 'Vision is the art of seeing what is invisible to others.' Something quick on its feet is coming. Keep your eyes open.",
-    "tags": ["swift", "coming-soon"],
-    "image": "/images/heiheihei.gif",
-    "date": "2026-10-28",
+    "title": "SwiftFox (Multimodal MoE)",
+    "description": "Custom Multimodal Language Model (MLM) processing up to 3 images + text with Rotary Position Embeddings (RoPE), 2D residual patch projections, SwiGLU, and dynamic entropy-driven adaptive Top-K MoE.",
+    "tags": ["Multimodal", "PyTorch", "MoE", "RoPE", "SwiGLU"],
+    "image": "/images/swiftfox.png",
+    "liveUrl": "/blog/swiftfox",
+    "date": "2026-10-30",
     "featured": true
   },
   {

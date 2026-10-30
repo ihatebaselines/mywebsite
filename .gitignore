@@ -42,3 +42,6 @@ next-env.d.ts
 
 # admin panel
 /admin-panel
+
+# loose screenshots at root
+/*.png

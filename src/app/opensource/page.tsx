@@ -1,32 +1,24 @@
-import Image from "next/image";
-import { getSortedOpenSource } from "@/content/opensource";
-import { ExternalEntryCard, PageIntro } from "@/components/SiteCards";
+"use client";
 
-export const metadata = {
-  title: "Open Source — ihatebaselines",
-  description: "Open-source repositories, tools, and experiments from ihatebaselines.",
-};
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
-export default function OpenSourcePage() {
-  const items = getSortedOpenSource();
-  const featured = items[0];
+export default function OpenSourceRedirect() {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace("/projects");
+  }, [router]);
+
   return (
-    <main className="site-main">
-      <PageIntro eyebrow="code in the open · 04" title="code in the open" description="Tools, templates, and experiments for a more open internet. Small ideas, real code." illustration={{ src: "/images/pixel-cat-icecream.jpg", alt: "Pixel art Siamese cat licking an orange ice cream" }} />
-      <section className="section-block" aria-label="Featured repository">
-        <div className="section-head"><div><span className="section-kicker">featured repository</span></div>{featured ? <a className="text-link" href="https://github.com/ihatebaselines" target="_blank" rel="noreferrer">View all on GitHub <span aria-hidden="true">→</span></a> : null}</div>
-        {featured ? <a className="featured-repo" href={featured.repoUrl || "#"} target={featured.repoUrl ? "_blank" : undefined} rel={featured.repoUrl ? "noreferrer" : undefined}>
-          {featured.image ? <span className="repo-mark" style={{ position: "relative", overflow: "hidden", padding: 0 }}><Image src={featured.image} alt={featured.name} fill sizes="58px" style={{ objectFit: "contain" }} /></span> : <span className="repo-mark" aria-hidden="true">⌘</span>}
-          <span><h2>{featured.name}</h2><p>{featured.description}</p><span className="tag-list">{featured.topics.map((topic) => <span className="tag" key={topic}>{topic}</span>)}</span></span>
-          <span className="repo-stats">{featured.language}<br />{featured.repoUrl ? "Browse the repository ↗" : "Repository coming soon ⏳"}</span>
-        </a> : <p className="empty-state">No repositories are listed here yet.</p>}
-      </section>
-      {items.length > 0 ? <section className="section-block">
-        <hr className="section-divider" />
-        <div className="section-head"><div><span className="section-kicker">all repositories</span></div></div>
-        <div className="listing-grid two-col">{items.map((item) => <ExternalEntryCard key={item.slug} href={item.repoUrl} title={item.name} description={item.description} meta={item.language} image={item.image} tags={item.topics} />)}</div>
-      </section> : null}
-      <section className="section-block"><hr className="section-divider" /><div className="illustrated-end"><div><h2>Want to build on it?</h2><p className="page-description">Everything listed here is public. Explore the repositories, open an issue, or fork something and make it your own.</p><a className="button button-primary" href="https://github.com/ihatebaselines" target="_blank" rel="noreferrer">View GitHub profile <span aria-hidden="true">↗</span></a></div><figure><Image src="/images/pixel-cat-tv.jpg" alt="Pixel art Siamese cat relaxing on a red sofa" fill sizes="(max-width: 720px) 90vw, 28vw" /></figure></div></section>
+    <main className="site-main" style={{ padding: "100px 0", textAlign: "center" }}>
+      <p>Open Source has moved into Projects.</p>
+      <p style={{ marginTop: "16px" }}>
+        <Link className="text-link" href="/projects">
+          Go to Projects <span aria-hidden="true">→</span>
+        </Link>
+      </p>
     </main>
   );
 }

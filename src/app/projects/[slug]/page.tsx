@@ -48,7 +48,16 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       {project.image ? <div className="article-cover"><Image src={project.image} alt="" width={1400} height={800} priority /></div> : null}
       <div className="article-body"><p>{project.description}</p></div>
       {project.gallery && project.gallery.length > 1 ? <PhotoGallery images={project.gallery} title={`${project.title} Gallery`} /> : null}
-      <div className="button-row">{project.repoUrl ? <a className="button" href={project.repoUrl} target="_blank" rel="noreferrer">GitHub repository ↗</a> : null}{project.liveUrl ? <a className="button button-primary" href={project.liveUrl} target="_blank" rel="noreferrer">View live ↗</a> : null}</div>
+      <div className="button-row">
+        {project.repoUrl ? <a className="button" href={project.repoUrl} target="_blank" rel="noreferrer">GitHub repository ↗</a> : null}
+        {project.liveUrl ? (
+          project.liveUrl.startsWith("/") ? (
+            <Link className="button button-primary" href={project.liveUrl}>Read architecture deep-dive →</Link>
+          ) : (
+            <a className="button button-primary" href={project.liveUrl} target="_blank" rel="noreferrer">View live ↗</a>
+          )
+        ) : null}
+      </div>
       <div className="tag-list project-detail-tags">{project.tags.map((tag) => <span className="tag" key={tag}>{tag}</span>)}</div>
     </article></main>
   );
