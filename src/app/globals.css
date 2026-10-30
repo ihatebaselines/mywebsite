@@ -14,8 +14,8 @@
   --border: rgba(255, 255, 255, 0.07);
   --border-strong: rgba(255, 255, 255, 0.14);
   --font: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
-  --page-width: 1180px;
-  --page-pad: clamp(18px, 3.5vw, 42px);
+  --page-width: 1200px;
+  --page-pad: clamp(18px, 3.5vw, 44px);
   --radius: 5px;
 }
 
@@ -71,14 +71,14 @@ img { display: block; max-width: 100%; }
 :focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
 
 /* ==========================================================================
-   Header & Navbar (Minimal & Sticky)
+   Header & Navbar (Slim 56px, Sticky, Subtle Blur)
    ========================================================================== */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
   width: 100%;
-  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
   backdrop-filter: blur(14px) saturate(130%);
   -webkit-backdrop-filter: blur(14px) saturate(130%);
   border-bottom: 1px solid var(--border);
@@ -272,6 +272,13 @@ img { display: block; max-width: 100%; }
 /* ==========================================================================
    Section Headers & Dividers
    ========================================================================== */
+.section-block { padding: 24px 0 0; }
+.section-divider {
+  height: 1px;
+  margin: 32px 0;
+  border: 0;
+  background: var(--border);
+}
 .section-head {
   display: flex;
   align-items: flex-end;
@@ -375,12 +382,15 @@ img { display: block; max-width: 100%; }
 .readme-status strong { color: var(--accent-dark); font-weight: 500; }
 
 /* ==========================================================================
-   Entry Cards & Grids
+   Entry Cards & Grids (Projects, Blog, Work)
    ========================================================================== */
 .listing-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
+}
+.listing-grid.two-col {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .listing-grid.three-col {
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -403,6 +413,20 @@ img { display: block; max-width: 100%; }
   grid-template-columns: minmax(100px, 130px) minmax(0, 1fr);
   gap: 14px;
   padding: 12px;
+}
+.entry-card-featured {
+  grid-column: span 2;
+}
+.entry-card-featured .entry-card-link {
+  grid-template-columns: minmax(160px, 30%) minmax(0, 1fr);
+  gap: 18px;
+  padding: 16px;
+}
+.entry-card-featured .entry-image {
+  min-height: 160px;
+}
+.entry-card-featured .entry-copy h2 {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
 }
 .listing-grid.three-col .entry-card-link {
   display: flex;
@@ -491,6 +515,62 @@ img { display: block; max-width: 100%; }
   font-size: 0.6rem;
   line-height: 1.45;
 }
+
+/* Open Source & Repo Cards */
+.repo-card { padding: 14px; }
+.repo-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--accent);
+  font-size: 0.66rem;
+}
+.repo-card h3 { margin: 6px 0 5px; font-size: 0.98rem; }
+.repo-card p { margin: 0; color: var(--muted); font-size: 0.74rem; line-height: 1.55; }
+
+/* ==========================================================================
+   Illustrated End Section ("Want to build on it?") - PROPERLY CONSTRAINED
+   ========================================================================== */
+.illustrated-end {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(200px, 300px);
+  align-items: center;
+  gap: 24px;
+  padding: 22px 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.illustrated-end .page-description { margin: 6px 0 16px; }
+.illustrated-end figure {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.4;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+}
+.illustrated-end figure img {
+  object-fit: cover !important;
+}
+
+/* Page Intro Illustrated (if used) */
+.page-intro-illustrated {
+  grid-template-columns: minmax(0, 1fr) minmax(200px, 320px);
+  align-items: center;
+}
+.intro-illustration {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.4;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+.intro-illustration img { object-fit: contain; }
 
 /* ==========================================================================
    Explore Grid (Hairline Grid Style)
@@ -835,10 +915,17 @@ img { display: block; max-width: 100%; }
 .callout-indicator { flex-shrink: 0; margin-top: 2px; }
 .callout-body { flex: 1; }
 
+.article-resources {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
 /* ==========================================================================
    Search Controls & Additional Sections
    ========================================================================== */
 .search-controls { display: flex; align-items: center; gap: 10px; margin: 0 0 16px; }
+.search-field-wrap { display: block; width: 100%; flex: 1; }
 .search-field {
   width: 100%;
   min-height: 38px;
@@ -854,6 +941,9 @@ img { display: block; max-width: 100%; }
 .search-count { flex: 0 0 auto; color: var(--quiet); font-size: 0.66rem; }
 .empty-state { padding: 18px; border: 1px dashed var(--border-strong); border-radius: var(--radius); color: var(--muted); }
 
+.competition-note { max-width: 410px; align-self: end; padding: 16px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+.competition-note h2 { margin: 0 0 6px; font-size: 0.88rem; }
+.competition-note p { margin: 0; color: var(--muted); font-size: 0.72rem; }
 .competition-list { display: grid; gap: 7px; }
 .competition-row {
   display: grid;
@@ -873,11 +963,83 @@ img { display: block; max-width: 100%; }
 .competition-row p { margin: 0; color: var(--muted); font-size: 0.72rem; }
 .competition-date { justify-self: end; color: var(--quiet); font-size: 0.66rem; }
 
-.resource-card { display: block; padding: 15px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
-.resource-card h2, .resource-card h3 { margin: 6px 0; font-size: 0.92rem; }
+/* Subpage Cards: Licenses, Socials, Details, Work Embed */
+.license-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.license-card {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color 150ms ease;
+}
+.license-card:hover { border-color: var(--border-strong); }
+.license-card h2 { margin: 0; font-size: 0.96rem; }
+.license-card p { margin: 6px 0; color: var(--muted); font-size: 0.73rem; }
+.license-card-top { display: flex; justify-content: space-between; gap: 8px; }
+.license-version { color: var(--quiet); font-size: 0.65rem; }
+.license-links { display: flex; gap: 8px; margin-top: 8px; color: var(--accent-dark); font-size: 0.68rem; }
+
+.social-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.social-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 15px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color 150ms ease, background 150ms ease;
+}
+.social-card:hover { border-color: var(--border-strong); background: var(--surface-soft); }
+.social-card strong { display: block; font-size: 0.86rem; }
+.social-card small { color: var(--muted); font-size: 0.66rem; }
+
+.resource-card { display: block; padding: 14px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+.resource-card h2, .resource-card h3 { margin: 5px 0; font-size: 0.92rem; }
 .resource-card p, .resource-card small { color: var(--muted); font-size: 0.74rem; }
+
 .detail-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 20px; }
 .detail-gallery img { width: 100%; height: 160px; object-fit: cover; border-radius: 4px; background: var(--surface-soft); }
+
+.work-embed { overflow: hidden; aspect-ratio: 16 / 9; margin: 24px 0; border: 1px solid var(--border); border-radius: var(--radius); }
+.work-embed iframe { width: 100%; height: 100%; border: 0; }
+.project-detail-tags { margin-top: 20px; }
+
+.filter-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+.filter-button {
+  min-height: 32px;
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.68rem;
+  transition: border-color 150ms ease, background 150ms ease, color 150ms ease;
+}
+.filter-button:hover, .filter-button[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.error-page { min-height: min(580px, calc(100svh - 160px)); }
+.error-page .button { margin-top: 20px; }
 
 /* ==========================================================================
    Footer (Clean, Minimal, Single Row)
@@ -899,6 +1061,28 @@ img { display: block; max-width: 100%; }
 .site-footer a { color: var(--muted); transition: color 150ms ease; }
 .site-footer a:hover { color: var(--accent-dark); }
 .footer-socials { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+
+
+.readme-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 64px);
+}
+.readme-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 24px;
+}
+.readme-stat {
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.readme-stat strong { display: block; font-size: 1.2rem; font-weight: 600; }
+.readme-stat span { color: var(--muted); font-size: 0.66rem; text-transform: uppercase; }
 
 /* ==========================================================================
    Responsive Adaptations
@@ -949,6 +1133,7 @@ img { display: block; max-width: 100%; }
   }
   .home-hero { gap: 24px; }
   .listing-grid.three-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .license-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 720px) {
@@ -970,8 +1155,9 @@ img { display: block; max-width: 100%; }
   .explore-card { min-height: 90px; grid-template-columns: 26px 1fr 18px; padding: 12px; }
   .page-intro { padding: 36px 0 20px; }
   .page-title { margin: 8px 0 8px; font-size: clamp(2.2rem, 10vw, 3.6rem); }
-  .listing-grid, .listing-grid.three-col { grid-template-columns: minmax(0, 1fr); gap: 8px; }
-  .entry-card-link, .listing-grid.three-col .entry-card-link { grid-template-columns: minmax(85px, 28%) minmax(0, 1fr); gap: 10px; padding: 10px; }
+  .listing-grid, .listing-grid.two-col, .listing-grid.three-col { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .entry-card-featured { grid-column: auto; }
+  .entry-card-link, .entry-card-featured .entry-card-link { grid-template-columns: minmax(85px, 28%) minmax(0, 1fr); gap: 10px; padding: 10px; }
   .listing-grid.three-col .entry-image { min-height: 85px; aspect-ratio: 1; }
   .entry-copy h2, .entry-copy h3 { font-size: 0.9rem; }
   .entry-copy p { font-size: 0.7rem; }
@@ -980,6 +1166,13 @@ img { display: block; max-width: 100%; }
   .competition-place strong { font-size: 1rem; }
   .competition-date { grid-column: 2; justify-self: start; }
   .contact-panel { grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 18px; }
+    .readme-layout { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .readme-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .illustrated-end { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .illustrated-end figure { max-width: 260px; justify-self: center; }
+  .page-intro-illustrated { grid-template-columns: minmax(0, 1fr); }
+  .intro-illustration { justify-self: center; max-width: 280px; }
+  .license-grid, .social-grid { grid-template-columns: minmax(0, 1fr); }
   .site-footer { flex-direction: column; align-items: flex-start; }
 }
 
