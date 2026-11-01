@@ -2,7 +2,7 @@
   {
     "slug": "swiftfox",
     "title": "swiftfox",
-    "date": "2026-10-30",
+    "date": "2026-11-01",
     "category": "AI ARCHITECTURE, MULTIMODAL",
     "excerpt": "The SwiftFox architecture has evolved through many iterations: a native multimodal language model (text + up to 3 images) built with RoPE, 2D residual patch projections, SwiGLU activations, and dynamic entropy-driven adaptive Top-K MoE routing.",
     "shortStory": "Inside SwiftFox: A deep dive into building a custom multimodal language model featuring RoPE attention, 2D residual visual patch projections, SwiGLU activations, and dynamic entropy-driven adaptive Top-K MoE routing.",

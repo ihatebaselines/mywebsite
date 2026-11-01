@@ -1,5 +1,23 @@
 [
   {
+    "version": "v2.5",
+    "date": "2026-11-01",
+    "title": "a little more changes to the website & swiftfox architecture",
+    "tag": "Design & AI Architecture",
+    "tagType": "feature",
+    "summary": "Minimalist website redesign and full architecture breakdown for SwiftFox (multi-image cross-frame reasoning, RoPE, SwiGLU & Adaptive Top-K MoE).",
+    "quote": "Simplicity is the ultimate sophistication.",
+    "quoteAuthor": "Leonardo da Vinci",
+    "changes": [
+      "Redesigned the homepage and layout into an ultra-minimalist dark aesthetic.",
+      "Published the SwiftFox architecture deep dive: native multi-image cross-frame reasoning, 2D residual patching, RoPE, SwiGLU, and entropy-driven Adaptive Top-K MoE.",
+      "Added SwiftFox to the featured projects showcase."
+    ],
+    "codename": "swift 2.5",
+    "image": "/images/updates/normal/update_2_5.jpg",
+    "imageGlitch": "/images/updates/glitch/update_2_5.jpg"
+  },
+  {
     "version": "v2.1",
     "date": "2026-10-28",
     "title": "CCC 2026, ROSDC 2026 & swift...",

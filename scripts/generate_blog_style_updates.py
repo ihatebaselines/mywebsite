@@ -2,6 +2,7 @@ import cv2, numpy as np, random, os
 from PIL import Image
 
 updates = [
+    ('update 2.5', 'update_2_5.jpg', 250),
     ('update 2.1', 'update_2_1.jpg', 201),
     ('update 2.0', 'update_2_0.jpg', 200),
     ('update 1.9.5', 'update_1_9_5.jpg', 195),

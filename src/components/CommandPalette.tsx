@@ -34,7 +34,7 @@ interface PaletteItem {
   badge?: string;
 }
 
-export default function CommandPalette() {
+export default function CommandPalette({ hideTrigger = false }: { hideTrigger?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -280,6 +280,7 @@ export default function CommandPalette() {
   }, [selectedIndex]);
 
   if (!isOpen) {
+    if (hideTrigger) return null;
     return (
       <button
         type="button"

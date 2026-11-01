@@ -4,20 +4,21 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import CommandPalette from "@/components/CommandPalette";
-import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
-  { label: "Work", href: "/work" },
-  { label: "Projects", href: "/projects" },
-  { label: "Blog", href: "/blog" },
-  { label: "Updates", href: "/changelog" },
+  { label: "work", href: "/work" },
+  { label: "projects", href: "/projects" },
+  { label: "blog", href: "/blog" },
+  { label: "updates", href: "/changelog" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
   const mobileMenu = useRef<HTMLDetailsElement>(null);
 
-  useEffect(() => { if (mobileMenu.current) mobileMenu.current.open = false; }, [pathname]);
+  useEffect(() => {
+    if (mobileMenu.current) mobileMenu.current.open = false;
+  }, [pathname]);
 
   return (
     <header className="site-header">
@@ -28,23 +29,34 @@ export default function Navbar() {
         <nav className="desktop-nav" aria-label="Main navigation">
           {links.map((link) => {
             const active = pathname === link.href || pathname.startsWith(`${link.href}/`);
-            return <Link key={link.href} href={link.href} aria-current={active ? "page" : undefined}>{link.label}</Link>;
+            return (
+              <Link key={link.href} href={link.href} aria-current={active ? "page" : undefined}>
+                {link.label}
+              </Link>
+            );
           })}
         </nav>
-        <div className="header-actions">
-          <ThemeToggle />
-          <CommandPalette />
-          <Link className="header-cta" href="/contact">Let’s talk <span aria-hidden="true">→</span></Link>
-        </div>
+        <CommandPalette hideTrigger />
         <details className="mobile-menu" ref={mobileMenu}>
-          <summary className="menu-toggle" aria-label="Toggle navigation menu" aria-controls="mobile-navigation"><span /><span /></summary>
+          <summary
+            className="menu-toggle"
+            aria-label="Toggle navigation menu"
+            aria-controls="mobile-navigation"
+          >
+            <span />
+            <span />
+          </summary>
           <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation">
             {links.map((link) => (
-              <Link key={link.href} href={link.href} aria-current={pathname === link.href ? "page" : undefined}>
-                <span>{link.label}</span><span aria-hidden="true">↗</span>
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={pathname === link.href ? "page" : undefined}
+              >
+                <span>{link.label}</span>
+                <span aria-hidden="true">↗</span>
               </Link>
             ))}
-            <Link className="mobile-contact" href="/contact">Let’s talk <span aria-hidden="true">→</span></Link>
           </nav>
         </details>
       </div>

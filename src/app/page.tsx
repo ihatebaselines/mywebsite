@@ -1,18 +1,15 @@
-import Image from "next/image";
 import Link from "next/link";
-import { EntryCard } from "@/components/SiteCards";
 import { getFeaturedProjects, projects } from "@/content/projects";
 import { getSortedPosts, posts } from "@/content/posts";
 import { getSortedWork, workItems } from "@/content/work";
 import DrunkTitle from "@/components/home/DrunkTitle";
-import RandomHeroVisual from "@/components/home/RandomHeroVisual";
 
 const destinations = [
-  { number: "01", label: "Work", copy: "things i’ve built and shipped.", href: "/work" },
-  { number: "02", label: "Blog", copy: "thoughts, notes, and experiments.", href: "/blog" },
-  { number: "03", label: "Projects", copy: "small ideas and code in the open.", href: "/projects" },
-  { number: "04", label: "Licenses", copy: "the tools behind this little corner.", href: "/licenses" },
-  { number: "05", label: "Updates", copy: "what changed, and what’s next.", href: "/changelog" },
+  { number: "01", label: "work", href: "/work" },
+  { number: "02", label: "blog", href: "/blog" },
+  { number: "03", label: "projects", href: "/projects" },
+  { number: "04", label: "licenses", href: "/licenses" },
+  { number: "05", label: "updates", href: "/changelog" },
 ];
 
 export default function Home() {
@@ -22,95 +19,195 @@ export default function Home() {
   const competitionCount = competitions.length;
 
   return (
-    <main className="site-main home-main">
-      <section className="home-hero" aria-labelledby="home-title">
-        <div className="hero-copy">
-          <p className="eyebrow">a student developer, still figuring it out</p>
+    <main className="site-main home-minimal-main">
+      {/* First Viewport: Exact Minimalist Hero */}
+      <section className="hero-minimal" aria-labelledby="home-title">
+        <div className="hero-minimal-center">
           <DrunkTitle />
-          <p className="hero-description">student developer building AI, open source, and things that start at zero.</p>
-          <div className="button-row">
-            <Link className="button button-primary" href="/work">View my work <span aria-hidden="true">→</span></Link>
-            <Link className="button" href="/blog">Read the blog</Link>
-            <Link className="button" href="/projects">See projects</Link>
-          </div>
-          <p className="hero-note">same curiosity. different day.</p>
-          <div className="hero-stats" aria-label="Portfolio at a glance">
-            <div className="hero-stat"><strong>{workItems.length}</strong><span>work entries</span></div>
-            <div className="hero-stat"><strong>{competitionCount}</strong><span>competitions</span></div>
-            <div className="hero-stat"><strong>{projects.length}</strong><span>projects</span></div>
-            <div className="hero-stat"><strong>{posts.length}</strong><span>notes & stories</span></div>
-          </div>
+          <p className="hero-minimal-desc">
+            student developer building AI, open source, and things that start at zero.
+          </p>
+          <Link className="hero-minimal-cta" href="/work">
+            view my work <span aria-hidden="true">→</span>
+          </Link>
         </div>
-        <RandomHeroVisual />
+
+        <div className="hero-minimal-bottom">
+          <div className="hero-strip" aria-label="Featured projects">
+            <Link href="/projects/swift" className="strip-item">
+              <span className="strip-num">01</span>
+              <span className="strip-label">swiftfox</span>
+            </Link>
+            <span className="strip-sep" aria-hidden="true">|</span>
+            <Link href="/projects/socrate-main-model" className="strip-item">
+              <span className="strip-num">02</span>
+              <span className="strip-label">socratex</span>
+            </Link>
+            <span className="strip-sep" aria-hidden="true">|</span>
+            <Link href="/projects/skillab-radar" className="strip-item">
+              <span className="strip-num">03</span>
+              <span className="strip-label">skillab radar</span>
+            </Link>
+          </div>
+          <p className="hero-location">cluj-napoca &middot; 2026</p>
+        </div>
       </section>
 
-      <section className="home-section home-readme" aria-label="A little about me" data-reveal>
-        <div className="readme-copy">
-          <span className="section-kicker">01 / README.md</span>
-          <h2>hi, i’m vlad<span className="title-period">.</span></h2>
-          <p>I’m a student based in Cluj-Napoca, studying at Colegiul Național “Emil Racoviță”. I’m interested in AI architectures, competitive programming, mathematics, research, and building things from zero.</p>
-          <Link className="text-link" href="/about">A little more about me <span aria-hidden="true">→</span></Link>
+      {/* 01 / About */}
+      <section className="min-section" aria-labelledby="min-about-title">
+        <div className="min-section-head">
+          <span className="min-kicker">01 / about</span>
+          <Link className="min-link" href="/about">
+            more about me <span aria-hidden="true">→</span>
+          </Link>
         </div>
-        <article className="readme-box" aria-label="README file">
-          <div className="readme-box-head"><span className="window-dots" aria-hidden="true">● ● ●</span><span>README.md</span><span className="readme-rank">student / Cluj-Napoca</span></div>
-          <div className="readme-box-body"><p><strong>Student developer</strong>, interested in technology, design, and the intersection of all three. I like building things, exploring new ideas, and documenting the journey along the way.</p><div className="readme-status"><span>currently</span><strong>learning in public · building from zero</strong></div></div>
-        </article>
+        <div className="min-about-block">
+          <h2 id="min-about-title">
+            hi, i’m vlad<span className="title-period">.</span>
+          </h2>
+          <p>
+            I’m a student based in Cluj-Napoca, studying at Colegiul Național “Emil Racoviță”. I’m
+            interested in AI architectures, competitive programming, mathematics, research, and
+            building things from zero.
+          </p>
+          <div className="min-meta-bar">
+            <span>
+              currently &mdash; <strong>learning in public &middot; building from zero</strong>
+            </span>
+            <span>
+              {workItems.length} work &middot; {competitionCount} competitions &middot;{" "}
+              {projects.length} projects &middot; {posts.length} notes
+            </span>
+          </div>
+        </div>
       </section>
 
-      <section className="home-section" aria-labelledby="home-igblogs-title" data-reveal>
-        <div className="section-head">
+      {/* 02 / Recent Notes & Small Blogs */}
+      <section className="min-section" aria-labelledby="min-blogs-title">
+        <div className="min-section-head">
           <div>
-            <span className="section-kicker">02 / blogs</span>
-            <h2 id="home-igblogs-title">recent notes & small blogs<span className="title-period">.</span></h2>
-            <p>quick updates, messy prototypes, and things written along the way.</p>
+            <span className="min-kicker" id="min-blogs-title">
+              02 / recent notes &amp; small blogs
+            </span>
           </div>
-          <Link className="text-link" href="/blog">View all blogs <span aria-hidden="true">→</span></Link>
+          <Link className="min-link" href="/blog">
+            view all blogs ({posts.length}) <span aria-hidden="true">→</span>
+          </Link>
         </div>
-        <div className="listing-grid three-col home-blog-grid">
-          {sortedPosts.slice(0, 3).map((post) => (
-            <EntryCard
-              key={post.slug}
-              href={`/blog/${post.slug}`}
-              title={post.title}
-              description={post.excerpt}
-              meta={`${post.category} · ${post.date}`}
-              image={post.cover}
-            />
+        <div className="min-list">
+          {sortedPosts.slice(0, 5).map((post, idx) => (
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="min-row">
+              <span className="min-row-num">{String(idx + 1).padStart(2, "0")}</span>
+              <div className="min-row-main">
+                <h3>{post.title}</h3>
+                <p>{post.excerpt}</p>
+              </div>
+              <div className="min-row-meta">
+                <span>{post.date}</span>
+                <span className="min-row-arrow" aria-hidden="true">→</span>
+              </div>
+            </Link>
           ))}
         </div>
       </section>
 
-      <section className="home-section" aria-labelledby="home-projects-title" data-reveal>
-        <div className="section-head"><div><span className="section-kicker">03 / projects</span><h2 id="home-projects-title">some things<span className="title-period">.</span></h2><p>projects, experiments, and ideas that somehow worked.</p></div><Link className="text-link" href="/projects">See all projects <span aria-hidden="true">→</span></Link></div>
-        <div className="listing-grid home-project-grid">
-          {featuredProjects.map((project) => <EntryCard key={project.slug} href={`/projects/${project.slug}`} title={project.title} description={project.description} meta={`PROJECT · ${project.date}`} image={project.image} tags={project.tags} />)}
+      {/* 03 / Projects */}
+      <section className="min-section" aria-labelledby="min-projects-title">
+        <div className="min-section-head">
+          <span className="min-kicker" id="min-projects-title">
+            03 / projects
+          </span>
+          <Link className="min-link" href="/projects">
+            see all projects <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+        <div className="min-list">
+          {featuredProjects.map((project, idx) => (
+            <Link key={project.slug} href={`/projects/${project.slug}`} className="min-row">
+              <span className="min-row-num">{String(idx + 1).padStart(2, "0")}</span>
+              <div className="min-row-main">
+                <h3>{project.title.toLowerCase()}</h3>
+                <p>{project.description}</p>
+              </div>
+              <div className="min-row-meta">
+                <span>{project.tags.slice(0, 2).join(" · ").toLowerCase()}</span>
+                <span className="min-row-arrow" aria-hidden="true">→</span>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
-      <section className="home-section" aria-labelledby="home-competitions-title" data-reveal>
-        <div className="section-head"><div><span className="section-kicker">04 / competitions</span><h2 id="home-competitions-title">recent competitions / hackathons</h2><p>small steps, bigger things.</p></div><Link className="text-link" href="/awards">All results <span aria-hidden="true">→</span></Link></div>
-        <div className="listing-grid">
-          {competitions.slice(0, 4).map((item) => <EntryCard key={item.slug} href={`/work/${item.slug}`} title={item.title} description={item.summary} meta={`${item.result ?? item.tag} · ${item.date}`} image={item.image} tags={[item.tag]} />)}
+      {/* 04 / Competitions & Hackathons */}
+      <section className="min-section" aria-labelledby="min-comp-title">
+        <div className="min-section-head">
+          <span className="min-kicker" id="min-comp-title">
+            04 / competitions &amp; hackathons
+          </span>
+          <Link className="min-link" href="/awards">
+            all results <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+        <div className="min-list">
+          {competitions.slice(0, 5).map((item, idx) => (
+            <Link key={item.slug} href={`/work/${item.slug}`} className="min-row">
+              <span className="min-row-num">{String(idx + 1).padStart(2, "0")}</span>
+              <div className="min-row-main">
+                <h3>
+                  {item.title}{" "}
+                  {item.result ? <em className="min-row-badge">{item.result}</em> : null}
+                </h3>
+                <p>{item.summary}</p>
+              </div>
+              <div className="min-row-meta">
+                <span>{item.date}</span>
+                <span className="min-row-arrow" aria-hidden="true">→</span>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
-      <section className="home-explore home-section" aria-labelledby="explore-heading" data-reveal>
-        <div className="section-head"><div><span className="section-kicker">05 / explore</span><h2 id="explore-heading">find your way around<span className="title-period">.</span></h2><p>everything else, all in one place.</p></div></div>
-        <div className="explore-grid">
-          {destinations.map((item) => <Link className="explore-card" href={item.href} key={item.number}><span className="explore-number">{item.number}</span><span><h3>{item.label}</h3><p>{item.copy}</p></span><span className="explore-arrow" aria-hidden="true">↗</span></Link>)}
+      {/* 05 / Explore & Say Hi */}
+      <section className="min-section" aria-labelledby="min-contact-title">
+        <div className="min-section-head">
+          <span className="min-kicker">05 / directory &amp; contact</span>
         </div>
-      </section>
+        <div className="hero-strip min-explore-strip" aria-label="Site directory">
+          {destinations.map((item, i) => (
+            <span key={item.number} className="strip-wrap">
+              <Link href={item.href} className="strip-item">
+                <span className="strip-num">{item.number}</span>
+                <span className="strip-label">{item.label}</span>
+              </Link>
+              {i < destinations.length - 1 ? (
+                <span className="strip-sep" aria-hidden="true">|</span>
+              ) : null}
+            </span>
+          ))}
+        </div>
 
-      <section className="home-contact home-section" aria-labelledby="home-contact-title" data-reveal>
-        <div className="contact-panel">
-          <div><small className="section-kicker">06 / say hi</small><h2 id="home-contact-title">good things start with a hello<span className="title-period">.</span></h2><p>Have a project, question, or just want to talk? My inbox is open.</p></div>
-          <div className="home-contact-links">
-            <a className="button button-primary" href="mailto:rusvlad1010@icloud.com">Email me <span aria-hidden="true">→</span></a>
-            <div className="home-contact-socials">
-              <a href="https://github.com/ihatebaselines" target="_blank" rel="noreferrer">GitHub ↗</a>
-              <a href="https://www.linkedin.com/in/vladandreirus" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-              <a href="https://www.instagram.com/_rusuuu__" target="_blank" rel="noreferrer">Instagram ↗</a>
-              <a href="mailto:rusvlad1010@icloud.com">Email ↗</a>
+        <div className="min-contact-block">
+          <div>
+            <h2 id="min-contact-title">
+              good things start with a hello<span className="title-period">.</span>
+            </h2>
+            <p>Have a project, question, or just want to talk? My inbox is open.</p>
+          </div>
+          <div className="min-contact-actions">
+            <a className="hero-minimal-cta" href="mailto:rusvlad1010@icloud.com">
+              rusvlad1010@icloud.com <span aria-hidden="true">→</span>
+            </a>
+            <div className="min-socials">
+              <a href="https://github.com/ihatebaselines" target="_blank" rel="noreferrer">
+                github ↗
+              </a>
+              <a href="https://www.linkedin.com/in/vladandreirus" target="_blank" rel="noreferrer">
+                linkedin ↗
+              </a>
+              <a href="https://www.instagram.com/_rusuuu__" target="_blank" rel="noreferrer">
+                instagram ↗
+              </a>
             </div>
           </div>
         </div>

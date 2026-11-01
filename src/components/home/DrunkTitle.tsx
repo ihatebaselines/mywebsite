@@ -2,14 +2,7 @@
 
 export default function DrunkTitle() {
   return (
-    <h1
-      className="home-title"
-      style={{
-        color: "var(--accent)",
-        whiteSpace: "nowrap",
-        letterSpacing: "-0.08em",
-      }}
-    >
+    <h1 className="home-title" id="home-title">
       ihatebaselines<span className="title-period">.</span>
     </h1>
   );
