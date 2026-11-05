@@ -1,7 +1,7 @@
 [
   {
     "slug": "dpit-2026",
-    "title": "DpIT Academy 2026 — 2nd Place",
+    "title": "DpIT Academy 2026<->2nd Place",
     "date": "2026-11-05",
     "result": "2nd Place · Award II",
     "tag": "Competition & Product Development",
@@ -26,13 +26,13 @@
     ],
     "body": [
       "Won 2nd Place (Award II) at DpIT Academy 2026 with Team Thores, competing against 21 high-school teams backed by top IT companies in Cluj-Napoca.",
-      "Over the course of six months, our team — Ian Ștefan-Cazacu, Maria Borgovan, Natasha Oprean, Patric Baidoc, Andrei Pop, and Vlad Andrei Rus — took part in product design, business, and AI workshops under the guidance of our BMW Techworks Romania mentors, Vlad Stoica and Cristian Matei.",
+      "Over the course of six months, our team<->Ian Ștefan-Cazacu, Maria Borgovan, Natasha Oprean, Patric Baidoc, Andrei Pop, and Vlad Andrei Rus<->took part in product design, business, and AI workshops under the guidance of our BMW Techworks Romania mentors, Vlad Stoica and Cristian Matei.",
       "We developed Thores (https://thores.ro/), demonstrated the product live in front of the judging panel (including a memorable live demo while on a mattress), and hosted a crowded interactive booth with custom merch and a prize wheel during the final gala."
     ]
   },
   {
     "slug": "ccc-2026",
-    "title": "CCC 2026 — School & Data/AI",
+    "title": "CCC 2026<->School & Data/AI",
     "date": "2026-10-24",
     "result": "14th · School / 31st · Data/AI",
     "tag": "AI Competition & Programming",
@@ -43,9 +43,9 @@
     ],
     "relatedHref": "/blog/ccc-2026",
     "body": [
-      "CCC 2026 was a very interesting experience, even though this year we didn't manage to achieve our best results — finishing 31st in Data/AI with team PretrainedLanguageModel and 14th in the School category.",
-      "In the Data/AI track, our progress was heavily impacted by what our team felt was a poorly designed matchmaking system. Because the queue rarely placed us into matches, we were unable to play nearly enough games with our AI — ending up with around 100 matches while other teams had 300–400 matches, and at times waiting 10 minutes without getting into a single match, watching our rank drop from 2nd down to 10th, 20th, and 31st toward the end.",
-      "We're not denying that we vibecoded too, but it's honestly sad that there is no real fairness right now: top teams pay for the most expensive AI model subscriptions just to profit from taking the top spots, while others don't stand a chance — even when trying hard to write good prompts, you still can't reach that performance ): A similar dynamic with paid AI subscriptions affected the School category as well, where we finished in 14th place."
+      "CCC 2026 was a very interesting experience, even though this year we didn't manage to achieve our best results<->finishing 31st in Data/AI with team PretrainedLanguageModel and 14th in the School category.",
+      "In the Data/AI track, our progress was heavily impacted by what our team felt was a poorly designed matchmaking system. Because the queue rarely placed us into matches, we were unable to play nearly enough games with our AI<->ending up with around 100 matches while other teams had 300–400 matches, and at times waiting 10 minutes without getting into a single match, watching our rank drop from 2nd down to 10th, 20th, and 31st toward the end.",
+      "We're not denying that we vibecoded too, but it's honestly sad that there is no real fairness right now: top teams pay for the most expensive AI model subscriptions just to profit from taking the top spots, while others don't stand a chance<->even when trying hard to write good prompts, you still can't reach that performance ): A similar dynamic with paid AI subscriptions affected the School category as well, where we finished in 14th place."
     ]
   },
   {
@@ -69,7 +69,7 @@
     ],
     "body": [
       "First things first: Condor is way better than Kepler or whatever other team 💔",
-      "ROSDC 2026 (Romanian Space Design Competition) was a wonderful experience! Held as an industry-style aerospace engineering and space settlement design simulation, the competition brings high school students together into fictional aerospace companies — such as Condor — to respond to a complex Request for Proposal (RFP) for future space habitats and orbital infrastructure.",
+      "ROSDC 2026 (Romanian Space Design Competition) was a wonderful experience! Held as an industry-style aerospace engineering and space settlement design simulation, the competition brings high school students together into fictional aerospace companies<->such as Condor<->to respond to a complex Request for Proposal (RFP) for future space habitats and orbital infrastructure.",
       "I worked on the Operations side of the project, focusing on how the settlement and systems actually function, scale, and sustain daily life and logistics in space.",
       "Beyond the engineering challenge itself, the best part of ROSDC 2026 was meeting so many creative people with truly awesome ideas and collaborating under pressure to turn ambitious concepts into a cohesive design pitch."
     ]

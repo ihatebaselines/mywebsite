@@ -193,7 +193,7 @@ const jsonLd = {
       "url": "https://ihatebaselines.com",
       "name": "ihatebaselines",
       "description":
-        "Portfolio, notes and projects by Vlad Andrei Rus — AI architectures, machine learning, competitive programming, math, and building things from zero.",
+        "Portfolio, notes and projects by Vlad Andrei Rus<->AI architectures, machine learning, competitive programming, math, and building things from zero.",
       "publisher": {
         "@id": "https://ihatebaselines.com/#person"
       },
@@ -240,7 +240,7 @@ const jsonLd = {
       "contentUrl": "https://ihatebaselines.com/images/ihatebaselines.jpg",
       "width": 800,
       "height": 400,
-      "caption": "ihatebaselines — Vlad Andrei Rus"
+      "caption": "ihatebaselines<->Vlad Andrei Rus"
     }
   ]
 };
@@ -248,11 +248,11 @@ const jsonLd = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://ihatebaselines.com"),
   title: {
-    default: "ihatebaselines. — Vlad Andrei Rus",
-    template: "%s — ihatebaselines.",
+    default: "ihatebaselines.<->Vlad Andrei Rus",
+    template: "%s<->ihatebaselines.",
   },
   description:
-    "Portfolio, notes and projects by Vlad Andrei Rus — AI architectures, machine learning, competitive programming, math, and building things from zero.",
+    "Portfolio, notes and projects by Vlad Andrei Rus<->AI architectures, machine learning, competitive programming, math, and building things from zero.",
   applicationName: "ihatebaselines",
   authors: [{ name: "Vlad Andrei Rus", url: "https://ihatebaselines.com" }],
   generator: "Next.js",
@@ -284,9 +284,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "ihatebaselines. — Vlad Andrei Rus",
+    title: "ihatebaselines.<->Vlad Andrei Rus",
     description:
-      "Portfolio, notes and projects by Vlad Andrei Rus — AI architectures, machine learning, competitive programming, math, and building things from zero.",
+      "Portfolio, notes and projects by Vlad Andrei Rus<->AI architectures, machine learning, competitive programming, math, and building things from zero.",
     url: "https://ihatebaselines.com",
     siteName: "ihatebaselines",
     locale: "en_US",
@@ -298,21 +298,21 @@ export const metadata: Metadata = {
         width: 800,
         height: 400,
         type: "image/jpeg",
-        alt: "ihatebaselines — Vlad Andrei Rus",
+        alt: "ihatebaselines<->Vlad Andrei Rus",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ihatebaselines. — Vlad Andrei Rus",
+    title: "ihatebaselines.<->Vlad Andrei Rus",
     description:
-      "Portfolio, notes and projects by Vlad Andrei Rus — AI architectures, machine learning, competitive programming, math.",
+      "Portfolio, notes and projects by Vlad Andrei Rus<->AI architectures, machine learning, competitive programming, math.",
     site: "@ihatebaselines",
     creator: "@ihatebaselines",
     images: [
       {
         url: "https://ihatebaselines.com/images/ihatebaselines.jpg",
-        alt: "ihatebaselines — Vlad Andrei Rus",
+        alt: "ihatebaselines<->Vlad Andrei Rus",
         width: 800,
         height: 400,
       },

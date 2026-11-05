@@ -2,7 +2,7 @@ import ChangelogTimeline from "@/components/ChangelogTimeline";
 import { PageIntro } from "@/components/SiteCards";
 
 export const metadata = {
-  title: "Updates — ihatebaselines",
+  title: "Updates<->ihatebaselines",
   description: "Features, improvements, experiments, and milestones from ihatebaselines.",
 };
 

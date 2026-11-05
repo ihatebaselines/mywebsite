@@ -40,7 +40,7 @@
   {
     "version": "v2.0",
     "date": "2026-08-26",
-    "title": "Total Remake — From Algorithms to Neurons",
+    "title": "Total Remake<->From Algorithms to Neurons",
     "tag": "Remake & Competition",
     "tagType": "competition",
     "summary": "A total remake of the entire site from scratch, plus adding a new competition I participated in: From Algorithms to Neurons.",
@@ -104,7 +104,7 @@
   {
     "version": "v1.9.2",
     "date": "2026-06-06",
-    "title": "RISE AI Final Round — 2nd Place",
+    "title": "RISE AI Final Round<->2nd Place",
     "tag": "Competition",
     "tagType": "competition",
     "summary": "A stronger final, harder tasks, and a second-place finish.",
@@ -124,7 +124,7 @@
   {
     "version": "v1.9.1",
     "date": "2026-05-27",
-    "title": "Skillab Innovation Challenge — 1st Place",
+    "title": "Skillab Innovation Challenge<->1st Place",
     "tag": "Hackathon",
     "tagType": "competition",
     "summary": "Built something useful, shipped it under pressure, and somehow won.",
@@ -146,7 +146,7 @@
   {
     "version": "v1.9",
     "date": "2026-05-18",
-    "title": "ROAI Prelot — Problem Setter",
+    "title": "ROAI Prelot<->Problem Setter",
     "tag": "Olympiad & Design",
     "tagType": "feature",
     "summary": "For once, I wasn't solving the problem. I was writing it.",
@@ -166,7 +166,7 @@
   {
     "version": "v1.8.5",
     "date": "2026-05-10",
-    "title": "NitroNLP Hackathon — 3rd Place",
+    "title": "NitroNLP Hackathon<->3rd Place",
     "tag": "NLP",
     "tagType": "competition",
     "summary": "Transformers, time pressure, and one more podium.",

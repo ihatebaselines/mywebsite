@@ -1,7 +1,7 @@
 [
   {
     "id": "dpit-2026",
-    "title": "2nd Place — DpIT Academy 2026",
+    "title": "2nd Place<->DpIT Academy 2026",
     "event": "DpIT Academy 2026 (Descoperă-ți Pasiunea în IT)",
     "category": "Product Development & Startup Competition",
     "date": "2026-11-05",
@@ -41,7 +41,7 @@
     "badge": "⚡ 14th School / 31st AI",
     "score": "100+ AI Matches",
     "division": "Team PretrainedLanguageModel",
-    "description": "Placed 31st in Data/AI (with team PretrainedLanguageModel) and 14th in School. Held back by matchmaking bottlenecks (~100 matches vs. 300–400 for others) and the lack of fairness where top teams pay for the best AI subscriptions to profit from top spots — making it nearly impossible to compete even when crafting strong prompts ):",
+    "description": "Placed 31st in Data/AI (with team PretrainedLanguageModel) and 14th in School. Held back by matchmaking bottlenecks (~100 matches vs. 300–400 for others) and the lack of fairness where top teams pay for the best AI subscriptions to profit from top spots<->making it nearly impossible to compete even when crafting strong prompts ):",
     "links": [
       {
         "label": "Blog Post",
@@ -57,7 +57,7 @@
   },
   {
     "id": "rosdc-2026",
-    "title": "Operations Department — Condor",
+    "title": "Operations Department<->Condor",
     "event": "ROSDC 2026 (Romanian Space Design Competition)",
     "category": "Space Design Competition",
     "date": "2026-10-17",
@@ -65,7 +65,7 @@
     "tier": "special",
     "badge": "🚀 Operations · Condor",
     "score": "Aerospace RFP Simulation",
-    "division": "Condor Company — Operations",
+    "division": "Condor Company<->Operations",
     "description": "First of all, Condor is way better than Kepler or whatever other team 💔 A wonderful experience working on the Operations side of an industry-style space settlement design competition, meeting lots of creative people with awesome ideas.",
     "links": [
       {
@@ -83,7 +83,7 @@
   },
   {
     "id": "algorithms-to-neurons-ai",
-    "title": "1st Place — AI Competition",
+    "title": "1st Place<->AI Competition",
     "event": "From Algorithms to Neurons",
     "category": "AI Competition",
     "date": "2026-08",
@@ -145,7 +145,7 @@
   },
   {
     "id": "rise-final-round",
-    "title": "2nd Place — Final Round",
+    "title": "2nd Place<->Final Round",
     "event": "RISE AI Competition",
     "category": "AI Olympiad",
     "date": "2026-06",
@@ -169,7 +169,7 @@
   },
   {
     "id": "nitronlp-hackathon",
-    "title": "3rd Place — NitroNLP Hackathon",
+    "title": "3rd Place<->NitroNLP Hackathon",
     "event": "NitroNLP 5th Edition",
     "category": "NLP Hackathon",
     "date": "2026-05",
@@ -194,7 +194,7 @@
   },
   {
     "id": "roai-national-stage",
-    "title": "19th Place — National Stage",
+    "title": "19th Place<->National Stage",
     "event": "ROAI National Stage",
     "category": "National Olympiad",
     "date": "2026-04",
@@ -244,7 +244,7 @@
   },
   {
     "id": "algorithms-to-neurons-hackathon",
-    "title": "9th Place — 24h Hackathon",
+    "title": "9th Place<->24h Hackathon",
     "event": "From Algorithms to Neurons",
     "category": "24h Hackathon",
     "date": "2026-08",

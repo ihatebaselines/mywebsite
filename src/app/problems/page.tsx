@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import styles from "./problems.module.css";
 
 export const metadata: Metadata = {
-  title: "Problems — coming soon",
+  title: "Problems<->coming soon",
   description: "Competition problems I’ve solved, with explanations and source code. Coming soon.",
 };
 

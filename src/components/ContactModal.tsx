@@ -13,7 +13,7 @@ export default function ContactModal({
   open: boolean;
   onClose: () => void;
 }) {
-  // ALL hooks at top level — no conditionals before hooks
+  // ALL hooks at top level<->no conditionals before hooks
   const [mounted, setMounted] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

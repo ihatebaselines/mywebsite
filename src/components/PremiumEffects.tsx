@@ -21,7 +21,7 @@ export default function PremiumEffects() {
     const headingSplits: SplitType[] = [];
 
     // ═══════════════════════════════════════════════════════
-    // MOBILE ANIMATIONS — lightweight GPU-accelerated
+    // MOBILE ANIMATIONS<->lightweight GPU-accelerated
     // ═══════════════════════════════════════════════════════
     if (isMobile) {
       // Hero title: word-by-word slide up
@@ -42,7 +42,7 @@ export default function PremiumEffects() {
         );
       }
 
-      // Section headings — word reveal on scroll
+      // Section headings<->word reveal on scroll
       gsap.utils.toArray<HTMLElement>("[data-split-heading]").forEach((heading) => {
         const headingSplit = new SplitType(heading, { types: "words" });
         headingSplits.push(headingSplit);
@@ -66,7 +66,7 @@ export default function PremiumEffects() {
         );
       });
 
-      // data-reveal — fade + slide up
+      // data-reveal<->fade + slide up
       gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((item) => {
         gsap.fromTo(
           item,
@@ -85,7 +85,7 @@ export default function PremiumEffects() {
         );
       });
 
-      // data-card — scale + fade pop-in
+      // data-card<->scale + fade pop-in
       gsap.utils.toArray<HTMLElement>("[data-card]").forEach((card, index) => {
         gsap.fromTo(
           card,

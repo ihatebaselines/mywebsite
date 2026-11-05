@@ -72,7 +72,7 @@ export default function Home() {
           </p>
           <div className="min-meta-bar">
             <span>
-              currently &mdash; <strong>learning in public &middot; building from zero</strong>
+              currently {"<->"} <strong>learning in public &middot; building from zero</strong>
             </span>
             <span>
               {workItems.length} work &middot; {competitionCount} competitions &middot;{" "}

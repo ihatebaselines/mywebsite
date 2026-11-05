@@ -4,7 +4,7 @@ import { getSortedOpenSource } from "@/content/opensource";
 import { EntryCard, ExternalEntryCard, PageIntro } from "@/components/SiteCards";
 
 export const metadata = {
-  title: "Projects — ihatebaselines",
+  title: "Projects<->ihatebaselines",
   description: "A collection of projects, open source code, and experiments built with curiosity.",
 };
 

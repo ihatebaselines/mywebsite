@@ -1,7 +1,7 @@
 import { PageIntro } from "@/components/SiteCards";
 
 export const metadata = {
-  title: "Contact — ihatebaselines",
+  title: "Contact<->ihatebaselines",
   description: "Get in touch with Vlad about projects, ideas, or just to say hi.",
 };
 
@@ -19,7 +19,7 @@ export default function ContactPage() {
       <PageIntro
         eyebrow="get in touch"
         title="contact"
-        description="I’d love to hear from you — whether you have a question, an idea, a project, or just want to say hi."
+        description="I’d love to hear from you<->whether you have a question, an idea, a project, or just want to say hi."
       />
       <section className="contact-panel">
         <div><small>email</small><h2>rusvlad1010@icloud.com</h2><p>Feel free to reach out anytime. I usually reply within a few days.</p></div>

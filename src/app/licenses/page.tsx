@@ -4,7 +4,7 @@ import { PageIntro } from "@/components/SiteCards";
 import rawLicensesData from "@/content/licensesData.json";
 
 export const metadata: Metadata = {
-  title: "Licenses & Attributions — ihatebaselines",
+  title: "Licenses & Attributions<->ihatebaselines",
   description:
     "Comprehensive directory of open-source libraries, frameworks, tools, and typefaces powering ihatebaselines.com.",
 };

@@ -7,9 +7,9 @@ export async function GET() {
     {
       version: "1.0",
       type: "rich",
-      title: "ihatebaselines. — Vlad Andrei Rus",
+      title: "ihatebaselines.<->Vlad Andrei Rus",
       description:
-        "Portfolio, notes and projects by Vlad Andrei Rus — AI architectures, machine learning, competitive programming, math, and building things from zero.",
+        "Portfolio, notes and projects by Vlad Andrei Rus<->AI architectures, machine learning, competitive programming, math, and building things from zero.",
       author_name: "Vlad Andrei Rus",
       author_url: "https://ihatebaselines.com",
       provider_name: "ihatebaselines",

@@ -5,7 +5,7 @@ import { posts } from "@/content/posts";
 import { PageIntro } from "@/components/SiteCards";
 
 export const metadata = {
-  title: "About — ihatebaselines",
+  title: "About<->ihatebaselines",
   description: "A little more about the student developer behind ihatebaselines.",
 };
 

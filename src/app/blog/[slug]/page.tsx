@@ -18,10 +18,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const imageUrl = post.cover ? (post.cover.startsWith("http") ? post.cover : `https://ihatebaselines.com${post.cover}`) : "https://ihatebaselines.com/images/ihatebaselines.jpg";
   const desc = post.excerpt || post.shortStory || "Blog post by Vlad Andrei Rus on ihatebaselines.";
   return {
-    title: `${post.title} — ihatebaselines.`,
+    title: `${post.title}<->ihatebaselines.`,
     description: desc,
     openGraph: {
-      title: `${post.title} — ihatebaselines.`,
+      title: `${post.title}<->ihatebaselines.`,
       description: desc,
       url: `https://ihatebaselines.com/blog/${slug}`,
       images: [
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: {
       card: "summary_large_image",
-      title: `${post.title} — ihatebaselines.`,
+      title: `${post.title}<->ihatebaselines.`,
       description: desc,
       images: [imageUrl],
     },

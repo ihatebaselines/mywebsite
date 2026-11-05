@@ -2,7 +2,7 @@ import { workItems } from "@/content/work";
 import { PageIntro } from "@/components/SiteCards";
 
 export const metadata = {
-  title: "Competitions & Hackathons — ihatebaselines",
+  title: "Competitions & Hackathons<->ihatebaselines",
   description: "Competition results, hackathons, and what I learned along the way.",
 };
 

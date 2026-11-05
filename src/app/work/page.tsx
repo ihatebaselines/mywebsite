@@ -3,7 +3,7 @@ import { getSortedWork } from "@/content/work";
 import { EntryCard, PageIntro } from "@/components/SiteCards";
 
 export const metadata = {
-  title: "Work — ihatebaselines",
+  title: "Work<->ihatebaselines",
   description: "Projects, competitions, and things I’ve built and shipped.",
 };
 

@@ -1,10 +1,10 @@
 [
   {
     "slug": "dpit-2026",
-    "title": "2nd Place at DpIT Academy 2026 — Team Thores",
+    "title": "2nd Place at DpIT Academy 2026<->Team Thores",
     "date": "2026-11-05",
     "category": "Portfolio, Competition",
-    "excerpt": "Winning 2nd Place (Award II) at DpIT Academy 2026 with Team Thores, mentored by BMW Techworks Romania — a 6-month journey from idea to live demo on a mattress and the final gala.",
+    "excerpt": "Winning 2nd Place (Award II) at DpIT Academy 2026 with Team Thores, mentored by BMW Techworks Romania<->a 6-month journey from idea to live demo on a mattress and the final gala.",
     "shortStory": "We won 2nd Place at DpIT Academy 2026 with Team Thores! A 6-month journey with BMW Techworks Romania mentorship, 21 competing teams, live demo moments, and an unforgettable awards ceremony.",
     "cover": "/images/dpit-team.jpg",
     "gallery": [
@@ -12,17 +12,17 @@
       "/images/dpit-award.jpg"
     ],
     "body": [
-      "Today we won 2nd Place at DpIT Academy 2026! 🥈 But honestly, this was never just a simple competition — it was an entire six-month journey and one of the most fulfilling experiences I've ever lived through.",
-      "From six months ago when I first met the team and we started brainstorming an ambitious idea together with our mentors from BMW Techworks Romania, all the way to today, November 5, at the final awards gala — we shared so many incredible, unforgettable moments.",
+      "Today we won 2nd Place at DpIT Academy 2026! 🥈 But honestly, this was never just a simple competition<->it was an entire six-month journey and one of the most fulfilling experiences I've ever lived through.",
+      "From six months ago when I first met the team and we started brainstorming an ambitious idea together with our mentors from BMW Techworks Romania, all the way to today, November 5, at the final awards gala<->we shared so many incredible, unforgettable moments.",
       "Throughout DpIT 2026, we took part in free courses and masterclasses organized by the academy covering business strategies, pitch presentations, computer science foundations, AI, and so much more. But it wasn't just about the coursework: it was truly about the people we met and the team we built. DpIT genuinely teaches you what it means to work as a team in a real company setting: at first, you usually don't even know most of your teammates, but step by step you learn to align, solve friction, and turn an abstract concept into a real, polished product.",
-      "Our team — **Team Thores** — was formed by Ian Ștefan-Cazacu, Maria Borgovan, Natasha Oprean, Patric Baidoc, Andrei Pop, and myself. And of course, a massive shoutout to our mentor from BMW who helped us tremendously throughout this whole journey: Vlad Stoica (: (as well as Cristian Matei from BMW Techworks Romania, and Elena Ștefan-Cazacu, president of Asociația DpIT).",
+      "Our team<->**Team Thores**<->was formed by Ian Ștefan-Cazacu, Maria Borgovan, Natasha Oprean, Patric Baidoc, Andrei Pop, and myself. And of course, a massive shoutout to our mentor from BMW who helped us tremendously throughout this whole journey: Vlad Stoica (: (as well as Cristian Matei from BMW Techworks Romania, and Elena Ștefan-Cazacu, president of Asociația DpIT).",
       "What we experienced today and across these six months is honestly ineffable.",
       "## The Jury Demo on a Mattress (:",
       "About a month ago, the official project evaluation took place: 21 teams pitched 21 projects backed by numerous partner companies. We even managed to make the jury burst into laughter: while two of my teammates were giving the pitch presentation, I was literally on a mattress in front of everyone doing the live, real-time demo of our application! It was super fun, ridiculously stressful, and an absolute rollercoaster of emotions that I would relive in a heartbeat (:.",
       "## The Exhibition Booth & The Wheel",
       "Then came today: alongside the awards ceremony to find out who would take 1st, 2nd, and 3rd place plus the special awards, all 21 teams had their own interactive exhibition booth! It was an absolute blast. We had tons of cool swag from our partner company as well as merchandise we designed ourselves, and we even built our own case-opening prize wheel that had a non-stop queue of people coming over to spin it. Sadly, we didn't end up taking home the Public Vote award (we were super close!), but the energy and fun at our booth was unmatched.",
       "## The Gala & The 2nd Place Announcement",
-      "And then came the awards gala — two solid hours of pure, concentrated tension. Following the speeches by company leaders and event sponsors, the awards segment began.",
+      "And then came the awards gala<->two solid hours of pure, concentrated tension. Following the speeches by company leaders and event sponsors, the awards segment began.",
       "First were the special awards offered by individual companies to various teams so everyone had a chance to get recognized. Unfortunately, we didn't get any of them ): At first, I felt pretty sad and wondered if all our hard work had gone unnoticed.",
       "Then came the top podium prizes for 1st, 2nd, and 3rd place.",
       "3rd Place was announced... nothing for us. The stress levels were off the charts.",
@@ -33,7 +33,7 @@
     ],
     "links": [
       {
-        "title": "Thores — Official Website",
+        "title": "Thores<->Official Website",
         "url": "https://thores.ro/",
         "badge": "PROJECT",
         "description": "Official website and product showcase developed by Team Thores during DpIT Academy 2026."
@@ -59,7 +59,7 @@
       "💔The SwiftFox architecture has gone through SO many iterations and existential crises (: and no, today I'm not here to debate names 😭🙏.",
       "Tbh, it was lowkey such a fun and crazy project to build, and I'm definitely going to keep developing it. If you remember my October 28 post, I attached an image to my earlier prototype, asked it what was inside, and it literally hallucinated complete non-sense code with a perplexity of 850.309159... like, what else could I even expect?! 💔 That kind of pain makes you want to rewrite everything from absolute scratch.",
       "So I sat down and built SwiftFox: a multimodal language model implemented completely in PyTorch that ingests both image patches and raw text tokens and autoregressively generates clean responses. The architecture is built to work seamlessly whether you give it pure **Text → Text** or multiple visual inputs for **Image + Text → Text**.",
-      "And before anyone asks: YES, it already has **native multi-image cross-frame reasoning** built right into its core! In my training pipeline, I pass up to 3 images at once (and structurally it can scale to even more). It doesn't process images in isolation — it flattens patches from ALL images into the exact same self-attention sequence, meaning the model can literally compare frames, track visual changes, and solve tasks like Spot-The-Diff natively 😭🙏.",
+      "And before anyone asks: YES, it already has **native multi-image cross-frame reasoning** built right into its core! In my training pipeline, I pass up to 3 images at once (and structurally it can scale to even more). It doesn't process images in isolation<->it flattens patches from ALL images into the exact same self-attention sequence, meaning the model can literally compare frames, track visual changes, and solve tasks like Spot-The-Diff natively 😭🙏.",
       "call:SwiftFox flattens all patches across multiple images and text tokens into a single autoregressive sequence, calculating dense cross-image attention with RoPE, and routing tokens through an Adaptive Entropy Mixture of Experts (MoE) powered by SwiGLU.",
       "diagram:swiftfox_flow",
       "## 1. The Real Timeline (:",
@@ -131,26 +131,26 @@
   },
   {
     "slug": "ccc-2026",
-    "title": "CCC 2026 — School & Data/AI",
+    "title": "CCC 2026<->School & Data/AI",
     "date": "2026-10-24",
     "category": "Portfolio, AI Competition",
-    "excerpt": "Place School: 14th, Place Data/AI: 31st (with team PretrainedLanguageModel) — a very interesting experience held back by matchmaking issues and the lack of fairness around paid AI subscriptions.",
+    "excerpt": "Place School: 14th, Place Data/AI: 31st (with team PretrainedLanguageModel)<->a very interesting experience held back by matchmaking issues and the lack of fairness around paid AI subscriptions.",
     "shortStory": "CCC 2026 was a very interesting experience where we placed 31st in Data/AI with team PretrainedLanguageModel and 14th in School, heavily impacted by strange matchmaking queues and the lack of fairness caused by top-tier paid AI subscriptions.",
     "cover": "/images/ccc.png",
     "gallery": [
       "/images/ccc2.png"
     ],
     "body": [
-      "Cloudflight Coding Contest (CCC) 2026 was a very interesting experience overall, even though unfortunately this year we didn’t manage to achieve our best results — finishing in 31st place in the Data/AI category with team PretrainedLanguageModel, and 14th place in the School phase.",
-      "From our team's perspective, one of the biggest obstacles in the Data/AI competition was the matchmaking system, which felt quite poorly balanced. Because the matchmaking queue simply wouldn't put us into games consistently, we couldn't play nearly as many matches with our AI as we should have. By the end, we only had around 100 matches played while other teams had 300 to 400 matches — which was really strange. There were even stretches where we sat for 10 minutes straight without being placed into a single match, which was honestly pretty sad.",
+      "Cloudflight Coding Contest (CCC) 2026 was a very interesting experience overall, even though unfortunately this year we didn’t manage to achieve our best results<->finishing in 31st place in the Data/AI category with team PretrainedLanguageModel, and 14th place in the School phase.",
+      "From our team's perspective, one of the biggest obstacles in the Data/AI competition was the matchmaking system, which felt quite poorly balanced. Because the matchmaking queue simply wouldn't put us into games consistently, we couldn't play nearly as many matches with our AI as we should have. By the end, we only had around 100 matches played while other teams had 300 to 400 matches<->which was really strange. There were even stretches where we sat for 10 minutes straight without being placed into a single match, which was honestly pretty sad.",
       "Because we weren't getting matched, our ranking kept sliding down toward the end: after being up in 2nd place, we dropped to 10th, then 20th, and finally 31st.",
-      "On top of the matchmaking issues, there were the paid AI subscriptions ): We're not denying that we vibecoded too, but it's honestly sad that there is no real fairness anymore. Top teams come in paying for the most expensive tier subscription of a model just to turn a profit by taking the top spots — and it's sad that others no longer stand a real chance of winning. Even when you genuinely try hard to craft good, explicit prompts for your model, you still can't match the performance of those top paid subscriptions without paying up ):",
-      "In the School category, we also finished in 14th place — largely for the same reason, going up against vibecoders with top-tier paid AI subscriptions ): Still, despite the frustrations with the matchmaking queue and the current pay-to-win feeling of AI subscriptions, competing alongside PretrainedLanguageModel made it a memorable contest."
+      "On top of the matchmaking issues, there were the paid AI subscriptions ): We're not denying that we vibecoded too, but it's honestly sad that there is no real fairness anymore. Top teams come in paying for the most expensive tier subscription of a model just to turn a profit by taking the top spots<->and it's sad that others no longer stand a real chance of winning. Even when you genuinely try hard to craft good, explicit prompts for your model, you still can't match the performance of those top paid subscriptions without paying up ):",
+      "In the School category, we also finished in 14th place<->largely for the same reason, going up against vibecoders with top-tier paid AI subscriptions ): Still, despite the frustrations with the matchmaking queue and the current pay-to-win feeling of AI subscriptions, competing alongside PretrainedLanguageModel made it a memorable contest."
     ]
   },
   {
     "slug": "from-algorithms-to-neurons",
-    "title": "1st Place at From Algorithms to Neurons — AI Competition & Hackathon",
+    "title": "1st Place at From Algorithms to Neurons<->AI Competition & Hackathon",
     "date": "2026-08-26",
     "category": "Portfolio, AI Competition",
     "excerpt": "1st place in the AI Competition (Group A, Grades 7–10) and 9th place in the 24h Hackathon at Constanța Maritime University.",
@@ -173,17 +173,17 @@
     ],
     "links": [
       {
-        "title": "From Algorithms to Neurons — Official Site",
+        "title": "From Algorithms to Neurons<->Official Site",
         "url": "https://www.algorithms-to-neurons.com/",
         "description": "Official event website with schedule, speakers, IEEE backing, and scientific showcase."
       },
       {
-        "title": "AI Competition Tasks — Group A (Grades 7–10)",
+        "title": "AI Competition Tasks<->Group A (Grades 7–10)",
         "url": "https://platform.olimpiada-ai.ro/ro/competitions/29",
         "description": "Signal Analysis and audio processing challenges on platform.olimpiada-ai.ro (1st place, ~260/300 pts)."
       },
       {
-        "title": "AI Competition Tasks — Group B (Grades 11–12)",
+        "title": "AI Competition Tasks<->Group B (Grades 11–12)",
         "url": "https://platform.olimpiada-ai.ro/ro/competitions/30",
         "description": "Signal processing tasks and problem sets for senior division competitors."
       }
@@ -272,7 +272,7 @@
   },
   {
     "slug": "skillab",
-    "title": "Skillab — Innovation Challenge",
+    "title": "Skillab<->Innovation Challenge",
     "date": "2026-05-27",
     "category": "Portofolio",
     "excerpt": "First place at the Skillab Innovation Challenge",
@@ -290,7 +290,7 @@
   },
   {
     "slug": "roaiprelot",
-    "title": "ROAI Prelot — Volunteer & Problem Setter",
+    "title": "ROAI Prelot<->Volunteer & Problem Setter",
     "date": "2026-05-18",
     "category": "Portofolio",
     "excerpt": "I volunteered and proposed a Reinforcement Learning problem named Funtime Beach, inspired by Gymnasium's Blackjack environment.",

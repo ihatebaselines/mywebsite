@@ -3,7 +3,7 @@ import { getSortedPosts } from "@/content/posts";
 import { PageIntro } from "@/components/SiteCards";
 
 export const metadata = {
-  title: "Blog — ihatebaselines",
+  title: "Blog<->ihatebaselines",
   description: "Random thoughts, experiments, and things learned while building on the internet.",
 };
 
