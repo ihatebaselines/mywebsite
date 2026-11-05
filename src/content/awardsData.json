@@ -1,5 +1,36 @@
 [
   {
+    "id": "dpit-2026",
+    "title": "2nd Place — DpIT Academy 2026",
+    "event": "DpIT Academy 2026 (Descoperă-ți Pasiunea în IT)",
+    "category": "Product Development & Startup Competition",
+    "date": "2026-11-05",
+    "place": "2nd Place",
+    "tier": "silver",
+    "badge": "🥈 2nd Place · Award II",
+    "score": "2nd / 21 Teams",
+    "division": "Team Thores · BMW Techworks Romania",
+    "description": "Won 2nd Place (Award II) at DpIT Academy 2026 with Team Thores, developed under BMW Techworks Romania mentorship. A 6-month journey spanning tech and business workshops, a 21-team project evaluation with a live mattress demo, and a bustling gala exhibition booth.",
+    "links": [
+      {
+        "label": "Blog Post",
+        "url": "/blog/dpit-2026"
+      },
+      {
+        "label": "Thores.ro",
+        "url": "https://thores.ro/"
+      }
+    ],
+    "tags": [
+      "DpIT",
+      "BMW Techworks",
+      "Team Thores",
+      "Startup",
+      "2nd Place",
+      "Product Development"
+    ]
+  },
+  {
     "id": "ccc-2026",
     "title": "14th School & 31st Data/AI",
     "event": "Cloudflight Coding Contest (CCC) 2026",
@@ -12,9 +43,17 @@
     "division": "Team PretrainedLanguageModel",
     "description": "Placed 31st in Data/AI (with team PretrainedLanguageModel) and 14th in School. Held back by matchmaking bottlenecks (~100 matches vs. 300–400 for others) and the lack of fairness where top teams pay for the best AI subscriptions to profit from top spots — making it nearly impossible to compete even when crafting strong prompts ):",
     "links": [
-      { "label": "Blog Post", "url": "/blog/ccc-2026" }
+      {
+        "label": "Blog Post",
+        "url": "/blog/ccc-2026"
+      }
     ],
-    "tags": ["Cloudflight", "Data/AI", "PretrainedLanguageModel", "Competitive Coding"]
+    "tags": [
+      "Cloudflight",
+      "Data/AI",
+      "PretrainedLanguageModel",
+      "Competitive Coding"
+    ]
   },
   {
     "id": "rosdc-2026",
@@ -29,9 +68,18 @@
     "division": "Condor Company — Operations",
     "description": "First of all, Condor is way better than Kepler or whatever other team 💔 A wonderful experience working on the Operations side of an industry-style space settlement design competition, meeting lots of creative people with awesome ideas.",
     "links": [
-      { "label": "Instagram", "url": "https://www.instagram.com/ro.sdc/" }
+      {
+        "label": "Instagram",
+        "url": "https://www.instagram.com/ro.sdc/"
+      }
     ],
-    "tags": ["ROSDC", "Space Design", "Operations", "Condor", "Aerospace"]
+    "tags": [
+      "ROSDC",
+      "Space Design",
+      "Operations",
+      "Condor",
+      "Aerospace"
+    ]
   },
   {
     "id": "algorithms-to-neurons-ai",
@@ -46,11 +94,25 @@
     "division": "Group A (Grades 7–10)",
     "description": "5-day AI event in Constanța organized by IEEE Romania Section & Informatică pentru Viitor. Focused on Signal Analysis, audio preprocessing, and competitive AI problem solving.",
     "links": [
-      { "label": "Blog Post", "url": "/blog/from-algorithms-to-neurons" },
-      { "label": "Group A Problems", "url": "https://platform.olimpiada-ai.ro/ro/competitions/29" },
-      { "label": "Event Site", "url": "https://www.algorithms-to-neurons.com/" }
+      {
+        "label": "Blog Post",
+        "url": "/blog/from-algorithms-to-neurons"
+      },
+      {
+        "label": "Group A Problems",
+        "url": "https://platform.olimpiada-ai.ro/ro/competitions/29"
+      },
+      {
+        "label": "Event Site",
+        "url": "https://www.algorithms-to-neurons.com/"
+      }
     ],
-    "tags": ["Signal Analysis", "Audio ML", "AI Competition", "IEEE"]
+    "tags": [
+      "Signal Analysis",
+      "Audio ML",
+      "AI Competition",
+      "IEEE"
+    ]
   },
   {
     "id": "skillab-innovation",
@@ -65,10 +127,21 @@
     "division": "Open / Team",
     "description": "Built Skillab Radar, an AI-powered labour market intelligence and skills analytics platform for Cluj IT Cluster, winning 1st place and €1000 prize.",
     "links": [
-      { "label": "Blog Post", "url": "/blog/skillab" },
-      { "label": "GitHub Repo", "url": "https://github.com/rusu28/Skillab-Radar-V1.2" }
+      {
+        "label": "Blog Post",
+        "url": "/blog/skillab"
+      },
+      {
+        "label": "GitHub Repo",
+        "url": "https://github.com/rusu28/Skillab-Radar-V1.2"
+      }
     ],
-    "tags": ["AI Innovation", "Product Design", "Labour Analytics", "Cluj IT"]
+    "tags": [
+      "AI Innovation",
+      "Product Design",
+      "Labour Analytics",
+      "Cluj IT"
+    ]
   },
   {
     "id": "rise-final-round",
@@ -83,9 +156,16 @@
     "division": "Individual (vladandrei)",
     "description": "International-style competitive machine learning contest on Nitro-AI Judge. High-pressure AI olympiad tasks testing model intuition, feature engineering, and robust pipelines.",
     "links": [
-      { "label": "Blog Post", "url": "/blog/rise" }
+      {
+        "label": "Blog Post",
+        "url": "/blog/rise"
+      }
     ],
-    "tags": ["Nitro-AI", "Olympiad ML", "Competitive AI"]
+    "tags": [
+      "Nitro-AI",
+      "Olympiad ML",
+      "Competitive AI"
+    ]
   },
   {
     "id": "nitronlp-hackathon",
@@ -100,9 +180,17 @@
     "division": "Team PretrainedLanguageModel",
     "description": "Fast-paced NLP competition on Nitro-AI Judge focused on language models, fine-tuning, embeddings, and text processing under strict time constraints.",
     "links": [
-      { "label": "Blog Post", "url": "/blog/nitronlp" }
+      {
+        "label": "Blog Post",
+        "url": "/blog/nitronlp"
+      }
     ],
-    "tags": ["NLP", "Transformers", "Nitro-AI", "Team Contest"]
+    "tags": [
+      "NLP",
+      "Transformers",
+      "Nitro-AI",
+      "Team Contest"
+    ]
   },
   {
     "id": "roai-national-stage",
@@ -117,9 +205,17 @@
     "division": "National AI Olympiad",
     "description": "Official Romanian National Artificial Intelligence Olympiad phase testing deep theoretical and applied machine learning and algorithmic problem solving.",
     "links": [
-      { "label": "Blog Post", "url": "/blog/roainationala" }
+      {
+        "label": "Blog Post",
+        "url": "/blog/roainationala"
+      }
     ],
-    "tags": ["ROAI", "National Olympiad", "AI Theory", "Romania"]
+    "tags": [
+      "ROAI",
+      "National Olympiad",
+      "AI Theory",
+      "Romania"
+    ]
   },
   {
     "id": "ccc-cloudflight",
@@ -134,9 +230,17 @@
     "division": "Individual (vladddddddd)",
     "description": "Progressive level-based algorithmic problem solving and data analysis challenge with live automated judge grading.",
     "links": [
-      { "label": "Blog Post", "url": "/blog/ccc" }
+      {
+        "label": "Blog Post",
+        "url": "/blog/ccc"
+      }
     ],
-    "tags": ["Cloudflight", "Algorithms", "Data/AI", "Competitive Coding"]
+    "tags": [
+      "Cloudflight",
+      "Algorithms",
+      "Data/AI",
+      "Competitive Coding"
+    ]
   },
   {
     "id": "algorithms-to-neurons-hackathon",
@@ -151,9 +255,17 @@
     "division": "Team Camera 505",
     "description": "24-hour intense hackathon on 'Signals That Can Change Our World' at Constanța Maritime University building real-world signal systems.",
     "links": [
-      { "label": "Blog Post", "url": "/blog/from-algorithms-to-neurons" }
+      {
+        "label": "Blog Post",
+        "url": "/blog/from-algorithms-to-neurons"
+      }
     ],
-    "tags": ["24h Hackathon", "Signal Systems", "Constanța", "Teamwork"]
+    "tags": [
+      "24h Hackathon",
+      "Signal Systems",
+      "Constanța",
+      "Teamwork"
+    ]
   },
   {
     "id": "roai-prelot-problem-setter",
@@ -168,8 +280,16 @@
     "division": "Reinforcement Learning Task",
     "description": "Authored and designed 'Funtime Beach', an original model-based Reinforcement Learning contest task inspired by Gymnasium's Blackjack environment.",
     "links": [
-      { "label": "Blog Post", "url": "/blog/roaiprelot" }
+      {
+        "label": "Blog Post",
+        "url": "/blog/roaiprelot"
+      }
     ],
-    "tags": ["Reinforcement Learning", "Gymnasium", "Contest Design", "ROAI"]
+    "tags": [
+      "Reinforcement Learning",
+      "Gymnasium",
+      "Contest Design",
+      "ROAI"
+    ]
   }
 ]

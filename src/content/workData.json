@@ -1,5 +1,36 @@
 [
   {
+    "slug": "dpit-2026",
+    "title": "DpIT Academy 2026 — 2nd Place",
+    "date": "2026-11-05",
+    "result": "2nd Place · Award II",
+    "tag": "Competition & Product Development",
+    "summary": "Won 2nd Place (Award II) at DpIT Academy 2026 with Team Thores, developed under BMW Techworks Romania mentorship. A 6-month product journey featuring business workshops, live jury demo on a mattress, and an exhibition booth.",
+    "image": "/images/dpit-team.jpg",
+    "gallery": [
+      "/images/dpit-team.jpg",
+      "/images/dpit-award.jpg"
+    ],
+    "relatedHref": "/blog/dpit-2026",
+    "links": [
+      {
+        "label": "Thores Official Website",
+        "url": "https://thores.ro/",
+        "description": "Official platform developed by Team Thores during DpIT 2026."
+      },
+      {
+        "label": "DpIT Official Site",
+        "url": "https://dpit.ro/",
+        "description": "Asociația Descoperă-ți Pasiunea în IT annual academy."
+      }
+    ],
+    "body": [
+      "Won 2nd Place (Award II) at DpIT Academy 2026 with Team Thores, competing against 21 high-school teams backed by top IT companies in Cluj-Napoca.",
+      "Over the course of six months, our team — Ian Ștefan-Cazacu, Maria Borgovan, Natasha Oprean, Patric Baidoc, Andrei Pop, and Vlad Andrei Rus — took part in product design, business, and AI workshops under the guidance of our BMW Techworks Romania mentors, Vlad Stoica and Cristian Matei.",
+      "We developed Thores (https://thores.ro/), demonstrated the product live in front of the judging panel (including a memorable live demo while on a mattress), and hosted a crowded interactive booth with custom merch and a prize wheel during the final gala."
+    ]
+  },
+  {
     "slug": "ccc-2026",
     "title": "CCC 2026 — School & Data/AI",
     "date": "2026-10-24",
@@ -80,7 +111,9 @@
     "tag": "Competition",
     "summary": "Second place at the RISE Final Round after a stronger final with harder AI tasks.",
     "image": "/images/riselogo.png",
-    "gallery": ["/images/roaifinalround.png"],
+    "gallery": [
+      "/images/roaifinalround.png"
+    ],
     "relatedHref": "/blog/rise",
     "body": [
       "RISE was one of the competition results that gave me a lot of confidence. The final round was harder than the qualifier and forced me to stay calm while solving AI-style tasks under pressure.",
@@ -95,7 +128,9 @@
     "tag": "Hackathon",
     "summary": "First place with a project around skills, labour-market analytics, and AI-assisted insight.",
     "image": "/images/skillab-logo-img.jpg",
-    "gallery": ["/images/angelu.png"],
+    "gallery": [
+      "/images/angelu.png"
+    ],
     "relatedHref": "/blog/skillab",
     "repoUrl": "https://github.com/rusu28/Skillab-Radar-V1.2",
     "body": [
@@ -112,7 +147,9 @@
     "tag": "NLP",
     "summary": "Third place with PretrainedLanguageModel in a fast NLP hackathon on Nitro-AI Judge.",
     "image": "/images/pretrainedlm.png",
-    "gallery": ["/images/pretrainedlm.png"],
+    "gallery": [
+      "/images/pretrainedlm.png"
+    ],
     "relatedHref": "/blog/nitronlp",
     "body": [
       "NitroNLP was a fast team-based NLP competition. It rewarded quick iteration, practical evaluation, and communication inside the team.",
@@ -127,7 +164,9 @@
     "tag": "AI Competition",
     "summary": "A high-pressure qualifier round that pushed my practical ML and contest strategy.",
     "image": "/images/portfolio-duck.png",
-    "gallery": ["/images/selectielot.png"],
+    "gallery": [
+      "/images/selectielot.png"
+    ],
     "relatedHref": "/blog/roaiselection",
     "body": [
       "The ROAI Selection Camp Qualifier was useful because it exposed weaknesses in how I manage experiments and time. It was not only about knowing ML, but also about choosing the right experiment quickly.",
@@ -142,7 +181,9 @@
     "tag": "Programming",
     "summary": "Placed 4th in School and 12th in Data/AI, mixing algorithmic speed with data thinking.",
     "image": "/images/ccc.png",
-    "gallery": ["/images/ccc2.png"],
+    "gallery": [
+      "/images/ccc2.png"
+    ],
     "relatedHref": "/blog/ccc",
     "body": [
       "CCC mixed level-based programming with data and AI thinking. I liked it because the structure rewarded persistence: each improvement unlocked more of the task.",

@@ -1,5 +1,52 @@
 [
   {
+    "slug": "dpit-2026",
+    "title": "2nd Place at DpIT Academy 2026 — Team Thores",
+    "date": "2026-11-05",
+    "category": "Portfolio, Competition",
+    "excerpt": "Winning 2nd Place (Award II) at DpIT Academy 2026 with Team Thores, mentored by BMW Techworks Romania — a 6-month journey from idea to live demo on a mattress and the final gala.",
+    "shortStory": "We won 2nd Place at DpIT Academy 2026 with Team Thores! A 6-month journey with BMW Techworks Romania mentorship, 21 competing teams, live demo moments, and an unforgettable awards ceremony.",
+    "cover": "/images/dpit-team.jpg",
+    "gallery": [
+      "/images/dpit-team.jpg",
+      "/images/dpit-award.jpg"
+    ],
+    "body": [
+      "Today we won 2nd Place at DpIT Academy 2026! 🥈 But honestly, this was never just a simple competition — it was an entire six-month journey and one of the most fulfilling experiences I've ever lived through.",
+      "From six months ago when I first met the team and we started brainstorming an ambitious idea together with our mentors from BMW Techworks Romania, all the way to today, November 5, at the final awards gala — we shared so many incredible, unforgettable moments.",
+      "Throughout DpIT 2026, we took part in free courses and masterclasses organized by the academy covering business strategies, pitch presentations, computer science foundations, AI, and so much more. But it wasn't just about the coursework: it was truly about the people we met and the team we built. DpIT genuinely teaches you what it means to work as a team in a real company setting: at first, you usually don't even know most of your teammates, but step by step you learn to align, solve friction, and turn an abstract concept into a real, polished product.",
+      "Our team — **Team Thores** — was formed by Ian Ștefan-Cazacu, Maria Borgovan, Natasha Oprean, Patric Baidoc, Andrei Pop, and myself. And of course, a massive shoutout to our mentor from BMW who helped us tremendously throughout this whole journey: Vlad Stoica (: (as well as Cristian Matei from BMW Techworks Romania, and Elena Ștefan-Cazacu, president of Asociația DpIT).",
+      "What we experienced today and across these six months is honestly ineffable.",
+      "## The Jury Demo on a Mattress (:",
+      "About a month ago, the official project evaluation took place: 21 teams pitched 21 projects backed by numerous partner companies. We even managed to make the jury burst into laughter: while two of my teammates were giving the pitch presentation, I was literally on a mattress in front of everyone doing the live, real-time demo of our application! It was super fun, ridiculously stressful, and an absolute rollercoaster of emotions that I would relive in a heartbeat (:.",
+      "## The Exhibition Booth & The Wheel",
+      "Then came today: alongside the awards ceremony to find out who would take 1st, 2nd, and 3rd place plus the special awards, all 21 teams had their own interactive exhibition booth! It was an absolute blast. We had tons of cool swag from our partner company as well as merchandise we designed ourselves, and we even built our own case-opening prize wheel that had a non-stop queue of people coming over to spin it. Sadly, we didn't end up taking home the Public Vote award (we were super close!), but the energy and fun at our booth was unmatched.",
+      "## The Gala & The 2nd Place Announcement",
+      "And then came the awards gala — two solid hours of pure, concentrated tension. Following the speeches by company leaders and event sponsors, the awards segment began.",
+      "First were the special awards offered by individual companies to various teams so everyone had a chance to get recognized. Unfortunately, we didn't get any of them ): At first, I felt pretty sad and wondered if all our hard work had gone unnoticed.",
+      "Then came the top podium prizes for 1st, 2nd, and 3rd place.",
+      "3rd Place was announced... nothing for us. The stress levels were off the charts.",
+      "And then... 2nd Place (Award II)... **TEAM THORES!** 🎉",
+      "I was so overwhelmingly happy, and the feeling was unbelievable!",
+      "call:Be sure to check out our official website at https://thores.ro/ to see more details about everything we built :)))",
+      "I am so incredibly happy today, and the emotions I felt are truly ineffable. I genuinely can't wait to participate again next year, maybe even meet a new team, and build something beautiful from zero once more. Thank you everyone (: Team Thores <3"
+    ],
+    "links": [
+      {
+        "title": "Thores — Official Website",
+        "url": "https://thores.ro/",
+        "badge": "PROJECT",
+        "description": "Official website and product showcase developed by Team Thores during DpIT Academy 2026."
+      },
+      {
+        "title": "DpIT Academy (Descoperă-ți Pasiunea în IT)",
+        "url": "https://dpit.ro/",
+        "badge": "ACADEMY",
+        "description": "High-school educational program and product competition organized by Asociația Descoperă-ți Pasiunea în IT."
+      }
+    ]
+  },
+  {
     "slug": "swiftfox",
     "title": "swiftfox",
     "date": "2026-11-01",
