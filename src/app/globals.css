@@ -274,7 +274,52 @@ img { display: block; max-width: 100%; }
 }
 .hero-minimal-center {
   margin: auto 0;
-  padding: 24px 0 48px;
+  padding: clamp(20px, 3vh, 40px) 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.22fr) minmax(260px, 0.78fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 56px);
+}
+.hero-minimal-copy {
+  display: flex;
+  flex-direction: column;
+}
+.hero-minimal-center .hero-visual {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 440px;
+  min-height: 240px;
+  max-height: 330px;
+  aspect-ratio: 1.35;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-soft);
+  justify-self: end;
+}
+.hero-visual-interactive {
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+.hero-visual-interactive:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 30px -10px rgba(79, 163, 165, 0.3);
+}
+.hero-visual-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 3px 8px;
+  background: rgba(15, 17, 21, 0.75);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  font-size: 0.62rem;
+  font-family: monospace;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  pointer-events: none;
 }
 .hero-minimal .home-title {
   margin: 0 0 18px;
@@ -538,6 +583,18 @@ img { display: block; max-width: 100%; }
 }
 
 @media (max-width: 720px) {
+  .hero-minimal-center {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 20px !important;
+    padding: 16px 0 24px !important;
+  }
+  .hero-minimal-center .hero-visual {
+    max-width: 100% !important;
+    min-height: 200px !important;
+    max-height: 250px !important;
+    aspect-ratio: 1.4 !important;
+    justify-self: start !important;
+  }
   .hero-minimal {
     min-height: calc(100svh - 68px);
     padding: 32px 0 24px;

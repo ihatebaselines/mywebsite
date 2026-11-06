@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { EntryCard } from "@/components/SiteCards";
 import { getFeaturedProjects, projects } from "@/content/projects";
 import { getSortedPosts, posts } from "@/content/posts";
 import { getSortedWork, workItems } from "@/content/work";
 import DrunkTitle from "@/components/home/DrunkTitle";
+import RandomHeroVisual from "@/components/home/RandomHeroVisual";
 
 const destinations = [
   { number: "01", label: "work", href: "/work" },
@@ -23,13 +25,18 @@ export default function Home() {
       {/* First Viewport: Exact Minimalist Hero */}
       <section className="hero-minimal" aria-labelledby="home-title">
         <div className="hero-minimal-center">
-          <DrunkTitle />
-          <p className="hero-minimal-desc">
-            student developer building AI, open source, and things that start at zero.
-          </p>
-          <Link className="hero-minimal-cta" href="/work">
-            view my work <span aria-hidden="true">→</span>
-          </Link>
+          <div className="hero-minimal-copy">
+            <DrunkTitle />
+            <p className="hero-minimal-desc">
+              student developer building AI, open source, and things that start at zero.
+            </p>
+            <div>
+              <Link className="hero-minimal-cta" href="/work">
+                view my work <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </div>
+          <RandomHeroVisual />
         </div>
 
         <div className="hero-minimal-bottom">
@@ -94,19 +101,16 @@ export default function Home() {
             view all blogs ({posts.length}) <span aria-hidden="true">→</span>
           </Link>
         </div>
-        <div className="min-list">
-          {sortedPosts.slice(0, 5).map((post, idx) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} className="min-row">
-              <span className="min-row-num">{String(idx + 1).padStart(2, "0")}</span>
-              <div className="min-row-main">
-                <h3>{post.title}</h3>
-                <p>{post.excerpt}</p>
-              </div>
-              <div className="min-row-meta">
-                <span>{post.date}</span>
-                <span className="min-row-arrow" aria-hidden="true">→</span>
-              </div>
-            </Link>
+        <div className="listing-grid three-col home-blog-grid">
+          {sortedPosts.slice(0, 3).map((post) => (
+            <EntryCard
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              title={post.title}
+              description={post.excerpt}
+              meta={`${post.category} <-> ${post.date}`}
+              image={post.cover}
+            />
           ))}
         </div>
       </section>
