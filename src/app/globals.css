@@ -284,6 +284,8 @@ img { display: block; max-width: 100%; }
 .hero-minimal-copy {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
 }
 .hero-minimal-center .hero-visual {
   position: relative;
@@ -322,11 +324,12 @@ img { display: block; max-width: 100%; }
 }
 .hero-minimal .home-title {
   margin: 0 0 18px;
-  font-size: clamp(2.8rem, 6.2vw, 4.9rem);
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
   font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.06;
   color: var(--text);
+  word-break: break-word;
 }
 .hero-minimal-desc {
   margin: 0 0 32px;
