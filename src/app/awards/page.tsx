@@ -29,7 +29,7 @@ export default function AwardsPage() {
       <aside className="competition-note"><h2>why competitions?</h2><p>Hackathons push me to learn faster, ship things, and meet amazing people. Even when it’s a weekend project, it’s a chance to try something new and grow.</p></aside>
       <section className="competition-list section-block" aria-label="Competition results">
         {entries.map((item) => <a className="competition-row" href={`/work/${item.slug}`} key={item.slug}>
-          <span className="competition-place"><strong>{results[item.slug] ?? "—"}</strong><span>{results[item.slug] ? "result" : "entry"}</span></span>
+          <span className="competition-place"><strong>{results[item.slug] ?? "<->"}</strong><span>{results[item.slug] ? "result" : "entry"}</span></span>
           <span><h2>{item.title}</h2><p>{item.summary}</p><span className="tag-list"><span className="tag">{item.tag}</span></span></span>
           <span className="competition-date">{item.date}　→</span>
         </a>)}
