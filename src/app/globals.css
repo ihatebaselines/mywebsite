@@ -342,7 +342,7 @@ img { display: block; max-width: 100%; }
   white-space: nowrap;
 }
 .hero-minimal .home-title .hero-video-text {
-  background-image: url('/videos/hero-mask.webp');
+  background-image: url('/videos/hero-mask-full.webp');
   background-size: cover;
   background-position: center;
   -webkit-background-clip: text;
