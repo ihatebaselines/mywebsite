@@ -276,9 +276,9 @@ img { display: block; max-width: 100%; }
   margin: auto 0;
   padding: clamp(20px, 3vh, 40px) 0;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+  grid-template-columns: minmax(0, 1.4fr) minmax(220px, 300px);
   align-items: center;
-  gap: clamp(24px, 4vw, 56px);
+  gap: clamp(40px, 6vw, 84px);
   overflow: hidden;
 }
 .hero-minimal-copy {
@@ -290,12 +290,14 @@ img { display: block; max-width: 100%; }
   position: relative;
   overflow: hidden;
   width: 100%;
+  max-width: 300px;
   min-width: 0;
-  aspect-ratio: 1.35;
+  aspect-ratio: 1.32;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--surface-soft);
   justify-self: end;
+  margin-left: auto;
 }
 .hero-visual-interactive {
   cursor: pointer;
@@ -342,8 +344,8 @@ img { display: block; max-width: 100%; }
 .title-video-mask {
   position: relative;
   width: 100%;
-  max-width: 460px;
-  aspect-ratio: 460 / 68;
+  max-width: 570px;
+  aspect-ratio: 570 / 80;
   overflow: hidden;
   background: var(--bg);
 }
@@ -1571,13 +1573,14 @@ img { display: block; max-width: 100%; }
   .hero-minimal-center {
     grid-template-columns: minmax(0, 1fr);
     padding: 0;
-    gap: 24px;
+    gap: 36px;
     overflow: visible;
   }
   .hero-minimal-center .hero-visual {
-    justify-self: stretch;
-    max-height: 240px;
-    aspect-ratio: 1.6;
+    justify-self: center;
+    max-width: 260px;
+    margin: 8px auto 0;
+    aspect-ratio: 1.35;
   }
   .hero-minimal .home-title {
     margin-bottom: 12px;
