@@ -34,7 +34,7 @@ export default function DrunkTitle() {
           />
         </video>
         <svg
-          viewBox="0 0 570 80"
+          viewBox="0 0 780 102"
           preserveAspectRatio="xMinYMid meet"
           className="title-mask-svg"
         >
@@ -43,10 +43,10 @@ export default function DrunkTitle() {
               <rect x="0" y="0" width="100%" height="100%" fill="white" />
               <text
                 x="0"
-                y="62"
+                y="80"
                 fill="black"
                 fontFamily="var(--font), 'JetBrains Mono', Consolas, monospace"
-                fontSize="62"
+                fontSize="88"
                 fontWeight="600"
                 letterSpacing="-0.035em"
               >

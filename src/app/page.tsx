@@ -4,7 +4,6 @@ import { getFeaturedProjects, projects } from "@/content/projects";
 import { getSortedPosts, posts } from "@/content/posts";
 import { getSortedWork, workItems } from "@/content/work";
 import DrunkTitle from "@/components/home/DrunkTitle";
-import RandomHeroVisual from "@/components/home/RandomHeroVisual";
 
 const destinations = [
   { number: "01", label: "work", href: "/work" },
@@ -25,18 +24,15 @@ export default function Home() {
       {/* First Viewport: Exact Minimalist Hero */}
       <section className="hero-minimal" aria-labelledby="home-title">
         <div className="hero-minimal-center">
-          <div className="hero-minimal-copy">
-            <DrunkTitle />
-            <p className="hero-minimal-desc">
-              student developer building AI, open source, and things that start at zero.
-            </p>
-            <div>
-              <Link className="hero-minimal-cta" href="/work">
-                view my work <span aria-hidden="true">→</span>
-              </Link>
-            </div>
+          <DrunkTitle />
+          <p className="hero-minimal-desc">
+            student developer building AI, open source, and things that start at zero.
+          </p>
+          <div>
+            <Link className="hero-minimal-cta" href="/work">
+              view my work <span aria-hidden="true">→</span>
+            </Link>
           </div>
-          <RandomHeroVisual />
         </div>
 
         <div className="hero-minimal-bottom">
