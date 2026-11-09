@@ -1,10 +1,10 @@
 import React from "react";
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PhotoGallery from "@/components/PhotoGallery";
 import ArticleContent from "@/components/ArticleContent";
+import { ClickableImage } from "@/components/ui/MediaModal";
 import { getPost, posts } from "@/content/posts";
 
 export function generateStaticParams() {
@@ -54,9 +54,39 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <h1>{post.title}</h1>
           <p>{post.excerpt}</p>
         </header>
-        {post.cover ? <div className="article-cover"><Image src={post.cover} alt="" width={1400} height={800} priority /></div> : null}
+        {post.cover ? (
+          <div className="article-cover">
+            <ClickableImage
+              src={post.cover}
+              alt={post.title}
+              title={post.title}
+              caption={post.excerpt}
+              width={1400}
+              height={800}
+            />
+          </div>
+        ) : null}
         <ArticleContent body={post.body} />
-        {post.links?.length ? <section className="article-resources"><div className="section-head"><div><span className="section-kicker">resources</span><h2>Further reading.</h2></div></div><div className="listing-grid two-col">{post.links.map((link) => <a className="entry-card resource-card" key={link.url} href={link.url} target="_blank" rel="noreferrer"><span className="entry-meta">{link.badge || "EXTERNAL RESOURCE"}</span><h3>{link.title} ↗</h3>{link.description ? <p>{link.description}</p> : null}<small>{link.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}</small></a>)}</div></section> : null}
+        {post.links?.length ? (
+          <section className="article-resources">
+            <div className="section-head">
+              <div>
+                <span className="section-kicker">resources</span>
+                <h2>Further reading.</h2>
+              </div>
+            </div>
+            <div className="listing-grid two-col">
+              {post.links.map((link) => (
+                <a className="entry-card resource-card" key={link.url} href={link.url} target="_blank" rel="noreferrer">
+                  <span className="entry-meta">{link.badge || "EXTERNAL RESOURCE"}</span>
+                  <h3>{link.title} ↗</h3>
+                  {link.description ? <p>{link.description}</p> : null}
+                  <small>{link.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}</small>
+                </a>
+              ))}
+            </div>
+          </section>
+        ) : null}
         {post.gallery?.length ? <PhotoGallery images={post.gallery} title="Event Photos & Showcase" /> : null}
       </article>
     </main>

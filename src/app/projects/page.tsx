@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getFeaturedProjects, getSortedProjects } from "@/content/projects";
 import { getSortedOpenSource } from "@/content/opensource";
 import { EntryCard, ExternalEntryCard, PageIntro } from "@/components/SiteCards";
+import StackingCards from "@/components/ui/StackingCards";
 
 export const metadata = {
   title: "Projects<->ihatebaselines",
@@ -22,19 +23,20 @@ export default function ProjectsPage() {
       />
 
       {featured.length > 0 ? (
-        <section className="listing-grid" aria-label="Featured projects">
-          {featured.map((project, index) => (
-            <EntryCard
-              key={project.slug}
-              href={`/projects/${project.slug}`}
-              title={project.title}
-              description={project.description}
-              meta={`FEATURED · ${project.date}`}
-              image={project.image}
-              tags={project.tags}
-              featured={index === 0}
-            />
-          ))}
+        <section aria-label="Featured projects" style={{ marginBottom: "52px" }}>
+          <StackingCards
+            cards={featured.map((project, index) => ({
+              id: project.slug,
+              number: String(index + 1).padStart(2, "0"),
+              title: project.title.toLowerCase(),
+              tag: project.tags[0]?.toUpperCase() || "FEATURED",
+              description: project.description,
+              meta: project.date,
+              image: project.image,
+              href: `/projects/${project.slug}`,
+              tags: project.tags,
+            }))}
+          />
         </section>
       ) : null}
 
@@ -80,7 +82,7 @@ export default function ProjectsPage() {
               target="_blank"
               rel="noreferrer"
             >
-              View all on GitHub <span aria-hidden="true">→</span>
+              View all on GitHub <span aria-hidden="true">↗</span>
             </a>
           </div>
           <div className="listing-grid two-col">

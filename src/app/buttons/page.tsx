@@ -1,18 +1,39 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.css";
+import LiquidShowcase from "@/components/ui/LiquidShowcase";
 
 export default function ButtonsShowcase() {
   return (
     <main className={styles.page}>
       <div className={styles.container}>
         <div className={styles.intro}>
-          <div><h1 className={styles.title}>Button Concepts</h1>
-          <p className={styles.subtitle}>Here is a showcase of different button styles. Hover over them!</p></div>
-          <div className={styles.introArt}><Image src="/images/pixel-cat-sunglasses.jpg" alt="Pixel art Siamese cat wearing red sunglasses" fill sizes="(max-width: 720px) 90vw, 30vw" /></div>
+          <div>
+            <h1 className={styles.title}>Button Concepts</h1>
+            <p className={styles.subtitle}>
+              Here is a showcase of different button styles, including our custom liquid gradient palettes. Hover over them!
+            </p>
+          </div>
+          <div className={styles.introArt}>
+            <Image
+              src="/images/pixel-cat-sunglasses.jpg"
+              alt="Pixel art Siamese cat wearing red sunglasses"
+              fill
+              sizes="(max-width: 720px) 90vw, 30vw"
+            />
+          </div>
         </div>
         
         <Link href="/" className={styles.backLink}>← Back to Home</Link>
+
+        {/* Featured: Liquid Gradient with Black, White & Emerald Palettes */}
+        <section style={{ marginBottom: "36px" }}>
+          <h2>Liquid Gradient Buttons <span style={{ color: "var(--accent)", fontSize: "0.85em" }}>&lt;-&gt; Custom Brand Palettes</span></h2>
+          <p style={{ color: "var(--muted)", margin: "4px 0 16px" }}>
+            Fluid SVG animated radial gradient borders configured with our black, white, and cyber emerald/mint palette. Toggle palettes below:
+          </p>
+          <LiquidShowcase />
+        </section>
 
         <div className={styles.grid}>
           {/* Glassmorphism */}

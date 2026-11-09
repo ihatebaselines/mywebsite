@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PhotoGallery from "@/components/PhotoGallery";
+import { ClickableImage } from "@/components/ui/MediaModal";
 import { getWork, workItems } from "@/content/work";
 
 export function generateStaticParams() {
@@ -42,22 +42,57 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ slu
   const item = getWork(slug);
   if (!item) notFound();
   return (
-    <main className="site-main"><article className="article-layout">
-      <Link className="text-link" href="/work">← Back to work</Link>
-      <header className="article-header"><p className="entry-meta">{item.tag} / {item.date}</p><h1>{item.title}</h1><p>{item.summary}</p></header>
-      {item.image ? <div className="article-cover"><Image src={item.image} alt="" width={1400} height={800} priority /></div> : null}
-      <div className="article-body">{item.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
-      {item.embedUrl ? <div className="work-embed"><iframe src={item.embedUrl} title={`${item.title} live embed`} loading="lazy" /></div> : null}
-      {item.repoUrl ? <a className="entry-card resource-card" href={item.repoUrl} target="_blank" rel="noreferrer"><span className="entry-meta">GITHUB REPOSITORY</span><h2>{item.repoUrl.replace("https://github.com/", "")} ↗</h2><p>Open the implementation, project files, and latest code.</p></a> : null}
-      {item.links?.map((link) => (
-        <a key={link.url} className="entry-card resource-card" href={link.url} target="_blank" rel="noreferrer">
-          <span className="entry-meta">{link.label.toUpperCase()}</span>
-          <h2>{link.url.replace(/^https?:\/\//, "").replace(/\/$/, "")} ↗</h2>
-          {link.description ? <p>{link.description}</p> : null}
-        </a>
-      ))}
-      {item.relatedHref ? <p><Link className="button" href={item.relatedHref}>Related post →</Link></p> : null}
-      {item.gallery?.length ? <PhotoGallery images={item.gallery} title={`${item.title} Showcase`} /> : null}
-    </article></main>
+    <main className="site-main">
+      <article className="article-layout">
+        <Link className="text-link" href="/work">← Back to work</Link>
+        <header className="article-header">
+          <p className="entry-meta">{item.tag} / {item.date}</p>
+          <h1>{item.title}</h1>
+          <p>{item.summary}</p>
+        </header>
+        {item.image ? (
+          <div className="article-cover">
+            <ClickableImage
+              src={item.image}
+              alt={item.title}
+              title={item.title}
+              caption={item.summary}
+              width={1400}
+              height={800}
+            />
+          </div>
+        ) : null}
+        <div className="article-body">
+          {item.body.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+        {item.embedUrl ? (
+          <div className="work-embed">
+            <iframe src={item.embedUrl} title={`${item.title} live embed`} loading="lazy" />
+          </div>
+        ) : null}
+        {item.repoUrl ? (
+          <a className="entry-card resource-card" href={item.repoUrl} target="_blank" rel="noreferrer">
+            <span className="entry-meta">GITHUB REPOSITORY</span>
+            <h2>{item.repoUrl.replace("https://github.com/", "")} ↗</h2>
+            <p>Open the implementation, project files, and latest code.</p>
+          </a>
+        ) : null}
+        {item.links?.map((link) => (
+          <a key={link.url} className="entry-card resource-card" href={link.url} target="_blank" rel="noreferrer">
+            <span className="entry-meta">{link.label.toUpperCase()}</span>
+            <h2>{link.url.replace(/^https?:\/\//, "").replace(/\/$/, "")} ↗</h2>
+            {link.description ? <p>{link.description}</p> : null}
+          </a>
+        ))}
+        {item.relatedHref ? (
+          <p>
+            <Link className="button" href={item.relatedHref}>Related post →</Link>
+          </p>
+        ) : null}
+        {item.gallery?.length ? <PhotoGallery images={item.gallery} title={`${item.title} Showcase`} /> : null}
+      </article>
+    </main>
   );
 }

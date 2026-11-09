@@ -4,6 +4,8 @@ import { getFeaturedProjects, projects } from "@/content/projects";
 import { getSortedPosts, posts } from "@/content/posts";
 import { getSortedWork, workItems } from "@/content/work";
 import DrunkTitle from "@/components/home/DrunkTitle";
+import BlocksBackground from "@/components/ui/BlocksBackground";
+import LiquidButton from "@/components/ui/LiquidButton";
 
 const destinations = [
   { number: "01", label: "work", href: "/work" },
@@ -21,40 +23,42 @@ export default function Home() {
 
   return (
     <main className="site-main home-minimal-main">
-      {/* First Viewport: Exact Minimalist Hero */}
-      <section className="hero-minimal" aria-labelledby="home-title">
-        <div className="hero-minimal-center">
-          <DrunkTitle />
-          <p className="hero-minimal-desc">
-            student developer building AI, open source, and things that start at zero.
-          </p>
-          <div>
-            <Link className="hero-minimal-cta" href="/work">
-              view my work <span aria-hidden="true">→</span>
-            </Link>
+      {/* First Viewport: Minimalist Hero with Ambient Interactive Matrix Grid */}
+      <BlocksBackground className="hero-blocks-container">
+        <section className="hero-minimal" aria-labelledby="home-title">
+          <div className="hero-minimal-center">
+            <DrunkTitle />
+            <p className="hero-minimal-desc">
+              student developer building AI, open source, and things that start at zero.
+            </p>
+            <div>
+              <Link className="hero-minimal-cta" href="/work">
+                view my work <span aria-hidden="true">→</span>
+              </Link>
+            </div>
           </div>
-        </div>
 
-        <div className="hero-minimal-bottom">
-          <div className="hero-strip" aria-label="Featured projects">
-            <Link href="/projects/swift" className="strip-item">
-              <span className="strip-num">01</span>
-              <span className="strip-label">swiftfox</span>
-            </Link>
-            <span className="strip-sep" aria-hidden="true">|</span>
-            <Link href="/projects/socrate-main-model" className="strip-item">
-              <span className="strip-num">02</span>
-              <span className="strip-label">socratex</span>
-            </Link>
-            <span className="strip-sep" aria-hidden="true">|</span>
-            <Link href="/projects/skillab-radar" className="strip-item">
-              <span className="strip-num">03</span>
-              <span className="strip-label">skillab radar</span>
-            </Link>
+          <div className="hero-minimal-bottom">
+            <div className="hero-strip" aria-label="Featured projects">
+              <Link href="/projects/swift" className="strip-item">
+                <span className="strip-num">01</span>
+                <span className="strip-label">swiftfox</span>
+              </Link>
+              <span className="strip-sep" aria-hidden="true">|</span>
+              <Link href="/projects/socrate-main-model" className="strip-item">
+                <span className="strip-num">02</span>
+                <span className="strip-label">socratex</span>
+              </Link>
+              <span className="strip-sep" aria-hidden="true">|</span>
+              <Link href="/projects/skillab-radar" className="strip-item">
+                <span className="strip-num">03</span>
+                <span className="strip-label">skillab radar</span>
+              </Link>
+            </div>
+            <p className="hero-location">cluj-napoca &middot; 2026</p>
           </div>
-          <p className="hero-location">cluj-napoca &middot; 2026</p>
-        </div>
-      </section>
+        </section>
+      </BlocksBackground>
 
       {/* 01 / About */}
       <section className="min-section" aria-labelledby="min-about-title">
@@ -195,6 +199,12 @@ export default function Home() {
             <p>Have a project, question, or just want to talk? My inbox is open.</p>
           </div>
           <div className="min-contact-actions">
+            <LiquidButton
+              href="https://github.com/ihatebaselines"
+              label="github"
+              sublabel="@ihatebaselines"
+              palette="cyberEmerald"
+            />
             <a className="hero-minimal-cta" href="mailto:rusvlad1010@icloud.com">
               rusvlad1010@icloud.com <span aria-hidden="true">→</span>
             </a>
