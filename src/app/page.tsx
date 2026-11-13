@@ -4,7 +4,6 @@ import { getFeaturedProjects, projects } from "@/content/projects";
 import { getSortedPosts, posts } from "@/content/posts";
 import { getSortedWork, workItems } from "@/content/work";
 import DrunkTitle from "@/components/home/DrunkTitle";
-import BlocksBackground from "@/components/ui/BlocksBackground";
 import LiquidButton from "@/components/ui/LiquidButton";
 
 const destinations = [
@@ -24,8 +23,7 @@ export default function Home() {
   return (
     <main className="site-main home-minimal-main">
       {/* First Viewport: Minimalist Hero with Ambient Interactive Matrix Grid */}
-      <BlocksBackground className="hero-blocks-container">
-        <section className="hero-minimal" aria-labelledby="home-title">
+              <section className="hero-minimal" aria-labelledby="home-title">
           <div className="hero-minimal-center">
             <DrunkTitle />
             <p className="hero-minimal-desc">
@@ -58,8 +56,7 @@ export default function Home() {
             <p className="hero-location">cluj-napoca &middot; 2026</p>
           </div>
         </section>
-      </BlocksBackground>
-
+      
       {/* 01 / About */}
       <section className="min-section" aria-labelledby="min-about-title">
         <div className="min-section-head">

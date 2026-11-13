@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
   color-scheme: dark;
@@ -334,10 +334,10 @@ img { display: block; max-width: 100%; }
 }
 .hero-minimal .home-title {
   margin: 0 0 18px;
-  font-size: clamp(3.2rem, 8vw, 5.8rem);
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 1.05;
+  font-size: clamp(3.6rem, 9.5vw, 6.8rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
   color: var(--text);
   white-space: nowrap;
 }
@@ -349,6 +349,9 @@ img { display: block; max-width: 100%; }
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: var(--text);
+  font-weight: 800;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.45);
+  filter: drop-shadow(0 4px 24px rgba(74, 147, 144, 0.3));
   display: inline-block;
 }
 .hero-minimal .home-title .title-period {
@@ -1563,7 +1566,8 @@ img { display: block; max-width: 100%; }
     overflow: visible;
   }
   .hero-minimal .home-title {
-    font-size: clamp(2.2rem, 10vw, 3.2rem);
+    font-size: clamp(2.5rem, 11vw, 3.8rem);
+    font-weight: 800;
     white-space: normal;
     word-break: break-word;
     margin-bottom: 12px;
