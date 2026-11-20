@@ -27,7 +27,7 @@ export default function Home() {
           <div className="hero-minimal-center">
             <DrunkTitle />
             <p className="hero-minimal-desc">
-              student developer building AI, open source, and things that start at zero.
+              lowkey obsessed with building AI from scratch. poke around for projects, experiments, and other cool things.
             </p>
             <div>
               <Link className="hero-minimal-cta" href="/work">
