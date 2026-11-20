@@ -1,19 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
   color-scheme: dark;
   --bg: #0b0c0e;
-  --surface: #101215;
-  --surface-soft: #15181c;
-  --text: #ededef;
-  --muted: #6e767f;
-  --quiet: #4c535b;
-  --accent: #4a9390;
-  --accent-dark: #5cb0ac;
-  --accent-soft: rgba(74, 147, 144, 0.1);
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.15);
+  --surface: #0f1217;
+  --surface-soft: #14181f;
+  --text: #f0f6fc;
+  --muted: #8295a5;
+  --quiet: #56687a;
+  --accent: #38bdf8;
+  --accent-dark: #67e8f9;
+  --accent-soft: rgba(56, 189, 248, 0.12);
+  --border: rgba(186, 230, 253, 0.08);
+  --border-strong: rgba(186, 230, 253, 0.18);
   --font: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+  --font-display: 'Space Grotesk', 'JetBrains Mono', sans-serif;
   --page-width: 960px;
   --page-pad: clamp(20px, 4vw, 40px);
   --radius: 4px;
@@ -22,16 +23,16 @@
 [data-theme="dark"] {
   color-scheme: dark;
   --bg: #0b0c0e;
-  --surface: #101215;
-  --surface-soft: #15181c;
-  --text: #ededef;
-  --muted: #6e767f;
-  --quiet: #4c535b;
-  --accent: #4a9390;
-  --accent-dark: #5cb0ac;
-  --accent-soft: rgba(74, 147, 144, 0.1);
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.15);
+  --surface: #0f1217;
+  --surface-soft: #14181f;
+  --text: #f0f6fc;
+  --muted: #8295a5;
+  --quiet: #56687a;
+  --accent: #38bdf8;
+  --accent-dark: #67e8f9;
+  --accent-soft: rgba(56, 189, 248, 0.12);
+  --border: rgba(186, 230, 253, 0.08);
+  --border-strong: rgba(186, 230, 253, 0.18);
 }
 
 [data-theme="light"] {
@@ -351,7 +352,7 @@ img { display: block; max-width: 100%; }
   color: var(--text);
   font-weight: 800;
   -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.45);
-  filter: drop-shadow(0 4px 24px rgba(74, 147, 144, 0.3));
+  filter: drop-shadow(0 4px 28px rgba(56, 189, 248, 0.35));
   display: inline-block;
 }
 .hero-minimal .home-title .title-period {
@@ -2055,8 +2056,8 @@ img { display: block; max-width: 100%; }
   transition: border-color 200ms ease, box-shadow 200ms ease;
 }
 .stacking-card-inner:hover {
-  border-color: rgba(74, 147, 144, 0.45);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65), 0 0 24px rgba(74, 147, 144, 0.08);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65), 0 0 28px rgba(56, 189, 248, 0.12);
 }
 .stacking-card-header {
   display: flex;
@@ -2170,4 +2171,9 @@ img { display: block; max-width: 100%; }
   .stacking-card-inner {
     padding: 18px 20px;
   }
+}
+
+/* Winter Display Typography */
+.home-title, .page-title, .min-about-block h2, .min-contact-block h2, .stacking-card-title {
+  font-family: var(--font-display);
 }
