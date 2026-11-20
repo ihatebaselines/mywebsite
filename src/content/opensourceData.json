@@ -10,11 +10,11 @@
   },
   {
     "slug": "swift",
-    "name": "swift...",
-    "description": "\"Not smash, just swift.\" As Jonathan Swift noted: 'May you live all the days of your life.' A quiet prelude<->swift, nimble, and always keeping one step ahead of the rest. Stay swift.",
-    "repoUrl": "",
+    "name": "SwiftFox",
+    "description": "Custom Multimodal Language Model (MLM) processing up to 3 images + text with Rotary Position Embeddings (RoPE), 2D residual patch projections, SwiGLU, and dynamic entropy-driven adaptive Top-K MoE.",
+    "repoUrl": "/blog/swiftfox",
     "language": "Python",
-    "topics": ["swift", "coming-soon"],
-    "image": "/images/heiheihei.gif"
+    "topics": ["multimodal", "pytorch", "moe", "rope", "swiglu"],
+    "image": "/images/swiftfox.png"
   }
 ]
