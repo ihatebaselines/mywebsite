@@ -53,7 +53,7 @@ export default function Home() {
                 <span className="strip-label">skillab radar</span>
               </Link>
             </div>
-            <p className="hero-location">cluj-napoca &middot; 2026</p>
+            <p className="hero-location">cluj-napoca &middot; winter &rsquo;26</p>
           </div>
         </section>
       
@@ -200,7 +200,7 @@ export default function Home() {
               href="https://github.com/ihatebaselines"
               label="github"
               sublabel="@ihatebaselines"
-              palette="cyberEmerald"
+              palette="glacierFrost"
             />
             <a className="hero-minimal-cta" href="mailto:rusvlad1010@icloud.com">
               rusvlad1010@icloud.com <span aria-hidden="true">→</span>

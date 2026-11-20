@@ -28,6 +28,27 @@ export type Colors = Record<ColorKey, string>;
  * Brand Palettes: Black, White, and Emerald/Teal/Green
  */
 export const PALETTES = {
+  // Polar Obsidian + Ice Cyan + Crisp Frost White
+  glacierFrost: {
+    color1: '#FFFFFF',
+    color2: '#0284C7',
+    color3: '#38BDF8',
+    color4: '#F0F9FF',
+    color5: '#E0F2FE',
+    color6: '#67E8F9',
+    color7: '#0C4A6E',
+    color8: '#0EA5E9',
+    color9: '#0369A1',
+    color10: '#7DD3FC',
+    color11: '#082F49',
+    color12: '#BAE6FD',
+    color13: '#0B0C0E',
+    color14: '#E0F7FA',
+    color15: '#38BDF8',
+    color16: '#0B0C0E',
+    color17: '#1E293B',
+  } satisfies Colors,
+
   // Primary brand palette: Deep obsidian black, crisp white, and glowing emerald/cyan
   cyberEmerald: {
     color1: '#FFFFFF',

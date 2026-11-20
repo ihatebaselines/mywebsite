@@ -5,9 +5,10 @@ import { LiquidButton } from './LiquidButton';
 import { PALETTES } from './liquid-gradient';
 
 export function LiquidShowcase() {
-  const [activePalette, setActivePalette] = useState<'cyberEmerald' | 'matrixMint' | 'monochrome'>('cyberEmerald');
+  const [activePalette, setActivePalette] = useState<'glacierFrost' | 'cyberEmerald' | 'matrixMint' | 'monochrome'>('glacierFrost');
 
   const paletteNames = [
+    { key: 'glacierFrost', name: 'Glacier Frost', desc: 'Polar Obsidian + Ice Cyan + Frost White' },
     { key: 'cyberEmerald', name: 'Cyber Emerald', desc: 'Black + White + Neon Emerald' },
     { key: 'matrixMint', name: 'Matrix Mint', desc: 'Obsidian + Bright Mint' },
     { key: 'monochrome', name: 'Monochrome Stealth', desc: 'Pure Stark Black & White' },

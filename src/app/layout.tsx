@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import SmoothScroll from "@/components/SmoothScroll";
+import Snowfall from "@/components/ui/Snowfall";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 
@@ -372,6 +373,7 @@ export default function RootLayout({
       <body id="top">
         <Navbar />
         <SmoothScroll />
+        <Snowfall />
         {children}
         <Footer />
       </body>

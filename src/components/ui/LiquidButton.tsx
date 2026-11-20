@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Liquid, PALETTES, type Colors } from './liquid-gradient';
 
-type PaletteKey = 'cyberEmerald' | 'matrixMint' | 'monochrome';
+type PaletteKey = 'glacierFrost' | 'cyberEmerald' | 'matrixMint' | 'monochrome';
 
 export type LiquidButtonProps = {
   href?: string;

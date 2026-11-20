@@ -2177,3 +2177,11 @@ img { display: block; max-width: 100%; }
 .home-title, .page-title, .min-about-block h2, .min-contact-block h2, .stacking-card-title {
   font-family: var(--font-display);
 }
+
+/* Winter Frost Glass Hover */
+.entry-card:hover, .min-row:hover {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(56, 189, 248, 0.08);
+}
