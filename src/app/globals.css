@@ -2193,3 +2193,68 @@ img { display: block; max-width: 100%; }
 }
 
 .wordmark { font-family: var(--font-display); font-size: 1.15rem; letter-spacing: 0.01em; }
+
+@keyframes tw-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+.typewritter-cursor { color: var(--accent); animation: tw-blink 1s step-end infinite; margin-left: 1px; }
+
+/* Avatar Circles & Secret CoolMode Button */
+.avatar-circles-wrap {
+  display: inline-flex;
+  align-items: center;
+}
+.avatar-circle-link {
+  display: inline-block;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid var(--bg);
+  transition: transform 150ms ease, z-index 150ms ease;
+  position: relative;
+}
+.avatar-circle-link:first-child {
+  margin-left: 0;
+}
+.avatar-circle-link:hover {
+  transform: translateY(-3px) scale(1.06);
+  z-index: 5;
+}
+.avatar-circle-img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+.avatar-circle-count {
+  margin-left: -10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--surface-soft);
+  border: 2px solid var(--bg);
+  color: var(--accent-dark);
+  font-family: var(--font);
+  font-size: 0.68rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.secret-cool-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.65;
+  transition: transform 150ms ease, opacity 150ms ease, color 150ms ease;
+}
+.secret-cool-btn:hover {
+  opacity: 1;
+  color: var(--accent-dark);
+  transform: scale(1.2) rotate(15deg);
+}

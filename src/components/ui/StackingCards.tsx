@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Lens } from './Lens';
 
 export type StackingCardItem = {
   id?: string;
@@ -147,13 +148,15 @@ export const StackingCards: React.FC<StackingCardsProps> = ({
                 {/* Visual / Image Media */}
                 {card.image ? (
                   <div className="stacking-card-media">
-                    <Image
+                    <Lens zoomFactor={1.75} lensSize={130}>
+                      <Image
                       src={card.image}
                       alt={card.title}
                       width={480}
                       height={320}
                       className="stacking-card-img"
                     />
+                    </Lens>
                   </div>
                 ) : null}
               </div>

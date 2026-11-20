@@ -5,6 +5,10 @@ import { getSortedPosts, posts } from "@/content/posts";
 import { getSortedWork, workItems } from "@/content/work";
 import DrunkTitle from "@/components/home/DrunkTitle";
 import LiquidButton from "@/components/ui/LiquidButton";
+import TypeWritter from "@/components/ui/TypeWritter";
+import CoolMode from "@/components/ui/CoolMode";
+import SparklesText from "@/components/ui/SparklesText";
+import AvatarCircles from "@/components/ui/AvatarCircles";
 
 const destinations = [
   { number: "01", label: "work", href: "/work" },
@@ -12,6 +16,10 @@ const destinations = [
   { number: "03", label: "projects", href: "/projects" },
   { number: "04", label: "licenses", href: "/licenses" },
   { number: "05", label: "updates", href: "/changelog" },
+];
+
+const collabAvatars = [
+  { imageUrl: "https://avatars.githubusercontent.com/ihatebaselines", profileUrl: "https://github.com/ihatebaselines" },
 ];
 
 export default function Home() {
@@ -53,7 +61,12 @@ export default function Home() {
                 <span className="strip-label">skillab radar</span>
               </Link>
             </div>
-            <p className="hero-location">cluj-napoca &middot; winter &rsquo;26</p>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <p className="hero-location" style={{ margin: 0 }}>cluj-napoca &middot; winter &rsquo;26</p>
+              <CoolMode options={{ particle: "/images/pixel-cat-sunglasses.jpg", size: 26, particleCount: 12 }}>
+                <button type="button" className="secret-cool-btn" title="click me">❄</button>
+              </CoolMode>
+            </div>
           </div>
         </section>
       
@@ -67,7 +80,7 @@ export default function Home() {
         </div>
         <div className="min-about-block">
           <h2 id="min-about-title">
-            hi, i’m vlad<span className="title-period">.</span>
+            <SparklesText sparklesCount={7}>hi, i’m vlad<span className="title-period">.</span></SparklesText>
           </h2>
           <p>
             I’m a student based in Cluj-Napoca, studying at Colegiul Național “Emil Racoviță”. I’m
@@ -76,7 +89,7 @@ export default function Home() {
           </p>
           <div className="min-meta-bar">
             <span>
-              currently {"<->"} <strong>learning in public &middot; building from zero</strong>
+              currently {"<->"} <strong><TypeWritter text="learning in public · building from zero" charDelay={50} loop pauseMs={3200} /></strong>
             </span>
             <span>
               {workItems.length} work &middot; {competitionCount} competitions &middot;{" "}
@@ -191,9 +204,10 @@ export default function Home() {
         <div className="min-contact-block">
           <div>
             <h2 id="min-contact-title">
-              good things start with a hello<span className="title-period">.</span>
+              <TypeWritter text="good things start with a hello" charDelay={55} showCursor={false} /><span className="title-period">.</span>
             </h2>
             <p>Have a project, question, or just want to talk? My inbox is open.</p>
+            <div style={{ marginTop: "14px" }}><AvatarCircles avatarUrls={collabAvatars} /></div>
           </div>
           <div className="min-contact-actions">
             <LiquidButton
