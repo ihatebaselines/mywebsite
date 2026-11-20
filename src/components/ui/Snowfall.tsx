@@ -33,7 +33,7 @@ export default function Snowfall() {
     const count = Math.min(90, Math.floor((width * docHeight) / 35000));
     const flakes = Array.from({ length: count }, () => ({
       x: Math.random() * width,
-      y: Math.random() * Math.min(docHeight, height * 1.3),
+      y: Math.random() * docHeight,
       size: Math.random() > 0.65 ? 3 : 2,
       speedY: 0.45 + Math.random() * 0.75,
       speedX: (Math.random() - 0.5) * 0.25,
