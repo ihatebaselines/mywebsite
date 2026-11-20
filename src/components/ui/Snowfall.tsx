@@ -17,64 +17,51 @@ export default function Snowfall() {
     let animId = 0;
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
-    let lastScrollY = window.scrollY;
-    let scrollVelocity = 0;
+    let docHeight = Math.max(document.documentElement.scrollHeight, height);
 
     const handleResize = () => {
       if (!canvas) return;
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
-    };
-
-    const handleScroll = () => {
-      const currentY = window.scrollY;
-      const delta = currentY - lastScrollY;
-      lastScrollY = currentY;
-      // Add scroll inertia so particles react physically as you scroll
-      scrollVelocity += delta * 0.45;
+      docHeight = Math.max(document.documentElement.scrollHeight, height);
     };
 
     window.addEventListener('resize', handleResize);
-    window.addEventListener('scroll', handleScroll, { passive: true });
 
-    const count = Math.min(56, Math.floor((width * height) / 28000));
-    const flakes = Array.from({ length: count }, () => {
-      const depth = 0.4 + Math.random() * 1.1;
-      return {
-        x: Math.random() * width,
-        y: Math.random() * height,
-        size: depth > 1.1 ? 3 : 2,
-        depth,
-        speedY: (0.3 + Math.random() * 0.55) * depth,
-        speedX: (Math.random() - 0.5) * 0.25,
-        alpha: 0.16 + depth * 0.22,
-      };
-    });
+    // Flakes live in document-space coordinates (0 .. docHeight)
+    // Start them near the top / initial viewport so they flow down the page like water
+    const count = Math.min(90, Math.floor((width * docHeight) / 35000));
+    const flakes = Array.from({ length: count }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * Math.min(docHeight, height * 1.3),
+      size: Math.random() > 0.65 ? 3 : 2,
+      speedY: 0.45 + Math.random() * 0.75,
+      speedX: (Math.random() - 0.5) * 0.25,
+      alpha: 0.2 + Math.random() * 0.35,
+    }));
 
     const render = () => {
       ctx.clearRect(0, 0, width, height);
-
-      // Smoothly decay scroll velocity each frame
-      scrollVelocity *= 0.88;
+      const scrollY = window.scrollY;
+      docHeight = Math.max(document.documentElement.scrollHeight, height);
 
       for (const f of flakes) {
-        // Particles move downward naturally + react to scroll velocity by depth
-        f.y += f.speedY + scrollVelocity * f.depth * 0.35;
+        f.y += f.speedY;
         f.x += f.speedX;
 
-        // Wrap around viewport vertically & horizontally
-        if (f.y > height + 4) {
+        if (f.y > docHeight) {
           f.y = -4;
-          f.x = Math.random() * width;
-        } else if (f.y < -4) {
-          f.y = height + 4;
           f.x = Math.random() * width;
         }
         if (f.x > width) f.x = 0;
         if (f.x < 0) f.x = width;
 
-        ctx.fillStyle = `rgba(224, 247, 250, ${Math.min(0.65, f.alpha)})`;
-        ctx.fillRect(Math.round(f.x), Math.round(f.y), f.size, f.size);
+        // Convert document Y to screen Y: if you scroll past them, they stay above!
+        const screenY = f.y - scrollY;
+        if (screenY >= -4 && screenY <= height + 4) {
+          ctx.fillStyle = `rgba(224, 247, 250, ${f.alpha})`;
+          ctx.fillRect(Math.round(f.x), Math.round(screenY), f.size, f.size);
+        }
       }
       animId = requestAnimationFrame(render);
     };
@@ -84,7 +71,6 @@ export default function Snowfall() {
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener('resize', handleResize);
-      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
