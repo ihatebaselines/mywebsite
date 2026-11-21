@@ -2,17 +2,17 @@
 
 :root {
   color-scheme: dark;
-  --bg: #0b0c0e;
-  --surface: #0f1217;
-  --surface-soft: #14181f;
+  --bg: #0a1120;
+  --surface: #101b30;
+  --surface-soft: #162440;
   --text: #f0f6fc;
-  --muted: #8295a5;
-  --quiet: #56687a;
+  --muted: #8ea4c2;
+  --quiet: #5c7394;
   --accent: #38bdf8;
   --accent-dark: #67e8f9;
-  --accent-soft: rgba(56, 189, 248, 0.12);
-  --border: rgba(186, 230, 253, 0.08);
-  --border-strong: rgba(186, 230, 253, 0.18);
+  --accent-soft: rgba(56, 189, 248, 0.14);
+  --border: rgba(148, 197, 255, 0.12);
+  --border-strong: rgba(148, 197, 255, 0.24);
   --font: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
   --font-display: 'Pixelify Sans', 'Space Grotesk', monospace;
   --page-width: 960px;
@@ -22,17 +22,17 @@
 
 [data-theme="dark"] {
   color-scheme: dark;
-  --bg: #0b0c0e;
-  --surface: #0f1217;
-  --surface-soft: #14181f;
+  --bg: #0a1120;
+  --surface: #101b30;
+  --surface-soft: #162440;
   --text: #f0f6fc;
-  --muted: #8295a5;
-  --quiet: #56687a;
+  --muted: #8ea4c2;
+  --quiet: #5c7394;
   --accent: #38bdf8;
   --accent-dark: #67e8f9;
-  --accent-soft: rgba(56, 189, 248, 0.12);
-  --border: rgba(186, 230, 253, 0.08);
-  --border-strong: rgba(186, 230, 253, 0.18);
+  --accent-soft: rgba(56, 189, 248, 0.14);
+  --border: rgba(148, 197, 255, 0.12);
+  --border-strong: rgba(148, 197, 255, 0.24);
 }
 
 [data-theme="light"] {
@@ -2257,4 +2257,9 @@ img { display: block; max-width: 100%; }
   opacity: 1;
   color: var(--accent-dark);
   transform: scale(1.2) rotate(15deg);
+}
+
+/* Midnight Polar Navy Ambient Glow */
+body {
+  background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(56, 189, 248, 0.08), transparent 70%), #0a1120;
 }
